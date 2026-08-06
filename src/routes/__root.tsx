@@ -77,12 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Thiago Surfista & Giovanni Sanches | PL 22" },
+      { title: "Giovanni Sanches 22 | Deputado Estadual - São Paulo" },
       {
         name: "description",
         content:
-          "Portal da dobradinha PL 22 em São Paulo e Guarulhos: causa autista, saneamento, saúde e educação.",
+          "Portal de pré-campanha de Giovanni Sanches (PL 22), pré-candidato a deputado estadual: causa autista, saneamento, saúde, educação e segurança.",
       },
+
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

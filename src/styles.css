@@ -122,6 +122,10 @@
 }
 
 @layer base {
+  #lovable-badge {
+    display: none !important;
+  }
+
   * {
     border-color: var(--color-border);
   }
@@ -140,6 +144,20 @@
     letter-spacing: 0.01em;
   }
 }
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
 
 @utility surface-hero {
   background-image: var(--gradient-hero);
