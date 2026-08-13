@@ -671,15 +671,12 @@ function Index() {
             <div>
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-10 h-10 bg-[var(--color-navy)] flex items-center justify-center rounded-lg">
-                  <Building2 className="text-[var(--color-gold)] w-6 h-6" />
+                  <Building2 className="text-[var(--color-accent)] w-6 h-6" />
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[var(--color-navy)] font-bold text-lg leading-none tracking-tight uppercase">TERRITORIAL</span>
-                  <span className="text-gray-500 text-[10px] font-medium uppercase tracking-[0.2em]">Imóveis & Perícia</span>
-                </div>
+                <span className="text-[var(--color-navy)] font-bold text-xl tracking-tight uppercase">TERRITORIAL</span>
               </div>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                Especialistas em intermediação imobiliária de alto e médio porte, loteamentos, topografia e perícia judicial.
+              <p className="text-slate-600 mb-8 leading-relaxed">
+                Referência em intermediação imobiliária de alto padrão, loteamentos, topografia e perícia judicial.
               </p>
               <div className="flex gap-4">
                 <a href="#" className="w-10 h-10 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center text-[var(--color-navy)] hover:bg-[var(--color-navy)] hover:text-white transition-all">
