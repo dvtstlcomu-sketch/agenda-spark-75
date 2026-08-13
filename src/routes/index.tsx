@@ -329,7 +329,16 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-[var(--color-navy)] flex items-center justify-center rounded-lg">
+              <img 
+                src="/favicon.png" 
+                alt="Territorial Logo" 
+                className="w-10 h-10 object-contain"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                }}
+              />
+              <div className="w-10 h-10 bg-[var(--color-navy)] hidden items-center justify-center rounded-lg">
                 <Building2 className="text-[var(--color-accent)] w-6 h-6" />
               </div>
               <span className="text-[var(--color-navy)] font-bold text-xl tracking-tight uppercase">TERRITORIAL</span>
