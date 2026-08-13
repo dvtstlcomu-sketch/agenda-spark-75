@@ -768,7 +768,7 @@ function Index() {
                 <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity text-slate-900">
                    <Building2 size={80} />
                 </div>
-                <p className="text-slate-700 italic text-2xl font-medium mb-6 leading-relaxed relative z-10">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta, como topografia avançada e drones, à segurança jurídica de uma perícia especializada."</p>
+                <p className="text-slate-700 italic text-2xl font-medium mb-6 leading-relaxed relative z-10">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta, como topografia avançada e drones, à segurança jurídica de uma perícia especializada para avaliação imobiliária."</p>
                 <p className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm relative z-10">— Silvio Moura</p>
               </div>
             </div>
