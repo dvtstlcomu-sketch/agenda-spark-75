@@ -701,11 +701,11 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-24 bg-white">
+      <section id="faq" className="py-24 bg-[var(--color-navy)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-[var(--color-navy)] font-bold text-4xl mb-4">Esclareça Suas Dúvidas</h2>
-            <p className="text-[var(--color-gold)] font-bold uppercase tracking-widest">Perguntas Frequentes (FAQ)</p>
+            <h2 className="text-white font-black text-4xl mb-4 uppercase tracking-tighter">Esclareça Suas Dúvidas</h2>
+            <p className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm">Consultoria Especializada</p>
           </div>
 
           <div className="space-y-4">
@@ -723,16 +723,16 @@ function Index() {
                 a: "Basta utilizar a seção 'Anuncie Seu Imóvel', preencher os dados de contato e realizar o upload das fotos. Nossa equipe entrará em contato para agendar uma vistoria."
               }
             ].map((faq, i) => (
-              <div key={i} className="border border-slate-100 rounded-2xl overflow-hidden">
+              <div key={i} className="border border-white/10 rounded-2xl overflow-hidden bg-white/5">
                 <button 
                   onClick={() => toggleFaq(i)}
-                  className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors text-left border-none cursor-pointer"
+                  className="w-full flex items-center justify-between p-6 hover:bg-white/5 transition-colors text-left border-none cursor-pointer bg-transparent"
                 >
-                  <span className="text-lg font-bold text-[var(--color-navy)]">{faq.q}</span>
+                  <span className="text-lg font-bold text-white">{faq.q}</span>
                   <ChevronDown className={cn("text-[var(--color-accent)] transition-transform", activeFaq === i && "rotate-180")} />
                 </button>
                 {activeFaq === i && (
-                  <div className="p-6 bg-slate-50 text-slate-600 border-t border-slate-100 leading-relaxed">
+                  <div className="p-6 text-gray-400 border-t border-white/10 leading-relaxed font-medium">
                     {faq.a}
                   </div>
                 )}
@@ -743,7 +743,7 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-50 py-20 border-t border-gray-100">
+      <footer className="bg-[var(--color-navy)] py-20 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <div>
@@ -751,28 +751,28 @@ function Index() {
                 <img 
                   src="/favicon.png" 
                   alt="Territorial Logo" 
-                  className="w-12 h-12 object-contain"
+                  className="w-12 h-12 object-contain brightness-110"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
                     e.currentTarget.nextElementSibling?.classList.remove('hidden');
                   }}
                 />
-                <div className="w-12 h-12 bg-[var(--color-navy)] hidden items-center justify-center rounded-lg">
+                <div className="w-12 h-12 bg-white/5 hidden items-center justify-center rounded-lg border border-white/10">
                   <Building2 className="text-[var(--color-accent)] w-7 h-7" />
                 </div>
-                <span className="text-[var(--color-navy)] font-bold text-xl tracking-tight uppercase">TERRITORIAL</span>
+                <span className="text-white font-bold text-xl tracking-tight uppercase">TERRITORIAL</span>
               </div>
-              <p className="text-slate-600 mb-8 leading-relaxed">
+              <p className="text-gray-400 mb-8 leading-relaxed font-medium">
                 Referência em intermediação imobiliária de alto padrão, loteamentos, topografia e perícia judicial.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center text-[var(--color-navy)] hover:bg-[var(--color-navy)] hover:text-white transition-all">
+                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
                   <Share2 size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center text-[var(--color-navy)] hover:bg-[var(--color-navy)] hover:text-white transition-all">
+                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
                   <Globe size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center text-[var(--color-navy)] hover:bg-[var(--color-navy)] hover:text-white transition-all">
+                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
                   <Link size={20} />
                 </a>
               </div>
