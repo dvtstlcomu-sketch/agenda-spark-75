@@ -807,14 +807,15 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-[var(--color-navy)] font-black text-4xl mb-4 uppercase tracking-tighter">Esclareça Suas Dúvidas</h2>
-            <p className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm">Consultoria Especializada</p>
+      <section id="faq" className="py-32 bg-navy relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 -skew-x-12 translate-x-1/2 opacity-10 z-0" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-24">
+            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Suporte & Consultoria</span>
+            <h2 className="text-5xl md:text-7xl font-bold text-foreground uppercase tracking-tighter font-heading italic leading-none">Dúvidas Frequentes</h2>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-6">
             {[
               {
                 q: "Como funciona o processo de Perícia e Avaliação Imobiliária?",
