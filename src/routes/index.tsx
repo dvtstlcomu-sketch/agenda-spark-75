@@ -10,7 +10,10 @@ import {
   MessageSquare,
   ChevronDown,
   Upload,
-  CheckCircle2
+  CheckCircle2,
+  Share2,
+  Facebook,
+  Linkedin
 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
