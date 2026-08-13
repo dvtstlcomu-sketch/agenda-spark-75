@@ -829,16 +829,16 @@ function Index() {
                 a: "Basta utilizar a seção 'Anuncie Seu Imóvel', preencher os dados de contato e realizar o upload das fotos. Nossa equipe entrará em contato para agendar uma vistoria."
               }
             ].map((faq, i) => (
-              <div key={i} className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm">
+              <div key={i} className="border border-white/10 rounded-[2rem] overflow-hidden bg-white/5 backdrop-blur-sm shadow-2xl transition-all duration-500 hover:border-[var(--color-accent)]/30">
                 <button 
                   onClick={() => toggleFaq(i)}
-                  className="w-full flex items-center justify-between p-6 hover:bg-slate-50 transition-colors text-left border-none cursor-pointer bg-transparent"
+                  className="w-full flex items-center justify-between p-8 hover:bg-white/5 transition-all text-left border-none cursor-pointer bg-transparent group"
                 >
-                  <span className="text-lg font-bold text-[var(--color-navy)]">{faq.q}</span>
-                  <ChevronDown className={cn("text-[var(--color-accent)] transition-transform", activeFaq === i && "rotate-180")} />
+                  <span className="text-xl font-bold text-foreground font-heading tracking-wide italic group-hover:text-[var(--color-accent)] transition-colors">{faq.q}</span>
+                  <ChevronDown className={cn("text-[var(--color-accent)] transition-transform duration-500", activeFaq === i && "rotate-180")} />
                 </button>
                 {activeFaq === i && (
-                  <div className="p-6 text-gray-600 border-t border-gray-100 leading-relaxed font-medium">
+                  <div className="px-8 pb-8 pt-0 text-gray-400 border-t border-white/5 leading-relaxed font-medium italic animate-in fade-in slide-in-from-top-4 duration-500">
                     {faq.a}
                   </div>
                 )}
@@ -854,8 +854,8 @@ function Index() {
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-12 h-12 bg-[var(--color-navy)] flex items-center justify-center rounded-xl shadow-lg border border-[var(--color-accent)]/30">
-                  <Building2 className="text-[var(--color-accent)] w-7 h-7" />
+                <div className="w-14 h-14 bg-[var(--color-navy)] flex items-center justify-center rounded-[1.25rem] shadow-2xl border border-[var(--color-accent)]/30 group">
+                  <Building2 className="text-[var(--color-accent)] w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
                 <span className="text-foreground font-black text-2xl tracking-tighter uppercase font-heading italic">TERRITORIAL IMÓVEIS</span>
               </div>
@@ -880,9 +880,9 @@ function Index() {
               <ul className="space-y-4">
                 <li className="flex items-start gap-4">
                   <Phone className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
-                  <div className="text-slate-600 font-medium">
-                    <p className="font-bold text-foreground text-xl">(11) 2405-0300</p>
-                    <p className="text-sm">Telefone Principal</p>
+                  <div className="text-gray-400 font-medium">
+                    <p className="font-bold text-foreground text-2xl tracking-tighter">(11) 2405-0300</p>
+                    <p className="text-xs uppercase tracking-[0.2em] mt-1 font-black opacity-50">Telefone Principal</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -906,7 +906,7 @@ function Index() {
               <h4 className="text-foreground font-bold text-xl mb-6 uppercase tracking-widest font-heading italic">Localização</h4>
               <div className="flex items-start gap-4">
                 <MapPin className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
-                <p className="text-slate-600 leading-relaxed font-medium">
+                <p className="text-gray-400 leading-relaxed font-medium italic">
                   Avenida Otávio Braga de Mesquita, Nº 3935<br />
                   Guarulhos / SP
                 </p>
