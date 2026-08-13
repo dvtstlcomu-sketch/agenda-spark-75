@@ -760,8 +760,8 @@ function Index() {
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-12 h-12 bg-[var(--color-accent)] flex items-center justify-center rounded-xl shadow-lg shadow-[var(--color-accent)]/20">
-                  <Building2 className="text-white w-7 h-7" />
+                <div className="w-12 h-12 bg-[var(--color-navy)] flex items-center justify-center rounded-xl shadow-lg">
+                  <Building2 className="text-[var(--color-accent)] w-7 h-7" />
                 </div>
                 <span className="text-[var(--color-navy)] font-bold text-xl tracking-tight uppercase">TERRITORIAL IMÓVEIS</span>
               </div>
