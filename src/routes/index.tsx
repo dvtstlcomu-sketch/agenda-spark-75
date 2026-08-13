@@ -375,24 +375,24 @@ function Index() {
   return (
     <div className="min-h-screen font-sans bg-background text-foreground selection:bg-[var(--color-accent)] selection:text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-[var(--color-navy)]/80 backdrop-blur-xl border-b border-white/5">
+      <nav className="fixed top-0 w-full z-50 bg-slate-200/90 backdrop-blur-xl border-b border-gray-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-2">
               <div className="w-12 h-12 bg-[var(--color-accent)] flex items-center justify-center rounded-xl shadow-lg shadow-[var(--color-accent)]/20">
                 <Building2 className="text-[var(--color-navy)] w-7 h-7" />
               </div>
-              <span className="text-white font-bold text-xl tracking-tight uppercase">TERRITORIAL IMÓVEIS</span>
+              <span className="text-[var(--color-navy)] font-bold text-xl tracking-tight uppercase">TERRITORIAL IMÓVEIS</span>
             </div>
             
-            <div className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest text-gray-400">
+            <div className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest text-slate-600">
               <a href="#inicio" className="hover:text-[var(--color-accent)] transition-colors">Início</a>
               <a href="#projetos" className="hover:text-[var(--color-accent)] transition-colors">Projetos</a>
               <a href="#imoveis" className="hover:text-[var(--color-accent)] transition-colors">Imóveis</a>
               <a href="#sobre" className="hover:text-[var(--color-accent)] transition-colors">Quem Somos</a>
             </div>
 
-            <Button className="bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent)]/90 rounded-full px-6 border-none font-bold">
+            <Button className="bg-[var(--color-navy)] text-white hover:bg-[var(--color-navy)]/90 rounded-full px-6 border-none font-bold">
               Fale Conosco
             </Button>
           </div>
