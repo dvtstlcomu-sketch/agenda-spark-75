@@ -354,15 +354,53 @@ const PROPERTIES = [
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
-    title: "Territorial Imóveis | Inteligência Territorial e Perícia Técnica",
-    meta: [
-      { name: "description", content: "Territorial Imóveis: Especialistas em administração, avaliação, compra, venda e perícia técnica judicial. CRECI 38258J | Silvio Moura CRECI 151545." },
-      { property: "og:title", content: "Territorial Imóveis | Inteligência e Soluções Imobiliárias" },
-      { property: "og:description", content: "Liderança em Perícia, Avaliação e Intermediação Imobiliária com excelência técnica." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" }
-    ]
-  })
+    title: "Territorial Imóveis | Perícia Judicial & Inteligência Territorial em Guarulhos",
+    head: () => ({
+      links: [
+        {
+          rel: "canonical",
+          href: "https://territorialimoveis.com.br"
+        }
+      ],
+      meta: [
+        { name: "description", content: "Liderança em Perícia Judicial e Inteligência Territorial em Guarulhos. Administração, Avaliação e Engenharia Técnica com excelência. CRECI 38258J | Silvio Moura CRECI 151545." },
+        { property: "og:title", content: "Territorial Imóveis | Excelência em Inteligência Imobiliária" },
+        { property: "og:description", content: "Especialistas em Perícia Judicial e Soluções Territoriais de Alto Padrão em Guarulhos e Região." },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+        {
+          name: "keywords",
+          content: "perícia judicial guarulhos, avaliação imobiliária, topografia guarulhos, engenharia territorial, administração de imóveis alto padrão, silvio moura creci 151545"
+        }
+      ],
+      script: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "RealEstateAgent",
+            "name": "Territorial Imóveis",
+            "image": "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
+            "@id": "",
+            "url": "https://territorialimoveis.com.br",
+            "telephone": "+551124050300",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Avenida Otávio Braga de Mesquita, 3935",
+              "addressLocality": "Guarulhos",
+              "addressRegion": "SP",
+              "postalCode": "07191-000",
+              "addressCountry": "BR"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": -23.444,
+              "longitude": -46.508
+            }
+          })
+        }
+      ]
+    })
 });
 
 function Index() {
@@ -488,12 +526,13 @@ function Index() {
       </section>
 
       {/* Property Showcase */}
-      <section id="imoveis" className="py-24 bg-slate-50">
+      <section id="imoveis" className="py-32 bg-background border-t border-white/5 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/20 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-xl text-left">
-              <h2 className="text-4xl md:text-5xl font-black text-[var(--color-navy)] mb-4 tracking-tighter uppercase">Curadoria Exclusiva</h2>
-              <p className="text-gray-600 font-medium">Imóveis selecionados pela excelência técnica e valorização estratégica.</p>
+              <h2 className="text-5xl lg:text-7xl font-bold text-foreground mb-6 uppercase tracking-tighter font-heading italic">Curadoria Técnica</h2>
+              <p className="text-gray-400 font-medium text-lg italic">Ativos imobiliários selecionados sob rigorosa análise pericial e potencial de valorização estratégica.</p>
             </div>
             <div className="flex gap-2">
               <Button variant="outline" className="rounded-full border-white/10 text-white hover:bg-white/5 transition-colors border-none bg-white/5 px-8">
@@ -504,7 +543,7 @@ function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {PROPERTIES.map((property) => (
-              <div key={property.id} className="group bg-white rounded-3xl overflow-hidden border border-gray-200 hover:border-[var(--color-accent)]/50 transition-all duration-500 shadow-sm hover:shadow-xl">
+              <div key={property.id} className="group bg-white/5 rounded-[2.5rem] overflow-hidden border border-white/10 hover:border-[var(--color-accent)] transition-all duration-700 shadow-2xl hover:-translate-y-3">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
                     src={property.image} 
@@ -525,12 +564,12 @@ function Index() {
                     <MapPin size={14} />
                     <span>{property.location}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[var(--color-navy)] mb-3 leading-tight group-hover:text-[var(--color-accent)] transition-colors">
+                  <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight group-hover:text-[var(--color-accent)] transition-colors font-heading tracking-wide italic">
                     {property.title}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-6 line-clamp-2">{property.description}</p>
+                  <p className="text-gray-400 text-sm mb-8 line-clamp-2 leading-relaxed">{property.description}</p>
                   
-                  <div className="flex items-center justify-between pt-6 border-t border-gray-100">
+                  <div className="flex items-center justify-between pt-8 border-t border-white/10">
                     <div className="flex gap-4 text-gray-500 text-sm font-medium">
                       {property.beds > 0 && (
                         <div className="flex items-center gap-1.5">
@@ -560,8 +599,11 @@ function Index() {
         </div>
       </section>
 
-      {/* Client Area / Form */}
-      <section id="anuncie" className="py-24 bg-[var(--color-navy)] text-white overflow-hidden relative">
+      {/* Lead Generation Premium */}
+      <section id="anuncie" className="py-32 bg-navy text-white overflow-hidden relative">
+        <div className="absolute inset-0 z-0 opacity-5">
+           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.2),transparent_70%)]" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
             <div className="mb-12 lg:mb-0">
@@ -620,21 +662,22 @@ function Index() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-gray-300 font-semibold text-sm">Descrição / Localização</label>
-                  <textarea className="w-full p-4 rounded-xl bg-white/5 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none min-h-[100px] transition-all" placeholder="Conte-nos mais sobre o imóvel..."></textarea>
+                  <label className="text-gray-400 font-bold text-xs uppercase tracking-[0.2em]">Descrição Estratégica</label>
+                  <textarea className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none min-h-[120px] transition-all placeholder:text-gray-600" placeholder="Detalhes técnicos ou localização específica..."></textarea>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-gray-300 font-semibold text-sm">Fotos do Imóvel</label>
-                  <div className="border-2 border-dashed border-white/10 rounded-xl p-8 text-center hover:border-[var(--color-accent)]/50 transition-colors cursor-pointer bg-white/5 group">
-                    <Upload className="mx-auto text-gray-500 mb-2 group-hover:text-[var(--color-accent)]" />
-                    <p className="text-white font-medium">Clique aqui para carregar as fotos</p>
-                    <p className="text-gray-500 text-xs">PNG, JPG ou JPEG até 10MB</p>
+                  <label className="text-gray-400 font-bold text-xs uppercase tracking-[0.2em]">Upload de Documentação/Fotos</label>
+                  <div className="border-2 border-dashed border-white/10 rounded-2xl p-10 text-center hover:border-[var(--color-accent)] transition-all cursor-pointer bg-white/5 group relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[var(--color-accent)]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <Upload className="mx-auto text-gray-500 mb-4 group-hover:text-[var(--color-accent)] transition-colors" size={32} />
+                    <p className="text-white font-bold text-lg mb-1 tracking-tight">Anexar arquivos técnicos</p>
+                    <p className="text-gray-500 text-xs uppercase tracking-widest font-black">Escrituras, Projetos ou Fotos (Até 50MB)</p>
                   </div>
                 </div>
 
-                <Button className="w-full bg-[var(--color-accent)] hover:bg-[var(--color-accent)]/90 text-white h-14 rounded-xl font-black text-lg shadow-lg border-none cursor-pointer uppercase tracking-widest">
-                  Enviar ao Perito
+                <Button className="w-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-gold)] text-[var(--color-navy)] h-20 rounded-2xl font-black text-xl shadow-[0_20px_40px_-10px_rgba(212,175,55,0.4)] border-none cursor-pointer uppercase tracking-[0.3em] hover:scale-[1.02] active:scale-95 transition-all">
+                  Solicitar Perícia
                 </Button>
               </form>
             </div>
