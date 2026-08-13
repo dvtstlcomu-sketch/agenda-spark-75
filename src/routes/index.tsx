@@ -323,14 +323,23 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen font-sans">
+    <div className="min-h-screen font-sans bg-background">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-[var(--color-navy)] flex items-center justify-center rounded-lg">
-                <Building2 className="text-[var(--color-accent)] w-6 h-6" />
+              <img 
+                src="/favicon.png" 
+                alt="Territorial Logo" 
+                className="w-12 h-12 object-contain"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                }}
+              />
+              <div className="w-12 h-12 bg-[var(--color-navy)] hidden items-center justify-center rounded-lg">
+                <Building2 className="text-[var(--color-accent)] w-7 h-7" />
               </div>
               <span className="text-[var(--color-navy)] font-bold text-xl tracking-tight uppercase">TERRITORIAL</span>
             </div>
@@ -338,7 +347,8 @@ function Index() {
             <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
               <a href="#inicio" className="hover:text-[var(--color-navy)] transition-colors">Início</a>
               <a href="#imoveis" className="hover:text-[var(--color-navy)] transition-colors">Imóveis</a>
-              <a href="#sobre" className="hover:text-[var(--color-navy)] transition-colors">Sobre</a>
+              <a href="#sobre" className="hover:text-[var(--color-navy)] transition-colors">Quem Somos</a>
+              <a href="#depoimentos" className="hover:text-[var(--color-navy)] transition-colors">Testemunhos</a>
             </div>
 
             <Button className="bg-[var(--color-navy)] text-white hover:bg-[var(--color-navy)]/90 rounded-full px-6">
@@ -353,10 +363,10 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-5xl lg:text-7xl font-extrabold text-[var(--color-navy)] mb-6 tracking-tight">
-              Encontre o seu imóvel de <span className="text-[var(--color-accent)]">alto padrão</span>
+              Excelência Territorial com <span className="text-[var(--color-accent)]">Silvio Moura</span>
             </h1>
             <p className="text-xl text-slate-600 mb-10">
-              A melhor curadoria de terrenos, casas e investimentos imobiliários.
+              Perícia judicial, topografia avançada e curadoria de imóveis de alto padrão em Guarulhos e região.
             </p>
 
             {/* Search Bar */}
@@ -559,19 +569,22 @@ function Index() {
 
             <div className="order-1 lg:order-2 mb-16 lg:mb-0">
               <span className="text-[var(--color-gold)] font-bold uppercase tracking-widest mb-4 block">Nossa Trajetória</span>
-              <h2 className="text-4xl lg:text-5xl font-bold text-[var(--color-navy)] mb-8">Uma História Pautada na Ética e Confiança</h2>
+              <h2 className="text-4xl lg:text-5xl font-bold text-[var(--color-navy)] mb-8">Silvio Moura: Tradição e Excelência</h2>
               <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                 <p>
-                  A Territorial Imóveis nasceu do compromisso inarredável com a transparência e a precisão no mercado imobiliário. Fundada por Silvio Moura, Perito Imobiliário com sólida experiência técnica, a empresa tornou-se referência na intermediação de imóveis de médio e alto padrão.
+                  A história de Silvio Moura no mercado imobiliário é marcada por uma busca incessante pela perfeição técnica e ética profissional. Com o CRECI 15145 F, Silvio consolidou-se como um dos peritos mais respeitados da região, unindo o conhecimento profundo da legislação territorial à paixão por realizar sonhos através de imóveis exclusivos.
                 </p>
                 <p>
-                  Compreendemos que negociar um terreno ou um imóvel de valor exige mais do que um anúncio: demanda análise de documentação, laudos precisos e mediação qualificada.
+                  Ao longo de décadas, Silvio transformou a Territorial Imóveis em um hub de soluções sofisticadas, onde cada terreno é analisado com precisão cirúrgica e cada mansão é selecionada por seu design e valor intrínseco. Sua expertise como Perito Judicial traz uma camada de segurança que poucos no mercado podem oferecer.
+                </p>
+                <p>
+                  Mais do que vender propriedades, Silvio Moura constrói relacionamentos baseados na confiança absoluta, garantindo que cada investimento seja sólido e cada transação, impecável.
                 </p>
               </div>
               
-              <div className="mt-10 p-8 bg-gray-50 rounded-2xl border-l-4 border-[var(--color-gold)]">
-                <p className="text-[var(--color-navy)] italic text-xl font-medium mb-4">"Proporcionar segurança jurídica absoluta e soluções imobiliárias completas aos nossos clientes, transformando terrenos e imóveis em patrimônios consolidados."</p>
-                <p className="text-[var(--color-gold)] font-bold uppercase tracking-widest text-sm">— Nosso Ideal</p>
+              <div className="mt-10 p-8 bg-white shadow-xl shadow-slate-200/50 rounded-2xl border-l-4 border-[var(--color-gold)]">
+                <p className="text-[var(--color-navy)] italic text-xl font-medium mb-4">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta, como topografia avançada e drones, à segurança jurídica de uma perícia especializada."</p>
+                <p className="text-[var(--color-gold)] font-bold uppercase tracking-widest text-sm">— Silvio Moura</p>
               </div>
             </div>
           </div>
@@ -586,34 +599,37 @@ function Index() {
             <h2 className="text-4xl md:text-5xl font-bold">O Que Dizem Nossos Clientes</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                text: "O trabalho do Silvio Moura na medição topográfica e venda da nossa gleba foi impecável. A perícia técnica evitou qualquer problema com documentação.",
-                author: "Dra. Renata Siqueira",
-                role: "Investidora de Imóveis"
+                text: "O Silvio Moura foi fundamental na venda da nossa propriedade em Alphaville. Sua análise técnica nos deu a segurança necessária para fechar um negócio complexo.",
+                author: "Beatriz Oliveira",
+                role: "Proprietária em Alphaville",
+                image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150"
               },
               {
-                text: "Precisava vender uma casa de alto padrão e fazer a avaliação correta de mercado. A Territorial Imóveis nos atendeu com sigilo e profissionalismo.",
-                author: "Carlos Eduardo Mendes",
-                role: "Empresário"
+                text: "Excepcional! A avaliação imobiliária foi precisa e o atendimento sofisticado. Encontramos o imóvel perfeito com a curadoria da Territorial.",
+                author: "Dr. Marcos Vinícius",
+                role: "Neurocirurgião",
+                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150"
               },
               {
-                text: "As imagens aéreas feitas com os drones ajudaram a valorizar muito o nosso terreno no processo de venda. Atendimento excelente do Silvio.",
-                author: "Roberto Alencar",
-                role: "Proprietário Rural"
+                text: "A transparência do Silvio e sua equipe é o que os diferencia. O uso de drones para mostrar nosso terreno fez toda a diferença na valorização.",
+                author: "Helena Castro",
+                role: "Empresária",
+                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150"
               }
             ].map((t, i) => (
-              <div key={i} className="bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
-                <MessageSquare className="text-[var(--color-accent)] mb-6 w-10 h-10" />
+              <div key={i} className="bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 group">
+                <MessageSquare className="text-[var(--color-accent)] mb-6 w-10 h-10 group-hover:scale-110 transition-transform" />
                 <p className="text-lg text-slate-300 italic mb-8">"{t.text}"</p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[var(--color-accent)] rounded-full flex items-center justify-center text-white font-bold">
-                    {t.author[0]}
+                  <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[var(--color-accent)]/30 group-hover:border-[var(--color-accent)] transition-colors">
+                    <img src={t.image} alt={t.author} className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <p className="font-bold text-white">{t.author}</p>
-                    <p className="text-[var(--color-accent)] text-sm">{t.role}</p>
+                    <p className="font-bold text-white text-lg">{t.author}</p>
+                    <p className="text-[var(--color-accent)] text-sm font-medium">{t.role}</p>
                   </div>
                 </div>
               </div>
@@ -670,8 +686,17 @@ function Index() {
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-10 h-10 bg-[var(--color-navy)] flex items-center justify-center rounded-lg">
-                  <Building2 className="text-[var(--color-accent)] w-6 h-6" />
+                <img 
+                  src="/favicon.png" 
+                  alt="Territorial Logo" 
+                  className="w-12 h-12 object-contain"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                  }}
+                />
+                <div className="w-12 h-12 bg-[var(--color-navy)] hidden items-center justify-center rounded-lg">
+                  <Building2 className="text-[var(--color-accent)] w-7 h-7" />
                 </div>
                 <span className="text-[var(--color-navy)] font-bold text-xl tracking-tight uppercase">TERRITORIAL</span>
               </div>
