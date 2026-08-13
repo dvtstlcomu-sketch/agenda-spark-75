@@ -24,7 +24,8 @@ import {
   Compass,
   Zap,
   Layers,
-  Activity
+  Activity,
+  Plus
 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
