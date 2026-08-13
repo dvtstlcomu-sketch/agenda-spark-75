@@ -721,18 +721,19 @@ function Index() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="lg:grid lg:grid-cols-2 lg:gap-24 items-center">
-            <div className="order-2 lg:order-1 relative">
-              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white group relative">
-                <div className="absolute inset-0 bg-white/10 z-10" />
+            <div className="order-2 lg:order-1 relative h-full min-h-[500px] flex items-center">
+              <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
                 <img 
-                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/d35f2ceb-384a-422f-8370-2082dacf0368.jpg" 
-                  alt="Silvio Moura - CEO Territorial Imóveis"
-                  className="w-full h-full object-cover opacity-90 grayscale-[20%] transition-transform duration-1000 group-hover:scale-110"
+                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/ab71f7bc-c10f-429e-b905-e3aa2e2c6943.jpg" 
+                  alt="Background Silvio Moura"
+                  className="w-full h-full object-cover opacity-20 transition-all duration-1000 grayscale-[30%]"
                 />
               </div>
-              <div className="absolute bottom-6 left-0 w-full text-white z-20 text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                <p className="text-white/90 text-[10px] uppercase font-black tracking-[0.4em] mb-0.5">CEO & Perito Judicial</p>
-                <p className="text-white font-bold text-lg font-heading tracking-tight">CRECI SP 151545</p>
+              <div className="relative z-10 p-8 w-full">
+                <div className="flex flex-col items-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+                  <p className="text-slate-900/80 text-[10px] uppercase font-black tracking-[0.4em] mb-1">CEO & Perito Judicial</p>
+                  <p className="text-slate-900 font-bold text-2xl font-heading tracking-tight">CRECI SP 151545</p>
+                </div>
               </div>
             </div>
 
