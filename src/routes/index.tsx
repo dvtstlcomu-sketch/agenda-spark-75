@@ -727,11 +727,6 @@ function Index() {
                   Guarulhos / SP
                 </p>
               </div>
-                <p className="text-gray-600 leading-relaxed">
-                  Avenida Otávio Braga de Mesquita, Nº 3935<br />
-                  São Paulo / SP
-                </p>
-              </div>
               <div className="mt-8">
                 <img 
                   src="https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=600" 
