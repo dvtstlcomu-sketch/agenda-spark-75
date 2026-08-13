@@ -612,7 +612,7 @@ function Index() {
       </section>
 
       {/* Lead Generation Premium */}
-      <section id="anuncie" className="py-32 bg-navy text-white overflow-hidden relative">
+      <section id="anuncie" className="py-32 bg-slate-900 text-white overflow-hidden relative border-y border-white/5">
         <div className="absolute inset-0 z-0 opacity-5">
            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.2),transparent_70%)]" />
         </div>
@@ -640,48 +640,48 @@ function Index() {
               </div>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-2xl p-10 lg:p-14 rounded-[3rem] border border-white/10 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.6)]">
+            <div className="bg-white/10 backdrop-blur-3xl p-10 lg:p-14 rounded-[3rem] border border-white/20 shadow-2xl">
               <form className="space-y-8">
                 <div className="grid sm:grid-cols-2 gap-8">
                   <div className="space-y-3">
                     <label className="text-gray-400 font-bold text-xs uppercase tracking-[0.2em]">Nome do Requerente</label>
-                    <input type="text" className="w-full h-16 px-6 rounded-2xl bg-white/5 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none transition-all placeholder:text-gray-600 font-medium" placeholder="Ex: Silvio Moura" />
+                    <input type="text" className="w-full h-16 px-6 rounded-2xl bg-white/10 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none transition-all placeholder:text-gray-400 font-medium" placeholder="Ex: Silvio Moura" />
                   </div>
                   <div className="space-y-3">
                     <label className="text-gray-400 font-bold text-xs uppercase tracking-[0.2em]">Contato Estratégico</label>
-                    <input type="tel" className="w-full h-16 px-6 rounded-2xl bg-white/5 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none transition-all placeholder:text-gray-600 font-medium" placeholder="(11) 2405-0300" />
+                    <input type="tel" className="w-full h-16 px-6 rounded-2xl bg-white/10 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none transition-all placeholder:text-gray-400 font-medium" placeholder="(11) 2405-0300" />
                   </div>
                 </div>
                 
                 <div className="grid sm:grid-cols-2 gap-8">
                   <div className="space-y-3">
                     <label className="text-gray-400 font-bold text-xs uppercase tracking-[0.2em]">Categoria do Ativo</label>
-                    <select className="w-full h-16 px-6 rounded-2xl bg-navy/50 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none">
-                      <option className="bg-navy">Terreno / Gleba</option>
-                      <option className="bg-navy">Residência Alto Padrão</option>
-                      <option className="bg-navy">Industrial / Logístico</option>
-                      <option className="bg-navy">Comercial</option>
+                    <select className="w-full h-16 px-6 rounded-2xl bg-white/10 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none">
+                      <option className="bg-slate-900">Terreno / Gleba</option>
+                      <option className="bg-slate-900">Residência Alto Padrão</option>
+                      <option className="bg-slate-900">Industrial / Logístico</option>
+                      <option className="bg-slate-900">Comercial</option>
                     </select>
                   </div>
                   <div className="space-y-3">
                     <label className="text-gray-400 font-bold text-xs uppercase tracking-[0.2em]">Objetivo da Perícia</label>
-                    <select className="w-full h-16 px-6 rounded-2xl bg-navy/50 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none">
-                      <option className="bg-navy">Avaliação Judicial</option>
-                      <option className="bg-navy">Usucapião / Regularização</option>
-                      <option className="bg-navy">Projetos de Engenharia</option>
-                      <option className="bg-navy">Venda Estratégica</option>
+                    <select className="w-full h-16 px-6 rounded-2xl bg-white/10 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none">
+                      <option className="bg-slate-900">Avaliação Judicial</option>
+                      <option className="bg-slate-900">Usucapião / Regularização</option>
+                      <option className="bg-slate-900">Projetos de Engenharia</option>
+                      <option className="bg-slate-900">Venda Estratégica</option>
                     </select>
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-gray-400 font-bold text-xs uppercase tracking-[0.2em]">Descrição Estratégica</label>
-                  <textarea className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none min-h-[120px] transition-all placeholder:text-gray-600" placeholder="Detalhes técnicos ou localização específica..."></textarea>
+                  <textarea className="w-full p-5 rounded-2xl bg-white/10 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none min-h-[120px] transition-all placeholder:text-gray-400" placeholder="Detalhes técnicos ou localização específica..."></textarea>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-gray-400 font-bold text-xs uppercase tracking-[0.2em]">Upload de Documentação/Fotos</label>
-                  <div className="border-2 border-dashed border-white/10 rounded-2xl p-10 text-center hover:border-[var(--color-accent)] transition-all cursor-pointer bg-white/5 group relative overflow-hidden">
+                  <div className="border-2 border-dashed border-white/20 rounded-2xl p-10 text-center hover:border-[var(--color-accent)] transition-all cursor-pointer bg-white/10 group relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[var(--color-accent)]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <Upload className="mx-auto text-gray-500 mb-4 group-hover:text-[var(--color-accent)] transition-colors" size={32} />
                     <p className="text-white font-bold text-lg mb-1 tracking-tight">Anexar arquivos técnicos</p>
@@ -713,10 +713,10 @@ function Index() {
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
-              <div className="absolute -bottom-8 -right-8 bg-navy shadow-2xl p-10 rounded-[2.5rem] text-white hidden md:block border-4 border-[var(--color-accent)]/30 backdrop-blur-2xl animate-in fade-in slide-in-from-bottom-10 duration-1000 z-20">
+              <div className="absolute -bottom-8 -right-8 bg-slate-900 shadow-2xl p-10 rounded-[2.5rem] text-white hidden md:block border-4 border-white/20 backdrop-blur-2xl animate-in fade-in slide-in-from-bottom-10 duration-1000 z-20">
                 <p className="text-[var(--color-accent)] font-black text-2xl mb-1 tracking-[0.3em] uppercase drop-shadow-lg">CRECI SP</p>
-                <p className="text-7xl font-bold mb-2 font-heading tracking-tighter italic text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400">151545</p>
-                <p className="text-gray-500 text-xs uppercase font-black tracking-[0.5em]">CEO & Perito Judicial</p>
+                <p className="text-7xl font-bold mb-2 font-heading tracking-tighter italic text-white">151545</p>
+                <p className="text-gray-400 text-xs uppercase font-black tracking-[0.5em]">CEO & Perito Judicial</p>
               </div>
             </div>
 
@@ -727,8 +727,8 @@ function Index() {
                 Segurança <br />
                 & Solidez
               </h2>
-              <div className="space-y-10 text-gray-400 text-xl leading-relaxed font-medium">
-                <p className="border-l-4 border-[var(--color-accent)] pl-8 py-4 bg-white/5 rounded-r-[2rem] italic">
+              <div className="space-y-10 text-slate-600 text-xl leading-relaxed font-medium">
+                <p className="border-l-4 border-[var(--color-accent)] pl-8 py-4 bg-white/40 backdrop-blur-sm rounded-r-[2rem] italic">
                   A <strong>Territorial Imóveis</strong> nasceu da necessidade de um mercado que exige precisão técnica e segurança jurídica absoluta. Não somos apenas uma imobiliária; somos um hub de soluções para quem busca valorização real e proteção patrimonial.
                 </p>
                 <p>
