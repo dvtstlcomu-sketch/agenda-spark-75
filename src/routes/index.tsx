@@ -363,10 +363,10 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-5xl lg:text-7xl font-extrabold text-[var(--color-navy)] mb-6 tracking-tight">
-              Encontre o seu imóvel de <span className="text-[var(--color-accent)]">alto padrão</span>
+              Excelência Territorial com <span className="text-[var(--color-accent)]">Silvio Moura</span>
             </h1>
             <p className="text-xl text-slate-600 mb-10">
-              A melhor curadoria de terrenos, casas e investimentos imobiliários.
+              Perícia judicial, topografia avançada e curadoria de imóveis de alto padrão em Guarulhos e região.
             </p>
 
             {/* Search Bar */}
