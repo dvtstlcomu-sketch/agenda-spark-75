@@ -30,30 +30,48 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const TECHNICAL_PROJECTS = [
+const TECHNICAL_SERVICES = [
   {
     id: 1,
-    title: "Levantamento Planialtimétrico - Condomínio Arujá Hills",
-    category: "Topografia de Precisão",
-    description: "Execução de levantamento técnico para implantação de infraestrutura viária e redes de saneamento em área de 150.000m².",
-    icon: <Ruler className="w-8 h-8 text-[var(--color-accent)]" />,
-    stats: "Precisão de 2mm"
+    title: "Administração de Imóveis e Condomínios",
+    description: "Gestão completa de patrimônio imobiliário e administração condominial com transparência.",
+    icon: <Building2 className="w-8 h-8 text-[var(--color-accent)]" />,
   },
   {
     id: 2,
-    title: "Mapeamento Aéreo e Fotogrametria - Expansão Industrial",
-    category: "Drone Imaging",
-    description: "Geração de ortofoto mosaico e modelo digital de superfície para planejamento de ampliação de planta fabril em Guarulhos.",
-    icon: <Zap className="w-8 h-8 text-[var(--color-accent)]" />,
-    stats: "GSD de 1.5cm"
+    title: "Avaliação Imobiliária e Laudo Pericial",
+    description: "Perícia judicial, laudos para usucapião e avaliações técnicas rigorosas.",
+    icon: <UserCheck className="w-8 h-8 text-[var(--color-accent)]" />,
   },
   {
     id: 3,
-    title: "Perícia Judicial Territorial - Loteamento Santa Isabel",
-    category: "Perícia Judicial",
-    description: "Elaboração de laudo pericial para resolução de litígio de divisas, utilizando métodos geodésicos avançados.",
-    icon: <Compass className="w-8 h-8 text-[var(--color-accent)]" />,
-    stats: "Laudo Homologado"
+    title: "Compra, Venda e Locação",
+    description: "Intermediação especializada para compra, venda, locação e permuta de imóveis.",
+    icon: <Search className="w-8 h-8 text-[var(--color-accent)]" />,
+  },
+  {
+    id: 4,
+    title: "Topografia e Medição",
+    description: "Levantamento planialtimétrico, georreferenciamento e medição de precisão.",
+    icon: <Ruler className="w-8 h-8 text-[var(--color-accent)]" />,
+  },
+  {
+    id: 5,
+    title: "Mapeamento Aéreo com Drone",
+    description: "Imagens aéreas de alta resolução e mapeamento técnico para grandes áreas.",
+    icon: <Zap className="w-8 h-8 text-[var(--color-accent)]" />,
+  },
+  {
+    id: 6,
+    title: "Demolição e Terraplanagem",
+    description: "Serviços de limpeza de terrenos, demolição técnica e preparação de solo.",
+    icon: <Activity className="w-8 h-8 text-[var(--color-accent)]" />,
+  },
+  {
+    id: 7,
+    title: "Estruturação Imobiliária e Despachante",
+    description: "Regularização documental, projetos e consultoria completa para incorporação.",
+    icon: <Layers className="w-8 h-8 text-[var(--color-accent)]" />,
   }
 ];
 
@@ -336,11 +354,11 @@ const PROPERTIES = [
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
-    title: "Territorial Imóveis | Silvio Moura - Perito Imobiliário",
+    title: "Territorial Imóveis | Soluções Imobiliárias e Perícia Técnica",
     meta: [
-      { name: "description", content: "Excelência na Compra, Venda e Avaliação de Imóveis. Especialistas em intermediação imobiliária de alto e médio porte, topografia e perícia judicial." },
-      { property: "og:title", content: "Territorial Imóveis | Silvio Moura" },
-      { property: "og:description", content: "Excelência na Compra, Venda e Avaliação de Imóveis." },
+      { name: "description", content: "Territorial Imóveis: Especialistas em administração, avaliação, compra, venda e perícia técnica judicial. CRECI 38258J." },
+      { property: "og:title", content: "Territorial Imóveis | Perícia e Imóveis" },
+      { property: "og:description", content: "Administração, Avaliação e Intermediação Imobiliária com excelência técnica." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" }
     ]
@@ -382,8 +400,9 @@ function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative pt-32 pb-20 lg:pt-48 overflow-hidden bg-[var(--color-navy)]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.1),transparent)] pointer-events-none" />
+      <section id="inicio" className="relative pt-32 pb-20 lg:pt-48 overflow-hidden bg-slate-200">
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 pointer-events-none" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1503387762-592dee582a7b?auto=format&fit=crop&q=80')" }} />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,0,0,0.05),transparent)] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-6xl lg:text-8xl font-black text-[var(--color-navy)] mb-6 tracking-tighter uppercase leading-[0.9] font-heading">
