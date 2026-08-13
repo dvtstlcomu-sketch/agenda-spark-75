@@ -370,7 +370,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "keywords",
-        content: "perícia judicial guarulhos, avaliação imobiliária, topografia guarulhos, engenharia territorial, administração de imóveis alto padrão, silvio moura creci 151545"
+        content: "perícia judicial guarulhos, avaliação imobiliária, topografia guarulhos, inteligência territorial, administração de imóveis alto padrão, silvio moura creci 151545"
       }
     ],
     script: [
