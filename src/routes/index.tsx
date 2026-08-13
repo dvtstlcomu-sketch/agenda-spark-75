@@ -779,37 +779,37 @@ function Index() {
             </div>
 
             <div>
-              <h4 className="text-[var(--color-navy)] font-bold text-xl mb-6">Atendimento</h4>
+              <h4 className="text-white font-bold text-xl mb-6 uppercase tracking-widest">Atendimento</h4>
               <ul className="space-y-4">
                 <li className="flex items-start gap-4">
                   <Phone className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
-                  <div className="text-slate-600">
-                    <p className="font-bold text-[var(--color-navy)]">(11) 2407-6900</p>
+                  <div className="text-gray-400 font-medium">
+                    <p className="font-bold text-white">(11) 2407-6900</p>
                     <p className="text-sm">Linha Fixa</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <MessageSquare className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
-                  <div className="text-slate-600">
-                    <p className="font-bold text-[var(--color-navy)]">(11) 96462-4491</p>
+                  <div className="text-gray-400 font-medium">
+                    <p className="font-bold text-white">(11) 96462-4491</p>
                     <p className="text-sm">WhatsApp / Celular</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <UserCheck className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
-                  <div className="text-slate-600">
-                    <p className="font-bold text-[var(--color-navy)]">CRECI 15145 F</p>
-                    <p className="text-sm">Silvio Moura - Perito</p>
+                  <div className="text-gray-400 font-medium">
+                    <p className="font-bold text-white">CRECI 15145 F</p>
+                    <p className="text-sm uppercase tracking-tighter">Silvio Moura - Perito</p>
                   </div>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h4 className="text-[var(--color-navy)] font-bold text-xl mb-6">Localização</h4>
+              <h4 className="text-white font-bold text-xl mb-6 uppercase tracking-widest">Localização</h4>
               <div className="flex items-start gap-4">
                 <MapPin className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-gray-400 leading-relaxed font-medium">
                   Avenida Otávio Braga de Mesquita, Nº 3935<br />
                   Guarulhos / SP
                 </p>
@@ -818,7 +818,7 @@ function Index() {
                 <img 
                   src="https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=600" 
                   alt="Office Location Map"
-                  className="w-full h-32 object-cover rounded-xl grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer"
+                  className="w-full h-32 object-cover rounded-xl grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer border border-white/10"
                 />
               </div>
             </div>
