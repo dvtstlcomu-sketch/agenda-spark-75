@@ -472,11 +472,11 @@ function Index() {
       <section id="inicio" className="relative pt-32 pb-24 lg:pt-56 lg:pb-40 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80" 
-            alt="Fazenda Alto Padrão" 
-            className="w-full h-full object-cover opacity-80"
+            src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/fde3807a-ee85-40a3-9739-8bc42f0ac33a.jpg" 
+            alt="Fazenda Territorial" 
+            className="w-full h-full object-cover opacity-10"
           />
-          <div className="absolute inset-0 bg-slate-900/20" />
+          <div className="absolute inset-0 bg-slate-900/5" />
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
