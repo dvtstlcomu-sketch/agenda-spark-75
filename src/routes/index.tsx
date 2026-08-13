@@ -373,7 +373,7 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-100 via-slate-200 to-slate-300 text-[var(--color-navy)] selection:bg-[var(--color-accent)] selection:text-white">
+    <div className="min-h-screen font-sans bg-background text-foreground selection:bg-[var(--color-accent)] selection:text-[var(--color-navy)]">
       {/* WhatsApp Floating Button */}
       <a 
         href="https://wa.me/551124050300" 
@@ -387,7 +387,7 @@ function Index() {
       </a>
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-slate-200/80 backdrop-blur-2xl border-b border-slate-300/50">
+      <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-3xl border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-3">
@@ -430,9 +430,9 @@ function Index() {
             <span className="inline-block px-4 py-1.5 bg-[var(--color-accent)]/10 text-[var(--color-accent)] font-black text-xs uppercase tracking-[0.4em] rounded-full mb-8 border border-[var(--color-accent)]/20 animate-pulse">
               Inteligência e Precisão Territorial
             </span>
-            <h1 className="text-7xl lg:text-[10rem] font-black text-[var(--color-navy)] mb-8 tracking-tighter uppercase leading-[0.8] font-heading drop-shadow-sm">
+            <h1 className="text-7xl lg:text-[10rem] font-bold text-foreground mb-8 tracking-tighter uppercase leading-[0.8] font-heading drop-shadow-2xl">
               Territorial <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-navy)] to-[var(--color-accent)]">Imóveis</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-gold)]">Imóveis</span>
             </h1>
             <p className="text-2xl lg:text-3xl text-[var(--color-navy)]/60 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-tight">
               A imobiliária sempre em primeiro lugar. Especialistas em Perícia Judicial, Gestão e Engenharia Territorial.
