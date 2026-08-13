@@ -699,24 +699,24 @@ function Index() {
       </section>
 
       {/* CEO & Story */}
-      <section id="sobre" className="py-40 bg-background relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 -skew-x-12 translate-x-1/2 opacity-30 z-0" />
+      <section id="sobre" className="py-40 bg-transparent relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-200/50 -skew-x-12 translate-x-1/2 opacity-30 z-0" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="lg:grid lg:grid-cols-2 lg:gap-24 items-center">
             <div className="order-2 lg:order-1 relative">
-              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.8)] border-8 border-white/5 group relative">
-                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-40 z-10" />
+              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white group relative">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent opacity-40 z-10" />
                 <img 
                   src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/d76d3dc4-a525-482d-ad4c-1557ebf0b83b.jpg" 
                   alt="Silvio Moura - CEO Territorial Imóveis"
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
-              <div className="absolute -bottom-8 -right-8 bg-slate-900 shadow-2xl p-10 rounded-[2.5rem] text-white hidden md:block border-4 border-white/20 backdrop-blur-2xl animate-in fade-in slide-in-from-bottom-10 duration-1000 z-20">
-                <p className="text-[var(--color-accent)] font-black text-2xl mb-1 tracking-[0.3em] uppercase drop-shadow-lg">CRECI SP</p>
-                <p className="text-7xl font-bold mb-2 font-heading tracking-tighter italic text-white">151545</p>
-                <p className="text-gray-400 text-xs uppercase font-black tracking-[0.5em]">CEO & Perito Judicial</p>
+              <div className="absolute -bottom-8 -right-8 bg-white shadow-2xl p-10 rounded-[2.5rem] text-slate-900 hidden md:block border border-slate-100 backdrop-blur-2xl animate-in fade-in slide-in-from-bottom-10 duration-1000 z-20">
+                <p className="text-[var(--color-accent)] font-black text-2xl mb-1 tracking-[0.3em] uppercase">CRECI SP</p>
+                <p className="text-7xl font-bold mb-2 font-heading tracking-tighter italic">151545</p>
+                <p className="text-slate-400 text-xs uppercase font-black tracking-[0.5em]">CEO & Perito Judicial</p>
               </div>
             </div>
 
@@ -742,17 +742,17 @@ function Index() {
               <div className="mt-8">
                 <Button 
                   onClick={() => window.open('https://wa.me/551124050300', '_blank')}
-                  className="bg-white text-[var(--color-navy)] hover:bg-[var(--color-accent)] hover:text-[var(--color-navy)] h-20 px-14 rounded-2xl font-black uppercase tracking-[0.2em] border-none transition-all duration-500 shadow-[0_20px_40px_-10px_rgba(255,255,255,0.1)] scale-100 hover:scale-[1.05]"
+                  className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 h-20 px-14 rounded-2xl font-black uppercase tracking-[0.2em] border-none transition-all duration-500 shadow-xl scale-100 hover:scale-[1.05]"
                 >
                   Fale com o CEO & Perito
                 </Button>
               </div>
               
-              <div className="mt-16 p-10 bg-white/5 border border-white/10 rounded-[2.5rem] border-l-8 border-[var(--color-accent)] relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+              <div className="mt-16 p-10 bg-white/60 backdrop-blur-md border border-white/40 rounded-[2.5rem] border-l-8 border-[var(--color-accent)] relative overflow-hidden group">
+                <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity text-slate-900">
                    <Building2 size={80} />
                 </div>
-                <p className="text-gray-300 italic text-2xl font-medium mb-6 leading-relaxed relative z-10">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta, como topografia avançada e drones, à segurança jurídica de uma perícia especializada."</p>
+                <p className="text-slate-700 italic text-2xl font-medium mb-6 leading-relaxed relative z-10">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta, como topografia avançada e drones, à segurança jurídica de uma perícia especializada."</p>
                 <p className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm relative z-10">— Silvio Moura</p>
               </div>
             </div>
