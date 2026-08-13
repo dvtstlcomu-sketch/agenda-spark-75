@@ -625,15 +625,15 @@ function Index() {
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
               </div>
-              <div className="absolute -bottom-10 -right-10 bg-[var(--color-navy)] p-8 rounded-3xl text-white hidden md:block">
-                <p className="text-[var(--color-gold)] font-bold text-3xl mb-1 tracking-tighter">CRECI</p>
-                <p className="text-4xl font-black mb-1">15145 F</p>
-                <p className="text-gray-400 text-sm uppercase font-bold tracking-widest">Silvio Moura - Perito</p>
+              <div className="absolute -bottom-10 -right-10 bg-white/5 backdrop-blur-xl p-8 rounded-3xl text-white hidden md:block border border-white/10">
+                <p className="text-[var(--color-accent)] font-black text-3xl mb-1 tracking-tighter">CRECI</p>
+                <p className="text-5xl font-black mb-1">15145 F</p>
+                <p className="text-gray-500 text-xs uppercase font-bold tracking-[0.3em]">Perito Judicial</p>
               </div>
             </div>
 
             <div className="order-1 lg:order-2 mb-16 lg:mb-0">
-              <span className="text-[var(--color-gold)] font-bold uppercase tracking-widest mb-4 block">Nossa Trajetória</span>
+              <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Nossa Trajetória</span>
               <h2 className="text-4xl lg:text-5xl font-black text-white mb-8 uppercase tracking-tighter">Silvio Moura: Tradição e Excelência</h2>
               <div className="space-y-6 text-gray-400 text-lg leading-relaxed font-medium">
                 <p>
