@@ -569,19 +569,22 @@ function Index() {
 
             <div className="order-1 lg:order-2 mb-16 lg:mb-0">
               <span className="text-[var(--color-gold)] font-bold uppercase tracking-widest mb-4 block">Nossa Trajetória</span>
-              <h2 className="text-4xl lg:text-5xl font-bold text-[var(--color-navy)] mb-8">Uma História Pautada na Ética e Confiança</h2>
+              <h2 className="text-4xl lg:text-5xl font-bold text-[var(--color-navy)] mb-8">Silvio Moura: Tradição e Excelência</h2>
               <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                 <p>
-                  A Territorial Imóveis nasceu do compromisso inarredável com a transparência e a precisão no mercado imobiliário. Fundada por Silvio Moura, Perito Imobiliário com sólida experiência técnica, a empresa tornou-se referência na intermediação de imóveis de médio e alto padrão.
+                  A história de Silvio Moura no mercado imobiliário é marcada por uma busca incessante pela perfeição técnica e ética profissional. Com o CRECI 15145 F, Silvio consolidou-se como um dos peritos mais respeitados da região, unindo o conhecimento profundo da legislação territorial à paixão por realizar sonhos através de imóveis exclusivos.
                 </p>
                 <p>
-                  Compreendemos que negociar um terreno ou um imóvel de valor exige mais do que um anúncio: demanda análise de documentação, laudos precisos e mediação qualificada.
+                  Ao longo de décadas, Silvio transformou a Territorial Imóveis em um hub de soluções sofisticadas, onde cada terreno é analisado com precisão cirúrgica e cada mansão é selecionada por seu design e valor intrínseco. Sua expertise como Perito Judicial traz uma camada de segurança que poucos no mercado podem oferecer.
+                </p>
+                <p>
+                  Mais do que vender propriedades, Silvio Moura constrói relacionamentos baseados na confiança absoluta, garantindo que cada investimento seja sólido e cada transação, impecável.
                 </p>
               </div>
               
-              <div className="mt-10 p-8 bg-gray-50 rounded-2xl border-l-4 border-[var(--color-gold)]">
-                <p className="text-[var(--color-navy)] italic text-xl font-medium mb-4">"Proporcionar segurança jurídica absoluta e soluções imobiliárias completas aos nossos clientes, transformando terrenos e imóveis em patrimônios consolidados."</p>
-                <p className="text-[var(--color-gold)] font-bold uppercase tracking-widest text-sm">— Nosso Ideal</p>
+              <div className="mt-10 p-8 bg-white shadow-xl shadow-slate-200/50 rounded-2xl border-l-4 border-[var(--color-gold)]">
+                <p className="text-[var(--color-navy)] italic text-xl font-medium mb-4">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta, como topografia avançada e drones, à segurança jurídica de uma perícia especializada."</p>
+                <p className="text-[var(--color-gold)] font-bold uppercase tracking-widest text-sm">— Silvio Moura</p>
               </div>
             </div>
           </div>
