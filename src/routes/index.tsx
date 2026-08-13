@@ -451,6 +451,10 @@ function Index() {
                 A Empresa
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
               </a>
+              <a href="#anuncie" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
+                Anunciar
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
+              </a>
             </div>
 
             <Button 
