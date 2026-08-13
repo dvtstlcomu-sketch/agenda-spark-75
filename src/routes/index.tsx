@@ -538,16 +538,16 @@ function Index() {
       </section>
 
       {/* Property Showcase */}
-      <section id="imoveis" className="py-32 bg-background border-t border-white/5 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/20 to-transparent" />
+      <section id="imoveis" className="py-32 bg-transparent relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-xl text-left">
               <h2 className="text-5xl lg:text-7xl font-bold text-foreground mb-6 uppercase tracking-tighter font-heading italic">Curadoria Técnica</h2>
-              <p className="text-gray-400 font-medium text-lg italic">Ativos imobiliários selecionados sob rigorosa análise pericial e potencial de valorização estratégica.</p>
+              <p className="text-slate-600 font-medium text-lg italic">Ativos imobiliários selecionados sob rigorosa análise pericial e potencial de valorização estratégica.</p>
             </div>
             <div className="flex gap-2">
-              <Button variant="outline" className="rounded-full border-white/10 text-white hover:bg-white/5 transition-colors border-none bg-white/5 px-8">
+              <Button variant="outline" className="rounded-full border-slate-200 text-slate-900 hover:bg-white/50 transition-colors bg-white/30 px-8">
                 Catálogo Completo <ArrowRight size={18} className="ml-2" />
               </Button>
             </div>
@@ -555,7 +555,7 @@ function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {PROPERTIES.slice(0, 6).map((property) => (
-              <div key={property.id} className="group bg-white/5 rounded-[2.5rem] overflow-hidden border border-white/10 hover:border-[var(--color-accent)] transition-all duration-700 shadow-2xl hover:-translate-y-3">
+              <div key={property.id} className="group bg-white/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-white/40 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
                     src={property.image} 
@@ -572,17 +572,17 @@ function Index() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <div className="flex items-center gap-1 text-gray-500 text-sm mb-2">
+                  <div className="flex items-center gap-1 text-slate-400 text-sm mb-2 font-medium">
                     <MapPin size={14} />
                     <span>{property.location}</span>
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight group-hover:text-[var(--color-accent)] transition-colors font-heading tracking-wide italic">
                     {property.title}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-8 line-clamp-2 leading-relaxed">{property.description}</p>
+                  <p className="text-slate-600 text-sm mb-8 line-clamp-2 leading-relaxed font-medium">{property.description}</p>
                   
-                  <div className="flex items-center justify-between pt-8 border-t border-white/10">
-                    <div className="flex gap-4 text-gray-500 text-sm font-medium">
+                  <div className="flex items-center justify-between pt-8 border-t border-slate-100">
+                    <div className="flex gap-4 text-slate-400 text-sm font-bold uppercase tracking-wider">
                       {property.beds > 0 && (
                         <div className="flex items-center gap-1.5">
                           <Bed size={16} className="text-[var(--color-accent)]" />
