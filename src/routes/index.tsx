@@ -492,7 +492,7 @@ function Index() {
                 "A chave da sua casa própria não abre apenas uma porta, ela realiza o seu maior sonho e constrói o seu futuro."
               </p>
             </div>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-8 tracking-tighter uppercase leading-tight font-heading drop-shadow-2xl">
+            <h1 className="text-2xl lg:text-4xl font-bold text-foreground mb-8 tracking-tighter uppercase leading-tight font-heading drop-shadow-2xl">
               "Tudo posso naquele que me fortalece"
             </h1>
             <p className="text-xl lg:text-2xl text-foreground/70 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-relaxed">
