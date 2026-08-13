@@ -450,12 +450,12 @@ function Index() {
       </section>
 
       {/* Property Showcase */}
-      <section id="imoveis" className="py-24 bg-[var(--color-navy)]">
+      <section id="imoveis" className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-xl text-left">
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tighter uppercase">Curadoria Exclusiva</h2>
-              <p className="text-gray-400 font-medium">Imóveis selecionados pela excelência técnica e valorização estratégica.</p>
+              <h2 className="text-4xl md:text-5xl font-black text-[var(--color-navy)] mb-4 tracking-tighter uppercase">Curadoria Exclusiva</h2>
+              <p className="text-gray-600 font-medium">Imóveis selecionados pela excelência técnica e valorização estratégica.</p>
             </div>
             <div className="flex gap-2">
               <Button variant="outline" className="rounded-full border-white/10 text-white hover:bg-white/5 transition-colors border-none bg-white/5 px-8">
@@ -466,7 +466,7 @@ function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {PROPERTIES.map((property) => (
-              <div key={property.id} className="group bg-white/5 rounded-3xl overflow-hidden border border-white/10 hover:border-[var(--color-accent)]/50 transition-all duration-500">
+              <div key={property.id} className="group bg-white rounded-3xl overflow-hidden border border-gray-200 hover:border-[var(--color-accent)]/50 transition-all duration-500 shadow-sm hover:shadow-xl">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
                     src={property.image} 
@@ -477,23 +477,23 @@ function Index() {
                     <span className="bg-[var(--color-navy)] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
                       {property.status}
                     </span>
-                    <span className="bg-white/90 backdrop-blur-sm text-[var(--color-navy)] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/20">
+                    <span className="bg-white/90 backdrop-blur-sm text-[var(--color-navy)] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border border-gray-200">
                       {property.type}
                     </span>
                   </div>
                 </div>
                 <div className="p-6">
-                  <div className="flex items-center gap-1 text-slate-400 text-sm mb-2">
+                  <div className="flex items-center gap-1 text-gray-500 text-sm mb-2">
                     <MapPin size={14} />
                     <span>{property.location}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3 leading-tight group-hover:text-[var(--color-accent)] transition-colors">
+                  <h3 className="text-xl font-bold text-[var(--color-navy)] mb-3 leading-tight group-hover:text-[var(--color-accent)] transition-colors">
                     {property.title}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-6 line-clamp-2">{property.description}</p>
+                  <p className="text-gray-600 text-sm mb-6 line-clamp-2">{property.description}</p>
                   
-                  <div className="flex items-center justify-between pt-6 border-t border-white/10">
-                    <div className="flex gap-4 text-gray-400 text-sm font-medium">
+                  <div className="flex items-center justify-between pt-6 border-t border-gray-100">
+                    <div className="flex gap-4 text-gray-500 text-sm font-medium">
                       {property.beds > 0 && (
                         <div className="flex items-center gap-1.5">
                           <Bed size={16} className="text-[var(--color-accent)]" />
@@ -511,7 +511,7 @@ function Index() {
                         <span>{property.area}</span>
                       </div>
                     </div>
-                    <span className="text-lg font-black text-white">
+                    <span className="text-lg font-black text-[var(--color-navy)]">
                       {property.price}
                     </span>
                   </div>
