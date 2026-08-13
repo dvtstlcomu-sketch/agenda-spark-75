@@ -428,13 +428,13 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-[var(--color-navy)] flex items-center justify-center rounded-2xl shadow-xl shadow-navy/20">
+              <div className="w-12 h-12 bg-slate-900 flex items-center justify-center rounded-2xl shadow-xl shadow-slate-900/10">
                 <Building2 className="text-[var(--color-accent)] w-7 h-7" />
               </div>
-              <span className="text-[var(--color-navy)] font-black text-2xl tracking-tighter uppercase font-heading italic drop-shadow-sm">TERRITORIAL IMÓVEIS</span>
+              <span className="text-slate-900 font-black text-2xl tracking-tighter uppercase font-heading italic drop-shadow-sm">TERRITORIAL IMÓVEIS</span>
             </div>
             
-            <div className="hidden md:flex items-center gap-10 text-xs font-black uppercase tracking-[0.25em] text-[var(--color-navy)]/70">
+            <div className="hidden md:flex items-center gap-10 text-xs font-black uppercase tracking-[0.25em] text-slate-900/60">
               <a href="#inicio" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
                 Início
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
@@ -455,7 +455,7 @@ function Index() {
 
             <Button 
               onClick={() => window.open('https://wa.me/551124050300', '_blank')}
-              className="bg-[var(--color-navy)] text-white hover:bg-[var(--color-accent)] hover:text-[var(--color-navy)] rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
+              className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
             >
               (11) 2405-0300
             </Button>
@@ -909,7 +909,7 @@ function Index() {
               <h4 className="text-foreground font-bold text-xl mb-6 uppercase tracking-widest font-heading italic">Localização</h4>
               <div className="flex items-start gap-4">
                 <MapPin className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
-                <p className="text-gray-400 leading-relaxed font-medium italic">
+                <p className="text-slate-400 leading-relaxed font-medium italic">
                   Avenida Otávio Braga de Mesquita, Nº 3935<br />
                   Guarulhos / SP
                 </p>
@@ -925,7 +925,7 @@ function Index() {
           </div>
 
           <div className="pt-10 border-t border-white/5 text-center">
-            <p className="text-gray-500 text-sm font-medium tracking-wide">
+            <p className="text-slate-500 text-sm font-medium tracking-wide">
               © 2026 Territorial Imóveis - CRECI 38258J | Silvio Moura CRECI 151545. Engenharia de Precisão & Segurança Jurídica.
             </p>
           </div>
