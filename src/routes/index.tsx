@@ -472,9 +472,10 @@ function Index() {
       <section id="inicio" className="relative pt-32 pb-24 lg:pt-56 lg:pb-40 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&q=80" 
-            alt="Cidade de Guarulhos" 
+            src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80" 
+            alt="Skyline da Cidade" 
             className="w-full h-full object-cover opacity-20"
+
 
 
 
