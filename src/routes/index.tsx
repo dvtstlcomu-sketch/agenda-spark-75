@@ -13,11 +13,293 @@ import {
   CheckCircle2,
   Share2,
   Globe,
-  Link
+  Link,
+  Search,
+  Bed,
+  Bath,
+  Maximize,
+  ArrowRight,
+  Filter
 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+const PROPERTIES = [
+  {
+    id: 1,
+    title: "Mansão Contemporânea Alphaville",
+    type: "Residencial",
+    status: "Venda",
+    price: "R$ 4.500.000",
+    location: "Alphaville, Barueri",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80",
+    beds: 5,
+    baths: 6,
+    area: "450m²",
+    description: "Projeto assinado com acabamentos em mármore e integração total."
+  },
+  {
+    id: 2,
+    title: "Cobertura Duplex Itaim Bibi",
+    type: "Apartamento",
+    status: "Locação",
+    price: "R$ 25.000/mês",
+    location: "Itaim Bibi, São Paulo",
+    image: "https://images.unsplash.com/photo-1600607687940-4e524cb35a36?auto=format&fit=crop&q=80",
+    beds: 3,
+    baths: 4,
+    area: "280m²",
+    description: "Vista panorâmica 360º para o skyline de São Paulo."
+  },
+  {
+    id: 3,
+    title: "Terreno Industrial Estratégico",
+    type: "Terreno",
+    status: "Venda",
+    price: "Sob Consulta",
+    location: "Guarulhos, SP",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
+    beds: 0,
+    baths: 0,
+    area: "12.000m²",
+    description: "Localização privilegiada próximo ao Aeroporto Internacional."
+  },
+  {
+    id: 4,
+    title: "Casa de Vila Jardim Europa",
+    type: "Residencial",
+    status: "Venda",
+    price: "R$ 3.200.000",
+    location: "Jardim Europa, São Paulo",
+    image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&q=80",
+    beds: 3,
+    baths: 3,
+    area: "180m²",
+    description: "Charme e exclusividade em uma das vilas mais cobiçadas."
+  },
+  {
+    id: 5,
+    title: "Office Boutique Faria Lima",
+    type: "Comercial",
+    status: "Locação",
+    price: "R$ 15.000/mês",
+    location: "Av. Faria Lima, São Paulo",
+    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80",
+    beds: 0,
+    baths: 2,
+    area: "120m²",
+    description: "Laje corporativa pronta para uso em edifício Triple A."
+  },
+  {
+    id: 6,
+    title: "Residência Minimalista Swiss Park",
+    type: "Residencial",
+    status: "Venda",
+    price: "R$ 2.800.000",
+    location: "Swiss Park, Campinas",
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80",
+    beds: 4,
+    baths: 5,
+    area: "320m²",
+    description: "Conceito aberto com piscina de borda infinita."
+  },
+  {
+    id: 7,
+    title: "Gleba para Loteamento",
+    type: "Terreno",
+    status: "Venda",
+    price: "R$ 8.000.000",
+    location: "Atibaia, SP",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
+    beds: 0,
+    baths: 0,
+    area: "50.000m²",
+    description: "Área ideal para desenvolvimento urbano de alto padrão."
+  },
+  {
+    id: 8,
+    title: "Apartamento Garden Moema",
+    type: "Apartamento",
+    status: "Locação",
+    price: "R$ 12.000/mês",
+    location: "Moema, São Paulo",
+    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80",
+    beds: 2,
+    baths: 3,
+    area: "150m²",
+    description: "Terraço privativo amplo em rua arborizada."
+  },
+  {
+    id: 9,
+    title: "Vila Toscana em Condomínio",
+    type: "Residencial",
+    status: "Venda",
+    price: "R$ 5.900.000",
+    location: "Quinta da Baronesa, Bragança",
+    image: "https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&q=80",
+    beds: 6,
+    baths: 8,
+    area: "800m²",
+    description: "Arquitetura clássica com vista permanente para o golf."
+  },
+  {
+    id: 10,
+    title: "Loft Industrial Pinheiros",
+    type: "Apartamento",
+    status: "Locação",
+    price: "R$ 8.500/mês",
+    location: "Pinheiros, São Paulo",
+    image: "https://images.unsplash.com/photo-1536376074432-a7ab1e07c84a?auto=format&fit=crop&q=80",
+    beds: 1,
+    baths: 2,
+    area: "95m²",
+    description: "Pé direito duplo e acabamento em concreto aparente."
+  },
+  {
+    id: 11,
+    title: "Sítio de Lazer em Ibiúna",
+    type: "Residencial",
+    status: "Venda",
+    price: "R$ 1.500.000",
+    location: "Ibiúna, SP",
+    image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80",
+    beds: 4,
+    baths: 3,
+    area: "5.000m²",
+    description: "Casa de campo completa com pomar e piscina."
+  },
+  {
+    id: 12,
+    title: "Lote em Condomínio Fechado",
+    type: "Terreno",
+    status: "Venda",
+    price: "R$ 850.000",
+    location: "Arujá, SP",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
+    beds: 0,
+    baths: 0,
+    area: "600m²",
+    description: "Terreno com leve aclive e vista privilegiada."
+  },
+  {
+    id: 13,
+    title: "Apartamento Alto Padrão Perdizes",
+    type: "Apartamento",
+    status: "Venda",
+    price: "R$ 2.400.000",
+    location: "Perdizes, São Paulo",
+    image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&q=80",
+    beds: 3,
+    baths: 4,
+    area: "165m²",
+    description: "Próximo à futura estação do metrô e Parque da Água Branca."
+  },
+  {
+    id: 14,
+    title: "Showroom Comercial",
+    type: "Comercial",
+    status: "Venda",
+    price: "R$ 4.000.000",
+    location: "Vila Olímpia, São Paulo",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80",
+    beds: 0,
+    baths: 4,
+    area: "400m²",
+    description: "Fachada em vidro e localização de alta visibilidade."
+  },
+  {
+    id: 15,
+    title: "Casa de Praia Juquehy",
+    type: "Residencial",
+    status: "Venda",
+    price: "R$ 3.800.000",
+    location: "Juquehy, São Sebastião",
+    image: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&q=80",
+    beds: 4,
+    baths: 5,
+    area: "250m²",
+    description: "Pé na areia com deck privativo e projeto náutico."
+  },
+  {
+    id: 16,
+    title: "Flat Design Jardins",
+    type: "Apartamento",
+    status: "Locação",
+    price: "R$ 6.000/mês",
+    location: "Jardins, São Paulo",
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80",
+    beds: 1,
+    baths: 1,
+    area: "45m²",
+    description: "Mobiliado por designer renomado, pronto para morar."
+  },
+  {
+    id: 17,
+    title: "Chácara Próxima a São Paulo",
+    type: "Residencial",
+    status: "Venda",
+    price: "R$ 1.200.000",
+    location: "Santa Isabel, SP",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80",
+    beds: 3,
+    baths: 2,
+    area: "2.000m²",
+    description: "Fácil acesso pela Rodovia Dutra, ideal para lazer."
+  },
+  {
+    id: 18,
+    title: "Apartamento Studio Vila Madalena",
+    type: "Apartamento",
+    status: "Venda",
+    price: "R$ 750.000",
+    location: "Vila Madalena, São Paulo",
+    image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80",
+    beds: 1,
+    baths: 1,
+    area: "35m²",
+    description: "Condomínio com lazer completo e rooftop."
+  },
+  {
+    id: 19,
+    title: "Prédio Inteiro para Investimento",
+    type: "Comercial",
+    status: "Venda",
+    price: "R$ 12.000.000",
+    location: "Centro, São Paulo",
+    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80",
+    beds: 0,
+    baths: 10,
+    area: "2.500m²",
+    description: "Ideal para retrofit ou sede corporativa."
+  },
+  {
+    id: 20,
+    title: "Casa Suspensa Campo Belo",
+    type: "Apartamento",
+    status: "Venda",
+    price: "R$ 3.500.000",
+    location: "Campo Belo, São Paulo",
+    image: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&q=80",
+    beds: 4,
+    baths: 5,
+    area: "240m²",
+    description: "Varanda gourmet integrada e 4 suítes plenas."
+  },
+  {
+    id: 21,
+    title: "Refúgio na Serra da Mantiqueira",
+    type: "Residencial",
+    status: "Venda",
+    price: "R$ 2.100.000",
+    location: "Campos do Jordão, SP",
+    image: "https://images.unsplash.com/photo-1449156003053-c304209c11e5?auto=format&fit=crop&q=80",
+    beds: 4,
+    baths: 4,
+    area: "300m²",
+    description: "Arquitetura em madeira e pedra com vista para o vale."
+  }
+];
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -43,26 +325,20 @@ function Index() {
   return (
     <div className="min-h-screen font-sans">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+      <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 bg-[var(--color-navy)] flex items-center justify-center rounded-lg">
-                <Building2 className="text-[var(--color-gold)] w-6 h-6" />
+                <Building2 className="text-[var(--color-accent)] w-6 h-6" />
               </div>
-              <div className="flex flex-col">
-                <span className="text-[var(--color-navy)] font-bold text-lg leading-none tracking-tight uppercase">TERRITORIAL</span>
-                <span className="text-gray-500 text-[10px] font-medium uppercase tracking-[0.2em]">Imóveis & Perícia</span>
-              </div>
+              <span className="text-[var(--color-navy)] font-bold text-xl tracking-tight uppercase">TERRITORIAL</span>
             </div>
             
-            <div className="hidden md:flex items-center gap-8">
-              <a href="#inicio" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">Início</a>
-              <a href="#projetos" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">Projetos</a>
-              <a href="#anuncie" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">Anuncie</a>
-              <a href="#sobre" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">Sobre</a>
-              <a href="#depoimentos" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">Depoimentos</a>
-              <a href="#faq" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">FAQ</a>
+            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+              <a href="#inicio" className="hover:text-[var(--color-navy)] transition-colors">Início</a>
+              <a href="#imoveis" className="hover:text-[var(--color-navy)] transition-colors">Imóveis</a>
+              <a href="#sobre" className="hover:text-[var(--color-navy)] transition-colors">Sobre</a>
             </div>
 
             <Button className="bg-[var(--color-navy)] text-white hover:bg-[var(--color-navy)]/90 rounded-full px-6">
@@ -73,97 +349,109 @@ function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
-            <div className="mb-12 lg:mb-0">
-              <div className="inline-flex items-center gap-2 bg-[var(--color-gold)]/10 text-[var(--color-gold)] px-4 py-2 rounded-full mb-6">
-                <UserCheck size={18} />
-                <span className="text-sm font-semibold uppercase tracking-wider">CRECI 15145 F | Perito Imobiliário Registrado</span>
-              </div>
-              <h1 className="text-5xl lg:text-7xl font-bold text-[var(--color-navy)] mb-6 leading-[1.1]">
-                Excelência na Compra, Venda e Avaliação de Imóveis
-              </h1>
-              <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-xl">
-                Sob a liderança de Silvio Moura, a Territorial Imóveis é especializada em áreas de alto padrão, terrenos estratégicos e laudos periciais de precisão.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-[var(--color-navy)] text-white h-14 px-8 text-lg rounded-xl">
-                  Avalie seu Imóvel
-                </Button>
-                <Button size="lg" variant="outline" className="border-[var(--color-navy)] text-[var(--color-navy)] h-14 px-8 text-lg rounded-xl hover:bg-[var(--color-navy)]/5">
-                  Serviços Topográficos
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80" 
-                  alt="Modern Luxury Real Estate"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hidden md:block">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[var(--color-gold)] rounded-full flex items-center justify-center text-white">
-                    <CheckCircle2 size={24} />
-                  </div>
-                  <div>
-                    <p className="text-[var(--color-navy)] font-bold text-lg leading-tight">Garantia Jurídica</p>
-                    <p className="text-gray-500 text-sm">Laudos técnicos oficiais</p>
-                  </div>
-                </div>
-              </div>
+      <section id="inicio" className="relative pt-32 pb-20 lg:pt-48 overflow-hidden bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-5xl lg:text-7xl font-extrabold text-[var(--color-navy)] mb-6 tracking-tight">
+              Encontre o seu imóvel de <span className="text-[var(--color-accent)]">alto padrão</span>
+            </h1>
+            <p className="text-xl text-slate-600 mb-10">
+              A melhor curadoria de terrenos, casas e investimentos imobiliários.
+            </p>
+
+            {/* Search Bar */}
+            <div className="bg-white p-4 rounded-2xl shadow-xl shadow-slate-200/50 flex flex-col md:flex-row gap-4 border border-slate-100">
+              <input type="text" placeholder="O que você procura?" className="flex-1 h-14 px-6 rounded-xl border border-slate-200 focus:ring-2 focus:ring-[var(--color-accent)] outline-none" />
+              <select className="h-14 px-4 rounded-xl border border-slate-200 text-slate-600 outline-none bg-white">
+                <option>Tipo de Imóvel</option>
+                <option>Residencial</option>
+                <option>Apartamento</option>
+                <option>Comercial</option>
+                <option>Terreno</option>
+              </select>
+              <select className="h-14 px-4 rounded-xl border border-slate-200 text-slate-600 outline-none bg-white">
+                <option>Finalidade</option>
+                <option>Compra</option>
+                <option>Venda</option>
+                <option>Locação</option>
+              </select>
+              <Button className="h-14 px-8 bg-[var(--color-navy)] rounded-xl font-bold gap-2">
+                <Search size={20} /> Buscar
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Projects & Solutions */}
-      <section id="projetos" className="py-24 bg-gray-50">
+      {/* Property Showcase */}
+      <section id="imoveis" className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-[var(--color-gold)] font-bold uppercase tracking-[0.2em] mb-4">Projetos & Soluções Territoriais</h2>
-            <p className="text-3xl md:text-4xl font-bold text-[var(--color-navy)] mb-6">Tecnologia avançada e perícia técnica aplicadas à valorização do seu patrimônio.</p>
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div className="max-w-xl">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--color-navy)] mb-4 tracking-tight">Imóveis em Destaque</h2>
+              <p className="text-slate-600">Uma seleção exclusiva de propriedades disponíveis para venda e locação.</p>
+            </div>
+            <div className="flex gap-2">
+              <Button variant="outline" className="rounded-full border-slate-200 hover:bg-slate-50 transition-colors">
+                Ver todos os imóveis <ArrowRight size={18} className="ml-2" />
+              </Button>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all group">
-              <div className="w-16 h-16 bg-[var(--color-navy)]/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[var(--color-navy)] group-hover:text-white transition-colors">
-                <Map className="w-8 h-8" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {PROPERTIES.map((property) => (
+              <div key={property.id} className="group bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img 
+                    src={property.image} 
+                    alt={property.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute top-4 left-4 flex gap-2">
+                    <span className="bg-[var(--color-navy)] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
+                      {property.status}
+                    </span>
+                    <span className="bg-white/90 backdrop-blur-sm text-[var(--color-navy)] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/20">
+                      {property.type}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-1 text-slate-400 text-sm mb-2">
+                    <MapPin size={14} />
+                    <span>{property.location}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-[var(--color-navy)] mb-3 leading-tight group-hover:text-[var(--color-accent)] transition-colors">
+                    {property.title}
+                  </h3>
+                  <p className="text-slate-500 text-sm mb-6 line-clamp-2">{property.description}</p>
+                  
+                  <div className="flex items-center justify-between pt-6 border-t border-slate-100">
+                    <div className="flex gap-4 text-slate-600 text-sm font-medium">
+                      {property.beds > 0 && (
+                        <div className="flex items-center gap-1.5">
+                          <Bed size={16} className="text-slate-400" />
+                          <span>{property.beds}</span>
+                        </div>
+                      )}
+                      {property.baths > 0 && (
+                        <div className="flex items-center gap-1.5">
+                          <Bath size={16} className="text-slate-400" />
+                          <span>{property.baths}</span>
+                        </div>
+                      )}
+                      <div className="flex items-center gap-1.5">
+                        <Maximize size={16} className="text-slate-400" />
+                        <span>{property.area}</span>
+                      </div>
+                    </div>
+                    <span className="text-lg font-extrabold text-[var(--color-navy)]">
+                      {property.price}
+                    </span>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-[var(--color-navy)] mb-4">Topografia & Medição Territorial</h3>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                Executamos levantamentos topográficos planialtimétricos com extrema precisão. Essencial para delimitação exata de perímetros e projetos arquitetônicos.
-              </p>
-              <ul className="space-y-3">
-                {['Demarcação de divisas', 'Levantamento Planialtimétrico Cadastral', 'Suporte para Regularização Fundiária'].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-[var(--color-navy)] font-medium">
-                    <CheckCircle2 className="text-[var(--color-gold)] w-5 h-5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all group">
-              <div className="w-16 h-16 bg-[var(--color-navy)]/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[var(--color-navy)] group-hover:text-white transition-colors">
-                <Camera className="w-8 h-8" />
-              </div>
-              <h3 className="text-2xl font-bold text-[var(--color-navy)] mb-4">Imagens Aéreas de Alta Resolução</h3>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                Mapeamento aéreo detalhado via drone para visualização estratégica de grandes glebas, loteamentos e residências de alto padrão.
-              </p>
-              <ul className="space-y-3">
-                {['Inspeção de terrenos', 'Fotogrametria e ortomosaicos', 'Vídeos promocionais em 4K'].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-[var(--color-navy)] font-medium">
-                    <CheckCircle2 className="text-[var(--color-gold)] w-5 h-5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -317,15 +605,15 @@ function Index() {
               }
             ].map((t, i) => (
               <div key={i} className="bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
-                <MessageSquare className="text-[var(--color-gold)] mb-6 w-10 h-10" />
-                <p className="text-lg text-gray-300 italic mb-8">"{t.text}"</p>
+                <MessageSquare className="text-[var(--color-accent)] mb-6 w-10 h-10" />
+                <p className="text-lg text-slate-300 italic mb-8">"{t.text}"</p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[var(--color-gold)] rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 bg-[var(--color-accent)] rounded-full flex items-center justify-center text-white font-bold">
                     {t.author[0]}
                   </div>
                   <div>
                     <p className="font-bold text-white">{t.author}</p>
-                    <p className="text-[var(--color-gold)] text-sm">{t.role}</p>
+                    <p className="text-[var(--color-accent)] text-sm">{t.role}</p>
                   </div>
                 </div>
               </div>
@@ -357,16 +645,16 @@ function Index() {
                 a: "Basta utilizar a seção 'Anuncie Seu Imóvel', preencher os dados de contato e realizar o upload das fotos. Nossa equipe entrará em contato para agendar uma vistoria."
               }
             ].map((faq, i) => (
-              <div key={i} className="border border-gray-100 rounded-2xl overflow-hidden">
+              <div key={i} className="border border-slate-100 rounded-2xl overflow-hidden">
                 <button 
                   onClick={() => toggleFaq(i)}
-                  className="w-full flex items-center justify-between p-6 bg-white hover:bg-gray-50 transition-colors text-left border-none cursor-pointer"
+                  className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors text-left border-none cursor-pointer"
                 >
                   <span className="text-lg font-bold text-[var(--color-navy)]">{faq.q}</span>
-                  <ChevronDown className={cn("text-[var(--color-gold)] transition-transform", activeFaq === i && "rotate-180")} />
+                  <ChevronDown className={cn("text-[var(--color-accent)] transition-transform", activeFaq === i && "rotate-180")} />
                 </button>
                 {activeFaq === i && (
-                  <div className="p-6 bg-gray-50 text-gray-600 border-t border-gray-100 leading-relaxed">
+                  <div className="p-6 bg-slate-50 text-slate-600 border-t border-slate-100 leading-relaxed">
                     {faq.a}
                   </div>
                 )}
@@ -383,15 +671,12 @@ function Index() {
             <div>
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-10 h-10 bg-[var(--color-navy)] flex items-center justify-center rounded-lg">
-                  <Building2 className="text-[var(--color-gold)] w-6 h-6" />
+                  <Building2 className="text-[var(--color-accent)] w-6 h-6" />
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[var(--color-navy)] font-bold text-lg leading-none tracking-tight uppercase">TERRITORIAL</span>
-                  <span className="text-gray-500 text-[10px] font-medium uppercase tracking-[0.2em]">Imóveis & Perícia</span>
-                </div>
+                <span className="text-[var(--color-navy)] font-bold text-xl tracking-tight uppercase">TERRITORIAL</span>
               </div>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                Especialistas em intermediação imobiliária de alto e médio porte, loteamentos, topografia e perícia judicial.
+              <p className="text-slate-600 mb-8 leading-relaxed">
+                Referência em intermediação imobiliária de alto padrão, loteamentos, topografia e perícia judicial.
               </p>
               <div className="flex gap-4">
                 <a href="#" className="w-10 h-10 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center text-[var(--color-navy)] hover:bg-[var(--color-navy)] hover:text-white transition-all">
@@ -410,22 +695,22 @@ function Index() {
               <h4 className="text-[var(--color-navy)] font-bold text-xl mb-6">Atendimento</h4>
               <ul className="space-y-4">
                 <li className="flex items-start gap-4">
-                  <Phone className="text-[var(--color-gold)] shrink-0 mt-1" />
-                  <div className="text-gray-600">
+                  <Phone className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
+                  <div className="text-slate-600">
                     <p className="font-bold text-[var(--color-navy)]">(11) 2407-6900</p>
                     <p className="text-sm">Linha Fixa</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <MessageSquare className="text-[var(--color-gold)] shrink-0 mt-1" />
-                  <div className="text-gray-600">
+                  <MessageSquare className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
+                  <div className="text-slate-600">
                     <p className="font-bold text-[var(--color-navy)]">(11) 96462-4491</p>
                     <p className="text-sm">WhatsApp / Celular</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <UserCheck className="text-[var(--color-gold)] shrink-0 mt-1" />
-                  <div className="text-gray-600">
+                  <UserCheck className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
+                  <div className="text-slate-600">
                     <p className="font-bold text-[var(--color-navy)]">CRECI 15145 F</p>
                     <p className="text-sm">Silvio Moura - Perito</p>
                   </div>
@@ -436,10 +721,10 @@ function Index() {
             <div>
               <h4 className="text-[var(--color-navy)] font-bold text-xl mb-6">Localização</h4>
               <div className="flex items-start gap-4">
-                <MapPin className="text-[var(--color-gold)] shrink-0 mt-1" />
-                <p className="text-gray-600 leading-relaxed">
+                <MapPin className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
+                <p className="text-slate-600 leading-relaxed">
                   Avenida Otávio Braga de Mesquita, Nº 3935<br />
-                  São Paulo / SP
+                  Guarulhos / SP
                 </p>
               </div>
               <div className="mt-8">
