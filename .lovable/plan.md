@@ -1,30 +1,22 @@
-# Plano de Reinicialização e Construção: Giovanni Sanches 2026
+# Modernização e Expansão do Portal Territorial Imóveis | Silvio Moura
 
-Reiniciar o projeto do zero para focar exclusivamente em Giovanni Sanches, criando um site político de alto impacto, dinâmico e focado em suas bandeiras.
+O objetivo é transformar o site em uma plataforma mais sofisticada, escura (dark theme) e persuasiva, destacando a expertise de Silvio Moura como Perito e introduzindo uma seção interativa de projetos técnicos (topografia e medição).
 
-## Ações Realizadas
-- Removidos todos os componentes e rotas anteriores para uma limpeza completa.
-- Criada uma estrutura base limpa no `src/routes/__root.tsx` e `src/routes/index.tsx`.
-- Mantido o design system de cores institucionais (Navy, Gold, Sky) no `src/styles.css`.
+## Mudanças Visuais e Tipográficas
+- **Paleta de Cores**: Transição para um tema predominantemente escuro (Dark Mode).
+    - Fundo principal: Azul marinho profundo/preto (#0a0a0f).
+    - Destaques: Ouro/Dourado (#d4af37) e Cinza Metálico.
+- **Tipografia**: Substituir "Outfit" por uma fonte mais "persuasiva" e moderna como **"Syne"** para títulos e **"Manrope"** para o corpo.
 
-## Próximos Passos
-
-### 1. Pesquisa e Identidade
-- Buscar informações atualizadas sobre a trajetória de Giovanni Sanches (Secretário de Guarulhos, apoio a Lucas Sanches).
-- Definir tom de voz impactante e dinâmico.
-
-### 2. Desenvolvimento da Landing Page
-- **Hero Section**: Impacto visual imediato com a foto de Giovanni e chamada forte para a pré-candidatura.
-- **Bandeiras Dinâmicas**: Apresentação visual das prioridades (Causa Autista, Saneamento, etc) com animações modernas.
-- **Trajetória Impactante**: Timeline ou grid dinâmico mostrando conquistas em Guarulhos.
-- **Engajamento**: Formulário de apoio direto e link para redes sociais.
-
-### 3. Refinamento Visual
-- Aplicar animações de scroll e micro-interações.
-- Garantir acessibilidade total e performance mobile impecável.
+## Novas Seções e Funcionalidades
+- **Expertise Técnica (Perícia & Topografia)**: Criar uma seção dedicada a Silvio Moura como Perito Judicial.
+- **Projetos Interativos**: Desenvolver uma galeria de "Projetos de Engenharia Territorial" com:
+    - Topografia e Medição de precisão.
+    - Levantamento Aéreo (Drone).
+    - Projetos de Loteamento fictícios para demonstração de capacidade.
+- **Interatividade**: Adicionar animações de hover mais refinadas, transições suaves entre seções e um visual de "dashboard profissional" para a área técnica.
 
 ## Detalhes Técnicos
-- **Framework**: TanStack Start (React 19).
-- **Estilização**: Tailwind CSS v4 com tokens semânticos.
-- **Animações**: Framer Motion ou Tailwind Animate para dinamismo.
-- **SEO**: Metatags otimizadas para busca orgânica regional.
+- Atualizar `src/styles.css` com novos tokens de cor e fontes.
+- Inserir novos ícones da `lucide-react` relacionados a medição e engenharia.
+- Adicionar dados fictícios de projetos técnicos ao `src/routes/index.tsx`.
