@@ -581,7 +581,7 @@ function Index() {
                     <MapPin size={14} />
                     <span>{property.location}</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight group-hover:text-[var(--color-accent)] transition-colors font-heading tracking-wide italic">
+                  <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight group-hover:text-[var(--color-accent)] transition-colors font-heading tracking-wide">
                     {property.title}
                   </h3>
                   <p className="text-slate-600 text-sm mb-8 line-clamp-2 leading-relaxed font-medium">{property.description}</p>
