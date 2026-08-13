@@ -780,7 +780,7 @@ function Index() {
             <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading">Vozes da Experiência</h2>
           </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 text: "O Silvio Moura foi fundamental na venda da nossa propriedade em Alphaville. Sua análise técnica nos deu a segurança necessária para fechar um negócio complexo.",
