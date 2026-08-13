@@ -474,7 +474,8 @@ function Index() {
           <img 
             src="https://images.unsplash.com/photo-1543232151-516d0061e39a?auto=format&fit=crop&q=80" 
             alt="Guarulhos Cidade" 
-            className="w-full h-full object-cover opacity-[0.03]"
+            className="w-full h-full object-cover opacity-[0.1]"
+
           />
           <div className="absolute inset-0 bg-slate-900/2" />
         </div>
