@@ -354,11 +354,11 @@ const PROPERTIES = [
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
-    title: "Territorial Imóveis | Soluções Imobiliárias e Perícia Técnica",
+    title: "Territorial Imóveis | Inteligência Territorial e Perícia Técnica",
     meta: [
-      { name: "description", content: "Territorial Imóveis: Especialistas em administração, avaliação, compra, venda e perícia técnica judicial. CRECI 38258J." },
-      { property: "og:title", content: "Territorial Imóveis | Perícia e Imóveis" },
-      { property: "og:description", content: "Administração, Avaliação e Intermediação Imobiliária com excelência técnica." },
+      { name: "description", content: "Territorial Imóveis: Especialistas em administração, avaliação, compra, venda e perícia técnica judicial. CRECI 38258J | Silvio Moura CRECI 151545." },
+      { property: "og:title", content: "Territorial Imóveis | Inteligência e Soluções Imobiliárias" },
+      { property: "og:description", content: "Liderança em Perícia, Avaliação e Intermediação Imobiliária com excelência técnica." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" }
     ]
@@ -373,16 +373,28 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-slate-200 text-[var(--color-navy)] selection:bg-[var(--color-accent)] selection:text-white">
+    <div className="min-h-screen font-sans bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-100 via-slate-200 to-slate-300 text-[var(--color-navy)] selection:bg-[var(--color-accent)] selection:text-white">
+      {/* WhatsApp Floating Button */}
+      <a 
+        href="https://wa.me/551124050300" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center group"
+        aria-label="Fale conosco no WhatsApp"
+      >
+        <MessageSquare className="w-7 h-7" />
+        <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 font-bold whitespace-nowrap">Fale Conosco</span>
+      </a>
+
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-slate-200/90 backdrop-blur-xl border-b border-gray-300">
+      <nav className="fixed top-0 w-full z-50 bg-slate-200/80 backdrop-blur-2xl border-b border-slate-300/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <div className="flex items-center gap-2">
-              <div className="w-12 h-12 bg-[var(--color-navy)] flex items-center justify-center rounded-xl shadow-lg">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-[var(--color-navy)] flex items-center justify-center rounded-2xl shadow-xl shadow-navy/20">
                 <Building2 className="text-[var(--color-accent)] w-7 h-7" />
               </div>
-              <span className="text-[var(--color-navy)] font-bold text-xl tracking-tight uppercase">TERRITORIAL IMÓVEIS</span>
+              <span className="text-[var(--color-navy)] font-black text-2xl tracking-tighter uppercase font-heading italic">TERRITORIAL IMÓVEIS</span>
             </div>
             
             <div className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest text-slate-600">
@@ -392,24 +404,38 @@ function Index() {
               <a href="#sobre" className="hover:text-[var(--color-accent)] transition-colors">A Empresa</a>
             </div>
 
-            <Button className="bg-[var(--color-navy)] text-white hover:bg-[var(--color-navy)]/90 rounded-full px-6 border-none font-bold">
-              Fale Conosco
+            <Button 
+              onClick={() => window.open('https://wa.me/551124050300', '_blank')}
+              className="bg-[var(--color-navy)] text-white hover:bg-[var(--color-accent)] hover:text-[var(--color-navy)] rounded-full px-8 h-12 border-none font-black transition-all duration-300 shadow-lg"
+            >
+              (11) 2405-0300
             </Button>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative pt-32 pb-20 lg:pt-48 overflow-hidden bg-slate-200">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 pointer-events-none" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1503387762-592dee582a7b?auto=format&fit=crop&q=80')" }} />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,0,0,0.05),transparent)] pointer-events-none" />
+      <section id="inicio" className="relative pt-32 pb-24 lg:pt-56 lg:pb-40 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80" 
+            alt="Fazenda Alto Padrão" 
+            className="w-full h-full object-cover opacity-15"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-200 via-transparent to-slate-200" />
+        </div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-6xl lg:text-8xl font-black text-[var(--color-navy)] mb-6 tracking-tighter uppercase leading-[0.9] font-heading">
-              Territorial Imóveis
+          <div className="text-center max-w-4xl mx-auto">
+            <span className="inline-block px-4 py-1.5 bg-[var(--color-accent)]/10 text-[var(--color-accent)] font-black text-xs uppercase tracking-[0.4em] rounded-full mb-8 border border-[var(--color-accent)]/20 animate-pulse">
+              Inteligência e Precisão Territorial
+            </span>
+            <h1 className="text-7xl lg:text-[10rem] font-black text-[var(--color-navy)] mb-8 tracking-tighter uppercase leading-[0.8] font-heading drop-shadow-sm">
+              Territorial <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-navy)] to-[var(--color-accent)]">Imóveis</span>
             </h1>
-            <p className="text-xl text-[var(--color-navy)]/70 mb-10 font-medium">
-              Gestão Imobiliária, Perícia Judicial e Engenharia Territorial.
+            <p className="text-2xl lg:text-3xl text-[var(--color-navy)]/60 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-tight">
+              A imobiliária sempre em primeiro lugar. Especialistas em Perícia Judicial, Gestão e Engenharia Territorial.
             </p>
 
             {/* Search Bar */}
@@ -616,43 +642,52 @@ function Index() {
         </div>
       </section>
 
-      {/* Trajectory */}
-      <section id="sobre" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+      {/* CEO & Story */}
+      <section id="sobre" className="py-32 bg-slate-100 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-200 -skew-x-12 translate-x-1/2 opacity-50 z-0" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-24 items-center">
             <div className="order-2 lg:order-1 relative">
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+              <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] border-8 border-white group">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80" 
-                  alt="Silvio Moura - Perito Imobiliário"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/d76d3dc4-a525-482d-ad4c-1557ebf0b83b.jpg" 
+                  alt="Silvio Moura - CEO Territorial Imóveis"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="absolute -bottom-10 -right-10 bg-white shadow-2xl p-8 rounded-3xl text-[var(--color-navy)] hidden md:block border border-gray-100">
-                <p className="text-[var(--color-accent)] font-black text-3xl mb-1 tracking-tighter">CRECI SP</p>
-                <p className="text-5xl font-black mb-1">151545 F</p>
-                <p className="text-gray-500 text-xs uppercase font-bold tracking-[0.3em]">CEO & Perito Judicial</p>
+              <div className="absolute -bottom-8 -right-8 bg-[var(--color-navy)] shadow-2xl p-10 rounded-3xl text-white hidden md:block border-4 border-[var(--color-accent)] animate-in fade-in slide-in-from-bottom-10 duration-1000">
+                <p className="text-[var(--color-accent)] font-black text-2xl mb-1 tracking-[0.2em] uppercase">CRECI SP</p>
+                <p className="text-6xl font-black mb-2 font-heading tracking-tighter italic">151545</p>
+                <p className="text-slate-400 text-xs uppercase font-bold tracking-[0.4em]">CEO & Perito Judicial</p>
               </div>
             </div>
 
             <div className="order-1 lg:order-2 mb-16 lg:mb-0">
-              <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Nossa Trajetória</span>
-              <h2 className="text-4xl lg:text-5xl font-black text-[var(--color-navy)] mb-8 uppercase tracking-tighter">Territorial Imóveis: Autoridade e Confiança</h2>
-              <div className="space-y-6 text-[var(--color-navy)] text-lg leading-relaxed font-medium">
-                <p>
-                  Fundada sobre os pilares da ética e da precisão técnica, a Territorial Imóveis é mais do que uma imobiliária; somos um centro de inteligência territorial. Nossa história é construída através da viabilização de grandes projetos e da segurança jurídica proporcionada a cada cliente.
+              <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Autoridade Territorial</span>
+              <h2 className="text-5xl lg:text-7xl font-black text-[var(--color-navy)] mb-10 uppercase tracking-tighter leading-[0.85] font-heading">
+                Inteligência, <br />
+                Segurança <br />
+                e Solidez
+              </h2>
+              <div className="space-y-8 text-[var(--color-navy)] text-lg leading-relaxed font-medium">
+                <p className="border-l-4 border-[var(--color-accent)] pl-6 py-2 bg-slate-200/50 rounded-r-xl">
+                  A <strong>Territorial Imóveis</strong> nasceu da necessidade de um mercado que exige precisão técnica e segurança jurídica absoluta. Não somos apenas uma imobiliária; somos um hub de soluções para quem busca valorização real e proteção patrimonial.
                 </p>
                 <p>
-                  Sob a liderança de Silvio Moura (CRECI 151545 F), especialista em Perícia Judicial e Engenharia Territorial, transformamos o mercado imobiliário em Guarulhos e região. Nossa atuação abrange desde a administração rigorosa de condomínios até a perícia técnica em processos judiciais complexos, como usucapião e avaliações de patrimônio.
+                  Nossa história é forjada na perícia técnica e na gestão estratégica. Atuamos com maestria desde a administração de condomínios até levantamentos topográficos complexos, garantindo que cada metro quadrado seja tratado com o rigor que a lei e a engenharia exigem.
                 </p>
                 <p>
-                  A imobiliária sempre em primeiro lugar: focamos na valorização do seu patrimônio com o suporte de tecnologias avançadas de mapeamento e uma equipe jurídica especializada.
+                  A imobiliária sempre em primeiro lugar: nossa filosofia coloca a transparência e a inteligência de mercado à frente, transformando desafios territoriais em oportunidades de alto retorno.
                 </p>
               </div>
               
               <div className="mt-8">
-                <Button className="bg-[var(--color-navy)] text-white hover:bg-[var(--color-navy)]/90 h-14 px-8 rounded-xl font-bold uppercase tracking-widest border-none">
-                  Conheça Silvio Moura (CEO)
+                <Button 
+                  onClick={() => window.open('https://wa.me/551124050300', '_blank')}
+                  className="bg-[var(--color-navy)] text-white hover:bg-[var(--color-accent)] hover:text-[var(--color-navy)] h-16 px-10 rounded-2xl font-black uppercase tracking-widest border-none transition-all duration-300 shadow-2xl scale-100 hover:scale-105"
+                >
+                  Fale com o CEO & Perito
                 </Button>
               </div>
               
@@ -760,10 +795,10 @@ function Index() {
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-12 h-12 bg-[var(--color-navy)] flex items-center justify-center rounded-xl shadow-lg">
+                <div className="w-12 h-12 bg-[var(--color-navy)] flex items-center justify-center rounded-xl shadow-lg border border-[var(--color-accent)]/30">
                   <Building2 className="text-[var(--color-accent)] w-7 h-7" />
                 </div>
-                <span className="text-[var(--color-navy)] font-bold text-xl tracking-tight uppercase">TERRITORIAL IMÓVEIS</span>
+                <span className="text-[var(--color-navy)] font-black text-xl tracking-tighter uppercase font-heading italic">TERRITORIAL IMÓVEIS</span>
               </div>
               <p className="text-slate-600 mb-8 leading-relaxed font-medium">
                 Referência em intermediação imobiliária de alto padrão, loteamentos, topografia e perícia judicial.
@@ -787,7 +822,7 @@ function Index() {
                 <li className="flex items-start gap-4">
                   <Phone className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
                   <div className="text-slate-600 font-medium">
-                    <p className="font-bold text-[var(--color-navy)]">(11) 2405-0300</p>
+                    <p className="font-bold text-[var(--color-navy)] text-xl">(11) 2405-0300</p>
                     <p className="text-sm">Telefone Principal</p>
                   </div>
                 </li>
@@ -829,7 +864,7 @@ function Index() {
 
           <div className="pt-10 border-t border-gray-200 text-center">
             <p className="text-slate-500 text-sm">
-              © 2026 Territorial Imóveis - CRECI 38258J | Silvio Moura CRECI 151545 F. Todos os direitos reservados.
+              © 2026 Territorial Imóveis - CRECI 38258J | Silvio Moura CRECI 151545. Todos os direitos reservados.
             </p>
           </div>
         </div>
