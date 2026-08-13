@@ -373,7 +373,7 @@ function Index() {
               <div className="w-12 h-12 bg-white/5 hidden items-center justify-center rounded-lg border border-white/10">
                 <Building2 className="text-[var(--color-accent)] w-7 h-7" />
               </div>
-              <span className="text-white font-bold text-xl tracking-tight uppercase">TERRITORIAL</span>
+              <span className="text-white font-bold text-xl tracking-tight uppercase">TERRITORIAL IMÓVEIS</span>
             </div>
             
             <div className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest text-gray-400">
@@ -760,7 +760,7 @@ function Index() {
                 <div className="w-12 h-12 bg-white/5 hidden items-center justify-center rounded-lg border border-white/10">
                   <Building2 className="text-[var(--color-accent)] w-7 h-7" />
                 </div>
-                <span className="text-white font-bold text-xl tracking-tight uppercase">TERRITORIAL</span>
+                <span className="text-white font-bold text-xl tracking-tight uppercase">TERRITORIAL IMÓVEIS</span>
               </div>
               <p className="text-gray-400 mb-8 leading-relaxed font-medium">
                 Referência em intermediação imobiliária de alto padrão, loteamentos, topografia e perícia judicial.
