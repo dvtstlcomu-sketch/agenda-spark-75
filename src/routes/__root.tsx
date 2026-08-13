@@ -4,6 +4,8 @@ import { HeadContent, Scripts } from "@tanstack/react-router";
 import * as React from "react";
 import "@/styles.css";
 
+const queryClient = new QueryClient();
+
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
 }>()({
@@ -28,7 +30,9 @@ function RootComponent() {
         <HeadContent />
       </head>
       <body>
-        <Outlet />
+        <QueryClientProvider client={queryClient}>
+          <Outlet />
+        </QueryClientProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
