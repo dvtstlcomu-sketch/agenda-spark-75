@@ -494,7 +494,7 @@ function Index() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-gold)]">Imóveis</span>
             </h1>
             <p className="text-xl lg:text-2xl text-foreground/70 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-relaxed">
-              A inteligência imobiliária em primeiro lugar. Especialistas em Perícia Judicial e Engenharia Territorial de alta precisão.
+              A inteligência imobiliária em primeiro lugar. Especialistas em Perícia Judicial e Inteligência Territorial de alta precisão.
             </p>
 
             {/* Search Bar Premium */}
