@@ -386,7 +386,7 @@ function Index() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.1),transparent)] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-6xl lg:text-8xl font-black text-white mb-6 tracking-tighter uppercase leading-[0.9]">
+            <h1 className="text-6xl lg:text-8xl font-black text-white mb-6 tracking-tighter uppercase leading-[0.9] font-heading">
               Precisão <span className="text-[var(--color-accent)]">Territorial</span> Incomparável
             </h1>
             <p className="text-xl text-gray-400 mb-10 font-medium">
