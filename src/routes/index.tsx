@@ -355,52 +355,51 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     title: "Territorial Imóveis | Perícia Judicial & Inteligência Territorial em Guarulhos",
-    head: () => ({
-      links: [
-        {
-          rel: "canonical",
-          href: "https://territorialimoveis.com.br"
-        }
-      ],
-      meta: [
-        { name: "description", content: "Liderança em Perícia Judicial e Inteligência Territorial em Guarulhos. Administração, Avaliação e Engenharia Técnica com excelência. CRECI 38258J | Silvio Moura CRECI 151545." },
-        { property: "og:title", content: "Territorial Imóveis | Excelência em Inteligência Imobiliária" },
-        { property: "og:description", content: "Especialistas em Perícia Judicial e Soluções Territoriais de Alto Padrão em Guarulhos e Região." },
-        { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary_large_image" },
-        {
-          name: "keywords",
-          content: "perícia judicial guarulhos, avaliação imobiliária, topografia guarulhos, engenharia territorial, administração de imóveis alto padrão, silvio moura creci 151545"
-        }
-      ],
-      script: [
-        {
-          type: "application/ld+json",
-          children: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "RealEstateAgent",
-            "name": "Territorial Imóveis",
-            "image": "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
-            "@id": "",
-            "url": "https://territorialimoveis.com.br",
-            "telephone": "+551124050300",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Avenida Otávio Braga de Mesquita, 3935",
-              "addressLocality": "Guarulhos",
-              "addressRegion": "SP",
-              "postalCode": "07191-000",
-              "addressCountry": "BR"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": -23.444,
-              "longitude": -46.508
-            }
-          })
-        }
-      ]
-    })
+    links: [
+      {
+        rel: "canonical",
+        href: "https://territorialimoveis.com.br"
+      }
+    ],
+    meta: [
+      { name: "description", content: "Liderança em Perícia Judicial e Inteligência Territorial em Guarulhos. Administração, Avaliação e Engenharia Técnica com excelência. CRECI 38258J | Silvio Moura CRECI 151545." },
+      { property: "og:title", content: "Territorial Imóveis | Excelência em Inteligência Imobiliária" },
+      { property: "og:description", content: "Especialistas em Perícia Judicial e Soluções Territoriais de Alto Padrão em Guarulhos e Região." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "keywords",
+        content: "perícia judicial guarulhos, avaliação imobiliária, topografia guarulhos, engenharia territorial, administração de imóveis alto padrão, silvio moura creci 151545"
+      }
+    ],
+    script: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "RealEstateAgent",
+          "name": "Territorial Imóveis",
+          "image": "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
+          "@id": "",
+          "url": "https://territorialimoveis.com.br",
+          "telephone": "+551124050300",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Avenida Otávio Braga de Mesquita, 3935",
+            "addressLocality": "Guarulhos",
+            "addressRegion": "SP",
+            "postalCode": "07191-000",
+            "addressCountry": "BR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -23.444,
+            "longitude": -46.508
+          }
+        })
+      }
+    ]
+  })
 });
 
 function Index() {
