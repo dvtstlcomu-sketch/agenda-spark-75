@@ -495,10 +495,10 @@ function Index() {
             <div className="bg-white/40 backdrop-blur-xl p-3 rounded-[2rem] border border-white/20 flex flex-col md:flex-row gap-3 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)]">
               <div className="flex-1 relative group">
                 <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[var(--color-accent)] transition-colors" size={20} />
-                <input type="text" placeholder="Localização ou tipo de imóvel..." className="w-full h-16 pl-16 pr-8 rounded-2xl bg-white/50 text-slate-900 border-none focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium transition-all" />
+                <input type="text" placeholder="Pesquisar por localização, tipo ou código..." className="w-full h-16 pl-16 pr-8 rounded-2xl bg-white/70 text-slate-900 border-none focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium transition-all shadow-inner" />
               </div>
               <div className="flex gap-3">
-                <select className="h-16 px-6 rounded-2xl bg-white/50 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-[160px]">
+                <select className="h-16 px-6 rounded-2xl bg-white/70 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-[160px] shadow-sm">
                   <option>Residencial</option>
                   <option>Apartamento</option>
                   <option>Comercial</option>
