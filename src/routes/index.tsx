@@ -78,12 +78,12 @@ const TECHNICAL_SERVICES = [
 const PROPERTIES = [
   {
     id: 1,
-    title: "Gleba Estratégica para Loteamento",
+    title: "Gleba Territorial Prime",
     type: "Terreno / Expansão",
     status: "Venda Técnica",
     price: "Sob Consulta",
     location: "Eixo Guarulhos-SP",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80",
     beds: 0,
     baths: 0,
     area: "85.000m²",
@@ -91,7 +91,7 @@ const PROPERTIES = [
   },
   {
     id: 2,
-    title: "Complexo Logístico Triple A",
+    title: "Logística Territorial Pro",
     type: "Industrial",
     status: "Investimento",
     price: "R$ 45.000.000",
@@ -431,7 +431,7 @@ function Index() {
               <div className="w-12 h-12 bg-slate-900 flex items-center justify-center rounded-2xl shadow-xl shadow-slate-900/10">
                 <Building2 className="text-[var(--color-accent)] w-7 h-7" />
               </div>
-              <span className="text-slate-900 font-black text-2xl tracking-tighter uppercase font-heading italic drop-shadow-sm">TERRITORIAL IMÓVEIS</span>
+              <span className="text-slate-900 font-black text-2xl tracking-tighter uppercase font-heading drop-shadow-sm">TERRITORIAL IMÓVEIS</span>
             </div>
             
             <div className="hidden md:flex items-center gap-10 text-xs font-black uppercase tracking-[0.25em] text-slate-900/60">
@@ -483,7 +483,7 @@ function Index() {
               Territorial <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-gold)]">Imóveis</span>
             </h1>
-            <p className="text-xl lg:text-2xl text-foreground/70 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-relaxed italic">
+            <p className="text-xl lg:text-2xl text-foreground/70 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-relaxed">
               A inteligência imobiliária em primeiro lugar. Especialistas em Perícia Judicial e Engenharia Territorial de alta precisão.
             </p>
 
@@ -520,7 +520,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-24">
             <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Nossa Expertise</span>
-            <h2 className="text-5xl md:text-7xl font-bold text-foreground uppercase tracking-tighter font-heading italic leading-none">Excelência Territorial</h2>
+            <h2 className="text-5xl md:text-7xl font-bold text-foreground uppercase tracking-tighter font-heading leading-none">Excelência Territorial</h2>
           </div>
  
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -529,7 +529,7 @@ function Index() {
                 <div className="mb-8 bg-[var(--color-accent)]/10 w-20 h-20 rounded-[1.5rem] flex items-center justify-center border border-[var(--color-accent)]/10 group-hover:bg-[var(--color-accent)] transition-all duration-500 scale-100 group-hover:scale-110">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight group-hover:text-[var(--color-navy)] transition-colors font-heading tracking-tight italic">{service.title}</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight group-hover:text-[var(--color-navy)] transition-colors font-heading tracking-tight">{service.title}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed font-medium">{service.description}</p>
               </div>
             ))}
@@ -543,8 +543,8 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-xl text-left">
-              <h2 className="text-5xl lg:text-7xl font-bold text-foreground mb-6 uppercase tracking-tighter font-heading italic">Curadoria Técnica</h2>
-              <p className="text-slate-600 font-medium text-lg italic">Ativos imobiliários selecionados sob rigorosa análise pericial e potencial de valorização estratégica.</p>
+              <h2 className="text-5xl lg:text-7xl font-bold text-foreground mb-6 uppercase tracking-tighter font-heading">Curadoria Técnica</h2>
+              <p className="text-slate-600 font-medium text-lg">Ativos imobiliários selecionados sob rigorosa análise pericial e potencial de valorização estratégica.</p>
             </div>
             <div className="flex gap-2">
               <Button variant="outline" className="rounded-full border-slate-200 text-slate-900 hover:bg-white/50 transition-colors bg-white/30 px-8">
@@ -713,22 +713,21 @@ function Index() {
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
-              <div className="absolute -bottom-8 -right-8 bg-white shadow-2xl p-10 rounded-[2.5rem] text-slate-900 hidden md:block border border-slate-100 backdrop-blur-2xl animate-in fade-in slide-in-from-bottom-10 duration-1000 z-20">
-                <p className="text-[var(--color-accent)] font-black text-2xl mb-1 tracking-[0.3em] uppercase">CRECI SP</p>
-                <p className="text-7xl font-bold mb-2 font-heading tracking-tighter italic">151545</p>
-                <p className="text-slate-400 text-xs uppercase font-black tracking-[0.5em]">CEO & Perito Judicial</p>
+              <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-md p-6 rounded-2xl text-white md:block border border-white/20 animate-in fade-in slide-in-from-bottom-10 duration-1000 z-20 w-[80%] text-center">
+                <p className="text-slate-300 text-[10px] uppercase font-black tracking-[0.5em] mb-1">CEO & Perito Judicial</p>
+                <p className="text-white font-bold text-xl font-heading tracking-tighter">CRECI SP 151545</p>
               </div>
             </div>
 
             <div className="order-1 lg:order-2 mb-16 lg:mb-0">
               <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Autoridade Territorial</span>
-              <h2 className="text-6xl lg:text-[6rem] font-bold text-foreground mb-12 uppercase tracking-tighter leading-[0.8] font-heading italic">
+              <h2 className="text-5xl lg:text-[4rem] font-bold text-foreground mb-12 uppercase tracking-tighter leading-[1] font-heading">
                 Inteligência, <br />
                 Segurança <br />
                 & Solidez
               </h2>
               <div className="space-y-10 text-slate-600 text-xl leading-relaxed font-medium">
-                <p className="border-l-4 border-[var(--color-accent)] pl-8 py-4 bg-white/40 backdrop-blur-sm rounded-r-[2rem] italic">
+                <p className="border-l-4 border-[var(--color-accent)] pl-8 py-4 bg-white/40 backdrop-blur-sm rounded-r-[2rem]">
                   A <strong>Territorial Imóveis</strong> nasceu da necessidade de um mercado que exige precisão técnica e segurança jurídica absoluta. Não somos apenas uma imobiliária; somos um hub de soluções para quem busca valorização real e proteção patrimonial.
                 </p>
                 <p>
