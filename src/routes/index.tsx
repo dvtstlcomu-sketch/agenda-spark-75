@@ -616,7 +616,7 @@ function Index() {
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
               </div>
-              <div className="absolute -bottom-10 -right-10 bg-white/5 backdrop-blur-xl p-8 rounded-3xl text-white hidden md:block border border-white/10">
+              <div className="absolute -bottom-10 -right-10 bg-white shadow-2xl p-8 rounded-3xl text-[var(--color-navy)] hidden md:block border border-gray-100">
                 <p className="text-[var(--color-accent)] font-black text-3xl mb-1 tracking-tighter">CRECI</p>
                 <p className="text-5xl font-black mb-1">15145 F</p>
                 <p className="text-gray-500 text-xs uppercase font-bold tracking-[0.3em]">Perito Judicial</p>
@@ -625,8 +625,8 @@ function Index() {
 
             <div className="order-1 lg:order-2 mb-16 lg:mb-0">
               <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Nossa Trajetória</span>
-              <h2 className="text-4xl lg:text-5xl font-black text-white mb-8 uppercase tracking-tighter">Silvio Moura: Tradição e Excelência</h2>
-              <div className="space-y-6 text-gray-400 text-lg leading-relaxed font-medium">
+              <h2 className="text-4xl lg:text-5xl font-black text-[var(--color-navy)] mb-8 uppercase tracking-tighter">Silvio Moura: Tradição e Excelência</h2>
+              <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-medium">
                 <p>
                   A história de Silvio Moura no mercado imobiliário é marcada por uma busca incessante pela perfeição técnica e ética profissional. Com o CRECI 15145 F, Silvio consolidou-se como um dos peritos mais respeitados da região, unindo o conhecimento profundo da legislação territorial à paixão por realizar sonhos através de imóveis exclusivos.
                 </p>
@@ -635,8 +635,8 @@ function Index() {
                 </p>
               </div>
               
-              <div className="mt-10 p-8 bg-white/5 border border-white/10 rounded-2xl border-l-4 border-[var(--color-accent)]">
-                <p className="text-white italic text-xl font-medium mb-4">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta, como topografia avançada e drones, à segurança jurídica de uma perícia especializada."</p>
+              <div className="mt-10 p-8 bg-slate-50 border border-gray-100 rounded-2xl border-l-4 border-[var(--color-accent)]">
+                <p className="text-[var(--color-navy)] italic text-xl font-medium mb-4">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta, como topografia avançada e drones, à segurança jurídica de uma perícia especializada."</p>
                 <p className="text-[var(--color-accent)] font-bold uppercase tracking-widest text-sm">— Silvio Moura</p>
               </div>
             </div>
@@ -645,7 +645,7 @@ function Index() {
       </section>
 
       {/* Testimonials */}
-      <section id="depoimentos" className="py-24 bg-[var(--color-navy)] text-white">
+      <section id="depoimentos" className="py-24 bg-slate-50 text-[var(--color-navy)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Testemunhos</span>
@@ -673,15 +673,15 @@ function Index() {
                 image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150"
               }
             ].map((t, i) => (
-              <div key={i} className="bg-white/5 p-8 rounded-3xl border border-white/10 hover:border-[var(--color-accent)]/50 transition-all duration-500 hover:-translate-y-2 group">
+              <div key={i} className="bg-white p-8 rounded-3xl border border-gray-200 hover:border-[var(--color-accent)]/50 transition-all duration-500 hover:-translate-y-2 group shadow-sm hover:shadow-xl">
                 <MessageSquare className="text-[var(--color-accent)] mb-6 w-10 h-10 group-hover:scale-110 transition-transform" />
-                <p className="text-lg text-gray-400 italic mb-8 font-medium">"{t.text}"</p>
+                <p className="text-lg text-gray-600 italic mb-8 font-medium">"{t.text}"</p>
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[var(--color-accent)]/30 group-hover:border-[var(--color-accent)] transition-colors">
                     <img src={t.image} alt={t.author} className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <p className="font-bold text-white text-lg">{t.author}</p>
+                    <p className="font-bold text-[var(--color-navy)] text-lg">{t.author}</p>
                     <p className="text-[var(--color-accent)] text-sm font-medium">{t.role}</p>
                   </div>
                 </div>
