@@ -479,7 +479,7 @@ function Index() {
             <span className="inline-block px-4 py-1.5 bg-[var(--color-accent)]/10 text-[var(--color-accent)] font-black text-xs uppercase tracking-[0.4em] rounded-full mb-8 border border-[var(--color-accent)]/20 animate-pulse">
               Inteligência e Precisão Territorial
             </span>
-            <h1 className="text-7xl lg:text-[10rem] font-bold text-foreground mb-8 tracking-tighter uppercase leading-[0.8] font-heading drop-shadow-2xl">
+            <h1 className="text-6xl lg:text-[8rem] font-bold text-foreground mb-8 tracking-tighter uppercase leading-[0.8] font-heading drop-shadow-2xl">
               Territorial <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-gold)]">Imóveis</span>
             </h1>
@@ -520,7 +520,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-24">
             <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Nossa Expertise</span>
-            <h2 className="text-5xl md:text-7xl font-bold text-foreground uppercase tracking-tighter font-heading leading-none">Excelência Territorial</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground uppercase tracking-tighter font-heading leading-none">Excelência Territorial</h2>
           </div>
  
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -543,7 +543,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-xl text-left">
-              <h2 className="text-5xl lg:text-7xl font-bold text-foreground mb-6 uppercase tracking-tighter font-heading">Curadoria Técnica</h2>
+              <h2 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 uppercase tracking-tighter font-heading">Curadoria Técnica</h2>
               <p className="text-slate-600 font-medium text-lg">Ativos imobiliários selecionados sob rigorosa análise pericial e potencial de valorização estratégica.</p>
             </div>
             <div className="flex gap-2">
@@ -713,15 +713,15 @@ function Index() {
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
-              <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-md p-6 rounded-2xl text-white md:block border border-white/20 animate-in fade-in slide-in-from-bottom-10 duration-1000 z-20 w-[80%] text-center">
-                <p className="text-slate-300 text-[10px] uppercase font-black tracking-[0.5em] mb-1">CEO & Perito Judicial</p>
+              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-white md:block animate-in fade-in slide-in-from-bottom-10 duration-1000 z-20 w-full text-center drop-shadow-lg">
+                <p className="text-white/80 text-[10px] uppercase font-black tracking-[0.5em] mb-1">CEO & Perito Judicial</p>
                 <p className="text-white font-bold text-xl font-heading tracking-tighter">CRECI SP 151545</p>
               </div>
             </div>
 
             <div className="order-1 lg:order-2 mb-16 lg:mb-0">
               <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Autoridade Territorial</span>
-              <h2 className="text-5xl lg:text-[4rem] font-bold text-foreground mb-12 uppercase tracking-tighter leading-[1] font-heading">
+              <h2 className="text-4xl lg:text-[3.5rem] font-bold text-foreground mb-12 uppercase tracking-tighter leading-[1] font-heading">
                 Inteligência, <br />
                 Segurança <br />
                 & Solidez
@@ -765,7 +765,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-24">
             <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Credibilidade & Vozes</span>
-            <h2 className="text-5xl md:text-7xl font-bold text-foreground uppercase tracking-tighter font-heading italic">Vozes da Experiência</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground uppercase tracking-tighter font-heading">Vozes da Experiência</h2>
           </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -791,7 +791,7 @@ function Index() {
             ].map((t, i) => (
               <div key={i} className="bg-white/60 backdrop-blur-md p-8 rounded-3xl border border-white/40 hover:border-[var(--color-accent)]/50 transition-all duration-500 hover:-translate-y-2 group shadow-xl">
                 <MessageSquare className="text-[var(--color-accent)] mb-6 w-10 h-10 group-hover:scale-110 transition-transform" />
-                <p className="text-lg text-slate-600 italic mb-8 font-medium">"{t.text}"</p>
+                <p className="text-lg text-slate-600 mb-8 font-medium">"{t.text}"</p>
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[var(--color-accent)]/30 group-hover:border-[var(--color-accent)] transition-colors">
                     <img src={t.image} alt={t.author} className="w-full h-full object-cover" />
@@ -859,9 +859,9 @@ function Index() {
                 <div className="w-14 h-14 bg-white/10 flex items-center justify-center rounded-[1.25rem] shadow-2xl border border-white/20 group">
                   <Building2 className="text-[var(--color-accent)] w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
-                <span className="text-foreground font-black text-2xl tracking-tighter uppercase font-heading italic">TERRITORIAL IMÓVEIS</span>
+                <span className="text-foreground font-black text-2xl tracking-tighter uppercase font-heading">TERRITORIAL IMÓVEIS</span>
               </div>
-              <p className="text-slate-400 mb-8 leading-relaxed font-medium italic">
+              <p className="text-slate-400 mb-8 leading-relaxed font-medium">
                 A vanguarda em Inteligência Territorial, Perícia Judicial e Soluções Imobiliárias de Alto Padrão em Guarulhos e Região.
               </p>
               <div className="flex gap-4">
@@ -878,7 +878,7 @@ function Index() {
             </div>
 
             <div>
-              <h4 className="text-foreground font-bold text-xl mb-6 uppercase tracking-widest font-heading italic">Atendimento</h4>
+              <h4 className="text-foreground font-bold text-xl mb-6 uppercase tracking-widest font-heading">Atendimento</h4>
               <ul className="space-y-4">
                 <li className="flex items-start gap-4">
                   <Phone className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
@@ -905,10 +905,10 @@ function Index() {
             </div>
 
             <div>
-              <h4 className="text-foreground font-bold text-xl mb-6 uppercase tracking-widest font-heading italic">Localização</h4>
+              <h4 className="text-foreground font-bold text-xl mb-6 uppercase tracking-widest font-heading">Localização</h4>
               <div className="flex items-start gap-4">
                 <MapPin className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
-                <p className="text-slate-400 leading-relaxed font-medium italic">
+                <p className="text-slate-400 leading-relaxed font-medium">
                   Avenida Otávio Braga de Mesquita, Nº 3935<br />
                   Guarulhos / SP
                 </p>
