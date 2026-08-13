@@ -450,12 +450,12 @@ function Index() {
       </section>
 
       {/* Property Showcase */}
-      <section id="imoveis" className="py-24 bg-[var(--color-navy)]">
+      <section id="imoveis" className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-xl text-left">
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tighter uppercase">Curadoria Exclusiva</h2>
-              <p className="text-gray-400 font-medium">Imóveis selecionados pela excelência técnica e valorização estratégica.</p>
+              <h2 className="text-4xl md:text-5xl font-black text-[var(--color-navy)] mb-4 tracking-tighter uppercase">Curadoria Exclusiva</h2>
+              <p className="text-gray-600 font-medium">Imóveis selecionados pela excelência técnica e valorização estratégica.</p>
             </div>
             <div className="flex gap-2">
               <Button variant="outline" className="rounded-full border-white/10 text-white hover:bg-white/5 transition-colors border-none bg-white/5 px-8">
@@ -466,7 +466,7 @@ function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {PROPERTIES.map((property) => (
-              <div key={property.id} className="group bg-white/5 rounded-3xl overflow-hidden border border-white/10 hover:border-[var(--color-accent)]/50 transition-all duration-500">
+              <div key={property.id} className="group bg-white rounded-3xl overflow-hidden border border-gray-200 hover:border-[var(--color-accent)]/50 transition-all duration-500 shadow-sm hover:shadow-xl">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
                     src={property.image} 
@@ -477,23 +477,23 @@ function Index() {
                     <span className="bg-[var(--color-navy)] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
                       {property.status}
                     </span>
-                    <span className="bg-white/90 backdrop-blur-sm text-[var(--color-navy)] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/20">
+                    <span className="bg-white/90 backdrop-blur-sm text-[var(--color-navy)] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border border-gray-200">
                       {property.type}
                     </span>
                   </div>
                 </div>
                 <div className="p-6">
-                  <div className="flex items-center gap-1 text-slate-400 text-sm mb-2">
+                  <div className="flex items-center gap-1 text-gray-500 text-sm mb-2">
                     <MapPin size={14} />
                     <span>{property.location}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3 leading-tight group-hover:text-[var(--color-accent)] transition-colors">
+                  <h3 className="text-xl font-bold text-[var(--color-navy)] mb-3 leading-tight group-hover:text-[var(--color-accent)] transition-colors">
                     {property.title}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-6 line-clamp-2">{property.description}</p>
+                  <p className="text-gray-600 text-sm mb-6 line-clamp-2">{property.description}</p>
                   
-                  <div className="flex items-center justify-between pt-6 border-t border-white/10">
-                    <div className="flex gap-4 text-gray-400 text-sm font-medium">
+                  <div className="flex items-center justify-between pt-6 border-t border-gray-100">
+                    <div className="flex gap-4 text-gray-500 text-sm font-medium">
                       {property.beds > 0 && (
                         <div className="flex items-center gap-1.5">
                           <Bed size={16} className="text-[var(--color-accent)]" />
@@ -511,7 +511,7 @@ function Index() {
                         <span>{property.area}</span>
                       </div>
                     </div>
-                    <span className="text-lg font-black text-white">
+                    <span className="text-lg font-black text-[var(--color-navy)]">
                       {property.price}
                     </span>
                   </div>
@@ -529,7 +529,7 @@ function Index() {
             <div className="mb-12 lg:mb-0">
               <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Consultoria Técnica</span>
               <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 uppercase tracking-tighter">Análise e Perícia Profissional</h2>
-              <p className="text-xl text-gray-400 mb-8 leading-relaxed font-medium">
+              <p className="text-xl text-slate-300 mb-8 leading-relaxed font-medium">
                 Deseja vender ou avaliar seu terreno/imóvel? Nossa equipe técnica realiza o levantamento completo com segurança jurídica.
               </p>
               <div className="space-y-6">
@@ -605,18 +605,18 @@ function Index() {
       </section>
 
       {/* Trajectory */}
-      <section id="sobre" className="py-24 bg-[var(--color-navy)]">
+      <section id="sobre" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
                 <img 
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80" 
                   alt="Silvio Moura - Perito Imobiliário"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
               </div>
-              <div className="absolute -bottom-10 -right-10 bg-white/5 backdrop-blur-xl p-8 rounded-3xl text-white hidden md:block border border-white/10">
+              <div className="absolute -bottom-10 -right-10 bg-white shadow-2xl p-8 rounded-3xl text-[var(--color-navy)] hidden md:block border border-gray-100">
                 <p className="text-[var(--color-accent)] font-black text-3xl mb-1 tracking-tighter">CRECI</p>
                 <p className="text-5xl font-black mb-1">15145 F</p>
                 <p className="text-gray-500 text-xs uppercase font-bold tracking-[0.3em]">Perito Judicial</p>
@@ -625,8 +625,8 @@ function Index() {
 
             <div className="order-1 lg:order-2 mb-16 lg:mb-0">
               <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Nossa Trajetória</span>
-              <h2 className="text-4xl lg:text-5xl font-black text-white mb-8 uppercase tracking-tighter">Silvio Moura: Tradição e Excelência</h2>
-              <div className="space-y-6 text-gray-400 text-lg leading-relaxed font-medium">
+              <h2 className="text-4xl lg:text-5xl font-black text-[var(--color-navy)] mb-8 uppercase tracking-tighter">Silvio Moura: Tradição e Excelência</h2>
+              <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-medium">
                 <p>
                   A história de Silvio Moura no mercado imobiliário é marcada por uma busca incessante pela perfeição técnica e ética profissional. Com o CRECI 15145 F, Silvio consolidou-se como um dos peritos mais respeitados da região, unindo o conhecimento profundo da legislação territorial à paixão por realizar sonhos através de imóveis exclusivos.
                 </p>
@@ -635,8 +635,8 @@ function Index() {
                 </p>
               </div>
               
-              <div className="mt-10 p-8 bg-white/5 border border-white/10 rounded-2xl border-l-4 border-[var(--color-accent)]">
-                <p className="text-white italic text-xl font-medium mb-4">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta, como topografia avançada e drones, à segurança jurídica de uma perícia especializada."</p>
+              <div className="mt-10 p-8 bg-slate-50 border border-gray-100 rounded-2xl border-l-4 border-[var(--color-accent)]">
+                <p className="text-[var(--color-navy)] italic text-xl font-medium mb-4">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta, como topografia avançada e drones, à segurança jurídica de uma perícia especializada."</p>
                 <p className="text-[var(--color-accent)] font-bold uppercase tracking-widest text-sm">— Silvio Moura</p>
               </div>
             </div>
@@ -645,7 +645,7 @@ function Index() {
       </section>
 
       {/* Testimonials */}
-      <section id="depoimentos" className="py-24 bg-[var(--color-navy)] text-white">
+      <section id="depoimentos" className="py-24 bg-slate-50 text-[var(--color-navy)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Testemunhos</span>
@@ -673,15 +673,15 @@ function Index() {
                 image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150"
               }
             ].map((t, i) => (
-              <div key={i} className="bg-white/5 p-8 rounded-3xl border border-white/10 hover:border-[var(--color-accent)]/50 transition-all duration-500 hover:-translate-y-2 group">
+              <div key={i} className="bg-white p-8 rounded-3xl border border-gray-200 hover:border-[var(--color-accent)]/50 transition-all duration-500 hover:-translate-y-2 group shadow-sm hover:shadow-xl">
                 <MessageSquare className="text-[var(--color-accent)] mb-6 w-10 h-10 group-hover:scale-110 transition-transform" />
-                <p className="text-lg text-gray-400 italic mb-8 font-medium">"{t.text}"</p>
+                <p className="text-lg text-gray-600 italic mb-8 font-medium">"{t.text}"</p>
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[var(--color-accent)]/30 group-hover:border-[var(--color-accent)] transition-colors">
                     <img src={t.image} alt={t.author} className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <p className="font-bold text-white text-lg">{t.author}</p>
+                    <p className="font-bold text-[var(--color-navy)] text-lg">{t.author}</p>
                     <p className="text-[var(--color-accent)] text-sm font-medium">{t.role}</p>
                   </div>
                 </div>
@@ -692,10 +692,10 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-24 bg-[var(--color-navy)]">
+      <section id="faq" className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-white font-black text-4xl mb-4 uppercase tracking-tighter">Esclareça Suas Dúvidas</h2>
+            <h2 className="text-[var(--color-navy)] font-black text-4xl mb-4 uppercase tracking-tighter">Esclareça Suas Dúvidas</h2>
             <p className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm">Consultoria Especializada</p>
           </div>
 
@@ -714,16 +714,16 @@ function Index() {
                 a: "Basta utilizar a seção 'Anuncie Seu Imóvel', preencher os dados de contato e realizar o upload das fotos. Nossa equipe entrará em contato para agendar uma vistoria."
               }
             ].map((faq, i) => (
-              <div key={i} className="border border-white/10 rounded-2xl overflow-hidden bg-white/5">
+              <div key={i} className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm">
                 <button 
                   onClick={() => toggleFaq(i)}
-                  className="w-full flex items-center justify-between p-6 hover:bg-white/5 transition-colors text-left border-none cursor-pointer bg-transparent"
+                  className="w-full flex items-center justify-between p-6 hover:bg-slate-50 transition-colors text-left border-none cursor-pointer bg-transparent"
                 >
-                  <span className="text-lg font-bold text-white">{faq.q}</span>
+                  <span className="text-lg font-bold text-[var(--color-navy)]">{faq.q}</span>
                   <ChevronDown className={cn("text-[var(--color-accent)] transition-transform", activeFaq === i && "rotate-180")} />
                 </button>
                 {activeFaq === i && (
-                  <div className="p-6 text-gray-400 border-t border-white/10 leading-relaxed font-medium">
+                  <div className="p-6 text-gray-600 border-t border-gray-100 leading-relaxed font-medium">
                     {faq.a}
                   </div>
                 )}
@@ -740,7 +740,7 @@ function Index() {
             <div>
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-12 h-12 bg-[var(--color-accent)] flex items-center justify-center rounded-xl shadow-lg shadow-[var(--color-accent)]/20">
-                  <Building2 className="text-[var(--color-navy)] w-7 h-7" />
+                  <Building2 className="text-white w-7 h-7" />
                 </div>
                 <span className="text-white font-bold text-xl tracking-tight uppercase">TERRITORIAL IMÓVEIS</span>
               </div>

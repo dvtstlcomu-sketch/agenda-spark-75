@@ -25,7 +25,7 @@ export const Route = createRootRouteWithContext<{
 
 function RootComponent() {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className="scroll-smooth">
       <head>
         <HeadContent />
       </head>
