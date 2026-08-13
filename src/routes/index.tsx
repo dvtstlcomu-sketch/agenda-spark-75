@@ -599,34 +599,37 @@ function Index() {
             <h2 className="text-4xl md:text-5xl font-bold">O Que Dizem Nossos Clientes</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                text: "O trabalho do Silvio Moura na medição topográfica e venda da nossa gleba foi impecável. A perícia técnica evitou qualquer problema com documentação.",
-                author: "Dra. Renata Siqueira",
-                role: "Investidora de Imóveis"
+                text: "O Silvio Moura foi fundamental na venda da nossa propriedade em Alphaville. Sua análise técnica nos deu a segurança necessária para fechar um negócio complexo.",
+                author: "Beatriz Oliveira",
+                role: "Proprietária em Alphaville",
+                image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150"
               },
               {
-                text: "Precisava vender uma casa de alto padrão e fazer a avaliação correta de mercado. A Territorial Imóveis nos atendeu com sigilo e profissionalismo.",
-                author: "Carlos Eduardo Mendes",
-                role: "Empresário"
+                text: "Excepcional! A avaliação imobiliária foi precisa e o atendimento sofisticado. Encontramos o imóvel perfeito com a curadoria da Territorial.",
+                author: "Dr. Marcos Vinícius",
+                role: "Neurocirurgião",
+                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150"
               },
               {
-                text: "As imagens aéreas feitas com os drones ajudaram a valorizar muito o nosso terreno no processo de venda. Atendimento excelente do Silvio.",
-                author: "Roberto Alencar",
-                role: "Proprietário Rural"
+                text: "A transparência do Silvio e sua equipe é o que os diferencia. O uso de drones para mostrar nosso terreno fez toda a diferença na valorização.",
+                author: "Helena Castro",
+                role: "Empresária",
+                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150"
               }
             ].map((t, i) => (
-              <div key={i} className="bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
-                <MessageSquare className="text-[var(--color-accent)] mb-6 w-10 h-10" />
+              <div key={i} className="bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 group">
+                <MessageSquare className="text-[var(--color-accent)] mb-6 w-10 h-10 group-hover:scale-110 transition-transform" />
                 <p className="text-lg text-slate-300 italic mb-8">"{t.text}"</p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[var(--color-accent)] rounded-full flex items-center justify-center text-white font-bold">
-                    {t.author[0]}
+                  <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[var(--color-accent)]/30 group-hover:border-[var(--color-accent)] transition-colors">
+                    <img src={t.image} alt={t.author} className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <p className="font-bold text-white">{t.author}</p>
-                    <p className="text-[var(--color-accent)] text-sm">{t.role}</p>
+                    <p className="font-bold text-white text-lg">{t.author}</p>
+                    <p className="text-[var(--color-accent)] text-sm font-medium">{t.role}</p>
                   </div>
                 </div>
               </div>
