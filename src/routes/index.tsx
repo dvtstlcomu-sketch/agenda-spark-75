@@ -58,8 +58,8 @@ const TECHNICAL_SERVICES = [
   },
   {
     id: 5,
-    title: "Mapeamento Aéreo com Drone",
-    description: "Imagens aéreas de alta resolução e mapeamento técnico para grandes áreas.",
+    title: "Drone para Avaliação Imobiliária",
+    description: "Sobrevôo especializado para avaliações e mapeamento técnico de precisão.",
     icon: <Zap className="w-8 h-8 text-[var(--color-accent)]" />,
   },
   {
@@ -71,7 +71,7 @@ const TECHNICAL_SERVICES = [
   {
     id: 7,
     title: "Estruturação Imobiliária e Despachante",
-    description: "Regularização documental, projetos e consultoria completa para incorporação.",
+    description: "Regularização documental, estrutura planejada e consultoria especializada de despachante.",
     icon: <Layers className="w-8 h-8 text-[var(--color-accent)]" />,
   }
 ];
