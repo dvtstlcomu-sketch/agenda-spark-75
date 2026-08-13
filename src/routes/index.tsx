@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Puzzle, Droplets, Stethoscope, GraduationCap, ShieldCheck, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import giovanniFoto from "@/assets/giovanni-sanches.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,9 +41,9 @@ function Index() {
             </div>
           </div>
           <div className="relative hidden lg:block animate-in fade-in zoom-in duration-1000 delay-300">
-             {/* Placeholder for photo until restored */}
              <div className="aspect-[4/5] bg-navy/40 rounded-3xl border border-gold/20 shadow-lift overflow-hidden relative group">
-                
+                <img src={giovanniFoto.url} alt="Giovanni Sanches" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
              </div>
              <div className="absolute -bottom-6 -right-6 w-32 h-32 surface-gold rounded-2xl flex items-center justify-center text-gold-foreground font-display text-6xl shadow-lift">
                22
