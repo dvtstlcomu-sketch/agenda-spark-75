@@ -493,7 +493,7 @@ function Index() {
               </p>
             </div>
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-8 tracking-tighter uppercase leading-tight font-heading drop-shadow-2xl">
-              Realizando o seu maior sonho
+              "Tudo posso naquele que me fortalece"
             </h1>
             <p className="text-xl lg:text-2xl text-foreground/70 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-relaxed">
               A inteligência imobiliária em primeiro lugar. Especialistas em Perícia Judicial e Inteligência de alta precisão.
