@@ -832,7 +832,7 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-300 py-20 border-t border-slate-400">
+      <footer className="bg-navy py-24 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <div>
@@ -840,7 +840,7 @@ function Index() {
                 <div className="w-12 h-12 bg-[var(--color-navy)] flex items-center justify-center rounded-xl shadow-lg border border-[var(--color-accent)]/30">
                   <Building2 className="text-[var(--color-accent)] w-7 h-7" />
                 </div>
-                <span className="text-[var(--color-navy)] font-black text-xl tracking-tighter uppercase font-heading italic">TERRITORIAL IMÓVEIS</span>
+                <span className="text-foreground font-black text-2xl tracking-tighter uppercase font-heading italic">TERRITORIAL IMÓVEIS</span>
               </div>
               <p className="text-slate-600 mb-8 leading-relaxed font-medium">
                 Referência em intermediação imobiliária de alto padrão, loteamentos, topografia e perícia judicial.
@@ -859,12 +859,12 @@ function Index() {
             </div>
 
             <div>
-              <h4 className="text-[var(--color-navy)] font-bold text-xl mb-6 uppercase tracking-widest">Atendimento</h4>
+              <h4 className="text-foreground font-bold text-xl mb-6 uppercase tracking-widest font-heading italic">Atendimento</h4>
               <ul className="space-y-4">
                 <li className="flex items-start gap-4">
                   <Phone className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
                   <div className="text-slate-600 font-medium">
-                    <p className="font-bold text-[var(--color-navy)] text-xl">(11) 2405-0300</p>
+                    <p className="font-bold text-foreground text-xl">(11) 2405-0300</p>
                     <p className="text-sm">Telefone Principal</p>
                   </div>
                 </li>
@@ -878,7 +878,7 @@ function Index() {
                 <li className="flex items-start gap-4">
                   <UserCheck className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
                   <div className="text-gray-400 font-medium">
-                    <p className="font-bold text-[var(--color-navy)] text-lg">CRECI 38258J | 151545</p>
+                    <p className="font-bold text-foreground text-lg">CRECI 38258J | 151545</p>
                     <p className="text-sm uppercase tracking-widest font-black text-[var(--color-accent)]">Territorial Imóveis | Silvio Moura</p>
                   </div>
                 </li>
@@ -886,7 +886,7 @@ function Index() {
             </div>
 
             <div>
-              <h4 className="text-[var(--color-navy)] font-bold text-xl mb-6 uppercase tracking-widest">Localização</h4>
+              <h4 className="text-foreground font-bold text-xl mb-6 uppercase tracking-widest font-heading italic">Localização</h4>
               <div className="flex items-start gap-4">
                 <MapPin className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
                 <p className="text-slate-600 leading-relaxed font-medium">
