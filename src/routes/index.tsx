@@ -600,7 +600,7 @@ function Index() {
                         <span>{property.area}</span>
                       </div>
                     </div>
-                    <span className="text-lg font-black text-[var(--color-navy)]">
+                    <span className="text-lg font-black text-slate-900">
                       {property.price}
                     </span>
                   </div>
@@ -627,13 +627,13 @@ function Index() {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                    <CheckCircle2 className="text-[var(--color-gold)]" />
+                    <CheckCircle2 className="text-[var(--color-accent)]" />
                   </div>
                   <p className="text-lg">Análise técnica profissional</p>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                    <CheckCircle2 className="text-[var(--color-gold)]" />
+                    <CheckCircle2 className="text-[var(--color-accent)]" />
                   </div>
                   <p className="text-lg">Sigilo e segurança jurídica</p>
                 </div>
@@ -689,7 +689,7 @@ function Index() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-gold)] text-[var(--color-navy)] h-20 rounded-2xl font-black text-xl shadow-[0_20px_40px_-10px_rgba(212,175,55,0.4)] border-none cursor-pointer uppercase tracking-[0.3em] hover:scale-[1.02] active:scale-95 transition-all">
+                <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-20 rounded-2xl font-black text-xl shadow-xl border-none cursor-pointer uppercase tracking-[0.3em] hover:scale-[1.02] active:scale-95 transition-all">
                   Solicitar Perícia
                 </Button>
               </form>
