@@ -472,11 +472,11 @@ function Index() {
       <section id="inicio" className="relative pt-32 pb-24 lg:pt-56 lg:pb-40 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/fde3807a-ee85-40a3-9739-8bc42f0ac33a.jpg" 
-            alt="Fazenda Territorial" 
-            className="w-full h-full object-cover opacity-10"
+            src="https://images.unsplash.com/photo-1543232151-516d0061e39a?auto=format&fit=crop&q=80" 
+            alt="Guarulhos Cidade" 
+            className="w-full h-full object-cover opacity-[0.03]"
           />
-          <div className="absolute inset-0 bg-slate-900/5" />
+          <div className="absolute inset-0 bg-slate-900/2" />
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -726,14 +726,8 @@ function Index() {
                 <img 
                   src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/ab71f7bc-c10f-429e-b905-e3aa2e2c6943.jpg" 
                   alt="Background Silvio Moura"
-                  className="w-full h-full object-cover opacity-20 transition-all duration-1000 grayscale-[30%]"
+                  className="w-full h-full object-cover opacity-40 transition-all duration-1000 grayscale-[30%]"
                 />
-              </div>
-              <div className="relative z-10 p-8 w-full">
-                <div className="flex flex-col items-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-                  <p className="text-slate-900/80 text-[10px] uppercase font-black tracking-[0.4em] mb-1">CEO & Perito Judicial</p>
-                  <p className="text-slate-900 font-bold text-2xl font-heading tracking-tight">CRECI SP 151545</p>
-                </div>
               </div>
             </div>
 
@@ -748,9 +742,14 @@ function Index() {
                 <p className="border-l-4 border-[var(--color-accent)] pl-8 py-4 bg-white/40 backdrop-blur-sm rounded-r-[2rem]">
                   A <strong>Territorial Imóveis</strong> nasceu da necessidade de um mercado que exige precisão técnica e segurança jurídica absoluta. Não somos apenas uma imobiliária; somos um hub de soluções para quem busca valorização real e proteção patrimonial.
                 </p>
-                <p>
-                  Nossa história é forjada na perícia técnica e na gestão estratégica. Atuamos com maestria desde a administração de condomínios até levantamentos topográficos complexos, garantindo que cada metro quadrado seja tratado com o rigor que a lei e a inteligência territorial exigem.
-                </p>
+                <div className="space-y-4">
+                  <p>
+                    Nossa história é criada em anos de experiência atuando em perícia técnica e gestão estratégica. Atuamos com maestria desde a administração de condomínios até levantamentos topográficos complexos, garantindo que cada metro quadrado seja tratado com o rigor que a lei e a inteligência territorial exigem.
+                  </p>
+                  <p className="text-slate-900 font-bold text-xl font-heading tracking-tight mt-6">
+                    CRECI SP 151545
+                  </p>
+                </div>
                 <p>
                   A imobiliária sempre em primeiro lugar: nossa filosofia coloca a transparência e a inteligência de mercado à frente, transformando desafios territoriais em oportunidades de alto retorno.
                 </p>
