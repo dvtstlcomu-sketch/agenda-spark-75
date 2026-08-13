@@ -910,26 +910,34 @@ function Index() {
 
             <div>
               <h4 className="text-foreground font-bold text-xl mb-6 uppercase tracking-widest font-heading">Atendimento</h4>
-              <ul className="space-y-4">
+              <ul className="space-y-6">
                 <li className="flex items-start gap-4">
-                  <Phone className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
+                  <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
+                    <Phone size={24} />
+                  </div>
                   <div className="text-slate-400 font-medium">
-                    <p className="font-bold text-foreground text-2xl tracking-tighter">(11) 2405-0300</p>
-                    <p className="text-xs uppercase tracking-[0.2em] mt-1 font-black opacity-50">Telefone Principal</p>
+                    <p className="font-bold text-foreground text-2xl tracking-tighter leading-none">(11) 2405-0300</p>
+                    <p className="text-[10px] uppercase tracking-[0.2em] mt-2 font-black opacity-50">Fixo Comercial</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <MessageSquare className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
+                  <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
+                    <MessageSquare size={24} />
+                  </div>
                   <div className="text-slate-400 font-medium">
-                    <p className="font-bold text-foreground">(11) 96462-4491</p>
-                    <p className="text-sm">WhatsApp / Celular</p>
+                    <p className="font-bold text-foreground text-2xl tracking-tighter leading-none">(11) 96462-4491</p>
+                    <p className="text-[10px] uppercase tracking-[0.2em] mt-2 font-black opacity-50">WhatsApp / Celular</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <UserCheck className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
+                  <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
+                    <UserCheck size={24} />
+                  </div>
                   <div className="text-slate-400 font-medium">
-                    <p className="font-bold text-foreground text-lg">CRECI 38258-J | 151545-F</p>
-                    <p className="text-sm uppercase tracking-widest font-black text-[var(--color-accent)]">Territorial | Silvio Moura</p>
+                    <div className="flex flex-col gap-1">
+                      <p className="font-bold text-foreground text-sm uppercase tracking-wider">CRECI 38258-J (Imobiliária)</p>
+                      <p className="font-bold text-foreground text-sm uppercase tracking-wider">CRECI 151545-F (Perito)</p>
+                    </div>
                   </div>
                 </li>
               </ul>
