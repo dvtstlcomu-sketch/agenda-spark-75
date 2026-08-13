@@ -422,7 +422,7 @@ function Index() {
             alt="Fazenda Alto Padrão" 
             className="w-full h-full object-cover opacity-15"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-200 via-transparent to-slate-200" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -434,31 +434,31 @@ function Index() {
               Territorial <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-gold)]">Imóveis</span>
             </h1>
-            <p className="text-2xl lg:text-3xl text-[var(--color-navy)]/60 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-tight">
+            <p className="text-2xl lg:text-3xl text-foreground/60 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-tight italic">
               A imobiliária sempre em primeiro lugar. Especialistas em Perícia Judicial, Gestão e Engenharia Territorial.
             </p>
 
-            {/* Search Bar */}
-            <div className="bg-slate-300/50 backdrop-blur-md p-2 rounded-2xl border border-slate-400/30 flex flex-col md:flex-row gap-2">
-              <div className="flex-1 relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
-                <input type="text" placeholder="Busque por localização ou tipo..." className="w-full h-14 pl-12 pr-6 rounded-xl bg-transparent text-[var(--color-navy)] border-none focus:ring-1 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-500" />
+            {/* Search Bar Premium */}
+            <div className="bg-white/5 backdrop-blur-2xl p-3 rounded-[2rem] border border-white/10 flex flex-col md:flex-row gap-3 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)]">
+              <div className="flex-1 relative group">
+                <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-[var(--color-accent)] transition-colors" size={20} />
+                <input type="text" placeholder="Localização ou tipo de imóvel..." className="w-full h-16 pl-16 pr-8 rounded-2xl bg-white/5 text-white border-none focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-gray-500 font-medium transition-all" />
               </div>
-              <select className="h-14 px-4 rounded-xl bg-slate-100 text-[var(--color-navy)] border border-slate-300 outline-none focus:border-[var(--color-accent)] transition-colors cursor-pointer">
-                <option className="bg-slate-100">Tipo de Imóvel</option>
-                <option className="bg-slate-100">Residencial</option>
-                <option className="bg-slate-100">Apartamento</option>
-                <option className="bg-slate-100">Comercial</option>
-                <option className="bg-slate-100">Terreno</option>
-              </select>
-              <select className="h-14 px-4 rounded-xl bg-slate-100 text-[var(--color-navy)] border border-slate-300 outline-none focus:border-[var(--color-accent)] transition-colors cursor-pointer">
-                <option className="bg-slate-100">Finalidade</option>
-                <option className="bg-slate-100">Compra</option>
-                <option className="bg-slate-100">Venda</option>
-                <option className="bg-slate-100">Locação</option>
-              </select>
-              <Button className="h-14 px-8 bg-[var(--color-navy)] text-white rounded-xl font-bold uppercase tracking-widest border-none">
-                Pesquisar
+              <div className="flex gap-3">
+                <select className="h-16 px-6 rounded-2xl bg-white/5 text-white border border-white/10 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-[160px]">
+                  <option className="bg-navy">Residencial</option>
+                  <option className="bg-navy">Apartamento</option>
+                  <option className="bg-navy">Comercial</option>
+                  <option className="bg-navy">Terreno</option>
+                </select>
+                <select className="h-16 px-6 rounded-2xl bg-white/5 text-white border border-white/10 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-[160px]">
+                  <option className="bg-navy">Compra</option>
+                  <option className="bg-navy">Venda</option>
+                  <option className="bg-navy">Locação</option>
+                </select>
+              </div>
+              <Button className="h-16 px-10 bg-[var(--color-accent)] text-[var(--color-navy)] rounded-2xl font-black uppercase tracking-[0.2em] border-none shadow-[0_10px_20px_-5px_var(--color-accent)] hover:scale-[1.02] transition-transform">
+                Consultar
               </Button>
             </div>
           </div>
@@ -466,20 +466,20 @@ function Index() {
       </section>
 
       {/* Technical Projects Section */}
-      <section id="projetos" className="py-24 bg-slate-100 border-y border-gray-200">
+      <section id="projetos" className="py-24 bg-navy border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Nossa Expertise</span>
-            <h2 className="text-4xl md:text-5xl font-black text-[var(--color-navy)] uppercase tracking-tighter">Soluções Imobiliárias Completas</h2>
+            <h2 className="text-5xl md:text-7xl font-bold text-foreground uppercase tracking-tighter font-heading italic">Excelência Territorial</h2>
           </div>
  
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {TECHNICAL_SERVICES.map((service) => (
-              <div key={service.id} className="group p-6 rounded-3xl bg-white border border-gray-200 hover:border-[var(--color-accent)]/50 transition-all duration-500 relative overflow-hidden shadow-sm hover:shadow-md">
-                <div className="mb-4 bg-slate-50 w-14 h-14 rounded-2xl flex items-center justify-center border border-gray-100 group-hover:border-[var(--color-accent)] transition-colors">
+              <div key={service.id} className="group p-8 rounded-[2rem] bg-white/5 border border-white/10 hover:border-[var(--color-accent)] transition-all duration-700 relative overflow-hidden shadow-2xl hover:-translate-y-2">
+                <div className="mb-6 bg-[var(--color-accent)]/10 w-16 h-16 rounded-2xl flex items-center justify-center border border-[var(--color-accent)]/20 group-hover:bg-[var(--color-accent)]/20 transition-all">
                   {service.icon}
                 </div>
-                <h3 className="text-lg font-bold text-[var(--color-navy)] mb-3 leading-tight group-hover:text-[var(--color-accent)] transition-colors">{service.title}</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight group-hover:text-[var(--color-accent)] transition-colors font-heading tracking-wide italic">{service.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{service.description}</p>
               </div>
             ))}
