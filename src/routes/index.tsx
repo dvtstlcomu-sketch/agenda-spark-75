@@ -657,8 +657,8 @@ function Index() {
       <section id="depoimentos" className="py-24 bg-[var(--color-navy)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-[var(--color-gold)] font-bold uppercase tracking-widest mb-4 block">Depoimentos</span>
-            <h2 className="text-4xl md:text-5xl font-bold">O Que Dizem Nossos Clientes</h2>
+            <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Testemunhos</span>
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">Vozes da Experiência</h2>
           </div>
 
             <div className="grid md:grid-cols-3 gap-8">
