@@ -347,7 +347,8 @@ function Index() {
             <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
               <a href="#inicio" className="hover:text-[var(--color-navy)] transition-colors">Início</a>
               <a href="#imoveis" className="hover:text-[var(--color-navy)] transition-colors">Imóveis</a>
-              <a href="#sobre" className="hover:text-[var(--color-navy)] transition-colors">Sobre</a>
+              <a href="#sobre" className="hover:text-[var(--color-navy)] transition-colors">Quem Somos</a>
+              <a href="#depoimentos" className="hover:text-[var(--color-navy)] transition-colors">Testemunhos</a>
             </div>
 
             <Button className="bg-[var(--color-navy)] text-white hover:bg-[var(--color-navy)]/90 rounded-full px-6">
