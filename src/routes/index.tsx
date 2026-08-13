@@ -725,7 +725,7 @@ function Index() {
               <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white group relative">
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent opacity-40 z-10" />
                 <img 
-                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/d76d3dc4-a525-482d-ad4c-1557ebf0b83b.jpg" 
+                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/96b9ae99-043e-427a-9081-ad1003492dd5.jpg" 
                   alt="Silvio Moura - CEO Territorial Imóveis"
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
