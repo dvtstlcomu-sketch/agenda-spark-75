@@ -24,7 +24,8 @@ import {
   Compass,
   Zap,
   Layers,
-  Activity
+  Activity,
+  Plus
 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -91,16 +92,16 @@ const PROPERTIES = [
   },
   {
     id: 2,
-    title: "Logística Territorial Pro",
-    type: "Industrial",
-    status: "Investimento",
-    price: "R$ 45.000.000",
-    location: "Guarulhos / Rodoanel",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80",
+    title: "Loteamento Santa Isabel",
+    type: "Loteamento / Gleba",
+    status: "Oportunidade",
+    price: "Sob Consulta",
+    location: "Santa Isabel - SP",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
     beds: 0,
-    baths: 12,
-    area: "12.000m²",
-    description: "Instalações modernas com pé-direito de 12m e docas automatizadas."
+    baths: 0,
+    area: "120.000m²",
+    description: "Excelente gleba para loteamento residencial ou industrial em Santa Isabel, com topografia favorável e acesso facilitado."
   },
   {
     id: 3,
@@ -551,7 +552,13 @@ function Index() {
               <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6 uppercase tracking-tighter font-heading">Curadoria Técnica</h2>
               <p className="text-slate-600 font-medium text-lg">Ativos imobiliários selecionados sob rigorosa análise pericial e potencial de valorização estratégica.</p>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-4">
+              <Button 
+                onClick={() => document.getElementById('anuncie')?.scrollIntoView({ behavior: 'smooth' })}
+                className="rounded-full bg-[var(--color-accent)] text-slate-900 hover:scale-105 transition-all px-8 font-black uppercase tracking-wider shadow-lg"
+              >
+                Incluir Imóvel <Plus size={18} className="ml-2" />
+              </Button>
               <Button variant="outline" className="rounded-full border-slate-200 text-slate-900 hover:bg-white/50 transition-colors bg-white/30 px-8">
                 Catálogo Completo <ArrowRight size={18} className="ml-2" />
               </Button>
