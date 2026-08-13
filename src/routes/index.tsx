@@ -78,42 +78,42 @@ const TECHNICAL_SERVICES = [
 const PROPERTIES = [
   {
     id: 1,
-    title: "Mansão Contemporânea Alphaville",
-    type: "Residencial",
-    status: "Venda",
-    price: "R$ 4.500.000",
-    location: "Alphaville, Barueri",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80",
-    beds: 5,
-    baths: 6,
-    area: "450m²",
-    description: "Projeto assinado com acabamentos em mármore e integração total."
-  },
-  {
-    id: 2,
-    title: "Cobertura Duplex Itaim Bibi",
-    type: "Apartamento",
-    status: "Locação",
-    price: "R$ 25.000/mês",
-    location: "Itaim Bibi, São Paulo",
-    image: "https://images.unsplash.com/photo-1600607687940-4e524cb35a36?auto=format&fit=crop&q=80",
-    beds: 3,
-    baths: 4,
-    area: "280m²",
-    description: "Vista panorâmica 360º para o skyline de São Paulo."
-  },
-  {
-    id: 3,
-    title: "Terreno Industrial Estratégico",
-    type: "Terreno",
-    status: "Venda",
+    title: "Gleba Estratégica para Loteamento",
+    type: "Terreno / Expansão",
+    status: "Venda Técnica",
     price: "Sob Consulta",
-    location: "Guarulhos, SP",
+    location: "Eixo Guarulhos-SP",
     image: "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
     beds: 0,
     baths: 0,
+    area: "85.000m²",
+    description: "Área com alto potencial de valorização, zoneamento favorável e análise pericial completa."
+  },
+  {
+    id: 2,
+    title: "Complexo Logístico Triple A",
+    type: "Industrial",
+    status: "Investimento",
+    price: "R$ 45.000.000",
+    location: "Guarulhos / Rodoanel",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80",
+    beds: 0,
+    baths: 12,
     area: "12.000m²",
-    description: "Localização privilegiada próximo ao Aeroporto Internacional."
+    description: "Instalações modernas com pé-direito de 12m e docas automatizadas."
+  },
+  {
+    id: 3,
+    title: "Residência de Autoridade Alphaville",
+    type: "Alto Padrão",
+    status: "Venda",
+    price: "R$ 6.800.000",
+    location: "Alphaville, Barueri",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80",
+    beds: 5,
+    baths: 7,
+    area: "650m²",
+    description: "Projeto arquitetônico premiado com automação total e segurança fortificada."
   },
   {
     id: 4,
