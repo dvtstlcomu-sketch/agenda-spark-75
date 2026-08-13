@@ -469,7 +469,7 @@ function Index() {
           <img 
             src="https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80" 
             alt="Fazenda Alto Padrão" 
-            className="w-full h-full object-cover opacity-10 grayscale hover:grayscale-0 transition-all duration-1000"
+            className="w-full h-full object-cover opacity-30 hover:opacity-50 transition-all duration-1000"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
         </div>
