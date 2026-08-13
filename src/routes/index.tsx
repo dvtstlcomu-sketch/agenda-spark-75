@@ -529,7 +529,7 @@ function Index() {
             <div className="mb-12 lg:mb-0">
               <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Consultoria Técnica</span>
               <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 uppercase tracking-tighter">Análise e Perícia Profissional</h2>
-              <p className="text-xl text-gray-400 mb-8 leading-relaxed font-medium">
+              <p className="text-xl text-slate-300 mb-8 leading-relaxed font-medium">
                 Deseja vender ou avaliar seu terreno/imóvel? Nossa equipe técnica realiza o levantamento completo com segurança jurídica.
               </p>
               <div className="space-y-6">
@@ -605,11 +605,11 @@ function Index() {
       </section>
 
       {/* Trajectory */}
-      <section id="sobre" className="py-24 bg-[var(--color-navy)]">
+      <section id="sobre" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
                 <img 
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80" 
                   alt="Silvio Moura - Perito Imobiliário"
