@@ -798,7 +798,7 @@ function Index() {
                     <img src={t.image} alt={t.author} className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <p className="font-bold text-[var(--color-navy)] text-lg">{t.author}</p>
+                    <p className="font-bold text-slate-900 text-lg">{t.author}</p>
                     <p className="text-[var(--color-accent)] text-sm font-medium">{t.role}</p>
                   </div>
                 </div>
