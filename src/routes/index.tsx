@@ -845,7 +845,7 @@ function Index() {
                   <ChevronDown className={cn("text-[var(--color-accent)] transition-transform duration-500", activeFaq === i && "rotate-180")} />
                 </button>
                 {activeFaq === i && (
-                  <div className="px-8 pb-8 pt-0 text-slate-300 border-t border-white/10 leading-relaxed font-medium italic animate-in fade-in slide-in-from-top-4 duration-500">
+                  <div className="px-8 pb-8 pt-0 text-slate-300 border-t border-white/10 leading-relaxed font-medium animate-in fade-in slide-in-from-top-4 duration-500">
                     {faq.a}
                   </div>
                 )}
