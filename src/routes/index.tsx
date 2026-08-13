@@ -751,7 +751,7 @@ function Index() {
                   </p>
                 </div>
                 <p>
-                  A imobiliária sempre em primeiro lugar: nossa filosofia coloca a transparência e a inteligência de mercado à frente, transformando desafios territoriais em oportunidades de alto retorno.
+                  O cliente em primeiro lugar: nossa filosofia coloca a transparência e a inteligência na frente, transformando desafios em futuras oportunidades de alto retorno.
                 </p>
               </div>
               
