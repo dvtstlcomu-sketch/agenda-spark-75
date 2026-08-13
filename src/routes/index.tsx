@@ -787,8 +787,8 @@ function Index() {
                 <li className="flex items-start gap-4">
                   <Phone className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
                   <div className="text-gray-400 font-medium">
-                    <p className="font-bold text-white">(11) 2407-6900</p>
-                    <p className="text-sm">Linha Fixa</p>
+                    <p className="font-bold text-white">(11) 2405-0300</p>
+                    <p className="text-sm">Telefone Principal</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -801,8 +801,8 @@ function Index() {
                 <li className="flex items-start gap-4">
                   <UserCheck className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
                   <div className="text-gray-400 font-medium">
-                    <p className="font-bold text-white">CRECI 15145 F</p>
-                    <p className="text-sm uppercase tracking-tighter">Silvio Moura - Perito</p>
+                    <p className="font-bold text-white">CRECI 38258J | 151545 F</p>
+                    <p className="text-sm uppercase tracking-tighter">Territorial Imóveis | Silvio Moura</p>
                   </div>
                 </li>
               </ul>
@@ -829,7 +829,7 @@ function Index() {
 
           <div className="pt-10 border-t border-gray-200 text-center">
             <p className="text-gray-400 text-sm">
-              © 2026 Territorial Imóveis - Silvio Moura CRECI 15145 F. Todos os direitos reservados.
+              © 2026 Territorial Imóveis - CRECI 38258J | Silvio Moura CRECI 151545 F. Todos os direitos reservados.
             </p>
           </div>
         </div>
