@@ -58,8 +58,8 @@ const TECHNICAL_SERVICES = [
   },
   {
     id: 5,
-    title: "Mapeamento Aéreo com Drone",
-    description: "Imagens aéreas de alta resolução e mapeamento técnico para grandes áreas.",
+    title: "Drone para Avaliação Imobiliária",
+    description: "Sobrevôo especializado para avaliações e mapeamento técnico de precisão.",
     icon: <Zap className="w-8 h-8 text-[var(--color-accent)]" />,
   },
   {
@@ -71,7 +71,7 @@ const TECHNICAL_SERVICES = [
   {
     id: 7,
     title: "Estruturação Imobiliária e Despachante",
-    description: "Regularização documental, projetos e consultoria completa para incorporação.",
+    description: "Regularização documental, estrutura planejada e consultoria especializada de despachante.",
     icon: <Layers className="w-8 h-8 text-[var(--color-accent)]" />,
   }
 ];
@@ -363,14 +363,14 @@ export const Route = createFileRoute("/")({
       }
     ],
     meta: [
-      { name: "description", content: "Liderança em Perícia Judicial e Inteligência Territorial em Guarulhos. Administração, Avaliação e Engenharia Técnica com excelência. CRECI 38258J | Silvio Moura CRECI 151545." },
+      { name: "description", content: "Liderança em Perícia Judicial e Inteligência Territorial em Guarulhos. Administração, Avaliação e Consultoria Técnica com excelência. CRECI 38258J | Silvio Moura CRECI 151545." },
       { property: "og:title", content: "Territorial Imóveis | Excelência em Inteligência Imobiliária" },
       { property: "og:description", content: "Especialistas em Perícia Judicial e Soluções Territoriais de Alto Padrão em Guarulhos e Região." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "keywords",
-        content: "perícia judicial guarulhos, avaliação imobiliária, topografia guarulhos, engenharia territorial, administração de imóveis alto padrão, silvio moura creci 151545"
+        content: "perícia judicial guarulhos, avaliação imobiliária, topografia guarulhos, inteligência territorial, administração de imóveis alto padrão, silvio moura creci 151545"
       }
     ],
     script: [
@@ -472,11 +472,11 @@ function Index() {
       <section id="inicio" className="relative pt-32 pb-24 lg:pt-56 lg:pb-40 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80" 
-            alt="Fazenda Alto Padrão" 
-            className="w-full h-full object-cover opacity-80"
+            src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/fde3807a-ee85-40a3-9739-8bc42f0ac33a.jpg" 
+            alt="Fazenda Territorial" 
+            className="w-full h-full object-cover opacity-10"
           />
-          <div className="absolute inset-0 bg-slate-900/20" />
+          <div className="absolute inset-0 bg-slate-900/5" />
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -494,7 +494,7 @@ function Index() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-gold)]">Imóveis</span>
             </h1>
             <p className="text-xl lg:text-2xl text-foreground/70 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-relaxed">
-              A inteligência imobiliária em primeiro lugar. Especialistas em Perícia Judicial e Engenharia Territorial de alta precisão.
+              A inteligência imobiliária em primeiro lugar. Especialistas em Perícia Judicial e Inteligência Territorial de alta precisão.
             </p>
 
             {/* Search Bar Premium */}
@@ -685,7 +685,7 @@ function Index() {
                     <select className="w-full h-16 px-6 rounded-2xl bg-white/10 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none">
                       <option className="bg-slate-900">Avaliação Judicial</option>
                       <option className="bg-slate-900">Usucapião / Regularização</option>
-                      <option className="bg-slate-900">Projetos de Engenharia</option>
+                      <option className="bg-slate-900">Projetos de Inteligência</option>
                       <option className="bg-slate-900">Venda Estratégica</option>
                     </select>
                   </div>
@@ -748,7 +748,7 @@ function Index() {
                   A <strong>Territorial Imóveis</strong> nasceu da necessidade de um mercado que exige precisão técnica e segurança jurídica absoluta. Não somos apenas uma imobiliária; somos um hub de soluções para quem busca valorização real e proteção patrimonial.
                 </p>
                 <p>
-                  Nossa história é forjada na perícia técnica e na gestão estratégica. Atuamos com maestria desde a administração de condomínios até levantamentos topográficos complexos, garantindo que cada metro quadrado seja tratado com o rigor que a lei e a engenharia exigem.
+                  Nossa história é forjada na perícia técnica e na gestão estratégica. Atuamos com maestria desde a administração de condomínios até levantamentos topográficos complexos, garantindo que cada metro quadrado seja tratado com o rigor que a lei e a inteligência territorial exigem.
                 </p>
                 <p>
                   A imobiliária sempre em primeiro lugar: nossa filosofia coloca a transparência e a inteligência de mercado à frente, transformando desafios territoriais em oportunidades de alto retorno.
@@ -768,7 +768,7 @@ function Index() {
                 <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity text-slate-900">
                    <Building2 size={80} />
                 </div>
-                <p className="text-slate-700 italic text-2xl font-medium mb-6 leading-relaxed relative z-10">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta, como topografia avançada e drones, à segurança jurídica de uma perícia especializada."</p>
+                <p className="text-slate-700 italic text-2xl font-medium mb-6 leading-relaxed relative z-10">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta, como topografia avançada e drones, à segurança jurídica de uma perícia especializada para avaliação imobiliária."</p>
                 <p className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm relative z-10">— Silvio Moura</p>
               </div>
             </div>
@@ -954,7 +954,7 @@ function Index() {
 
           <div className="pt-10 border-t border-white/5 text-center">
             <p className="text-slate-500 text-sm font-medium tracking-wide">
-              © 2026 Territorial Imóveis - CRECI 38258J | Silvio Moura CRECI 151545. Engenharia de Precisão & Segurança Jurídica.
+              © 2026 Territorial Imóveis - CRECI 38258J | Silvio Moura CRECI 151545. Inteligência de Precisão & Segurança Jurídica.
             </p>
           </div>
         </div>
