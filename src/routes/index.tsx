@@ -363,7 +363,7 @@ export const Route = createFileRoute("/")({
       }
     ],
     meta: [
-      { name: "description", content: "Liderança em Perícia Judicial e Inteligência Territorial em Guarulhos. Administração, Avaliação e Engenharia Técnica com excelência. CRECI 38258J | Silvio Moura CRECI 151545." },
+      { name: "description", content: "Liderança em Perícia Judicial e Inteligência Territorial em Guarulhos. Administração, Avaliação e Consultoria Técnica com excelência. CRECI 38258J | Silvio Moura CRECI 151545." },
       { property: "og:title", content: "Territorial Imóveis | Excelência em Inteligência Imobiliária" },
       { property: "og:description", content: "Especialistas em Perícia Judicial e Soluções Territoriais de Alto Padrão em Guarulhos e Região." },
       { property: "og:type", content: "website" },
