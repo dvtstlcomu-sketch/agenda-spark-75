@@ -692,10 +692,10 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-24 bg-[var(--color-navy)]">
+      <section id="faq" className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-white font-black text-4xl mb-4 uppercase tracking-tighter">Esclareça Suas Dúvidas</h2>
+            <h2 className="text-[var(--color-navy)] font-black text-4xl mb-4 uppercase tracking-tighter">Esclareça Suas Dúvidas</h2>
             <p className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm">Consultoria Especializada</p>
           </div>
 
@@ -714,16 +714,16 @@ function Index() {
                 a: "Basta utilizar a seção 'Anuncie Seu Imóvel', preencher os dados de contato e realizar o upload das fotos. Nossa equipe entrará em contato para agendar uma vistoria."
               }
             ].map((faq, i) => (
-              <div key={i} className="border border-white/10 rounded-2xl overflow-hidden bg-white/5">
+              <div key={i} className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm">
                 <button 
                   onClick={() => toggleFaq(i)}
-                  className="w-full flex items-center justify-between p-6 hover:bg-white/5 transition-colors text-left border-none cursor-pointer bg-transparent"
+                  className="w-full flex items-center justify-between p-6 hover:bg-slate-50 transition-colors text-left border-none cursor-pointer bg-transparent"
                 >
-                  <span className="text-lg font-bold text-white">{faq.q}</span>
+                  <span className="text-lg font-bold text-[var(--color-navy)]">{faq.q}</span>
                   <ChevronDown className={cn("text-[var(--color-accent)] transition-transform", activeFaq === i && "rotate-180")} />
                 </button>
                 {activeFaq === i && (
-                  <div className="p-6 text-gray-400 border-t border-white/10 leading-relaxed font-medium">
+                  <div className="p-6 text-gray-600 border-t border-gray-100 leading-relaxed font-medium">
                     {faq.a}
                   </div>
                 )}
@@ -740,7 +740,7 @@ function Index() {
             <div>
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-12 h-12 bg-[var(--color-accent)] flex items-center justify-center rounded-xl shadow-lg shadow-[var(--color-accent)]/20">
-                  <Building2 className="text-[var(--color-navy)] w-7 h-7" />
+                  <Building2 className="text-white w-7 h-7" />
                 </div>
                 <span className="text-white font-bold text-xl tracking-tight uppercase">TERRITORIAL IMÓVEIS</span>
               </div>
