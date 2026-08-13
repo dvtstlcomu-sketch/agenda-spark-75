@@ -373,7 +373,7 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-background text-foreground selection:bg-[var(--color-accent)] selection:text-white">
+    <div className="min-h-screen font-sans bg-slate-200 text-[var(--color-navy)] selection:bg-[var(--color-accent)] selection:text-white">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-slate-200/90 backdrop-blur-xl border-b border-gray-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
