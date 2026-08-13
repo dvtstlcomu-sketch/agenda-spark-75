@@ -871,7 +871,7 @@ function Index() {
                 <li className="flex items-start gap-4">
                   <MessageSquare className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
                   <div className="text-gray-400 font-medium">
-                    <p className="font-bold text-[var(--color-navy)]">(11) 96462-4491</p>
+                    <p className="font-bold text-foreground">(11) 96462-4491</p>
                     <p className="text-sm">WhatsApp / Celular</p>
                   </div>
                 </li>
