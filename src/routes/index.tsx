@@ -474,7 +474,8 @@ function Index() {
           <img 
             src="https://images.unsplash.com/photo-1543232151-516d0061e39a?auto=format&fit=crop&q=80" 
             alt="Guarulhos Cidade" 
-            className="w-full h-full object-cover opacity-[0.1]"
+            className="w-full h-full object-cover opacity-20"
+
 
           />
           <div className="absolute inset-0 bg-slate-900/2" />
@@ -707,7 +708,7 @@ function Index() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-20 rounded-2xl font-black text-xl shadow-xl border-none cursor-pointer uppercase tracking-[0.3em] hover:scale-[1.02] active:scale-95 transition-all">
+                <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-20 rounded-2xl font-black text-xl shadow-xl border-none cursor-pointer uppercase tracking-[0.3em] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center">
                   Solicitar Perícia
                 </Button>
               </form>
