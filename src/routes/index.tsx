@@ -97,7 +97,7 @@ const PROPERTIES = [
     status: "Oportunidade",
     price: "Sob Consulta",
     location: "Santa Isabel - SP",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80",
     beds: 0,
     baths: 0,
     area: "120.000m²",
@@ -474,9 +474,9 @@ function Index() {
           <img 
             src="https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80" 
             alt="Fazenda Alto Padrão" 
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-cover opacity-80"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-300/40 via-transparent to-slate-100/60" />
+          <div className="absolute inset-0 bg-slate-900/20" />
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -780,7 +780,7 @@ function Index() {
             <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading">Vozes da Experiência</h2>
           </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 text: "O Silvio Moura foi fundamental na venda da nossa propriedade em Alphaville. Sua análise técnica nos deu a segurança necessária para fechar um negócio complexo.",
@@ -799,6 +799,18 @@ function Index() {
                 author: "Helena Castro",
                 role: "Empresária",
                 image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150"
+              },
+              {
+                text: "Trabalho técnico impecável na regularização da nossa fazenda. Silvio é a maior autoridade que conhecemos em perícia territorial.",
+                author: "Ricardo Mendes",
+                role: "Investidor Agronegócio",
+                image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150"
+              },
+              {
+                text: "Gestão condominial de outro nível. A Territorial trouxe tecnologia e clareza para nossa administração.",
+                author: "Patrícia Lima",
+                role: "Síndica Profissional",
+                image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=150&h=150"
               }
             ].map((t, i) => (
               <div key={i} className="bg-white/60 backdrop-blur-md p-8 rounded-3xl border border-white/40 hover:border-[var(--color-accent)]/50 transition-all duration-500 hover:-translate-y-2 group shadow-xl">
