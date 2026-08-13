@@ -634,22 +634,19 @@ function Index() {
 
             <div className="order-1 lg:order-2 mb-16 lg:mb-0">
               <span className="text-[var(--color-gold)] font-bold uppercase tracking-widest mb-4 block">Nossa Trajetória</span>
-              <h2 className="text-4xl lg:text-5xl font-bold text-[var(--color-navy)] mb-8">Silvio Moura: Tradição e Excelência</h2>
-              <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+              <h2 className="text-4xl lg:text-5xl font-black text-white mb-8 uppercase tracking-tighter">Silvio Moura: Tradição e Excelência</h2>
+              <div className="space-y-6 text-gray-400 text-lg leading-relaxed font-medium">
                 <p>
                   A história de Silvio Moura no mercado imobiliário é marcada por uma busca incessante pela perfeição técnica e ética profissional. Com o CRECI 15145 F, Silvio consolidou-se como um dos peritos mais respeitados da região, unindo o conhecimento profundo da legislação territorial à paixão por realizar sonhos através de imóveis exclusivos.
                 </p>
                 <p>
                   Ao longo de décadas, Silvio transformou a Territorial Imóveis em um hub de soluções sofisticadas, onde cada terreno é analisado com precisão cirúrgica e cada mansão é selecionada por seu design e valor intrínseco. Sua expertise como Perito Judicial traz uma camada de segurança que poucos no mercado podem oferecer.
                 </p>
-                <p>
-                  Mais do que vender propriedades, Silvio Moura constrói relacionamentos baseados na confiança absoluta, garantindo que cada investimento seja sólido e cada transação, impecável.
-                </p>
               </div>
               
-              <div className="mt-10 p-8 bg-white shadow-xl shadow-slate-200/50 rounded-2xl border-l-4 border-[var(--color-gold)]">
-                <p className="text-[var(--color-navy)] italic text-xl font-medium mb-4">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta, como topografia avançada e drones, à segurança jurídica de uma perícia especializada."</p>
-                <p className="text-[var(--color-gold)] font-bold uppercase tracking-widest text-sm">— Silvio Moura</p>
+              <div className="mt-10 p-8 bg-white/5 border border-white/10 rounded-2xl border-l-4 border-[var(--color-accent)]">
+                <p className="text-white italic text-xl font-medium mb-4">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta, como topografia avançada e drones, à segurança jurídica de uma perícia especializada."</p>
+                <p className="text-[var(--color-accent)] font-bold uppercase tracking-widest text-sm">— Silvio Moura</p>
               </div>
             </div>
           </div>
