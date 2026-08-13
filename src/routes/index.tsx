@@ -515,21 +515,21 @@ function Index() {
       </section>
 
       {/* Technical Projects Section */}
-      <section id="projetos" className="py-24 bg-navy border-y border-white/5">
+      <section id="projetos" className="py-32 bg-navy border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Nossa Expertise</span>
-            <h2 className="text-5xl md:text-7xl font-bold text-foreground uppercase tracking-tighter font-heading italic">Excelência Territorial</h2>
+          <div className="text-center mb-24">
+            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Nossa Expertise</span>
+            <h2 className="text-6xl md:text-[5.5rem] font-bold text-foreground uppercase tracking-tighter font-heading italic leading-none">Excelência Territorial</h2>
           </div>
  
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {TECHNICAL_SERVICES.map((service) => (
-              <div key={service.id} className="group p-8 rounded-[2rem] bg-white/5 border border-white/10 hover:border-[var(--color-accent)] transition-all duration-700 relative overflow-hidden shadow-2xl hover:-translate-y-2">
-                <div className="mb-6 bg-[var(--color-accent)]/10 w-16 h-16 rounded-2xl flex items-center justify-center border border-[var(--color-accent)]/20 group-hover:bg-[var(--color-accent)]/20 transition-all">
+              <div key={service.id} className="group p-10 rounded-[2.5rem] bg-white/5 border border-white/10 hover:border-[var(--color-accent)] transition-all duration-700 relative overflow-hidden shadow-2xl hover:-translate-y-3 flex flex-col items-center text-center">
+                <div className="mb-8 bg-[var(--color-accent)]/10 w-20 h-20 rounded-[1.5rem] flex items-center justify-center border border-[var(--color-accent)]/20 group-hover:bg-[var(--color-accent)]/20 transition-all duration-500 scale-100 group-hover:scale-110">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight group-hover:text-[var(--color-accent)] transition-colors font-heading tracking-wide italic">{service.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{service.description}</p>
+                <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight group-hover:text-[var(--color-accent)] transition-colors font-heading tracking-tight italic">{service.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed font-medium">{service.description}</p>
               </div>
             ))}
           </div>
@@ -553,13 +553,13 @@ function Index() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {PROPERTIES.map((property) => (
+            {PROPERTIES.slice(0, 6).map((property) => (
               <div key={property.id} className="group bg-white/5 rounded-[2.5rem] overflow-hidden border border-white/10 hover:border-[var(--color-accent)] transition-all duration-700 shadow-2xl hover:-translate-y-3">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
                     src={property.image} 
                     alt={property.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
                   <div className="absolute top-4 left-4 flex gap-2">
                     <span className="bg-[var(--color-navy)] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
