@@ -383,50 +383,75 @@ function Index() {
         </div>
       </section>
 
-      {/* Projects & Solutions */}
-      <section id="projetos" className="py-24 bg-gray-50">
+      {/* Property Showcase */}
+      <section id="imoveis" className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-[var(--color-gold)] font-bold uppercase tracking-[0.2em] mb-4">Projetos & Soluções Territoriais</h2>
-            <p className="text-3xl md:text-4xl font-bold text-[var(--color-navy)] mb-6">Tecnologia avançada e perícia técnica aplicadas à valorização do seu patrimônio.</p>
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div className="max-w-xl">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--color-navy)] mb-4 tracking-tight">Imóveis em Destaque</h2>
+              <p className="text-slate-600">Uma seleção exclusiva de propriedades disponíveis para venda e locação.</p>
+            </div>
+            <div className="flex gap-2">
+              <Button variant="outline" className="rounded-full border-slate-200 hover:bg-slate-50 transition-colors">
+                Ver todos os imóveis <ArrowRight size={18} className="ml-2" />
+              </Button>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all group">
-              <div className="w-16 h-16 bg-[var(--color-navy)]/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[var(--color-navy)] group-hover:text-white transition-colors">
-                <Map className="w-8 h-8" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {PROPERTIES.map((property) => (
+              <div key={property.id} className="group bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img 
+                    src={property.image} 
+                    alt={property.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute top-4 left-4 flex gap-2">
+                    <span className="bg-[var(--color-navy)] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
+                      {property.status}
+                    </span>
+                    <span className="bg-white/90 backdrop-blur-sm text-[var(--color-navy)] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/20">
+                      {property.type}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-1 text-slate-400 text-sm mb-2">
+                    <MapPin size={14} />
+                    <span>{property.location}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-[var(--color-navy)] mb-3 leading-tight group-hover:text-[var(--color-accent)] transition-colors">
+                    {property.title}
+                  </h3>
+                  <p className="text-slate-500 text-sm mb-6 line-clamp-2">{property.description}</p>
+                  
+                  <div className="flex items-center justify-between pt-6 border-t border-slate-100">
+                    <div className="flex gap-4 text-slate-600 text-sm font-medium">
+                      {property.beds > 0 && (
+                        <div className="flex items-center gap-1.5">
+                          <Bed size={16} className="text-slate-400" />
+                          <span>{property.beds}</span>
+                        </div>
+                      )}
+                      {property.baths > 0 && (
+                        <div className="flex items-center gap-1.5">
+                          <Bath size={16} className="text-slate-400" />
+                          <span>{property.baths}</span>
+                        </div>
+                      )}
+                      <div className="flex items-center gap-1.5">
+                        <Maximize size={16} className="text-slate-400" />
+                        <span>{property.area}</span>
+                      </div>
+                    </div>
+                    <span className="text-lg font-extrabold text-[var(--color-navy)]">
+                      {property.price}
+                    </span>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-[var(--color-navy)] mb-4">Topografia & Medição Territorial</h3>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                Executamos levantamentos topográficos planialtimétricos com extrema precisão. Essencial para delimitação exata de perímetros e projetos arquitetônicos.
-              </p>
-              <ul className="space-y-3">
-                {['Demarcação de divisas', 'Levantamento Planialtimétrico Cadastral', 'Suporte para Regularização Fundiária'].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-[var(--color-navy)] font-medium">
-                    <CheckCircle2 className="text-[var(--color-gold)] w-5 h-5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all group">
-              <div className="w-16 h-16 bg-[var(--color-navy)]/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[var(--color-navy)] group-hover:text-white transition-colors">
-                <Camera className="w-8 h-8" />
-              </div>
-              <h3 className="text-2xl font-bold text-[var(--color-navy)] mb-4">Imagens Aéreas de Alta Resolução</h3>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                Mapeamento aéreo detalhado via drone para visualização estratégica de grandes glebas, loteamentos e residências de alto padrão.
-              </p>
-              <ul className="space-y-3">
-                {['Inspeção de terrenos', 'Fotogrametria e ortomosaicos', 'Vídeos promocionais em 4K'].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-[var(--color-navy)] font-medium">
-                    <CheckCircle2 className="text-[var(--color-gold)] w-5 h-5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            ))}
           </div>
         </div>
       </section>
