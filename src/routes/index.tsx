@@ -433,7 +433,7 @@ function Index() {
                 <Building2 className="text-[var(--color-accent)] w-7 h-7" />
               </div>
               <div className="flex flex-col">
-                <span className="text-slate-900 font-black text-2xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL</span>
+                <span className="text-slate-900 font-black text-2xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL IMÓVEIS</span>
                 <span className="text-[var(--color-accent)] font-black text-[10px] uppercase tracking-[0.2em] leading-none mt-1">CRECI 38258-J</span>
               </div>
             </div>
@@ -493,7 +493,7 @@ function Index() {
               </p>
             </div>
             <h1 className="text-5xl lg:text-8xl font-bold text-foreground mb-8 tracking-tighter uppercase leading-[0.9] font-heading drop-shadow-2xl">
-              Territorial
+              Realizando Sonhos
             </h1>
             <p className="text-xl lg:text-2xl text-foreground/70 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-relaxed">
               A inteligência imobiliária em primeiro lugar. Especialistas em Perícia Judicial e Inteligência de alta precisão.
