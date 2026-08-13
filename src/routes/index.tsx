@@ -645,16 +645,16 @@ function Index() {
                 a: "Basta utilizar a seção 'Anuncie Seu Imóvel', preencher os dados de contato e realizar o upload das fotos. Nossa equipe entrará em contato para agendar uma vistoria."
               }
             ].map((faq, i) => (
-              <div key={i} className="border border-gray-100 rounded-2xl overflow-hidden">
+              <div key={i} className="border border-slate-100 rounded-2xl overflow-hidden">
                 <button 
                   onClick={() => toggleFaq(i)}
-                  className="w-full flex items-center justify-between p-6 bg-white hover:bg-gray-50 transition-colors text-left border-none cursor-pointer"
+                  className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors text-left border-none cursor-pointer"
                 >
                   <span className="text-lg font-bold text-[var(--color-navy)]">{faq.q}</span>
-                  <ChevronDown className={cn("text-[var(--color-gold)] transition-transform", activeFaq === i && "rotate-180")} />
+                  <ChevronDown className={cn("text-[var(--color-accent)] transition-transform", activeFaq === i && "rotate-180")} />
                 </button>
                 {activeFaq === i && (
-                  <div className="p-6 bg-gray-50 text-gray-600 border-t border-gray-100 leading-relaxed">
+                  <div className="p-6 bg-slate-50 text-slate-600 border-t border-slate-100 leading-relaxed">
                     {faq.a}
                   </div>
                 )}
