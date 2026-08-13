@@ -79,7 +79,7 @@ const TECHNICAL_SERVICES = [
 const PROPERTIES = [
   {
     id: 1,
-    title: "Gleba Territorial Prime",
+    title: "Gleba Prime",
     type: "Terreno / Expansão",
     status: "Venda Técnica",
     price: "Sob Consulta",
@@ -355,7 +355,7 @@ const PROPERTIES = [
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
-    title: "Territorial Imóveis | Perícia Judicial & Inteligência Territorial em Guarulhos",
+    title: "Imóveis | Perícia Judicial & Inteligência em Guarulhos",
     links: [
       {
         rel: "canonical",
@@ -363,14 +363,14 @@ export const Route = createFileRoute("/")({
       }
     ],
     meta: [
-      { name: "description", content: "Liderança em Perícia Judicial e Inteligência Territorial em Guarulhos. Administração, Avaliação e Consultoria Técnica com excelência. CRECI 38258J | Silvio Moura CRECI 151545." },
-      { property: "og:title", content: "Territorial Imóveis | Excelência em Inteligência Imobiliária" },
-      { property: "og:description", content: "Especialistas em Perícia Judicial e Soluções Territoriais de Alto Padrão em Guarulhos e Região." },
+      { name: "description", content: "Liderança em Perícia Judicial e Inteligência em Guarulhos. Administração, Avaliação e Consultoria Técnica com excelência. CRECI 38258J | Silvio Moura CRECI 151545." },
+      { property: "og:title", content: "Imóveis | Excelência em Inteligência Imobiliária" },
+      { property: "og:description", content: "Especialistas em Perícia Judicial e Soluções de Alto Padrão em Guarulhos e Região." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "keywords",
-        content: "perícia judicial guarulhos, avaliação imobiliária, topografia guarulhos, inteligência territorial, administração de imóveis alto padrão, silvio moura creci 151545"
+        content: "perícia judicial guarulhos, avaliação imobiliária, topografia guarulhos, inteligência, administração de imóveis alto padrão, silvio moura creci 151545"
       }
     ],
     script: [
@@ -433,7 +433,7 @@ function Index() {
                 <Building2 className="text-[var(--color-accent)] w-7 h-7" />
               </div>
               <div className="flex flex-col">
-                <span className="text-slate-900 font-black text-2xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL IMÓVEIS</span>
+                <span className="text-slate-900 font-black text-2xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">IMÓVEIS</span>
                 <span className="text-[var(--color-accent)] font-black text-[10px] uppercase tracking-[0.2em] leading-none mt-1">CRECI 38258-J</span>
               </div>
             </div>
@@ -493,10 +493,10 @@ function Index() {
               </p>
             </div>
             <h1 className="text-5xl lg:text-8xl font-bold text-foreground mb-8 tracking-tighter uppercase leading-[0.9] font-heading drop-shadow-2xl">
-              Territorial
+              Imóveis
             </h1>
             <p className="text-xl lg:text-2xl text-foreground/70 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-relaxed">
-              A inteligência imobiliária em primeiro lugar. Especialistas em Perícia Judicial e Inteligência Territorial de alta precisão.
+              A inteligência imobiliária em primeiro lugar. Especialistas em Perícia Judicial e Inteligência de alta precisão.
             </p>
 
             {/* Search Bar Premium */}
@@ -533,7 +533,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-24">
             <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Nossa Expertise</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight">Excelência Territorial (Área de Atuação)</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight">Excelência (Área de Atuação)</h2>
           </div>
  
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -929,7 +929,7 @@ function Index() {
                   <UserCheck className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
                   <div className="text-slate-400 font-medium">
                     <p className="font-bold text-foreground text-lg">CRECI 38258-J | 151545-F</p>
-                    <p className="text-sm uppercase tracking-widest font-black text-[var(--color-accent)]">Territorial | Silvio Moura</p>
+                    <p className="text-sm uppercase tracking-widest font-black text-[var(--color-accent)]">Imóveis | Silvio Moura</p>
                   </div>
                 </li>
               </ul>
