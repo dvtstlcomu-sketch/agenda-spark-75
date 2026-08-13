@@ -1,17 +1,464 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { 
+  Building2, 
+  Map, 
+  Camera, 
+  UserCheck, 
+  Phone, 
+  Mail, 
+  MapPin, 
+  MessageSquare,
+  ChevronDown,
+  Upload,
+  CheckCircle2,
+  Instagram,
+  Facebook,
+  Linkedin
+} from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    title: "Territorial Imóveis | Silvio Moura - Perito Imobiliário",
+    meta: [
+      { name: "description", content: "Excelência na Compra, Venda e Avaliação de Imóveis. Especialistas em intermediação imobiliária de alto e médio porte, topografia e perícia judicial." },
+      { property: "og:title", content: "Territorial Imóveis | Silvio Moura" },
+      { property: "og:description", content: "Excelência na Compra, Venda e Avaliação de Imóveis." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" }
+    ]
+  })
 });
 
 function Index() {
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setActiveFaq(activeFaq === index ? null : index);
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black text-white p-4">
-      <div className="text-center space-y-6 animate-pulse">
-        <h1 className="text-6xl font-bold tracking-tighter">GIOVANNI SANCHES</h1>
-        <div className="h-1 w-32 bg-yellow-500 mx-auto"></div>
-        <p className="text-xl uppercase tracking-widest opacity-50">Projeto Reiniciado</p>
-      </div>
+    <div className="min-h-screen font-sans">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 bg-[var(--color-navy)] flex items-center justify-center rounded-lg">
+                <Building2 className="text-[var(--color-gold)] w-6 h-6" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[var(--color-navy)] font-bold text-lg leading-none tracking-tight uppercase">TERRITORIAL</span>
+                <span className="text-gray-500 text-[10px] font-medium uppercase tracking-[0.2em]">Imóveis & Perícia</span>
+              </div>
+            </div>
+            
+            <div className="hidden md:flex items-center gap-8">
+              <a href="#inicio" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">Início</a>
+              <a href="#projetos" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">Projetos</a>
+              <a href="#anuncie" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">Anuncie</a>
+              <a href="#sobre" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">Sobre</a>
+              <a href="#depoimentos" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">Depoimentos</a>
+              <a href="#faq" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">FAQ</a>
+            </div>
+
+            <Button className="bg-[var(--color-navy)] text-white hover:bg-[var(--color-navy)]/90 rounded-full px-6">
+              Fale Conosco
+            </Button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="inicio" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+            <div className="mb-12 lg:mb-0">
+              <div className="inline-flex items-center gap-2 bg-[var(--color-gold)]/10 text-[var(--color-gold)] px-4 py-2 rounded-full mb-6">
+                <UserCheck size={18} />
+                <span className="text-sm font-semibold uppercase tracking-wider">CRECI 15145 F | Perito Imobiliário Registrado</span>
+              </div>
+              <h1 className="text-5xl lg:text-7xl font-bold text-[var(--color-navy)] mb-6 leading-[1.1]">
+                Excelência na Compra, Venda e Avaliação de Imóveis
+              </h1>
+              <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-xl">
+                Sob a liderança de Silvio Moura, a Territorial Imóveis é especializada em áreas de alto padrão, terrenos estratégicos e laudos periciais de precisão.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-[var(--color-navy)] text-white h-14 px-8 text-lg rounded-xl">
+                  Avalie seu Imóvel
+                </Button>
+                <Button size="lg" variant="outline" className="border-[var(--color-navy)] text-[var(--color-navy)] h-14 px-8 text-lg rounded-xl hover:bg-[var(--color-navy)]/5">
+                  Serviços Topográficos
+                </Button>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80" 
+                  alt="Modern Luxury Real Estate"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hidden md:block">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-[var(--color-gold)] rounded-full flex items-center justify-center text-white">
+                    <CheckCircle2 size={24} />
+                  </div>
+                  <div>
+                    <p className="text-[var(--color-navy)] font-bold text-lg leading-tight">Garantia Jurídica</p>
+                    <p className="text-gray-500 text-sm">Laudos técnicos oficiais</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects & Solutions */}
+      <section id="projetos" className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-[var(--color-gold)] font-bold uppercase tracking-[0.2em] mb-4">Projetos & Soluções Territoriais</h2>
+            <p className="text-3xl md:text-4xl font-bold text-[var(--color-navy)] mb-6">Tecnologia avançada e perícia técnica aplicadas à valorização do seu patrimônio.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all group">
+              <div className="w-16 h-16 bg-[var(--color-navy)]/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[var(--color-navy)] group-hover:text-white transition-colors">
+                <Map className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-[var(--color-navy)] mb-4">Topografia & Medição Territorial</h3>
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                Executamos levantamentos topográficos planialtimétricos com extrema precisão. Essencial para delimitação exata de perímetros e projetos arquitetônicos.
+              </p>
+              <ul className="space-y-3">
+                {['Demarcação de divisas', 'Levantamento Planialtimétrico Cadastral', 'Suporte para Regularização Fundiária'].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-[var(--color-navy)] font-medium">
+                    <CheckCircle2 className="text-[var(--color-gold)] w-5 h-5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all group">
+              <div className="w-16 h-16 bg-[var(--color-navy)]/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[var(--color-navy)] group-hover:text-white transition-colors">
+                <Camera className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-[var(--color-navy)] mb-4">Imagens Aéreas de Alta Resolução</h3>
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                Mapeamento aéreo detalhado via drone para visualização estratégica de grandes glebas, loteamentos e residências de alto padrão.
+              </p>
+              <ul className="space-y-3">
+                {['Inspeção de terrenos', 'Fotogrametria e ortomosaicos', 'Vídeos promocionais em 4K'].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-[var(--color-navy)] font-medium">
+                    <CheckCircle2 className="text-[var(--color-gold)] w-5 h-5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Client Area / Form */}
+      <section id="anuncie" className="py-24 bg-[var(--color-navy)] text-white overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+            <div className="mb-12 lg:mb-0">
+              <span className="text-[var(--color-gold)] font-bold uppercase tracking-widest mb-4 block">Área do Cliente</span>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6">Envie as Fotos e Dados do seu Imóvel</h2>
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                Deseja vender ou avaliar seu terreno/imóvel? Preencha o formulário e anexe as fotos. Nosso perito analisará seu material.
+              </p>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                    <CheckCircle2 className="text-[var(--color-gold)]" />
+                  </div>
+                  <p className="text-lg">Análise técnica profissional</p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                    <CheckCircle2 className="text-[var(--color-gold)]" />
+                  </div>
+                  <p className="text-lg">Sigilo e segurança jurídica</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-8 md:p-10 rounded-3xl shadow-2xl">
+              <form className="space-y-5">
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div className="space-y-2">
+                    <label className="text-[var(--color-navy)] font-semibold text-sm">Seu Nome Completo</label>
+                    <input type="text" className="w-full h-12 px-4 rounded-xl border border-gray-200 text-[var(--color-navy)] focus:ring-2 focus:ring-[var(--color-gold)] outline-none" placeholder="Ex: João Silva" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[var(--color-navy)] font-semibold text-sm">Telefone / WhatsApp</label>
+                    <input type="tel" className="w-full h-12 px-4 rounded-xl border border-gray-200 text-[var(--color-navy)] focus:ring-2 focus:ring-[var(--color-gold)] outline-none" placeholder="(11) 99999-9999" />
+                  </div>
+                </div>
+                
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div className="space-y-2">
+                    <label className="text-[var(--color-navy)] font-semibold text-sm">Tipo de Imóvel</label>
+                    <select className="w-full h-12 px-4 rounded-xl border border-gray-200 text-[var(--color-navy)] focus:ring-2 focus:ring-[var(--color-gold)] outline-none bg-white">
+                      <option>Terreno / Gleba</option>
+                      <option>Imóvel de Médio Porte</option>
+                      <option>Residência de Alto Padrão</option>
+                      <option>Comercial</option>
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[var(--color-navy)] font-semibold text-sm">Finalidade</label>
+                    <select className="w-full h-12 px-4 rounded-xl border border-gray-200 text-[var(--color-navy)] focus:ring-2 focus:ring-[var(--color-gold)] outline-none bg-white">
+                      <option>Quero Vender</option>
+                      <option>Quero Avaliação / Perícia</option>
+                      <option>Projetos / Topografia</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-[var(--color-navy)] font-semibold text-sm">Descrição / Localização</label>
+                  <textarea className="w-full p-4 rounded-xl border border-gray-200 text-[var(--color-navy)] focus:ring-2 focus:ring-[var(--color-gold)] outline-none min-h-[100px]" placeholder="Conte-nos mais sobre o imóvel..."></textarea>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-[var(--color-navy)] font-semibold text-sm">Fotos do Imóvel</label>
+                  <div className="border-2 border-dashed border-gray-200 rounded-xl p-8 text-center hover:border-[var(--color-gold)] transition-colors cursor-pointer bg-gray-50 group">
+                    <Upload className="mx-auto text-gray-400 mb-2 group-hover:text-[var(--color-gold)]" />
+                    <p className="text-[var(--color-navy)] font-medium">Clique aqui para carregar as fotos</p>
+                    <p className="text-gray-400 text-xs">PNG, JPG ou JPEG até 10MB</p>
+                  </div>
+                </div>
+
+                <Button className="w-full bg-[var(--color-gold)] hover:bg-[var(--color-gold)]/90 text-white h-14 rounded-xl font-bold text-lg shadow-lg border-none cursor-pointer">
+                  Enviar Informações ao Perito
+                </Button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trajectory */}
+      <section id="sobre" className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+            <div className="order-2 lg:order-1 relative">
+              <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80" 
+                  alt="Silvio Moura - Perito Imobiliário"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-10 -right-10 bg-[var(--color-navy)] p-8 rounded-3xl text-white hidden md:block">
+                <p className="text-[var(--color-gold)] font-bold text-3xl mb-1 tracking-tighter">CRECI</p>
+                <p className="text-4xl font-black mb-1">15145 F</p>
+                <p className="text-gray-400 text-sm uppercase font-bold tracking-widest">Silvio Moura - Perito</p>
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2 mb-16 lg:mb-0">
+              <span className="text-[var(--color-gold)] font-bold uppercase tracking-widest mb-4 block">Nossa Trajetória</span>
+              <h2 className="text-4xl lg:text-5xl font-bold text-[var(--color-navy)] mb-8">Uma História Pautada na Ética e Confiança</h2>
+              <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+                <p>
+                  A Territorial Imóveis nasceu do compromisso inarredável com a transparência e a precisão no mercado imobiliário. Fundada por Silvio Moura, Perito Imobiliário com sólida experiência técnica, a empresa tornou-se referência na intermediação de imóveis de médio e alto padrão.
+                </p>
+                <p>
+                  Compreendemos que negociar um terreno ou um imóvel de valor exige mais do que um anúncio: demanda análise de documentação, laudos precisos e mediação qualificada.
+                </p>
+              </div>
+              
+              <div className="mt-10 p-8 bg-gray-50 rounded-2xl border-l-4 border-[var(--color-gold)]">
+                <p className="text-[var(--color-navy)] italic text-xl font-medium mb-4">"Proporcionar segurança jurídica absoluta e soluções imobiliárias completas aos nossos clientes, transformando terrenos e imóveis em patrimônios consolidados."</p>
+                <p className="text-[var(--color-gold)] font-bold uppercase tracking-widest text-sm">— Nosso Ideal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section id="depoimentos" className="py-24 bg-[var(--color-navy)] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-[var(--color-gold)] font-bold uppercase tracking-widest mb-4 block">Depoimentos</span>
+            <h2 className="text-4xl md:text-5xl font-bold">O Que Dizem Nossos Clientes</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                text: "O trabalho do Silvio Moura na medição topográfica e venda da nossa gleba foi impecável. A perícia técnica evitou qualquer problema com documentação.",
+                author: "Dra. Renata Siqueira",
+                role: "Investidora de Imóveis"
+              },
+              {
+                text: "Precisava vender uma casa de alto padrão e fazer a avaliação correta de mercado. A Territorial Imóveis nos atendeu com sigilo e profissionalismo.",
+                author: "Carlos Eduardo Mendes",
+                role: "Empresário"
+              },
+              {
+                text: "As imagens aéreas feitas com os drones ajudaram a valorizar muito o nosso terreno no processo de venda. Atendimento excelente do Silvio.",
+                author: "Roberto Alencar",
+                role: "Proprietário Rural"
+              }
+            ].map((t, i) => (
+              <div key={i} className="bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
+                <MessageSquare className="text-[var(--color-gold)] mb-6 w-10 h-10" />
+                <p className="text-lg text-gray-300 italic mb-8">"{t.text}"</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-[var(--color-gold)] rounded-full flex items-center justify-center text-white font-bold">
+                    {t.author[0]}
+                  </div>
+                  <div>
+                    <p className="font-bold text-white">{t.author}</p>
+                    <p className="text-[var(--color-gold)] text-sm">{t.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-[var(--color-navy)] font-bold text-4xl mb-4">Esclareça Suas Dúvidas</h2>
+            <p className="text-[var(--color-gold)] font-bold uppercase tracking-widest">Perguntas Frequentes (FAQ)</p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "Como funciona o processo de Perícia e Avaliação Imobiliária?",
+                a: "A perícia realizada pelo Silvio Moura envolve vistorias técnicas, levantamento documental, análise de mercado e parecer fundamentado conforme as normas da ABNT, emitindo um laudo com valor legal."
+              },
+              {
+                q: "Qual a importância da medição topográfica ao comprar ou vender um terreno?",
+                a: "A topografia garante que as metragens reais do imóvel correspondem exatamente ao registrado na escritura pública, evitando litígios e garantindo aprovação de projetos."
+              },
+              {
+                q: "Como posso cadastrar meu imóvel para venda no site?",
+                a: "Basta utilizar a seção 'Anuncie Seu Imóvel', preencher os dados de contato e realizar o upload das fotos. Nossa equipe entrará em contato para agendar uma vistoria."
+              }
+            ].map((faq, i) => (
+              <div key={i} className="border border-gray-100 rounded-2xl overflow-hidden">
+                <button 
+                  onClick={() => toggleFaq(i)}
+                  className="w-full flex items-center justify-between p-6 bg-white hover:bg-gray-50 transition-colors text-left border-none cursor-pointer"
+                >
+                  <span className="text-lg font-bold text-[var(--color-navy)]">{faq.q}</span>
+                  <ChevronDown className={cn("text-[var(--color-gold)] transition-transform", activeFaq === i && "rotate-180")} />
+                </button>
+                {activeFaq === i && (
+                  <div className="p-6 bg-gray-50 text-gray-600 border-t border-gray-100 leading-relaxed">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-50 py-20 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-12 mb-16">
+            <div>
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-10 h-10 bg-[var(--color-navy)] flex items-center justify-center rounded-lg">
+                  <Building2 className="text-[var(--color-gold)] w-6 h-6" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[var(--color-navy)] font-bold text-lg leading-none tracking-tight uppercase">TERRITORIAL</span>
+                  <span className="text-gray-500 text-[10px] font-medium uppercase tracking-[0.2em]">Imóveis & Perícia</span>
+                </div>
+              </div>
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                Especialistas em intermediação imobiliária de alto e médio porte, loteamentos, topografia e perícia judicial.
+              </p>
+              <div className="flex gap-4">
+                <a href="#" className="w-10 h-10 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center text-[var(--color-navy)] hover:bg-[var(--color-navy)] hover:text-white transition-all">
+                  <Instagram size={20} />
+                </a>
+                <a href="#" className="w-10 h-10 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center text-[var(--color-navy)] hover:bg-[var(--color-navy)] hover:text-white transition-all">
+                  <Facebook size={20} />
+                </a>
+                <a href="#" className="w-10 h-10 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center text-[var(--color-navy)] hover:bg-[var(--color-navy)] hover:text-white transition-all">
+                  <Linkedin size={20} />
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-[var(--color-navy)] font-bold text-xl mb-6">Atendimento</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-4">
+                  <Phone className="text-[var(--color-gold)] shrink-0 mt-1" />
+                  <div className="text-gray-600">
+                    <p className="font-bold text-[var(--color-navy)]">(11) 2407-6900</p>
+                    <p className="text-sm">Linha Fixa</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <MessageSquare className="text-[var(--color-gold)] shrink-0 mt-1" />
+                  <div className="text-gray-600">
+                    <p className="font-bold text-[var(--color-navy)]">(11) 96462-4491</p>
+                    <p className="text-sm">WhatsApp / Celular</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <UserCheck className="text-[var(--color-gold)] shrink-0 mt-1" />
+                  <div className="text-gray-600">
+                    <p className="font-bold text-[var(--color-navy)]">CRECI 15145 F</p>
+                    <p className="text-sm">Silvio Moura - Perito</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-[var(--color-navy)] font-bold text-xl mb-6">Localização</h4>
+              <div className="flex items-start gap-4">
+                <MapPin className="text-[var(--color-gold)] shrink-0 mt-1" />
+                <p className="text-gray-600 leading-relaxed">
+                  Avenida Otávio Braga de Mesquita, Nº 3935<br />
+                  São Paulo / SP
+                </p>
+              </div>
+              <div className="mt-8">
+                <img 
+                  src="https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=600" 
+                  alt="Office Location Map"
+                  className="w-full h-32 object-cover rounded-xl grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-10 border-t border-gray-200 text-center">
+            <p className="text-gray-400 text-sm">
+              © 2026 Territorial Imóveis - Silvio Moura CRECI 15145 F. Todos os direitos reservados.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
