@@ -496,31 +496,31 @@ function Index() {
                     <MapPin size={14} />
                     <span>{property.location}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[var(--color-navy)] mb-3 leading-tight group-hover:text-[var(--color-accent)] transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-3 leading-tight group-hover:text-[var(--color-accent)] transition-colors">
                     {property.title}
                   </h3>
-                  <p className="text-slate-500 text-sm mb-6 line-clamp-2">{property.description}</p>
+                  <p className="text-gray-400 text-sm mb-6 line-clamp-2">{property.description}</p>
                   
-                  <div className="flex items-center justify-between pt-6 border-t border-slate-100">
-                    <div className="flex gap-4 text-slate-600 text-sm font-medium">
+                  <div className="flex items-center justify-between pt-6 border-t border-white/10">
+                    <div className="flex gap-4 text-gray-400 text-sm font-medium">
                       {property.beds > 0 && (
                         <div className="flex items-center gap-1.5">
-                          <Bed size={16} className="text-slate-400" />
+                          <Bed size={16} className="text-[var(--color-accent)]" />
                           <span>{property.beds}</span>
                         </div>
                       )}
                       {property.baths > 0 && (
                         <div className="flex items-center gap-1.5">
-                          <Bath size={16} className="text-slate-400" />
+                          <Bath size={16} className="text-[var(--color-accent)]" />
                           <span>{property.baths}</span>
                         </div>
                       )}
                       <div className="flex items-center gap-1.5">
-                        <Maximize size={16} className="text-slate-400" />
+                        <Maximize size={16} className="text-[var(--color-accent)]" />
                         <span>{property.area}</span>
                       </div>
                     </div>
-                    <span className="text-lg font-extrabold text-[var(--color-navy)]">
+                    <span className="text-lg font-black text-white">
                       {property.price}
                     </span>
                   </div>
