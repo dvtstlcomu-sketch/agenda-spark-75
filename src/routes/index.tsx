@@ -433,7 +433,7 @@ function Index() {
                 <Building2 className="text-[var(--color-accent)] w-7 h-7" />
               </div>
               <div className="flex flex-col">
-                <span className="text-slate-900 font-black text-2xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL</span>
+                <span className="text-slate-900 font-black text-2xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL IMÓVEIS</span>
                 <span className="text-[var(--color-accent)] font-black text-[10px] uppercase tracking-[0.2em] leading-none mt-1">CRECI 38258-J</span>
               </div>
             </div>
@@ -486,7 +486,7 @@ function Index() {
           <div className="text-center max-w-4xl mx-auto">
             <div className="mb-8 space-y-4">
               <span className="inline-block px-6 py-2 bg-slate-900/10 text-slate-900 font-black text-xs uppercase tracking-[0.4em] rounded-full border border-slate-900/20 shadow-sm">
-                Inteligência e Precisão Territorial
+                Inteligência e Precisão
               </span>
               <p className="text-slate-900 font-black uppercase tracking-[0.2em] text-sm drop-shadow-sm animate-pulse">
                 "Você sonha e nós realizamos"
