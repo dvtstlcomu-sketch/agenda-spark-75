@@ -497,8 +497,7 @@ function Index() {
                     <span>{property.location}</span>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 leading-tight group-hover:text-[var(--color-accent)] transition-colors">
-                    {property.title}
-                  </h3>
+                  <h3 className="text-xl font-bold text-white mb-3 leading-tight group-hover:text-[var(--color-accent)] transition-colors">
                   <p className="text-gray-400 text-sm mb-6 line-clamp-2">{property.description}</p>
                   
                   <div className="flex items-center justify-between pt-6 border-t border-white/10">
