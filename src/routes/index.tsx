@@ -686,35 +686,36 @@ function Index() {
       </section>
 
       {/* CEO & Story */}
-      <section id="sobre" className="py-32 bg-slate-100 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-200 -skew-x-12 translate-x-1/2 opacity-50 z-0" />
+      <section id="sobre" className="py-40 bg-background relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 -skew-x-12 translate-x-1/2 opacity-30 z-0" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="lg:grid lg:grid-cols-2 lg:gap-24 items-center">
             <div className="order-2 lg:order-1 relative">
-              <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] border-8 border-white group">
+              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.8)] border-8 border-white/5 group relative">
+                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-40 z-10" />
                 <img 
                   src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/d76d3dc4-a525-482d-ad4c-1557ebf0b83b.jpg" 
                   alt="Silvio Moura - CEO Territorial Imóveis"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
-              <div className="absolute -bottom-8 -right-8 bg-[var(--color-navy)] shadow-2xl p-10 rounded-3xl text-white hidden md:block border-4 border-[var(--color-accent)] animate-in fade-in slide-in-from-bottom-10 duration-1000">
-                <p className="text-[var(--color-accent)] font-black text-2xl mb-1 tracking-[0.2em] uppercase">CRECI SP</p>
-                <p className="text-6xl font-black mb-2 font-heading tracking-tighter italic">151545</p>
-                <p className="text-slate-400 text-xs uppercase font-bold tracking-[0.4em]">CEO & Perito Judicial</p>
+              <div className="absolute -bottom-8 -right-8 bg-navy shadow-2xl p-10 rounded-[2.5rem] text-white hidden md:block border-4 border-[var(--color-accent)]/30 backdrop-blur-2xl animate-in fade-in slide-in-from-bottom-10 duration-1000 z-20">
+                <p className="text-[var(--color-accent)] font-black text-2xl mb-1 tracking-[0.3em] uppercase drop-shadow-lg">CRECI SP</p>
+                <p className="text-7xl font-bold mb-2 font-heading tracking-tighter italic text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400">151545</p>
+                <p className="text-gray-500 text-xs uppercase font-black tracking-[0.5em]">CEO & Perito Judicial</p>
               </div>
             </div>
 
             <div className="order-1 lg:order-2 mb-16 lg:mb-0">
               <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Autoridade Territorial</span>
-              <h2 className="text-5xl lg:text-7xl font-black text-[var(--color-navy)] mb-10 uppercase tracking-tighter leading-[0.85] font-heading">
+              <h2 className="text-6xl lg:text-[6rem] font-bold text-foreground mb-12 uppercase tracking-tighter leading-[0.8] font-heading italic">
                 Inteligência, <br />
                 Segurança <br />
-                e Solidez
+                & Solidez
               </h2>
-              <div className="space-y-8 text-[var(--color-navy)] text-lg leading-relaxed font-medium">
-                <p className="border-l-4 border-[var(--color-accent)] pl-6 py-2 bg-slate-200/50 rounded-r-xl">
+              <div className="space-y-10 text-gray-400 text-xl leading-relaxed font-medium">
+                <p className="border-l-4 border-[var(--color-accent)] pl-8 py-4 bg-white/5 rounded-r-[2rem] italic">
                   A <strong>Territorial Imóveis</strong> nasceu da necessidade de um mercado que exige precisão técnica e segurança jurídica absoluta. Não somos apenas uma imobiliária; somos um hub de soluções para quem busca valorização real e proteção patrimonial.
                 </p>
                 <p>
@@ -728,15 +729,18 @@ function Index() {
               <div className="mt-8">
                 <Button 
                   onClick={() => window.open('https://wa.me/551124050300', '_blank')}
-                  className="bg-[var(--color-navy)] text-white hover:bg-[var(--color-accent)] hover:text-[var(--color-navy)] h-16 px-10 rounded-2xl font-black uppercase tracking-widest border-none transition-all duration-300 shadow-2xl scale-100 hover:scale-105"
+                  className="bg-white text-[var(--color-navy)] hover:bg-[var(--color-accent)] hover:text-[var(--color-navy)] h-20 px-14 rounded-2xl font-black uppercase tracking-[0.2em] border-none transition-all duration-500 shadow-[0_20px_40px_-10px_rgba(255,255,255,0.1)] scale-100 hover:scale-[1.05]"
                 >
                   Fale com o CEO & Perito
                 </Button>
               </div>
               
-              <div className="mt-10 p-8 bg-slate-50 border border-gray-100 rounded-2xl border-l-4 border-[var(--color-accent)]">
-                <p className="text-[var(--color-navy)] italic text-xl font-medium mb-4">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta, como topografia avançada e drones, à segurança jurídica de uma perícia especializada."</p>
-                <p className="text-[var(--color-accent)] font-bold uppercase tracking-widest text-sm">— Silvio Moura</p>
+              <div className="mt-16 p-10 bg-white/5 border border-white/10 rounded-[2.5rem] border-l-8 border-[var(--color-accent)] relative overflow-hidden group">
+                <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                   <Building2 size={80} />
+                </div>
+                <p className="text-gray-300 italic text-2xl font-medium mb-6 leading-relaxed relative z-10">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta, como topografia avançada e drones, à segurança jurídica de uma perícia especializada."</p>
+                <p className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm relative z-10">— Silvio Moura</p>
               </div>
             </div>
           </div>
@@ -744,11 +748,11 @@ function Index() {
       </section>
 
       {/* Testimonials */}
-      <section id="depoimentos" className="py-24 bg-slate-50 text-[var(--color-navy)]">
+      <section id="depoimentos" className="py-32 bg-background border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Testemunhos</span>
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">Vozes da Experiência</h2>
+          <div className="text-center mb-24">
+            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Credibilidade & Vozes</span>
+            <h2 className="text-5xl md:text-7xl font-bold text-foreground uppercase tracking-tighter font-heading italic">Vozes da Experiência</h2>
           </div>
 
             <div className="grid md:grid-cols-3 gap-8">
