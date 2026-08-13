@@ -557,55 +557,55 @@ function Index() {
               </div>
             </div>
 
-            <div className="bg-white p-8 md:p-10 rounded-3xl shadow-2xl">
+            <div className="bg-white/5 backdrop-blur-md p-8 md:p-10 rounded-3xl border border-white/10 shadow-2xl">
               <form className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div className="space-y-2">
-                    <label className="text-[var(--color-navy)] font-semibold text-sm">Seu Nome Completo</label>
-                    <input type="text" className="w-full h-12 px-4 rounded-xl border border-gray-200 text-[var(--color-navy)] focus:ring-2 focus:ring-[var(--color-gold)] outline-none" placeholder="Ex: João Silva" />
+                    <label className="text-gray-300 font-semibold text-sm">Seu Nome Completo</label>
+                    <input type="text" className="w-full h-12 px-4 rounded-xl bg-white/5 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none transition-all" placeholder="Ex: João Silva" />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[var(--color-navy)] font-semibold text-sm">Telefone / WhatsApp</label>
-                    <input type="tel" className="w-full h-12 px-4 rounded-xl border border-gray-200 text-[var(--color-navy)] focus:ring-2 focus:ring-[var(--color-gold)] outline-none" placeholder="(11) 99999-9999" />
+                    <label className="text-gray-300 font-semibold text-sm">Telefone / WhatsApp</label>
+                    <input type="tel" className="w-full h-12 px-4 rounded-xl bg-white/5 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none transition-all" placeholder="(11) 99999-9999" />
                   </div>
                 </div>
                 
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div className="space-y-2">
-                    <label className="text-[var(--color-navy)] font-semibold text-sm">Tipo de Imóvel</label>
-                    <select className="w-full h-12 px-4 rounded-xl border border-gray-200 text-[var(--color-navy)] focus:ring-2 focus:ring-[var(--color-gold)] outline-none bg-white">
-                      <option>Terreno / Gleba</option>
-                      <option>Imóvel de Médio Porte</option>
-                      <option>Residência de Alto Padrão</option>
-                      <option>Comercial</option>
+                    <label className="text-gray-300 font-semibold text-sm">Tipo de Imóvel</label>
+                    <select className="w-full h-12 px-4 rounded-xl bg-white/5 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer">
+                      <option className="bg-[var(--color-navy)]">Terreno / Gleba</option>
+                      <option className="bg-[var(--color-navy)]">Imóvel de Médio Porte</option>
+                      <option className="bg-[var(--color-navy)]">Residência de Alto Padrão</option>
+                      <option className="bg-[var(--color-navy)]">Comercial</option>
                     </select>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[var(--color-navy)] font-semibold text-sm">Finalidade</label>
-                    <select className="w-full h-12 px-4 rounded-xl border border-gray-200 text-[var(--color-navy)] focus:ring-2 focus:ring-[var(--color-gold)] outline-none bg-white">
-                      <option>Quero Vender</option>
-                      <option>Quero Avaliação / Perícia</option>
-                      <option>Projetos / Topografia</option>
+                    <label className="text-gray-300 font-semibold text-sm">Finalidade</label>
+                    <select className="w-full h-12 px-4 rounded-xl bg-white/5 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer">
+                      <option className="bg-[var(--color-navy)]">Quero Vender</option>
+                      <option className="bg-[var(--color-navy)]">Quero Avaliação / Perícia</option>
+                      <option className="bg-[var(--color-navy)]">Projetos / Topografia</option>
                     </select>
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[var(--color-navy)] font-semibold text-sm">Descrição / Localização</label>
-                  <textarea className="w-full p-4 rounded-xl border border-gray-200 text-[var(--color-navy)] focus:ring-2 focus:ring-[var(--color-gold)] outline-none min-h-[100px]" placeholder="Conte-nos mais sobre o imóvel..."></textarea>
+                  <label className="text-gray-300 font-semibold text-sm">Descrição / Localização</label>
+                  <textarea className="w-full p-4 rounded-xl bg-white/5 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none min-h-[100px] transition-all" placeholder="Conte-nos mais sobre o imóvel..."></textarea>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[var(--color-navy)] font-semibold text-sm">Fotos do Imóvel</label>
-                  <div className="border-2 border-dashed border-gray-200 rounded-xl p-8 text-center hover:border-[var(--color-gold)] transition-colors cursor-pointer bg-gray-50 group">
-                    <Upload className="mx-auto text-gray-400 mb-2 group-hover:text-[var(--color-gold)]" />
-                    <p className="text-[var(--color-navy)] font-medium">Clique aqui para carregar as fotos</p>
-                    <p className="text-gray-400 text-xs">PNG, JPG ou JPEG até 10MB</p>
+                  <label className="text-gray-300 font-semibold text-sm">Fotos do Imóvel</label>
+                  <div className="border-2 border-dashed border-white/10 rounded-xl p-8 text-center hover:border-[var(--color-accent)]/50 transition-colors cursor-pointer bg-white/5 group">
+                    <Upload className="mx-auto text-gray-500 mb-2 group-hover:text-[var(--color-accent)]" />
+                    <p className="text-white font-medium">Clique aqui para carregar as fotos</p>
+                    <p className="text-gray-500 text-xs">PNG, JPG ou JPEG até 10MB</p>
                   </div>
                 </div>
 
-                <Button className="w-full bg-[var(--color-gold)] hover:bg-[var(--color-gold)]/90 text-white h-14 rounded-xl font-bold text-lg shadow-lg border-none cursor-pointer">
-                  Enviar Informações ao Perito
+                <Button className="w-full bg-[var(--color-accent)] hover:bg-[var(--color-accent)]/90 text-white h-14 rounded-xl font-black text-lg shadow-lg border-none cursor-pointer uppercase tracking-widest">
+                  Enviar ao Perito
                 </Button>
               </form>
             </div>
