@@ -1,6 +1,6 @@
+import { Head, Scripts } from "@tanstack/react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createRootRouteWithContext, Outlet, ScrollRestoration } from "@tanstack/react-router";
-import { Meta, Scripts } from "@tanstack/react-start";
 import * as React from "react";
 import "@/styles.css";
 
@@ -21,7 +21,7 @@ function RootComponent() {
   return (
     <html lang="pt-BR">
       <head>
-        <Meta />
+        <Head />
       </head>
       <body>
         <Outlet />
