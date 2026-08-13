@@ -97,7 +97,7 @@ const PROPERTIES = [
     status: "Oportunidade",
     price: "Sob Consulta",
     location: "Santa Isabel - SP",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80",
     beds: 0,
     baths: 0,
     area: "120.000m²",
