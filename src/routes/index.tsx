@@ -431,19 +431,31 @@ function Index() {
               <div className="w-12 h-12 bg-[var(--color-navy)] flex items-center justify-center rounded-2xl shadow-xl shadow-navy/20">
                 <Building2 className="text-[var(--color-accent)] w-7 h-7" />
               </div>
-              <span className="text-[var(--color-navy)] font-black text-2xl tracking-tighter uppercase font-heading italic">TERRITORIAL IMÓVEIS</span>
+              <span className="text-[var(--color-navy)] font-black text-2xl tracking-tighter uppercase font-heading italic drop-shadow-sm">TERRITORIAL IMÓVEIS</span>
             </div>
             
-            <div className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest text-slate-600">
-              <a href="#inicio" className="hover:text-[var(--color-accent)] transition-colors">Início</a>
-              <a href="#projetos" className="hover:text-[var(--color-accent)] transition-colors">Projetos</a>
-              <a href="#imoveis" className="hover:text-[var(--color-accent)] transition-colors">Imóveis</a>
-              <a href="#sobre" className="hover:text-[var(--color-accent)] transition-colors">A Empresa</a>
+            <div className="hidden md:flex items-center gap-10 text-xs font-black uppercase tracking-[0.25em] text-[var(--color-navy)]/70">
+              <a href="#inicio" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
+                Início
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
+              </a>
+              <a href="#projetos" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
+                Projetos
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
+              </a>
+              <a href="#imoveis" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
+                Imóveis
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
+              </a>
+              <a href="#sobre" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
+                A Empresa
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
+              </a>
             </div>
 
             <Button 
               onClick={() => window.open('https://wa.me/551124050300', '_blank')}
-              className="bg-[var(--color-navy)] text-white hover:bg-[var(--color-accent)] hover:text-[var(--color-navy)] rounded-full px-8 h-12 border-none font-black transition-all duration-300 shadow-lg"
+              className="bg-[var(--color-navy)] text-white hover:bg-[var(--color-accent)] hover:text-[var(--color-navy)] rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
             >
               (11) 2405-0300
             </Button>
