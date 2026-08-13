@@ -536,10 +536,10 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
             <div className="mb-12 lg:mb-0">
-              <span className="text-[var(--color-gold)] font-bold uppercase tracking-widest mb-4 block">Área do Cliente</span>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">Envie as Fotos e Dados do seu Imóvel</h2>
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Deseja vender ou avaliar seu terreno/imóvel? Preencha o formulário e anexe as fotos. Nosso perito analisará seu material.
+              <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Consultoria Técnica</span>
+              <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 uppercase tracking-tighter">Análise e Perícia Profissional</h2>
+              <p className="text-xl text-gray-400 mb-8 leading-relaxed font-medium">
+                Deseja vender ou avaliar seu terreno/imóvel? Nossa equipe técnica realiza o levantamento completo com segurança jurídica.
               </p>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
@@ -614,15 +614,15 @@ function Index() {
       </section>
 
       {/* Trajectory */}
-      <section id="sobre" className="py-24">
+      <section id="sobre" className="py-24 bg-[var(--color-navy)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
-              <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
                 <img 
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80" 
                   alt="Silvio Moura - Perito Imobiliário"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
               </div>
               <div className="absolute -bottom-10 -right-10 bg-[var(--color-navy)] p-8 rounded-3xl text-white hidden md:block">
