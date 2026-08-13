@@ -413,25 +413,25 @@ function Index() {
             </p>
 
             {/* Search Bar */}
-            <div className="bg-white/5 backdrop-blur-md p-2 rounded-2xl border border-white/10 flex flex-col md:flex-row gap-2">
+            <div className="bg-slate-300/50 backdrop-blur-md p-2 rounded-2xl border border-slate-400/30 flex flex-col md:flex-row gap-2">
               <div className="flex-1 relative">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
-                <input type="text" placeholder="Busque por localização ou tipo..." className="w-full h-14 pl-12 pr-6 rounded-xl bg-transparent text-white border-none focus:ring-1 focus:ring-[var(--color-accent)] outline-none" />
+                <input type="text" placeholder="Busque por localização ou tipo..." className="w-full h-14 pl-12 pr-6 rounded-xl bg-transparent text-[var(--color-navy)] border-none focus:ring-1 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-500" />
               </div>
-              <select className="h-14 px-4 rounded-xl bg-white/5 text-gray-300 border border-white/10 outline-none focus:border-[var(--color-accent)] transition-colors cursor-pointer">
-                <option className="bg-[var(--color-navy)]">Tipo de Imóvel</option>
-                <option className="bg-[var(--color-navy)]">Residencial</option>
-                <option className="bg-[var(--color-navy)]">Apartamento</option>
-                <option className="bg-[var(--color-navy)]">Comercial</option>
-                <option className="bg-[var(--color-navy)]">Terreno</option>
+              <select className="h-14 px-4 rounded-xl bg-slate-100 text-[var(--color-navy)] border border-slate-300 outline-none focus:border-[var(--color-accent)] transition-colors cursor-pointer">
+                <option className="bg-slate-100">Tipo de Imóvel</option>
+                <option className="bg-slate-100">Residencial</option>
+                <option className="bg-slate-100">Apartamento</option>
+                <option className="bg-slate-100">Comercial</option>
+                <option className="bg-slate-100">Terreno</option>
               </select>
-              <select className="h-14 px-4 rounded-xl bg-white/5 text-gray-300 border border-white/10 outline-none focus:border-[var(--color-accent)] transition-colors cursor-pointer">
-                <option className="bg-[var(--color-navy)]">Finalidade</option>
-                <option className="bg-[var(--color-navy)]">Compra</option>
-                <option className="bg-[var(--color-navy)]">Venda</option>
-                <option className="bg-[var(--color-navy)]">Locação</option>
+              <select className="h-14 px-4 rounded-xl bg-slate-100 text-[var(--color-navy)] border border-slate-300 outline-none focus:border-[var(--color-accent)] transition-colors cursor-pointer">
+                <option className="bg-slate-100">Finalidade</option>
+                <option className="bg-slate-100">Compra</option>
+                <option className="bg-slate-100">Venda</option>
+                <option className="bg-slate-100">Locação</option>
               </select>
-              <Button className="h-14 px-8 bg-[var(--color-accent)] text-white rounded-xl font-bold uppercase tracking-widest border-none">
+              <Button className="h-14 px-8 bg-[var(--color-navy)] text-white rounded-xl font-bold uppercase tracking-widest border-none">
                 Pesquisar
               </Button>
             </div>
