@@ -748,7 +748,7 @@ function Index() {
                   A <strong>Territorial Imóveis</strong> nasceu da necessidade de um mercado que exige precisão técnica e segurança jurídica absoluta. Não somos apenas uma imobiliária; somos um hub de soluções para quem busca valorização real e proteção patrimonial.
                 </p>
                 <p>
-                  Nossa história é forjada na perícia técnica e na gestão estratégica. Atuamos com maestria desde a administração de condomínios até levantamentos topográficos complexos, garantindo que cada metro quadrado seja tratado com o rigor que a lei e a engenharia exigem.
+                  Nossa história é forjada na perícia técnica e na gestão estratégica. Atuamos com maestria desde a administração de condomínios até levantamentos topográficos complexos, garantindo que cada metro quadrado seja tratado com o rigor que a lei e a inteligência territorial exigem.
                 </p>
                 <p>
                   A imobiliária sempre em primeiro lugar: nossa filosofia coloca a transparência e a inteligência de mercado à frente, transformando desafios territoriais em oportunidades de alto retorno.
