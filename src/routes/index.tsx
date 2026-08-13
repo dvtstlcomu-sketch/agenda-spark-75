@@ -376,9 +376,9 @@ function Index() {
               <span className="text-white font-bold text-xl tracking-tight uppercase">TERRITORIAL</span>
             </div>
             
-            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+            <div className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest text-gray-400">
               <a href="#inicio" className="hover:text-[var(--color-accent)] transition-colors">Início</a>
-              <a href="#projetos" className="hover:text-[var(--color-accent)] transition-colors">Projetos Técnicos</a>
+              <a href="#projetos" className="hover:text-[var(--color-accent)] transition-colors">Projetos</a>
               <a href="#imoveis" className="hover:text-[var(--color-accent)] transition-colors">Imóveis</a>
               <a href="#sobre" className="hover:text-[var(--color-accent)] transition-colors">Quem Somos</a>
             </div>
