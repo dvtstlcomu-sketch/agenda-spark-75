@@ -475,13 +475,9 @@ function Index() {
       <section id="inicio" className="relative pt-32 pb-24 lg:pt-56 lg:pb-40 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80" 
-            alt="Skyline da Cidade" 
-            className="w-full h-full object-cover opacity-20"
-
-
-
-
+            src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/c14a5ede-f10c-463a-84f2-86a49ec04d10.jpg" 
+            alt="Skyline da Cidade de Guarulhos" 
+            className="w-full h-full object-cover opacity-20 transition-all duration-700" 
           />
           <div className="absolute inset-0 bg-slate-900/2" />
         </div>
