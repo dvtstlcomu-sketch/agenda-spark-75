@@ -695,22 +695,22 @@ function Index() {
               <h4 className="text-[var(--color-navy)] font-bold text-xl mb-6">Atendimento</h4>
               <ul className="space-y-4">
                 <li className="flex items-start gap-4">
-                  <Phone className="text-[var(--color-gold)] shrink-0 mt-1" />
-                  <div className="text-gray-600">
+                  <Phone className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
+                  <div className="text-slate-600">
                     <p className="font-bold text-[var(--color-navy)]">(11) 2407-6900</p>
                     <p className="text-sm">Linha Fixa</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <MessageSquare className="text-[var(--color-gold)] shrink-0 mt-1" />
-                  <div className="text-gray-600">
+                  <MessageSquare className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
+                  <div className="text-slate-600">
                     <p className="font-bold text-[var(--color-navy)]">(11) 96462-4491</p>
                     <p className="text-sm">WhatsApp / Celular</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <UserCheck className="text-[var(--color-gold)] shrink-0 mt-1" />
-                  <div className="text-gray-600">
+                  <UserCheck className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
+                  <div className="text-slate-600">
                     <p className="font-bold text-[var(--color-navy)]">CRECI 15145 F</p>
                     <p className="text-sm">Silvio Moura - Perito</p>
                   </div>
@@ -721,7 +721,12 @@ function Index() {
             <div>
               <h4 className="text-[var(--color-navy)] font-bold text-xl mb-6">Localização</h4>
               <div className="flex items-start gap-4">
-                <MapPin className="text-[var(--color-gold)] shrink-0 mt-1" />
+                <MapPin className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
+                <p className="text-slate-600 leading-relaxed">
+                  Avenida Otávio Braga de Mesquita, Nº 3935<br />
+                  Guarulhos / SP
+                </p>
+              </div>
                 <p className="text-gray-600 leading-relaxed">
                   Avenida Otávio Braga de Mesquita, Nº 3935<br />
                   São Paulo / SP
