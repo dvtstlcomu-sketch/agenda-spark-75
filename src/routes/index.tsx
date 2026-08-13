@@ -440,28 +440,21 @@ function Index() {
       </section>
 
       {/* Technical Projects Section */}
-      <section id="projetos" className="py-24 bg-[var(--color-navy)] border-y border-white/5">
+      <section id="projetos" className="py-24 bg-slate-100 border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Engenharia e Precisão</span>
-            <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter">Projetos de Engenharia Territorial</h2>
+            <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Nossa Expertise</span>
+            <h2 className="text-4xl md:text-5xl font-black text-[var(--color-navy)] uppercase tracking-tighter">Soluções Imobiliárias Completas</h2>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {TECHNICAL_PROJECTS.map((project) => (
-              <div key={project.id} className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-[var(--color-accent)]/50 transition-all duration-500 relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <Activity className="w-24 h-24 text-white" />
+ 
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {TECHNICAL_SERVICES.map((service) => (
+              <div key={service.id} className="group p-6 rounded-3xl bg-white border border-gray-200 hover:border-[var(--color-accent)]/50 transition-all duration-500 relative overflow-hidden shadow-sm hover:shadow-md">
+                <div className="mb-4 bg-slate-50 w-14 h-14 rounded-2xl flex items-center justify-center border border-gray-100 group-hover:border-[var(--color-accent)] transition-colors">
+                  {service.icon}
                 </div>
-                <div className="mb-6 bg-[var(--color-navy)] w-16 h-16 rounded-2xl flex items-center justify-center border border-white/10 group-hover:border-[var(--color-accent)] transition-colors">
-                  {project.icon}
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4 leading-tight group-hover:text-[var(--color-accent)] transition-colors">{project.title}</h3>
-                <p className="text-gray-400 text-sm mb-6 leading-relaxed">{project.description}</p>
-                <div className="flex items-center justify-between pt-6 border-t border-white/5">
-                  <span className="text-[var(--color-accent)] font-bold text-xs uppercase tracking-widest">{project.category}</span>
-                  <span className="text-white font-mono text-xs">{project.stats}</span>
-                </div>
+                <h3 className="text-lg font-bold text-[var(--color-navy)] mb-3 leading-tight group-hover:text-[var(--color-accent)] transition-colors">{service.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
@@ -636,22 +629,31 @@ function Index() {
                 />
               </div>
               <div className="absolute -bottom-10 -right-10 bg-white shadow-2xl p-8 rounded-3xl text-[var(--color-navy)] hidden md:block border border-gray-100">
-                <p className="text-[var(--color-accent)] font-black text-3xl mb-1 tracking-tighter">CRECI</p>
-                <p className="text-5xl font-black mb-1">15145 F</p>
-                <p className="text-gray-500 text-xs uppercase font-bold tracking-[0.3em]">Perito Judicial</p>
+                <p className="text-[var(--color-accent)] font-black text-3xl mb-1 tracking-tighter">CRECI SP</p>
+                <p className="text-5xl font-black mb-1">151545 F</p>
+                <p className="text-gray-500 text-xs uppercase font-bold tracking-[0.3em]">CEO & Perito Judicial</p>
               </div>
             </div>
 
             <div className="order-1 lg:order-2 mb-16 lg:mb-0">
               <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Nossa Trajetória</span>
-              <h2 className="text-4xl lg:text-5xl font-black text-[var(--color-navy)] mb-8 uppercase tracking-tighter">Silvio Moura: Tradição e Excelência</h2>
-              <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-medium">
+              <h2 className="text-4xl lg:text-5xl font-black text-[var(--color-navy)] mb-8 uppercase tracking-tighter">Territorial Imóveis: Autoridade e Confiança</h2>
+              <div className="space-y-6 text-[var(--color-navy)] text-lg leading-relaxed font-medium">
                 <p>
-                  A história de Silvio Moura no mercado imobiliário é marcada por uma busca incessante pela perfeição técnica e ética profissional. Com o CRECI 15145 F, Silvio consolidou-se como um dos peritos mais respeitados da região, unindo o conhecimento profundo da legislação territorial à paixão por realizar sonhos através de imóveis exclusivos.
+                  Fundada sobre os pilares da ética e da precisão técnica, a Territorial Imóveis é mais do que uma imobiliária; somos um centro de inteligência territorial. Nossa história é construída através da viabilização de grandes projetos e da segurança jurídica proporcionada a cada cliente.
                 </p>
                 <p>
-                  Ao longo de décadas, Silvio transformou a Territorial Imóveis em um hub de soluções sofisticadas, onde cada terreno é analisado com precisão cirúrgica e cada mansão é selecionada por seu design e valor intrínseco. Sua expertise como Perito Judicial traz uma camada de segurança que poucos no mercado podem oferecer.
+                  Sob a liderança de Silvio Moura (CRECI 151545 F), especialista em Perícia Judicial e Engenharia Territorial, transformamos o mercado imobiliário em Guarulhos e região. Nossa atuação abrange desde a administração rigorosa de condomínios até a perícia técnica em processos judiciais complexos, como usucapião e avaliações de patrimônio.
                 </p>
+                <p>
+                  A imobiliária sempre em primeiro lugar: focamos na valorização do seu patrimônio com o suporte de tecnologias avançadas de mapeamento e uma equipe jurídica especializada.
+                </p>
+              </div>
+              
+              <div className="mt-8">
+                <Button className="bg-[var(--color-navy)] text-white hover:bg-[var(--color-navy)]/90 h-14 px-8 rounded-xl font-bold uppercase tracking-widest border-none">
+                  Conheça Silvio Moura (CEO)
+                </Button>
               </div>
               
               <div className="mt-10 p-8 bg-slate-50 border border-gray-100 rounded-2xl border-l-4 border-[var(--color-accent)]">
