@@ -508,6 +508,7 @@ function Index() {
                   <option>Compra</option>
                   <option>Venda</option>
                   <option>Locação</option>
+                  <option>Permuta</option>
                 </select>
               </div>
               <Button className="h-16 px-10 bg-[var(--color-accent)] text-[var(--color-navy)] rounded-2xl font-black uppercase tracking-[0.2em] border-none shadow-[0_10px_20px_-5px_var(--color-accent)] hover:scale-[1.02] transition-transform">
