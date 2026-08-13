@@ -410,7 +410,7 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-transparent text-foreground selection:bg-[var(--color-accent)] selection:text-[var(--color-navy)]">
+    <div className="min-h-screen font-sans bg-slate-200/50 bg-gradient-to-b from-slate-300/80 via-slate-100 to-slate-300/80 text-foreground selection:bg-[var(--color-accent)] selection:text-[var(--color-navy)]">
       {/* WhatsApp Floating Button */}
       <a 
         href="https://wa.me/551124050300" 
@@ -451,6 +451,10 @@ function Index() {
                 A Empresa
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
               </a>
+              <a href="#anuncie" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
+                Anunciar
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
+              </a>
             </div>
 
             <Button 
@@ -469,7 +473,7 @@ function Index() {
           <img 
             src="https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80" 
             alt="Fazenda Alto Padrão" 
-            className="w-full h-full object-cover opacity-10 grayscale hover:grayscale-0 transition-all duration-1000"
+            className="w-full h-full object-cover opacity-30 hover:opacity-50 transition-all duration-1000"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
         </div>
@@ -488,13 +492,13 @@ function Index() {
             </p>
 
             {/* Search Bar Premium */}
-            <div className="bg-white/40 backdrop-blur-xl p-3 rounded-[2rem] border border-white/20 flex flex-col md:flex-row gap-3 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)]">
+            <div className="bg-white/60 backdrop-blur-2xl p-4 rounded-[2.5rem] border border-white/40 flex flex-col md:flex-row gap-3 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
               <div className="flex-1 relative group">
                 <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[var(--color-accent)] transition-colors" size={20} />
-                <input type="text" placeholder="Localização ou tipo de imóvel..." className="w-full h-16 pl-16 pr-8 rounded-2xl bg-white/50 text-slate-900 border-none focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium transition-all" />
+                <input type="text" placeholder="Pesquisar por localização, tipo ou código..." className="w-full h-16 pl-16 pr-8 rounded-2xl bg-white/70 text-slate-900 border-none focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium transition-all shadow-inner" />
               </div>
               <div className="flex gap-3">
-                <select className="h-16 px-6 rounded-2xl bg-white/50 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-[160px]">
+                <select className="h-16 px-6 rounded-2xl bg-white/70 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-[160px] shadow-sm">
                   <option>Residencial</option>
                   <option>Apartamento</option>
                   <option>Comercial</option>
@@ -504,6 +508,7 @@ function Index() {
                   <option>Compra</option>
                   <option>Venda</option>
                   <option>Locação</option>
+                  <option>Permuta</option>
                 </select>
               </div>
               <Button className="h-16 px-10 bg-[var(--color-accent)] text-[var(--color-navy)] rounded-2xl font-black uppercase tracking-[0.2em] border-none shadow-[0_10px_20px_-5px_var(--color-accent)] hover:scale-[1.02] transition-transform">
@@ -576,7 +581,7 @@ function Index() {
                     <MapPin size={14} />
                     <span>{property.location}</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight group-hover:text-[var(--color-accent)] transition-colors font-heading tracking-wide italic">
+                  <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight group-hover:text-[var(--color-accent)] transition-colors font-heading tracking-wide">
                     {property.title}
                   </h3>
                   <p className="text-slate-600 text-sm mb-8 line-clamp-2 leading-relaxed font-medium">{property.description}</p>
@@ -813,7 +818,7 @@ function Index() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-24">
             <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Suporte & Consultoria</span>
-            <h2 className="text-5xl md:text-7xl font-bold text-foreground uppercase tracking-tighter font-heading italic leading-none">Dúvidas Frequentes</h2>
+            <h2 className="text-5xl md:text-7xl font-bold text-foreground uppercase tracking-tighter font-heading leading-none">Dúvidas Frequentes</h2>
           </div>
 
           <div className="space-y-6">
@@ -836,11 +841,11 @@ function Index() {
                   onClick={() => toggleFaq(i)}
                   className="w-full flex items-center justify-between p-8 hover:bg-white/5 transition-all text-left border-none cursor-pointer bg-transparent group"
                 >
-                  <span className="text-xl font-bold text-foreground font-heading tracking-wide italic group-hover:text-[var(--color-accent)] transition-colors">{faq.q}</span>
+                  <span className="text-xl font-bold text-foreground font-heading tracking-wide group-hover:text-[var(--color-accent)] transition-colors">{faq.q}</span>
                   <ChevronDown className={cn("text-[var(--color-accent)] transition-transform duration-500", activeFaq === i && "rotate-180")} />
                 </button>
                 {activeFaq === i && (
-                  <div className="px-8 pb-8 pt-0 text-slate-300 border-t border-white/10 leading-relaxed font-medium italic animate-in fade-in slide-in-from-top-4 duration-500">
+                  <div className="px-8 pb-8 pt-0 text-slate-300 border-t border-white/10 leading-relaxed font-medium animate-in fade-in slide-in-from-top-4 duration-500">
                     {faq.a}
                   </div>
                 )}
