@@ -479,7 +479,7 @@ function Index() {
             <span className="inline-block px-4 py-1.5 bg-[var(--color-accent)]/10 text-[var(--color-accent)] font-black text-xs uppercase tracking-[0.4em] rounded-full mb-8 border border-[var(--color-accent)]/20 animate-pulse">
               Inteligência e Precisão Territorial
             </span>
-            <h1 className="text-6xl lg:text-[8rem] font-bold text-foreground mb-8 tracking-tighter uppercase leading-[0.8] font-heading drop-shadow-2xl">
+            <h1 className="text-5xl lg:text-8xl font-bold text-foreground mb-8 tracking-tighter uppercase leading-[0.9] font-heading drop-shadow-2xl">
               Territorial <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-gold)]">Imóveis</span>
             </h1>
@@ -520,7 +520,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-24">
             <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Nossa Expertise</span>
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground uppercase tracking-tighter font-heading leading-none">Excelência Territorial</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight">Excelência Territorial</h2>
           </div>
  
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -543,7 +543,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-xl text-left">
-              <h2 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 uppercase tracking-tighter font-heading">Curadoria Técnica</h2>
+              <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6 uppercase tracking-tighter font-heading">Curadoria Técnica</h2>
               <p className="text-slate-600 font-medium text-lg">Ativos imobiliários selecionados sob rigorosa análise pericial e potencial de valorização estratégica.</p>
             </div>
             <div className="flex gap-2">
@@ -713,15 +713,15 @@ function Index() {
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
-              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-white md:block animate-in fade-in slide-in-from-bottom-10 duration-1000 z-20 w-full text-center drop-shadow-lg">
-                <p className="text-white/80 text-[10px] uppercase font-black tracking-[0.5em] mb-1">CEO & Perito Judicial</p>
-                <p className="text-white font-bold text-xl font-heading tracking-tighter">CRECI SP 151545</p>
+              <div className="absolute bottom-6 left-0 w-full text-white z-20 text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                <p className="text-white/90 text-[10px] uppercase font-black tracking-[0.4em] mb-0.5">CEO & Perito Judicial</p>
+                <p className="text-white font-bold text-lg font-heading tracking-tight">CRECI SP 151545</p>
               </div>
             </div>
 
             <div className="order-1 lg:order-2 mb-16 lg:mb-0">
               <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Autoridade Territorial</span>
-              <h2 className="text-4xl lg:text-[3.5rem] font-bold text-foreground mb-12 uppercase tracking-tighter leading-[1] font-heading">
+              <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-10 uppercase tracking-tighter leading-tight font-heading">
                 Inteligência, <br />
                 Segurança <br />
                 & Solidez
@@ -765,7 +765,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-24">
             <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Credibilidade & Vozes</span>
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground uppercase tracking-tighter font-heading">Vozes da Experiência</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading">Vozes da Experiência</h2>
           </div>
 
             <div className="grid md:grid-cols-3 gap-8">
