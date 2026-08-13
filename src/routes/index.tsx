@@ -685,7 +685,7 @@ function Index() {
                     <select className="w-full h-16 px-6 rounded-2xl bg-white/10 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none">
                       <option className="bg-slate-900">Avaliação Judicial</option>
                       <option className="bg-slate-900">Usucapião / Regularização</option>
-                      <option className="bg-slate-900">Projetos de Engenharia</option>
+                      <option className="bg-slate-900">Projetos de Inteligência</option>
                       <option className="bg-slate-900">Venda Estratégica</option>
                     </select>
                   </div>
