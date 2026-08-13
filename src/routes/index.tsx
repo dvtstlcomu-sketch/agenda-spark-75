@@ -492,7 +492,7 @@ function Index() {
             </p>
 
             {/* Search Bar Premium */}
-            <div className="bg-white/40 backdrop-blur-xl p-3 rounded-[2rem] border border-white/20 flex flex-col md:flex-row gap-3 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)]">
+            <div className="bg-white/60 backdrop-blur-2xl p-4 rounded-[2.5rem] border border-white/40 flex flex-col md:flex-row gap-3 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
               <div className="flex-1 relative group">
                 <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[var(--color-accent)] transition-colors" size={20} />
                 <input type="text" placeholder="Pesquisar por localização, tipo ou código..." className="w-full h-16 pl-16 pr-8 rounded-2xl bg-white/70 text-slate-900 border-none focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium transition-all shadow-inner" />
