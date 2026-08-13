@@ -432,7 +432,10 @@ function Index() {
               <div className="w-12 h-12 bg-slate-900 flex items-center justify-center rounded-2xl shadow-xl shadow-slate-900/10">
                 <Building2 className="text-[var(--color-accent)] w-7 h-7" />
               </div>
-              <span className="text-slate-900 font-black text-2xl tracking-tighter uppercase font-heading drop-shadow-sm">TERRITORIAL IMÓVEIS</span>
+              <div className="flex flex-col">
+                <span className="text-slate-900 font-black text-2xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL</span>
+                <span className="text-[var(--color-accent)] font-black text-[10px] uppercase tracking-[0.2em] leading-none mt-1">CRECI 38258-J</span>
+              </div>
             </div>
             
             <div className="hidden md:flex items-center gap-10 text-xs font-black uppercase tracking-[0.25em] text-slate-900/60">
@@ -472,13 +475,9 @@ function Index() {
       <section id="inicio" className="relative pt-32 pb-24 lg:pt-56 lg:pb-40 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80" 
-            alt="Skyline da Cidade" 
-            className="w-full h-full object-cover opacity-20"
-
-
-
-
+            src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/c14a5ede-f10c-463a-84f2-86a49ec04d10.jpg" 
+            alt="Skyline da Cidade de Guarulhos" 
+            className="w-full h-full object-cover opacity-20 transition-all duration-700" 
           />
           <div className="absolute inset-0 bg-slate-900/2" />
         </div>
@@ -494,8 +493,7 @@ function Index() {
               </p>
             </div>
             <h1 className="text-5xl lg:text-8xl font-bold text-foreground mb-8 tracking-tighter uppercase leading-[0.9] font-heading drop-shadow-2xl">
-              Territorial <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-gold)]">Imóveis</span>
+              Territorial
             </h1>
             <p className="text-xl lg:text-2xl text-foreground/70 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-relaxed">
               A inteligência imobiliária em primeiro lugar. Especialistas em Perícia Judicial e Inteligência Territorial de alta precisão.
@@ -751,7 +749,7 @@ function Index() {
                     Nossa história é criada em anos de experiência atuando em perícia técnica e gestão estratégica. Atuamos com maestria desde a administração de condomínios até levantamentos topográficos complexos, garantindo que cada metro quadrado seja tratado com o rigor que a lei e a inteligência territorial exigem.
                   </p>
                   <p className="text-slate-900 font-bold text-xl font-heading tracking-tight mt-6">
-                    CRECI SP 151545
+                    CRECI 151545-F
                   </p>
                 </div>
                 <p>
@@ -930,8 +928,8 @@ function Index() {
                 <li className="flex items-start gap-4">
                   <UserCheck className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
                   <div className="text-slate-400 font-medium">
-                    <p className="font-bold text-foreground text-lg">CRECI 38258J | 151545</p>
-                    <p className="text-sm uppercase tracking-widest font-black text-[var(--color-accent)]">Territorial Imóveis | Silvio Moura</p>
+                    <p className="font-bold text-foreground text-lg">CRECI 38258-J | 151545-F</p>
+                    <p className="text-sm uppercase tracking-widest font-black text-[var(--color-accent)]">Territorial | Silvio Moura</p>
                   </div>
                 </li>
               </ul>
