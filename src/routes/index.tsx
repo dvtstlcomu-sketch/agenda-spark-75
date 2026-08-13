@@ -723,11 +723,11 @@ function Index() {
           <div className="lg:grid lg:grid-cols-2 lg:gap-24 items-center">
             <div className="order-2 lg:order-1 relative">
               <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white group relative">
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent opacity-40 z-10" />
+                <div className="absolute inset-0 bg-white/10 z-10" />
                 <img 
-                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/96b9ae99-043e-427a-9081-ad1003492dd5.jpg" 
+                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/d35f2ceb-384a-422f-8370-2082dacf0368.jpg" 
                   alt="Silvio Moura - CEO Territorial Imóveis"
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="w-full h-full object-cover opacity-90 grayscale-[20%] transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
               <div className="absolute bottom-6 left-0 w-full text-white z-20 text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
