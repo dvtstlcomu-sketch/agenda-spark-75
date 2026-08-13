@@ -954,7 +954,7 @@ function Index() {
 
           <div className="pt-10 border-t border-white/5 text-center">
             <p className="text-slate-500 text-sm font-medium tracking-wide">
-              © 2026 Territorial Imóveis - CRECI 38258J | Silvio Moura CRECI 151545. Engenharia de Precisão & Segurança Jurídica.
+              © 2026 Territorial Imóveis - CRECI 38258J | Silvio Moura CRECI 151545. Inteligência de Precisão & Segurança Jurídica.
             </p>
           </div>
         </div>
