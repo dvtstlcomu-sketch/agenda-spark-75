@@ -361,17 +361,8 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-2">
-              <img 
-                src="/favicon.png" 
-                alt="Territorial Logo" 
-                className="w-12 h-12 object-contain brightness-110"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                }}
-              />
-              <div className="w-12 h-12 bg-white/5 hidden items-center justify-center rounded-lg border border-white/10">
-                <Building2 className="text-[var(--color-accent)] w-7 h-7" />
+              <div className="w-12 h-12 bg-[var(--color-accent)] flex items-center justify-center rounded-xl shadow-lg shadow-[var(--color-accent)]/20">
+                <Building2 className="text-[var(--color-navy)] w-7 h-7" />
               </div>
               <span className="text-white font-bold text-xl tracking-tight uppercase">TERRITORIAL IMÓVEIS</span>
             </div>
@@ -748,17 +739,8 @@ function Index() {
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <img 
-                  src="/favicon.png" 
-                  alt="Territorial Logo" 
-                  className="w-12 h-12 object-contain brightness-110"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                  }}
-                />
-                <div className="w-12 h-12 bg-white/5 hidden items-center justify-center rounded-lg border border-white/10">
-                  <Building2 className="text-[var(--color-accent)] w-7 h-7" />
+                <div className="w-12 h-12 bg-[var(--color-accent)] flex items-center justify-center rounded-xl shadow-lg shadow-[var(--color-accent)]/20">
+                  <Building2 className="text-[var(--color-navy)] w-7 h-7" />
                 </div>
                 <span className="text-white font-bold text-xl tracking-tight uppercase">TERRITORIAL IMÓVEIS</span>
               </div>
