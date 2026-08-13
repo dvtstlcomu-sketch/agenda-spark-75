@@ -91,16 +91,16 @@ const PROPERTIES = [
   },
   {
     id: 2,
-    title: "Logística Territorial Pro",
-    type: "Industrial",
-    status: "Investimento",
-    price: "R$ 45.000.000",
-    location: "Guarulhos / Rodoanel",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80",
+    title: "Loteamento Santa Isabel",
+    type: "Loteamento / Gleba",
+    status: "Oportunidade",
+    price: "Sob Consulta",
+    location: "Santa Isabel - SP",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
     beds: 0,
-    baths: 12,
-    area: "12.000m²",
-    description: "Instalações modernas com pé-direito de 12m e docas automatizadas."
+    baths: 0,
+    area: "120.000m²",
+    description: "Excelente gleba para loteamento residencial ou industrial em Santa Isabel, com topografia favorável e acesso facilitado."
   },
   {
     id: 3,
