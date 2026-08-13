@@ -12,8 +12,8 @@ import {
   Upload,
   CheckCircle2,
   Share2,
-  Facebook,
-  Linkedin
+  Globe,
+  Link
 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
