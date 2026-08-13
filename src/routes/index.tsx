@@ -605,15 +605,15 @@ function Index() {
               }
             ].map((t, i) => (
               <div key={i} className="bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
-                <MessageSquare className="text-[var(--color-gold)] mb-6 w-10 h-10" />
-                <p className="text-lg text-gray-300 italic mb-8">"{t.text}"</p>
+                <MessageSquare className="text-[var(--color-accent)] mb-6 w-10 h-10" />
+                <p className="text-lg text-slate-300 italic mb-8">"{t.text}"</p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[var(--color-gold)] rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 bg-[var(--color-accent)] rounded-full flex items-center justify-center text-white font-bold">
                     {t.author[0]}
                   </div>
                   <div>
                     <p className="font-bold text-white">{t.author}</p>
-                    <p className="text-[var(--color-gold)] text-sm">{t.role}</p>
+                    <p className="text-[var(--color-accent)] text-sm">{t.role}</p>
                   </div>
                 </div>
               </div>
