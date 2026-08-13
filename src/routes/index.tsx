@@ -355,7 +355,7 @@ const PROPERTIES = [
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
-    title: "Imóveis | Perícia Judicial & Inteligência em Guarulhos",
+    title: "Territorial | Perícia Judicial & Inteligência em Guarulhos",
     links: [
       {
         rel: "canonical",
@@ -364,7 +364,7 @@ export const Route = createFileRoute("/")({
     ],
     meta: [
       { name: "description", content: "Liderança em Perícia Judicial e Inteligência em Guarulhos. Administração, Avaliação e Consultoria Técnica com excelência. CRECI 38258J | Silvio Moura CRECI 151545." },
-      { property: "og:title", content: "Imóveis | Excelência em Inteligência Imobiliária" },
+      { property: "og:title", content: "Territorial | Excelência em Inteligência Imobiliária" },
       { property: "og:description", content: "Especialistas em Perícia Judicial e Soluções de Alto Padrão em Guarulhos e Região." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -379,7 +379,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "RealEstateAgent",
-          "name": "Territorial Imóveis",
+          "name": "Territorial",
           "image": "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
           "@id": "",
           "url": "https://territorialimoveis.com.br",
@@ -433,7 +433,7 @@ function Index() {
                 <Building2 className="text-[var(--color-accent)] w-7 h-7" />
               </div>
               <div className="flex flex-col">
-                <span className="text-slate-900 font-black text-2xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">IMÓVEIS</span>
+                <span className="text-slate-900 font-black text-2xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL</span>
                 <span className="text-[var(--color-accent)] font-black text-[10px] uppercase tracking-[0.2em] leading-none mt-1">CRECI 38258-J</span>
               </div>
             </div>
@@ -488,12 +488,12 @@ function Index() {
               <span className="inline-block px-6 py-2 bg-slate-900/10 text-slate-900 font-black text-xs uppercase tracking-[0.4em] rounded-full border border-slate-900/20 shadow-sm">
                 Inteligência e Precisão
               </span>
-              <p className="text-slate-900 font-black uppercase tracking-[0.2em] text-sm drop-shadow-sm animate-pulse">
-                "Você sonha e nós realizamos"
+              <p className="text-slate-900 font-black uppercase tracking-[0.1em] text-sm drop-shadow-sm animate-pulse max-w-lg mx-auto">
+                "A chave da sua casa própria não abre apenas uma porta, ela realiza o seu maior sonho e constrói o seu futuro."
               </p>
             </div>
             <h1 className="text-5xl lg:text-8xl font-bold text-foreground mb-8 tracking-tighter uppercase leading-[0.9] font-heading drop-shadow-2xl">
-              Imóveis
+              Territorial
             </h1>
             <p className="text-xl lg:text-2xl text-foreground/70 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-relaxed">
               A inteligência imobiliária em primeiro lugar. Especialistas em Perícia Judicial e Inteligência de alta precisão.
@@ -929,7 +929,7 @@ function Index() {
                   <UserCheck className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
                   <div className="text-slate-400 font-medium">
                     <p className="font-bold text-foreground text-lg">CRECI 38258-J | 151545-F</p>
-                    <p className="text-sm uppercase tracking-widest font-black text-[var(--color-accent)]">Imóveis | Silvio Moura</p>
+                    <p className="text-sm uppercase tracking-widest font-black text-[var(--color-accent)]">Territorial | Silvio Moura</p>
                   </div>
                 </li>
               </ul>
