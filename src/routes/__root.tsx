@@ -1,11 +1,12 @@
-import { Outlet, HeadContent, Scripts } from "@tanstack/react-router";
-import { createRootRoute } from "@tanstack/react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import "../styles.css";
+import { createRootRouteWithContext, Outlet, ScrollRestoration } from "@tanstack/react-router";
+import { HeadContent, Scripts } from "@tanstack/react-router";
+import * as React from "react";
+import "@/styles.css";
 
-const queryClient = new QueryClient();
-
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<{
+  queryClient: QueryClient;
+}>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -13,17 +14,20 @@ export const Route = createRootRoute({
       { title: "Giovanni Sanches 2026" },
     ],
   }),
-  component: () => (
-    <html lang="pt-br">
+  component: RootComponent,
+});
+
+function RootComponent() {
+  return (
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
       <body>
-        <QueryClientProvider client={queryClient}>
-          <Outlet />
-        </QueryClientProvider>
+        <Outlet />
+        <ScrollRestoration />
         <Scripts />
       </body>
     </html>
-  ),
-});
+  );
+}

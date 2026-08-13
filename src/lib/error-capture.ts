@@ -1,17 +1,16 @@
-// src/lib/error-capture.ts
-let lastCapturedError: unknown = null;
+let lastError: unknown = null;
 
-if (typeof window !== "undefined") {
-  window.addEventListener("error", (event) => {
-    lastCapturedError = event.error;
+if (typeof window === "undefined") {
+  process.on("unhandledRejection", (error) => {
+    lastError = error;
   });
-  window.addEventListener("unhandledrejection", (event) => {
-    lastCapturedError = event.reason;
+  process.on("uncaughtException", (error) => {
+    lastError = error;
   });
 }
 
 export function consumeLastCapturedError() {
-  const error = lastCapturedError;
-  lastCapturedError = null;
+  const error = lastError;
+  lastError = null;
   return error;
 }
