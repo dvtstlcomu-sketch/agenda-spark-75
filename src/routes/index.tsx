@@ -841,7 +841,7 @@ function Index() {
                   onClick={() => toggleFaq(i)}
                   className="w-full flex items-center justify-between p-8 hover:bg-white/5 transition-all text-left border-none cursor-pointer bg-transparent group"
                 >
-                  <span className="text-xl font-bold text-foreground font-heading tracking-wide italic group-hover:text-[var(--color-accent)] transition-colors">{faq.q}</span>
+                  <span className="text-xl font-bold text-foreground font-heading tracking-wide group-hover:text-[var(--color-accent)] transition-colors">{faq.q}</span>
                   <ChevronDown className={cn("text-[var(--color-accent)] transition-transform duration-500", activeFaq === i && "rotate-180")} />
                 </button>
                 {activeFaq === i && (
