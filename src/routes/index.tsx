@@ -395,13 +395,13 @@ function Index() {
               </p>
               <div className="flex gap-4">
                 <a href="#" className="w-10 h-10 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center text-[var(--color-navy)] hover:bg-[var(--color-navy)] hover:text-white transition-all">
-                  <Instagram size={20} />
+                  <Share2 size={20} />
                 </a>
                 <a href="#" className="w-10 h-10 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center text-[var(--color-navy)] hover:bg-[var(--color-navy)] hover:text-white transition-all">
-                  <Facebook size={20} />
+                  <Globe size={20} />
                 </a>
                 <a href="#" className="w-10 h-10 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center text-[var(--color-navy)] hover:bg-[var(--color-navy)] hover:text-white transition-all">
-                  <Linkedin size={20} />
+                  <Link size={20} />
                 </a>
               </div>
             </div>
