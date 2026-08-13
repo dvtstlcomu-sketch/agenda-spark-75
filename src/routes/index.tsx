@@ -389,7 +389,7 @@ function Index() {
               <a href="#inicio" className="hover:text-[var(--color-accent)] transition-colors">Início</a>
               <a href="#projetos" className="hover:text-[var(--color-accent)] transition-colors">Projetos</a>
               <a href="#imoveis" className="hover:text-[var(--color-accent)] transition-colors">Imóveis</a>
-              <a href="#sobre" className="hover:text-[var(--color-accent)] transition-colors">Quem Somos</a>
+              <a href="#sobre" className="hover:text-[var(--color-accent)] transition-colors">A Empresa</a>
             </div>
 
             <Button className="bg-[var(--color-navy)] text-white hover:bg-[var(--color-navy)]/90 rounded-full px-6 border-none font-bold">
