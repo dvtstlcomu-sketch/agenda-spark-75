@@ -836,8 +836,8 @@ function Index() {
                 <li className="flex items-start gap-4">
                   <UserCheck className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
                   <div className="text-gray-400 font-medium">
-                    <p className="font-bold text-[var(--color-navy)]">CRECI 38258J | 151545 F</p>
-                    <p className="text-sm uppercase tracking-tighter">Territorial Imóveis | Silvio Moura</p>
+                    <p className="font-bold text-[var(--color-navy)] text-lg">CRECI 38258J | 151545</p>
+                    <p className="text-sm uppercase tracking-widest font-black text-[var(--color-accent)]">Territorial Imóveis | Silvio Moura</p>
                   </div>
                 </li>
               </ul>
