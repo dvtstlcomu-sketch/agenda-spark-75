@@ -325,26 +325,20 @@ function Index() {
   return (
     <div className="min-h-screen font-sans">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+      <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 bg-[var(--color-navy)] flex items-center justify-center rounded-lg">
-                <Building2 className="text-[var(--color-gold)] w-6 h-6" />
+                <Building2 className="text-[var(--color-accent)] w-6 h-6" />
               </div>
-              <div className="flex flex-col">
-                <span className="text-[var(--color-navy)] font-bold text-lg leading-none tracking-tight uppercase">TERRITORIAL</span>
-                <span className="text-gray-500 text-[10px] font-medium uppercase tracking-[0.2em]">Imóveis & Perícia</span>
-              </div>
+              <span className="text-[var(--color-navy)] font-bold text-xl tracking-tight uppercase">TERRITORIAL</span>
             </div>
             
-            <div className="hidden md:flex items-center gap-8">
-              <a href="#inicio" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">Início</a>
-              <a href="#projetos" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">Projetos</a>
-              <a href="#anuncie" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">Anuncie</a>
-              <a href="#sobre" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">Sobre</a>
-              <a href="#depoimentos" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">Depoimentos</a>
-              <a href="#faq" className="text-[var(--color-navy)] font-medium hover:text-[var(--color-gold)] transition-colors">FAQ</a>
+            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+              <a href="#inicio" className="hover:text-[var(--color-navy)] transition-colors">Início</a>
+              <a href="#imoveis" className="hover:text-[var(--color-navy)] transition-colors">Imóveis</a>
+              <a href="#sobre" className="hover:text-[var(--color-navy)] transition-colors">Sobre</a>
             </div>
 
             <Button className="bg-[var(--color-navy)] text-white hover:bg-[var(--color-navy)]/90 rounded-full px-6">
@@ -355,48 +349,35 @@ function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
-            <div className="mb-12 lg:mb-0">
-              <div className="inline-flex items-center gap-2 bg-[var(--color-gold)]/10 text-[var(--color-gold)] px-4 py-2 rounded-full mb-6">
-                <UserCheck size={18} />
-                <span className="text-sm font-semibold uppercase tracking-wider">CRECI 15145 F | Perito Imobiliário Registrado</span>
-              </div>
-              <h1 className="text-5xl lg:text-7xl font-bold text-[var(--color-navy)] mb-6 leading-[1.1]">
-                Excelência na Compra, Venda e Avaliação de Imóveis
-              </h1>
-              <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-xl">
-                Sob a liderança de Silvio Moura, a Territorial Imóveis é especializada em áreas de alto padrão, terrenos estratégicos e laudos periciais de precisão.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-[var(--color-navy)] text-white h-14 px-8 text-lg rounded-xl">
-                  Avalie seu Imóvel
-                </Button>
-                <Button size="lg" variant="outline" className="border-[var(--color-navy)] text-[var(--color-navy)] h-14 px-8 text-lg rounded-xl hover:bg-[var(--color-navy)]/5">
-                  Serviços Topográficos
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80" 
-                  alt="Modern Luxury Real Estate"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hidden md:block">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[var(--color-gold)] rounded-full flex items-center justify-center text-white">
-                    <CheckCircle2 size={24} />
-                  </div>
-                  <div>
-                    <p className="text-[var(--color-navy)] font-bold text-lg leading-tight">Garantia Jurídica</p>
-                    <p className="text-gray-500 text-sm">Laudos técnicos oficiais</p>
-                  </div>
-                </div>
-              </div>
+      <section id="inicio" className="relative pt-32 pb-20 lg:pt-48 overflow-hidden bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-5xl lg:text-7xl font-extrabold text-[var(--color-navy)] mb-6 tracking-tight">
+              Encontre o seu imóvel de <span className="text-[var(--color-accent)]">alto padrão</span>
+            </h1>
+            <p className="text-xl text-slate-600 mb-10">
+              A melhor curadoria de terrenos, casas e investimentos imobiliários.
+            </p>
+
+            {/* Search Bar */}
+            <div className="bg-white p-4 rounded-2xl shadow-xl shadow-slate-200/50 flex flex-col md:flex-row gap-4 border border-slate-100">
+              <input type="text" placeholder="O que você procura?" className="flex-1 h-14 px-6 rounded-xl border border-slate-200 focus:ring-2 focus:ring-[var(--color-accent)] outline-none" />
+              <select className="h-14 px-4 rounded-xl border border-slate-200 text-slate-600 outline-none bg-white">
+                <option>Tipo de Imóvel</option>
+                <option>Residencial</option>
+                <option>Apartamento</option>
+                <option>Comercial</option>
+                <option>Terreno</option>
+              </select>
+              <select className="h-14 px-4 rounded-xl border border-slate-200 text-slate-600 outline-none bg-white">
+                <option>Finalidade</option>
+                <option>Compra</option>
+                <option>Venda</option>
+                <option>Locação</option>
+              </select>
+              <Button className="h-14 px-8 bg-[var(--color-navy)] rounded-xl font-bold gap-2">
+                <Search size={20} /> Buscar
+              </Button>
             </div>
           </div>
         </div>
