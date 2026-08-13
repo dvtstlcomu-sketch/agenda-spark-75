@@ -10,8 +10,8 @@
   --color-accent: #eab308;
   --color-muted: #f1f5f9;
   
-  --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "Outfit", sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Inter", sans-serif;
 }
 
 @layer base {
