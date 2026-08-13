@@ -852,21 +852,21 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-navy py-24 border-t border-white/5">
+      <footer className="bg-slate-900 py-24 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-14 h-14 bg-[var(--color-navy)] flex items-center justify-center rounded-[1.25rem] shadow-2xl border border-[var(--color-accent)]/30 group">
+                <div className="w-14 h-14 bg-white/10 flex items-center justify-center rounded-[1.25rem] shadow-2xl border border-white/20 group">
                   <Building2 className="text-[var(--color-accent)] w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
                 <span className="text-foreground font-black text-2xl tracking-tighter uppercase font-heading italic">TERRITORIAL IMÓVEIS</span>
               </div>
-              <p className="text-gray-400 mb-8 leading-relaxed font-medium italic">
+              <p className="text-slate-400 mb-8 leading-relaxed font-medium italic">
                 A vanguarda em Inteligência Territorial, Perícia Judicial e Soluções Imobiliárias de Alto Padrão em Guarulhos e Região.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 bg-[var(--color-navy)]/10 border border-[var(--color-navy)]/20 rounded-full flex items-center justify-center text-[var(--color-navy)] hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] hover:text-white transition-all">
+                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] hover:text-slate-900 transition-all">
                   <Share2 size={20} />
                 </a>
                 <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
@@ -883,21 +883,21 @@ function Index() {
               <ul className="space-y-4">
                 <li className="flex items-start gap-4">
                   <Phone className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
-                  <div className="text-gray-400 font-medium">
+                  <div className="text-slate-400 font-medium">
                     <p className="font-bold text-foreground text-2xl tracking-tighter">(11) 2405-0300</p>
                     <p className="text-xs uppercase tracking-[0.2em] mt-1 font-black opacity-50">Telefone Principal</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <MessageSquare className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
-                  <div className="text-gray-400 font-medium">
+                  <div className="text-slate-400 font-medium">
                     <p className="font-bold text-foreground">(11) 96462-4491</p>
                     <p className="text-sm">WhatsApp / Celular</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <UserCheck className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
-                  <div className="text-gray-400 font-medium">
+                  <div className="text-slate-400 font-medium">
                     <p className="font-bold text-foreground text-lg">CRECI 38258J | 151545</p>
                     <p className="text-sm uppercase tracking-widest font-black text-[var(--color-accent)]">Territorial Imóveis | Silvio Moura</p>
                   </div>
