@@ -551,7 +551,13 @@ function Index() {
               <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6 uppercase tracking-tighter font-heading">Curadoria Técnica</h2>
               <p className="text-slate-600 font-medium text-lg">Ativos imobiliários selecionados sob rigorosa análise pericial e potencial de valorização estratégica.</p>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-4">
+              <Button 
+                onClick={() => document.getElementById('anuncie')?.scrollIntoView({ behavior: 'smooth' })}
+                className="rounded-full bg-[var(--color-accent)] text-slate-900 hover:scale-105 transition-all px-8 font-black uppercase tracking-wider shadow-lg"
+              >
+                Incluir Imóvel <Plus size={18} className="ml-2" />
+              </Button>
               <Button variant="outline" className="rounded-full border-slate-200 text-slate-900 hover:bg-white/50 transition-colors bg-white/30 px-8">
                 Catálogo Completo <ArrowRight size={18} className="ml-2" />
               </Button>
