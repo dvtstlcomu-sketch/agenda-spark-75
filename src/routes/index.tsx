@@ -177,12 +177,12 @@ const PROPERTIES = [
   },
   {
     id: 10,
-    title: "Loft Industrial Pinheiros",
+    title: "Loft Design Pinheiros",
     type: "Apartamento",
     status: "Locação",
     price: "R$ 8.500/mês",
     location: "Pinheiros, São Paulo",
-    image: "https://images.unsplash.com/photo-1536376074432-a7ab1e07c84a?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80",
     beds: 1,
     baths: 2,
     area: "95m²",
@@ -195,7 +195,7 @@ const PROPERTIES = [
     status: "Venda",
     price: "R$ 1.500.000",
     location: "Ibiúna, SP",
-    image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80",
     beds: 4,
     baths: 3,
     area: "5.000m²",
@@ -361,17 +361,8 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-2">
-              <img 
-                src="/favicon.png" 
-                alt="Territorial Logo" 
-                className="w-12 h-12 object-contain brightness-110"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                }}
-              />
-              <div className="w-12 h-12 bg-white/5 hidden items-center justify-center rounded-lg border border-white/10">
-                <Building2 className="text-[var(--color-accent)] w-7 h-7" />
+              <div className="w-12 h-12 bg-[var(--color-accent)] flex items-center justify-center rounded-xl shadow-lg shadow-[var(--color-accent)]/20">
+                <Building2 className="text-[var(--color-navy)] w-7 h-7" />
               </div>
               <span className="text-white font-bold text-xl tracking-tight uppercase">TERRITORIAL IMÓVEIS</span>
             </div>
@@ -748,17 +739,8 @@ function Index() {
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <img 
-                  src="/favicon.png" 
-                  alt="Territorial Logo" 
-                  className="w-12 h-12 object-contain brightness-110"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                  }}
-                />
-                <div className="w-12 h-12 bg-white/5 hidden items-center justify-center rounded-lg border border-white/10">
-                  <Building2 className="text-[var(--color-accent)] w-7 h-7" />
+                <div className="w-12 h-12 bg-[var(--color-accent)] flex items-center justify-center rounded-xl shadow-lg shadow-[var(--color-accent)]/20">
+                  <Building2 className="text-[var(--color-navy)] w-7 h-7" />
                 </div>
                 <span className="text-white font-bold text-xl tracking-tight uppercase">TERRITORIAL IMÓVEIS</span>
               </div>
