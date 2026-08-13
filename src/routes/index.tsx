@@ -761,7 +761,8 @@ function Index() {
       </section>
 
       {/* Testimonials */}
-      <section id="depoimentos" className="py-32 bg-background border-y border-white/5">
+      <section id="depoimentos" className="py-32 bg-transparent relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-200/20 via-transparent to-slate-200/20" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-24">
             <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Credibilidade & Vozes</span>
@@ -789,9 +790,9 @@ function Index() {
                 image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150"
               }
             ].map((t, i) => (
-              <div key={i} className="bg-white p-8 rounded-3xl border border-gray-200 hover:border-[var(--color-accent)]/50 transition-all duration-500 hover:-translate-y-2 group shadow-sm hover:shadow-xl">
+              <div key={i} className="bg-white/60 backdrop-blur-md p-8 rounded-3xl border border-white/40 hover:border-[var(--color-accent)]/50 transition-all duration-500 hover:-translate-y-2 group shadow-xl">
                 <MessageSquare className="text-[var(--color-accent)] mb-6 w-10 h-10 group-hover:scale-110 transition-transform" />
-                <p className="text-lg text-gray-600 italic mb-8 font-medium">"{t.text}"</p>
+                <p className="text-lg text-slate-600 italic mb-8 font-medium">"{t.text}"</p>
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[var(--color-accent)]/30 group-hover:border-[var(--color-accent)] transition-colors">
                     <img src={t.image} alt={t.author} className="w-full h-full object-cover" />
@@ -808,8 +809,8 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-32 bg-navy relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 -skew-x-12 translate-x-1/2 opacity-10 z-0" />
+      <section id="faq" className="py-32 bg-slate-900 relative overflow-hidden border-y border-white/5">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 -skew-x-12 translate-x-1/2 opacity-20 z-0" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-24">
             <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Suporte & Consultoria</span>
@@ -831,7 +832,7 @@ function Index() {
                 a: "Basta utilizar a seção 'Anuncie Seu Imóvel', preencher os dados de contato e realizar o upload das fotos. Nossa equipe entrará em contato para agendar uma vistoria."
               }
             ].map((faq, i) => (
-              <div key={i} className="border border-white/10 rounded-[2rem] overflow-hidden bg-white/5 backdrop-blur-sm shadow-2xl transition-all duration-500 hover:border-[var(--color-accent)]/30">
+              <div key={i} className="border border-white/20 rounded-[2rem] overflow-hidden bg-white/10 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:border-[var(--color-accent)]/30">
                 <button 
                   onClick={() => toggleFaq(i)}
                   className="w-full flex items-center justify-between p-8 hover:bg-white/5 transition-all text-left border-none cursor-pointer bg-transparent group"
@@ -840,7 +841,7 @@ function Index() {
                   <ChevronDown className={cn("text-[var(--color-accent)] transition-transform duration-500", activeFaq === i && "rotate-180")} />
                 </button>
                 {activeFaq === i && (
-                  <div className="px-8 pb-8 pt-0 text-gray-400 border-t border-white/5 leading-relaxed font-medium italic animate-in fade-in slide-in-from-top-4 duration-500">
+                  <div className="px-8 pb-8 pt-0 text-slate-300 border-t border-white/10 leading-relaxed font-medium italic animate-in fade-in slide-in-from-top-4 duration-500">
                     {faq.a}
                   </div>
                 )}
