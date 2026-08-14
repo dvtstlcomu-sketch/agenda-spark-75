@@ -885,8 +885,8 @@ function Index() {
       </section>
 
 
-      {/* Testimonials */}
-      <section id="depoimentos" className="py-32 bg-transparent relative overflow-hidden">
+      {/* Vozes da Experiência (Section Order 7) */}
+      <section id="depoimentos" className="py-32 bg-transparent relative overflow-hidden border-t border-black/5">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-200/20 via-transparent to-slate-200/20" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 md:mb-24">
@@ -945,9 +945,6 @@ function Index() {
         </div>
       </section>
 
-
-      {/* Testimonials (Section Order 7 - Post Projects) */}
-      <section id="depoimentos" className="py-32 bg-transparent relative overflow-hidden border-t border-black/5">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-200/20 via-transparent to-slate-200/20" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 md:mb-24">
