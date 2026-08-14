@@ -94,10 +94,10 @@ const PROJETOS_3D = [
   },
   {
     id: 3,
-    title: "Simulação de Construção",
-    description: "Projeção 3D de futuras edificações em terrenos analisados, facilitando a tomada de decisão do investidor.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80",
-    tech: "BIM & 3D"
+    title: "Precisão e Simulação Comercial",
+    description: "Modelagem técnica e projeção 3D de empreendimentos comerciais de alta complexidade com rigor pericial.",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80",
+    tech: "Inteligência Comercial"
   }
 ];
 
