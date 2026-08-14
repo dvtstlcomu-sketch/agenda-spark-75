@@ -1055,8 +1055,8 @@ function Index() {
                   </div>
                   <div className="text-slate-600 font-medium flex flex-col items-center md:items-start">
                     <div className="flex flex-col gap-2">
-                      <p className="font-bold text-foreground text-xs md:text-sm uppercase tracking-wider leading-tight text-center md:text-left">CRECI 38258-J (Imobiliária)</p>
                       <p className="font-bold text-foreground text-xs md:text-sm uppercase tracking-wider leading-tight text-center md:text-left">CRECI 151545-F (Perito)</p>
+                      <p className="font-bold text-foreground text-[10px] md:text-xs uppercase tracking-[0.1em] opacity-70 text-center md:text-left">CNAE 49386</p>
                     </div>
                   </div>
                 </li>
