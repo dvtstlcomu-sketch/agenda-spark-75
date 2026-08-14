@@ -426,10 +426,10 @@ function Index() {
       </a>
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-[#e2e2e2] shadow-sm">
+      <nav className="fixed top-0 w-full z-50 bg-[#e2e2e2] shadow-sm py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-32">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-col items-center justify-center py-4">
+            <div className="flex flex-col items-center flex-1">
               <div className="w-40 h-40 flex items-center justify-center overflow-visible">
                 <img 
                   src={logo2.url} 
@@ -437,13 +437,13 @@ function Index() {
                   className="w-full h-full object-contain mix-blend-multiply"
                 />
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col items-center">
                 <span className="text-slate-900 font-black text-2xl lg:text-3xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL IMÓVEIS</span>
                 <span className="text-[var(--color-accent)] font-black text-xs uppercase tracking-[0.2em] leading-none mt-2">CRECI 38258-J</span>
               </div>
             </div>
             
-            <div className="hidden md:flex items-center gap-10 text-xs font-black uppercase tracking-[0.25em] text-slate-900">
+            <div className="flex items-center gap-10 text-xs font-black uppercase tracking-[0.25em] text-slate-900 mt-6">
               <a href="#inicio" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
                 Início
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
@@ -466,18 +466,20 @@ function Index() {
               </a>
             </div>
 
-            <Button 
-              onClick={() => window.open('https://wa.me/551124050300', '_blank')}
-              className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
-            >
-              (11) 2405-0300
-            </Button>
+            <div className="mt-6">
+              <Button 
+                onClick={() => window.open('https://wa.me/551124050300', '_blank')}
+                className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
+              >
+                (11) 2405-0300
+              </Button>
+            </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative pt-32 pb-24 lg:pt-56 lg:pb-40 overflow-hidden">
+      <section id="inicio" className="relative pt-64 pb-24 lg:pt-96 lg:pb-40 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/c14a5ede-f10c-463a-84f2-86a49ec04d10.jpg" 
