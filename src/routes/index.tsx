@@ -425,11 +425,11 @@ function Index() {
       </a>
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-[#0a0a0b]/80 backdrop-blur-xl border-b border-white/10">
+      <nav className="fixed top-0 w-full z-50 bg-[#1a1a1b]/90 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center gap-3">
-              <div className="w-16 h-16 flex items-center justify-center overflow-hidden">
+          <div className="flex justify-between items-center h-24">
+            <div className="flex items-center gap-4">
+              <div className="w-24 h-24 flex items-center justify-center overflow-visible">
                 <img 
                   src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-14/d009c91b-ae71-45e5-8429-e45ac0d4fb77.png" 
                   alt="Territorial Imóveis Logo" 
@@ -437,8 +437,8 @@ function Index() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-white font-black text-2xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL IMÓVEIS</span>
-                <span className="text-[var(--color-accent)] font-black text-[10px] uppercase tracking-[0.2em] leading-none mt-1">CRECI 38258-J</span>
+                <span className="text-white font-black text-2xl lg:text-3xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL IMÓVEIS</span>
+                <span className="text-[var(--color-accent)] font-black text-xs uppercase tracking-[0.2em] leading-none mt-2">CRECI 38258-J</span>
               </div>
             </div>
             
