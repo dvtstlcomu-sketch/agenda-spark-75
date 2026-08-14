@@ -769,7 +769,7 @@ function Index() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-20 rounded-2xl font-black text-xl shadow-xl border-none cursor-pointer uppercase tracking-[0.3em] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center">
+                <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-16 md:h-20 rounded-xl md:rounded-2xl font-black text-lg md:text-xl shadow-xl border-none cursor-pointer uppercase tracking-[0.2em] md:tracking-[0.3em] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center">
                   Solicitar Perícia
                 </Button>
               </form>
