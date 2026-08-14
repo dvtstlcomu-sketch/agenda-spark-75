@@ -479,7 +479,7 @@ function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative pt-32 pb-24 lg:pt-56 lg:pb-40 overflow-hidden">
+      <section id="inicio" className="relative pt-64 pb-24 lg:pt-96 lg:pb-40 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/c14a5ede-f10c-463a-84f2-86a49ec04d10.jpg" 
