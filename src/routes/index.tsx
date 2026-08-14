@@ -453,9 +453,10 @@ function Index() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#e2e2e2] shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-24 md:h-32">
-            <div className="flex items-center gap-2 md:gap-4 shrink-0">
-              <div className="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center overflow-visible">
+          <div className="flex justify-between items-center h-24 md:h-32 relative">
+            {/* Logo and Branding - Left */}
+            <div className="flex items-center gap-2 md:gap-4">
+              <div className="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center overflow-visible shrink-0">
                 <img 
                   src={logo2.url} 
                   alt="Territorial Imóveis Logo" 
@@ -468,8 +469,8 @@ function Index() {
               </div>
             </div>
 
-            {/* Desktop Menu */}
-            <div className="hidden xl:flex items-center gap-6 px-4">
+            {/* Desktop Menu - Center */}
+            <div className="hidden lg:flex items-center gap-4 xl:gap-6 absolute left-1/2 -translate-x-1/2 whitespace-nowrap">
               <a href="#inicio" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Início</a>
               <a href="#projetos" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Projetos</a>
               <a href="#imoveis" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Imóveis</a>
@@ -477,10 +478,11 @@ function Index() {
               <a href="#anuncie" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Anunciar</a>
             </div>
 
+            {/* Contact - Right */}
             <div className="flex items-center gap-4 shrink-0">
               <Button 
                 onClick={() => window.open('https://wa.me/551124050300', '_blank')}
-                className="hidden md:flex bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
+                className="hidden md:flex bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-6 lg:px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
               >
                 (11) 2405-0300
               </Button>
