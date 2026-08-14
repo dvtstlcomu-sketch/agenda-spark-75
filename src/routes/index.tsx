@@ -890,12 +890,12 @@ function Index() {
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-14 h-14 bg-white/10 flex items-center justify-center rounded-[1.25rem] shadow-2xl border border-white/20 group">
+                <div className="w-14 h-14 bg-black/5 flex items-center justify-center rounded-[1.25rem] shadow-2xl border border-black/5 group">
                   <Building2 className="text-[var(--color-accent)] w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
                 <span className="text-foreground font-black text-2xl tracking-tighter uppercase font-heading">TERRITORIAL IMÓVEIS</span>
               </div>
-              <p className="text-slate-400 mb-8 leading-relaxed font-medium">
+              <p className="text-slate-600 mb-8 leading-relaxed font-medium">
                 A vanguarda em Inteligência Territorial, Perícia Judicial e Soluções Imobiliárias de Alto Padrão em Guarulhos e Região.
               </p>
               <div className="flex gap-4">
@@ -927,7 +927,7 @@ function Index() {
                   <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
                     <MessageSquare size={24} />
                   </div>
-                  <div className="text-slate-400 font-medium flex-1">
+                  <div className="text-slate-600 font-medium flex-1">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                       <div>
                         <p className="font-bold text-foreground text-2xl tracking-tighter leading-none">(11) 2405-0300</p>
@@ -944,10 +944,10 @@ function Index() {
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
+                  <div className="w-12 h-12 bg-black/5 border border-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
                     <UserCheck size={24} />
                   </div>
-                  <div className="text-slate-400 font-medium">
+                  <div className="text-slate-600 font-medium">
                     <div className="flex flex-col gap-1">
                       <p className="font-bold text-foreground text-sm uppercase tracking-wider">CRECI 38258-J (Imobiliária)</p>
                       <p className="font-bold text-foreground text-sm uppercase tracking-wider">CRECI 151545-F (Perito)</p>
@@ -977,7 +977,7 @@ function Index() {
           </div>
 
           <div className="pt-10 border-t border-white/5 text-center">
-            <p className="text-slate-500 text-sm font-medium tracking-wide">
+            <p className="text-slate-600 text-sm font-medium tracking-wide">
               © 2026 Territorial Imóveis - CRECI 38258J | Silvio Moura CRECI 151545. Inteligência de Precisão & Segurança Jurídica.
             </p>
           </div>
