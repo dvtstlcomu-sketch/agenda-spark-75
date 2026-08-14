@@ -692,37 +692,37 @@ function Index() {
       </section>
 
       {/* Lead Generation Premium */}
-      <section id="anuncie" className="py-32 bg-[#e2e2e2] text-slate-900 overflow-hidden relative border-y border-black/5">
+      <section id="anuncie" className="py-20 md:py-32 bg-[#e2e2e2] text-slate-900 overflow-hidden relative border-y border-black/5">
         <div className="absolute inset-0 z-0 opacity-5">
            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.05),transparent_70%)]" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-            <div className="mb-12 lg:mb-0">
-              <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Consultoria Técnica</span>
-              <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6 uppercase tracking-tighter">Análise e Perícia Profissional</h2>
-              <p className="text-xl text-slate-600 mb-8 leading-relaxed font-medium">
+            <div className="mb-12 lg:mb-0 text-center lg:text-left px-4">
+              <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-sm mb-4 block">Consultoria Técnica</span>
+              <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 uppercase tracking-tighter leading-tight">Análise e Perícia Profissional</h2>
+              <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed font-medium">
                 Deseja vender ou avaliar seu terreno/imóvel? Nossa equipe técnica realiza o levantamento completo com segurança jurídica.
               </p>
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6 flex flex-col items-center lg:items-start">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                    <CheckCircle2 className="text-[var(--color-accent)]" />
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-full flex items-center justify-center">
+                    <CheckCircle2 className="text-[var(--color-accent)]" size={20} />
                   </div>
-                  <p className="text-lg">Análise técnica profissional</p>
+                  <p className="text-base md:text-lg">Análise técnica profissional</p>
                 </div>
                 <div className="flex items-center gap-4">
-                   <div className="w-12 h-12 bg-black/5 rounded-full flex items-center justify-center">
-                    <CheckCircle2 className="text-[var(--color-accent)]" />
+                   <div className="w-10 h-10 md:w-12 md:h-12 bg-black/5 rounded-full flex items-center justify-center">
+                    <CheckCircle2 className="text-[var(--color-accent)]" size={20} />
                   </div>
-                  <p className="text-lg">Sigilo e segurança jurídica</p>
+                  <p className="text-base md:text-lg">Sigilo e segurança jurídica</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white/40 backdrop-blur-3xl p-10 lg:p-14 rounded-[3rem] border border-black/5 shadow-2xl">
-              <form className="space-y-8">
-                <div className="grid sm:grid-cols-2 gap-8">
+            <div className="bg-white/40 backdrop-blur-3xl p-6 md:p-14 rounded-[2rem] md:rounded-[3rem] border border-black/5 shadow-2xl mx-4 md:mx-0">
+              <form className="space-y-6 md:space-y-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
                   <div className="space-y-3">
                     <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Nome do Requerente</label>
                     <input type="text" className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none transition-all placeholder:text-slate-400 font-medium" placeholder="Ex: Silvio Moura" />
