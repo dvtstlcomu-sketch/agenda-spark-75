@@ -433,7 +433,7 @@ function Index() {
                 <img 
                   src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-14/122edf09-6e87-44ab-9bb3-6116c6021058.png" 
                   alt="Territorial Imóveis Logo" 
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain mix-blend-multiply"
                 />
               </div>
               <div className="flex flex-col">
