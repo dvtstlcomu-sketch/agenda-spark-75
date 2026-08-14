@@ -745,7 +745,7 @@ function Index() {
                   </div>
                   <div className="space-y-3">
                     <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Objetivo da Perícia</label>
-                    <select className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none text-[10px] md:text-sm">
+                    <select className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none text-[9px] sm:text-xs md:text-sm">
                       <option className="bg-white">Avaliação Mercadológica e Laudo Judicial</option>
                       <option className="bg-white">Usucapião / Regularização</option>
                       <option className="bg-white">Projetos de Inteligência</option>
