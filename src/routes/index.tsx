@@ -462,18 +462,19 @@ function Index() {
                   className="w-full h-full object-contain mix-blend-multiply"
                 />
               </div>
-              <div className="flex flex-col items-start justify-center">
+              <div className="flex flex-col items-center justify-center">
                 <span className="text-slate-900 font-black text-xl md:text-4xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight">TERRITORIAL IMÓVEIS</span>
-                <span className="text-slate-900 font-bold text-[9px] md:text-sm uppercase tracking-[0.25em] leading-none mt-0.5">CRECI 38258-J</span>
+                <span className="text-slate-900 font-bold text-[9px] md:text-sm uppercase tracking-[0.25em] leading-none mt-0.5 w-full text-center">CRECI 38258-J</span>
               </div>
             </div>
+
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center gap-8 ml-12">
-              <a href="#inicio" className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Início</a>
-              <a href="#projetos" className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Projetos</a>
-              <a href="#imoveis" className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Imóveis</a>
-              <a href="#sobre" className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Nossa História</a>
-              <a href="#anuncie" className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Anunciar</a>
+            <div className="hidden lg:flex items-center gap-6 ml-6">
+              <a href="#inicio" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Início</a>
+              <a href="#projetos" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Projetos</a>
+              <a href="#imoveis" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Imóveis</a>
+              <a href="#sobre" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Nossa História</a>
+              <a href="#anuncie" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Anunciar</a>
             </div>
             <div className="absolute right-4 md:right-8 flex items-center gap-4">
               <Button 
