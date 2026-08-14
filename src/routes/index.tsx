@@ -938,10 +938,10 @@ function Index() {
       <section id="projetos" className="py-32 bg-[#e2e2e2] border-t border-black/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-tr from-black/5 via-transparent to-black/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-24">
-            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Portfólio de Inteligência</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight">Projetos & Tecnologia</h2>
-            <p className="text-slate-900 mt-6 max-w-2xl mx-auto font-black text-xl lg:text-2xl uppercase tracking-tight">Simulação de Construção e Modelagem 3D Urbana</p>
+          <div className="text-center mb-16 md:mb-24">
+            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Portfólio de Inteligência</span>
+            <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight px-4">Projetos & Tecnologia</h2>
+            <p className="text-slate-900 mt-6 max-w-2xl mx-auto font-black text-lg md:text-2xl uppercase tracking-tight px-4">Simulação de Construção e Modelagem 3D Urbana</p>
           </div>
  
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
