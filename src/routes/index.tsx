@@ -434,7 +434,7 @@ function Index() {
                 <img 
                   src={logoSilvio.url} 
                   alt="Territorial Imóveis Logo" 
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain mix-blend-multiply"
                 />
               </div>
               <div className="flex flex-col">
