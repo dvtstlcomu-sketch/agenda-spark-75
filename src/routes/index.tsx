@@ -455,16 +455,16 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 md:h-32">
             <div className="flex items-center gap-0">
-              <div className="w-16 h-16 md:w-32 md:h-32 flex items-center justify-center overflow-visible">
+              <div className="w-20 h-20 md:w-40 md:h-40 flex items-center justify-center overflow-visible">
                 <img 
                   src={logo2.url} 
                   alt="Territorial Imóveis Logo" 
                   className="w-full h-full object-contain mix-blend-multiply"
                 />
               </div>
-              <div className="flex flex-col justify-center">
-                <span className="text-slate-900 font-black text-lg md:text-3xl lg:text-4xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight">TERRITORIAL IMÓVEIS</span>
-                <span className="text-[var(--color-accent)] font-black text-[10px] md:text-xs uppercase tracking-[0.2em] leading-none">CRECI 38258-J</span>
+              <div className="flex flex-col justify-center items-center">
+                <span className="text-slate-900 font-black text-xl md:text-4xl lg:text-5xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight">TERRITORIAL IMÓVEIS</span>
+                <span className="text-slate-500 font-black text-[10px] md:text-sm uppercase tracking-[0.2em] leading-none text-center">CRECI 38258-J</span>
               </div>
             </div>
             
