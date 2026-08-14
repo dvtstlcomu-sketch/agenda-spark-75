@@ -967,11 +967,15 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <div>
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-14 h-14 bg-black/5 flex items-center justify-center rounded-[1.25rem] shadow-2xl border border-black/5 group">
-                  <Building2 className="text-[var(--color-accent)] w-8 h-8 group-hover:scale-110 transition-transform" />
+              <div className="flex items-center gap-0 mb-6">
+                <div className="w-14 h-14 flex items-center justify-center overflow-visible">
+                  <img 
+                    src={logo2.url} 
+                    alt="Territorial Imóveis Logo" 
+                    className="w-full h-full object-contain mix-blend-multiply"
+                  />
                 </div>
-                <span className="text-foreground font-black text-2xl tracking-tighter uppercase font-heading">TERRITORIAL IMÓVEIS</span>
+                <span className="text-foreground font-black text-xl tracking-tighter uppercase font-brand ml-2">TERRITORIAL IMÓVEIS</span>
               </div>
               <p className="text-slate-600 mb-8 leading-relaxed font-medium">
                 A vanguarda em Inteligência Territorial, Perícia Judicial e Soluções Imobiliárias de Alto Padrão em Guarulhos e Região.
