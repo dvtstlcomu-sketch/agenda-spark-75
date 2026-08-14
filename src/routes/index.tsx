@@ -636,16 +636,16 @@ function Index() {
       </section>
 
       {/* Lead Generation Premium */}
-      <section id="anuncie" className="py-32 bg-slate-900 text-white overflow-hidden relative border-y border-white/5">
+      <section id="anuncie" className="py-32 bg-[#e2e2e2] text-slate-900 overflow-hidden relative border-y border-black/5">
         <div className="absolute inset-0 z-0 opacity-5">
-           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.2),transparent_70%)]" />
+           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.05),transparent_70%)]" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
             <div className="mb-12 lg:mb-0">
               <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Consultoria Técnica</span>
-              <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 uppercase tracking-tighter">Análise e Perícia Profissional</h2>
-              <p className="text-xl text-slate-300 mb-8 leading-relaxed font-medium">
+              <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6 uppercase tracking-tighter">Análise e Perícia Profissional</h2>
+              <p className="text-xl text-slate-600 mb-8 leading-relaxed font-medium">
                 Deseja vender ou avaliar seu terreno/imóvel? Nossa equipe técnica realiza o levantamento completo com segurança jurídica.
               </p>
               <div className="space-y-6">
@@ -656,7 +656,7 @@ function Index() {
                   <p className="text-lg">Análise técnica profissional</p>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                   <div className="w-12 h-12 bg-black/5 rounded-full flex items-center justify-center">
                     <CheckCircle2 className="text-[var(--color-accent)]" />
                   </div>
                   <p className="text-lg">Sigilo e segurança jurídica</p>
@@ -664,48 +664,48 @@ function Index() {
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-3xl p-10 lg:p-14 rounded-[3rem] border border-white/20 shadow-2xl">
+            <div className="bg-white/40 backdrop-blur-3xl p-10 lg:p-14 rounded-[3rem] border border-black/5 shadow-2xl">
               <form className="space-y-8">
                 <div className="grid sm:grid-cols-2 gap-8">
                   <div className="space-y-3">
-                    <label className="text-gray-400 font-bold text-xs uppercase tracking-[0.2em]">Nome do Requerente</label>
-                    <input type="text" className="w-full h-16 px-6 rounded-2xl bg-white/10 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none transition-all placeholder:text-gray-400 font-medium" placeholder="Ex: Silvio Moura" />
+                    <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Nome do Requerente</label>
+                    <input type="text" className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none transition-all placeholder:text-slate-400 font-medium" placeholder="Ex: Silvio Moura" />
                   </div>
                   <div className="space-y-3">
-                    <label className="text-gray-400 font-bold text-xs uppercase tracking-[0.2em]">Contato Estratégico</label>
-                    <input type="tel" className="w-full h-16 px-6 rounded-2xl bg-white/10 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none transition-all placeholder:text-gray-400 font-medium" placeholder="(11) 2405-0300" />
+                    <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Contato Estratégico</label>
+                    <input type="tel" className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none transition-all placeholder:text-slate-400 font-medium" placeholder="(11) 2405-0300" />
                   </div>
                 </div>
                 
                 <div className="grid sm:grid-cols-2 gap-8">
                   <div className="space-y-3">
-                    <label className="text-gray-400 font-bold text-xs uppercase tracking-[0.2em]">Categoria do Ativo</label>
-                    <select className="w-full h-16 px-6 rounded-2xl bg-white/10 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none">
-                      <option className="bg-slate-900">Terreno / Gleba</option>
-                      <option className="bg-slate-900">Residência Alto Padrão</option>
-                      <option className="bg-slate-900">Industrial / Logístico</option>
-                      <option className="bg-slate-900">Comercial</option>
+                    <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Categoria do Ativo</label>
+                    <select className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none">
+                      <option className="bg-white">Terreno / Gleba</option>
+                      <option className="bg-white">Residência Alto Padrão</option>
+                      <option className="bg-white">Industrial / Logístico</option>
+                      <option className="bg-white">Comercial</option>
                     </select>
                   </div>
                   <div className="space-y-3">
-                    <label className="text-gray-400 font-bold text-xs uppercase tracking-[0.2em]">Objetivo da Perícia</label>
-                    <select className="w-full h-16 px-6 rounded-2xl bg-white/10 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none">
-                      <option className="bg-slate-900">Avaliação Judicial</option>
-                      <option className="bg-slate-900">Usucapião / Regularização</option>
-                      <option className="bg-slate-900">Projetos de Inteligência</option>
-                      <option className="bg-slate-900">Venda Estratégica</option>
+                    <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Objetivo da Perícia</label>
+                    <select className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none">
+                      <option className="bg-white">Avaliação Judicial</option>
+                      <option className="bg-white">Usucapião / Regularização</option>
+                      <option className="bg-white">Projetos de Inteligência</option>
+                      <option className="bg-white">Venda Estratégica</option>
                     </select>
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-gray-400 font-bold text-xs uppercase tracking-[0.2em]">Descrição Estratégica</label>
-                  <textarea className="w-full p-5 rounded-2xl bg-white/10 border border-white/10 text-white focus:ring-2 focus:ring-[var(--color-accent)] outline-none min-h-[120px] transition-all placeholder:text-gray-400" placeholder="Detalhes técnicos ou localização específica..."></textarea>
+                  <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Descrição Estratégica</label>
+                  <textarea className="w-full p-5 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none min-h-[120px] transition-all placeholder:text-slate-400" placeholder="Detalhes técnicos ou localização específica..."></textarea>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-gray-400 font-bold text-xs uppercase tracking-[0.2em]">Upload de Documentação/Fotos</label>
-                  <div className="border-2 border-dashed border-white/20 rounded-2xl p-10 text-center hover:border-[var(--color-accent)] transition-all cursor-pointer bg-white/10 group relative overflow-hidden">
+                  <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Upload de Documentação/Fotos</label>
+                  <div className="border-2 border-dashed border-black/10 rounded-2xl p-10 text-center hover:border-[var(--color-accent)] transition-all cursor-pointer bg-white/40 group relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[var(--color-accent)]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <Upload className="mx-auto text-gray-500 mb-4 group-hover:text-[var(--color-accent)] transition-colors" size={32} />
                     <p className="text-white font-bold text-lg mb-1 tracking-tight">Anexar arquivos técnicos</p>
@@ -842,8 +842,8 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-32 bg-slate-900 relative overflow-hidden border-y border-white/5">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 -skew-x-12 translate-x-1/2 opacity-20 z-0" />
+      <section id="faq" className="py-32 bg-[#e2e2e2] relative overflow-hidden border-y border-black/5">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-black/5 -skew-x-12 translate-x-1/2 opacity-20 z-0" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-24">
             <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Suporte & Consultoria</span>
@@ -865,16 +865,16 @@ function Index() {
                 a: "Basta utilizar a seção 'Anuncie Seu Imóvel', preencher os dados de contato e realizar o upload das fotos. Nossa equipe entrará em contato para agendar uma vistoria."
               }
             ].map((faq, i) => (
-              <div key={i} className="border border-white/20 rounded-[2rem] overflow-hidden bg-white/10 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:border-[var(--color-accent)]/30">
+              <div key={i} className="border border-black/5 rounded-[2rem] overflow-hidden bg-white/40 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:border-[var(--color-accent)]/30">
                 <button 
                   onClick={() => toggleFaq(i)}
-                  className="w-full flex items-center justify-between p-8 hover:bg-white/5 transition-all text-left border-none cursor-pointer bg-transparent group"
+                  className="w-full flex items-center justify-between p-8 hover:bg-black/5 transition-all text-left border-none cursor-pointer bg-transparent group"
                 >
                   <span className="text-xl font-bold text-foreground font-heading tracking-wide group-hover:text-[var(--color-accent)] transition-colors">{faq.q}</span>
                   <ChevronDown className={cn("text-[var(--color-accent)] transition-transform duration-500", activeFaq === i && "rotate-180")} />
                 </button>
                 {activeFaq === i && (
-                  <div className="px-8 pb-8 pt-0 text-slate-300 border-t border-white/10 leading-relaxed font-medium animate-in fade-in slide-in-from-top-4 duration-500">
+                  <div className="px-8 pb-8 pt-0 text-slate-600 border-t border-black/5 leading-relaxed font-medium animate-in fade-in slide-in-from-top-4 duration-500">
                     {faq.a}
                   </div>
                 )}
@@ -885,17 +885,17 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 py-24 border-t border-white/10">
+      <footer className="bg-[#e2e2e2] py-24 border-t border-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-14 h-14 bg-white/10 flex items-center justify-center rounded-[1.25rem] shadow-2xl border border-white/20 group">
+                <div className="w-14 h-14 bg-black/5 flex items-center justify-center rounded-[1.25rem] shadow-2xl border border-black/5 group">
                   <Building2 className="text-[var(--color-accent)] w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
                 <span className="text-foreground font-black text-2xl tracking-tighter uppercase font-heading">TERRITORIAL IMÓVEIS</span>
               </div>
-              <p className="text-slate-400 mb-8 leading-relaxed font-medium">
+              <p className="text-slate-600 mb-8 leading-relaxed font-medium">
                 A vanguarda em Inteligência Territorial, Perícia Judicial e Soluções Imobiliárias de Alto Padrão em Guarulhos e Região.
               </p>
               <div className="flex gap-4">
@@ -927,7 +927,7 @@ function Index() {
                   <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
                     <MessageSquare size={24} />
                   </div>
-                  <div className="text-slate-400 font-medium flex-1">
+                  <div className="text-slate-600 font-medium flex-1">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                       <div>
                         <p className="font-bold text-foreground text-2xl tracking-tighter leading-none">(11) 2405-0300</p>
@@ -944,10 +944,10 @@ function Index() {
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
+                  <div className="w-12 h-12 bg-black/5 border border-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
                     <UserCheck size={24} />
                   </div>
-                  <div className="text-slate-400 font-medium">
+                  <div className="text-slate-600 font-medium">
                     <div className="flex flex-col gap-1">
                       <p className="font-bold text-foreground text-sm uppercase tracking-wider">CRECI 38258-J (Imobiliária)</p>
                       <p className="font-bold text-foreground text-sm uppercase tracking-wider">CRECI 151545-F (Perito)</p>
@@ -977,7 +977,7 @@ function Index() {
           </div>
 
           <div className="pt-10 border-t border-white/5 text-center">
-            <p className="text-slate-500 text-sm font-medium tracking-wide">
+            <p className="text-slate-600 text-sm font-medium tracking-wide">
               © 2026 Territorial Imóveis - CRECI 38258J | Silvio Moura CRECI 151545. Inteligência de Precisão & Segurança Jurídica.
             </p>
           </div>
