@@ -1002,7 +1002,7 @@ function Index() {
                 <span className="text-foreground font-black text-lg md:text-xl tracking-tighter uppercase font-brand ml-2">TERRITORIAL IMÓVEIS</span>
               </div>
               <p className="text-slate-600 mb-8 leading-relaxed font-medium px-4 md:px-0 text-sm md:text-base">
-                A vanguarda em Inteligência Territorial, Perícia Judicial e Soluções Imobiliárias de Alto Padrão em Guarulhos e Região.
+                Perícia Judicial e Soluções Imobiliárias de Alto Padrão em Guarulhos e Região.
               </p>
               <div className="flex justify-center md:justify-start gap-4">
                 <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-slate-900 hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
