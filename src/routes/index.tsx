@@ -426,7 +426,7 @@ function Index() {
       </a>
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-[#1a1a1b]/90 backdrop-blur-xl border-b border-white/5">
+      <nav className="fixed top-0 w-full z-50 bg-[#e2e2e2]/95 backdrop-blur-xl border-b border-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-32">
             <div className="flex items-center gap-4">
@@ -438,12 +438,12 @@ function Index() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-white font-black text-2xl lg:text-3xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL IMÓVEIS</span>
+                <span className="text-slate-900 font-black text-2xl lg:text-3xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL IMÓVEIS</span>
                 <span className="text-[var(--color-accent)] font-black text-xs uppercase tracking-[0.2em] leading-none mt-2">CRECI 38258-J</span>
               </div>
             </div>
             
-            <div className="hidden md:flex items-center gap-10 text-xs font-black uppercase tracking-[0.25em] text-white">
+            <div className="hidden md:flex items-center gap-10 text-xs font-black uppercase tracking-[0.25em] text-slate-900">
               <a href="#inicio" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
                 Início
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
