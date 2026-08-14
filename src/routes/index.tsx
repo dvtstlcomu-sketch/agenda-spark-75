@@ -425,25 +425,24 @@ function Index() {
       </a>
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white/40 backdrop-blur-xl border-b border-white/20">
+      <nav className="fixed top-0 w-full z-50 bg-[#0a0a0b]/80 backdrop-blur-xl border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-3">
-              <div className="w-40 h-40 flex items-center justify-center overflow-visible">
+              <div className="w-16 h-16 flex items-center justify-center overflow-hidden">
                 <img 
-                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-14/122edf09-6e87-44ab-9bb3-6116c6021058.png" 
+                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-14/d009c91b-ae71-45e5-8429-e45ac0d4fb77.png" 
                   alt="Territorial Imóveis Logo" 
-                  className="w-full h-full object-contain brightness-110 contrast-125 dark:invert"
-                  style={{ mixBlendMode: 'multiply' }}
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-slate-900 font-black text-2xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL IMÓVEIS</span>
+                <span className="text-white font-black text-2xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL IMÓVEIS</span>
                 <span className="text-[var(--color-accent)] font-black text-[10px] uppercase tracking-[0.2em] leading-none mt-1">CRECI 38258-J</span>
               </div>
             </div>
             
-            <div className="hidden md:flex items-center gap-10 text-xs font-black uppercase tracking-[0.25em] text-slate-900/60">
+            <div className="hidden md:flex items-center gap-10 text-xs font-black uppercase tracking-[0.25em] text-white/60">
               <a href="#inicio" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
                 Início
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
