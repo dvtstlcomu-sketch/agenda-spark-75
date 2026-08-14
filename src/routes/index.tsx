@@ -807,8 +807,8 @@ function Index() {
                   <p className="text-sm md:text-xl">
                     Nossa história foi construída ao longo de anos de experiência, atuando em diversos segmentos imobiliários.
                   </p>
-                  <p className="text-slate-900 font-bold text-lg md:text-xl font-heading tracking-tight mt-6">
-                    CRECI 151545-F
+                  <p className="text-slate-900 font-bold text-lg md:text-xl font-brand tracking-tighter mt-6">
+                    PERITO JUDICIAL E CEO
                   </p>
                 </div>
               </div>
