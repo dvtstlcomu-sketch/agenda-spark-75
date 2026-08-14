@@ -453,9 +453,9 @@ function Index() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#e2e2e2] shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-32">
+          <div className="flex justify-between items-center h-20 md:h-32">
             <div className="flex items-center gap-0">
-              <div className="w-32 h-32 flex items-center justify-center overflow-visible">
+              <div className="w-16 h-16 md:w-32 md:h-32 flex items-center justify-center overflow-visible">
                 <img 
                   src={logo2.url} 
                   alt="Territorial Imóveis Logo" 
@@ -463,11 +463,12 @@ function Index() {
                 />
               </div>
               <div className="flex flex-col justify-center">
-                <span className="text-slate-900 font-black text-3xl lg:text-4xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight">TERRITORIAL IMÓVEIS</span>
-                <span className="text-[var(--color-accent)] font-black text-xs uppercase tracking-[0.2em] leading-none">CRECI 38258-J</span>
+                <span className="text-slate-900 font-black text-lg md:text-3xl lg:text-4xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight">TERRITORIAL IMÓVEIS</span>
+                <span className="text-[var(--color-accent)] font-black text-[10px] md:text-xs uppercase tracking-[0.2em] leading-none">CRECI 38258-J</span>
               </div>
             </div>
             
+            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-10 text-xs font-black uppercase tracking-[0.25em] text-slate-900">
               <a href="#inicio" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
                 Início
@@ -487,18 +488,49 @@ function Index() {
               </a>
               <a href="#anuncie" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
                 Anunciar
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
               </a>
             </div>
 
-            <Button 
-              onClick={() => window.open('https://wa.me/551124050300', '_blank')}
-              className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
-            >
-              (11) 2405-0300
-            </Button>
+            <div className="flex items-center gap-4">
+              <Button 
+                onClick={() => window.open('https://wa.me/551124050300', '_blank')}
+                className="hidden md:flex bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
+              >
+                (11) 2405-0300
+              </Button>
+
+              {/* Mobile Menu Button */}
+              <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="md:hidden p-2 text-slate-900"
+              >
+                {isMenuOpen ? <Plus className="rotate-45 w-8 h-8" /> : <Layers className="w-8 h-8" />}
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-[#e2e2e2] border-t border-black/5 p-4 animate-in slide-in-from-top duration-300">
+            <div className="flex flex-col gap-4 text-xs font-black uppercase tracking-[0.25em] text-slate-900">
+              <a href="#inicio" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Início</a>
+              <a href="#projetos" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Projetos</a>
+              <a href="#imoveis" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Imóveis</a>
+              <a href="#sobre" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Nossa História</a>
+              <a href="#anuncie" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Anunciar</a>
+              <Button 
+                onClick={() => {
+                  window.open('https://wa.me/551124050300', '_blank');
+                  setIsMenuOpen(false);
+                }}
+                className="bg-slate-900 text-white rounded-xl h-14 font-black uppercase tracking-widest text-xs mt-2"
+              >
+                (11) 2405-0300
+              </Button>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
