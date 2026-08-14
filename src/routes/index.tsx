@@ -769,7 +769,7 @@ function Index() {
                 </Button>
               </div>
               
-              <div className="mt-16 p-10 bg-white/60 backdrop-blur-md border border-white/40 rounded-[2.5rem] border-l-8 border-[var(--color-accent)] relative overflow-hidden group">
+              <div className="mt-16 p-10 bg-white/40 backdrop-blur-md border border-black/5 rounded-[2.5rem] border-l-8 border-[var(--color-accent)] relative overflow-hidden group">
                 <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity text-slate-900">
                    <Building2 size={80} />
                 </div>
@@ -823,7 +823,7 @@ function Index() {
                 image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=150&h=150"
               }
             ].map((t, i) => (
-              <div key={i} className="bg-white/60 backdrop-blur-md p-8 rounded-3xl border border-white/40 hover:border-[var(--color-accent)]/50 transition-all duration-500 hover:-translate-y-2 group shadow-xl">
+              <div key={i} className="bg-white/40 backdrop-blur-md p-8 rounded-3xl border border-black/5 hover:border-[var(--color-accent)]/50 transition-all duration-500 hover:-translate-y-2 group shadow-xl">
                 <MessageSquare className="text-[var(--color-accent)] mb-6 w-10 h-10 group-hover:scale-110 transition-transform" />
                 <p className="text-lg text-slate-600 mb-8 font-medium">"{t.text}"</p>
                 <div className="flex items-center gap-4">
