@@ -590,20 +590,20 @@ function Index() {
       </section>
 
       {/* Technical Areas Section (Moved up) */}
-      <section className="py-24 bg-[#e2e2e2] border-b border-black/5 relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-[#e2e2e2] border-b border-black/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Expertise Técnica</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight">Nossas Especialidades</h2>
+          <div className="text-center mb-12 md:mb-16">
+            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Expertise Técnica</span>
+            <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight px-4">Nossas Especialidades</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {TECHNICAL_SERVICES.map((service) => (
-              <div key={service.id} className="group p-8 rounded-[2.5rem] bg-white/40 backdrop-blur-md border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 relative overflow-hidden shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
-                <div className="mb-6 bg-[var(--color-accent)]/10 w-16 h-16 rounded-[1.25rem] flex items-center justify-center border border-[var(--color-accent)]/10 group-hover:bg-[var(--color-accent)] transition-all duration-500 scale-100 group-hover:scale-110">
-                  {service.icon}
+              <div key={service.id} className="group p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] bg-white/40 backdrop-blur-md border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 relative overflow-hidden shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+                <div className="mb-4 md:mb-6 bg-[var(--color-accent)]/10 w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-[1.25rem] flex items-center justify-center border border-[var(--color-accent)]/10 group-hover:bg-[var(--color-accent)] transition-all duration-500 scale-100 group-hover:scale-110">
+                  <div className="scale-75 md:scale-100">{service.icon}</div>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3 leading-tight group-hover:text-[var(--color-navy)] transition-colors font-heading tracking-tight">{service.title}</h3>
-                <p className="text-slate-600 text-xs leading-relaxed font-medium">{service.description}</p>
+                <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3 leading-tight group-hover:text-[var(--color-navy)] transition-colors font-heading tracking-tight">{service.title}</h3>
+                <p className="text-slate-600 text-[10px] md:text-xs leading-relaxed font-medium">{service.description}</p>
               </div>
             ))}
           </div>
