@@ -496,11 +496,6 @@ function Index() {
               </button>
             </div>
           </div>
-              >
-                {isMenuOpen ? <Plus className="rotate-45 w-8 h-8" /> : <Layers className="w-8 h-8" />}
-              </button>
-            </div>
-          </div>
         </div>
 
         {/* Mobile Menu Dropdown */}
