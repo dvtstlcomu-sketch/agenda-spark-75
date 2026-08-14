@@ -987,31 +987,31 @@ function Index() {
 
 
       {/* Footer */}
-      <footer className="bg-[#e2e2e2] py-24 border-t border-black/5">
+      <footer className="bg-[#e2e2e2] py-16 md:py-24 border-t border-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-12 mb-16">
-            <div>
-              <div className="flex items-center gap-0 mb-6">
-                <div className="w-14 h-14 flex items-center justify-center overflow-visible">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+            <div className="text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start gap-0 mb-6">
+                <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center overflow-visible">
                   <img 
                     src={logo2.url} 
                     alt="Territorial Imóveis Logo" 
                     className="w-full h-full object-contain mix-blend-multiply"
                   />
                 </div>
-                <span className="text-foreground font-black text-xl tracking-tighter uppercase font-brand ml-2">TERRITORIAL IMÓVEIS</span>
+                <span className="text-foreground font-black text-lg md:text-xl tracking-tighter uppercase font-brand ml-2">TERRITORIAL IMÓVEIS</span>
               </div>
-              <p className="text-slate-600 mb-8 leading-relaxed font-medium">
+              <p className="text-slate-600 mb-8 leading-relaxed font-medium px-4 md:px-0 text-sm md:text-base">
                 A vanguarda em Inteligência Territorial, Perícia Judicial e Soluções Imobiliárias de Alto Padrão em Guarulhos e Região.
               </p>
-              <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] hover:text-slate-900 transition-all">
+              <div className="flex justify-center md:justify-start gap-4">
+                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-slate-900 hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
                   <Share2 size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
+                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-slate-900 hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
                   <Globe size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
+                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-slate-900 hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
                   <Link size={20} />
                 </a>
               </div>
