@@ -28,7 +28,7 @@ import {
   Plus
 } from "lucide-react";
 import { useState } from "react";
-import logoSilvio from "@/assets/logo_silvio.jpg.asset.json";
+import logo2 from "@/assets/logo_2.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -432,7 +432,7 @@ function Index() {
             <div className="flex items-center gap-4">
               <div className="w-40 h-40 flex items-center justify-center overflow-visible">
                 <img 
-                  src={logoSilvio.url} 
+                  src={logo2.url} 
                   alt="Territorial Imóveis Logo" 
                   className="w-full h-full object-contain mix-blend-multiply"
                 />
