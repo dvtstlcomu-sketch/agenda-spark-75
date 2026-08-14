@@ -1037,7 +1037,7 @@ function Index() {
                     <div className="flex flex-col gap-2 items-center md:items-start">
                       <div>
                         <p className="font-bold text-foreground text-lg md:text-xl tracking-tighter leading-none">(11) 2405-0300</p>
-                        <p className="text-[10px] uppercase tracking-[0.2em] mt-1 font-black opacity-50 text-center md:text-left">WhatsApp / Celular</p>
+                        <p className="text-[10px] uppercase tracking-[0.2em] mt-1 font-black opacity-50 text-center md:text-left">Zap</p>
                       </div>
                       <Button 
                         onClick={() => window.open('https://wa.me/551124050300', '_blank')}
