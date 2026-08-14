@@ -1,33 +1,28 @@
-# Plano de Responsividade Mobile - Territorial Imóveis
+# Plan - Reorder Website Sections
 
-Ajustar o layout e a tipografia do site para garantir uma visualização perfeita em dispositivos móveis, corrigindo elementos que estão "fora de tamanho" ou desalinhados no celular.
+Reorganize the layout of `src/routes/index.tsx` to follow the user's requested narrative flow.
 
-## Alterações
+## Proposed Changes
 
-### Navegação (Header)
-- Implementar um menu mobile (hambúrguer) ou simplificar a barra de navegação para telas pequenas.
-- Ajustar o tamanho da logo e do texto "TERRITORIAL IMÓVEIS" para não quebrar em telas estreitas.
-- Reduzir a altura do header (`h-32` para `h-20` ou similar) no mobile.
+### Content Reordering
+- Move "Nossa História" (CEO & Story) to the top position after the Hero.
+- Position "Nossas Especialidades" immediately after history.
+- Place the "Imóveis" (Curadoria) section next.
+- Follow with "Análise e Perícia" (Lead Generation).
+- Include the "FAQ" (Dúvidas Frequentes) section.
+- Move "Projetos & Tecnologia" to the final content position before the footer.
+- Relocate "Testemunhos" to follow Projects.
 
-### Seção Hero
-- Ajustar o tamanho da fonte do título principal e da frase de impacto para que não transbordem ou fiquem excessivamente grandes no celular.
-- Reorganizar a barra de busca para que os campos fiquem empilhados verticalmente no mobile.
-- Ajustar o preenchimento (padding) para melhor aproveitamento do espaço.
+### Navigation Updates
+- Update the desktop header menu links to match the new order: Início, Nossa História, Especialidades, Imóveis, Projetos, Dúvidas.
+- Update the mobile menu dropdown links to maintain consistency.
 
-### Grid de Serviços e Imóveis
-- Garantir que os cards ocupem a largura total da tela em dispositivos pequenos (1 coluna).
-- Ajustar os tamanhos de ícones e espaçamentos internos para melhor legibilidade.
+### Section Refinements
+- Ensure anchors (`id`) and section headers are consistent with the new hierarchy.
+- Verify visual transitions (gradients, borders) between reordered sections.
 
-### Seção Nossa História (CEO)
-- Reorganizar o layout de Silvio Moura: a foto de fundo e o texto precisam se adaptar para que um não oculte o outro no formato vertical.
-- Ajustar a citação da missão para melhor ajuste em telas pequenas.
-
-### Rodapé (Footer)
-- Corrigir a disposição dos ícones e textos de contato para evitar sobreposição (encavalamento).
-- Ajustar o tamanho dos botões de WhatsApp e Call to Action.
-
-## Detalhes Técnicos
-- Uso extensivo de classes utilitárias do Tailwind (ex: `text-2xl md:text-5xl`, `flex-col md:flex-row`).
-- Ajuste de `gap` e `padding` responsivos.
-- Implementação de estado `isOpen` para o menu mobile (se necessário).
-- Verificação de `overflow-hidden` em containers pai para evitar scroll horizontal.
+## Technical Details
+- The implementation involves moving large JSX blocks within the `Index` component in `src/routes/index.tsx`.
+- Anchor links (`href="#..."`) will be updated to reflect the logical flow.
+- "Analise Pericial" is mapped to the existing Lead Generation section.
+- "Curadoria" is mapped to the existing Property Showcase section.
