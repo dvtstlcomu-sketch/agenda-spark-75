@@ -1022,7 +1022,7 @@ function Index() {
               <ul className="space-y-6 flex flex-col items-center md:items-start">
                 <li className="flex flex-col md:flex-row items-center md:items-start gap-4">
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
-                    <Phone size={20} md:size={24} />
+                    <Phone size={24} className="scale-75 md:scale-100" />
                   </div>
                   <div className="text-slate-600 font-medium">
                     <p className="font-bold text-foreground text-lg md:text-xl tracking-tighter leading-none">(11) 2405-0300</p>
