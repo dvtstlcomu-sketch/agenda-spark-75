@@ -412,7 +412,7 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-slate-200/50 bg-gradient-to-b from-slate-300/80 via-slate-100 to-slate-300/80 text-foreground selection:bg-[var(--color-accent)] selection:text-[var(--color-navy)]">
+    <div className="min-h-screen font-sans bg-[#e2e2e2] text-foreground selection:bg-[var(--color-accent)] selection:text-[var(--color-navy)]">
       {/* WhatsApp Floating Button */}
       <a 
         href="https://wa.me/551124050300" 
@@ -457,7 +457,7 @@ function Index() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
               </a>
               <a href="#sobre" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
-                A Empresa
+                Nossa História
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
               </a>
               <a href="#anuncie" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
