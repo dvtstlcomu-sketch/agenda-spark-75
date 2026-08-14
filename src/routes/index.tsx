@@ -453,8 +453,8 @@ function Index() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#e2e2e2] shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-24 md:h-32 relative">
-            <div className="flex items-center gap-2 md:gap-4">
+          <div className="flex justify-between items-center h-24 md:h-32">
+            <div className="flex items-center gap-2 md:gap-4 shrink-0">
               <div className="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center overflow-visible">
                 <img 
                   src={logo2.url} 
@@ -463,20 +463,21 @@ function Index() {
                 />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <span className="text-slate-900 font-black text-xl md:text-4xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight">TERRITORIAL IMÓVEIS</span>
+                <span className="text-slate-900 font-black text-xl md:text-4xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight whitespace-nowrap">TERRITORIAL IMÓVEIS</span>
                 <span className="text-slate-900 font-bold text-[9px] md:text-sm uppercase tracking-[0.25em] leading-none mt-0.5 w-full text-center">CRECI 38258-J</span>
               </div>
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center gap-6 ml-6">
+            <div className="hidden xl:flex items-center gap-6 px-4">
               <a href="#inicio" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Início</a>
               <a href="#projetos" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Projetos</a>
               <a href="#imoveis" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Imóveis</a>
               <a href="#sobre" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Nossa História</a>
               <a href="#anuncie" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Anunciar</a>
             </div>
-            <div className="absolute right-4 md:right-8 flex items-center gap-4">
+
+            <div className="flex items-center gap-4 shrink-0">
               <Button 
                 onClick={() => window.open('https://wa.me/551124050300', '_blank')}
                 className="hidden md:flex bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
