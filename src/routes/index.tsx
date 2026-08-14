@@ -1025,7 +1025,7 @@ function Index() {
                     <Phone size={24} className="scale-75 md:scale-100" />
                   </div>
                   <div className="text-slate-600 font-medium">
-                    <p className="font-bold text-foreground text-lg md:text-xl tracking-tighter leading-none">(11) 2405-0300</p>
+                    <p className="font-bold text-foreground text-lg md:text-xl tracking-tighter leading-none">(11) 2405-0300 / 2407-6900</p>
                     <p className="text-[10px] uppercase tracking-[0.2em] mt-1 font-black opacity-50">Fixo Comercial</p>
                   </div>
                 </li>
