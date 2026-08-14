@@ -453,17 +453,17 @@ function Index() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#e2e2e2] shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20 md:h-32">
-            <div className="flex items-center gap-0">
-              <div className="w-20 h-20 md:w-40 md:h-40 flex items-center justify-center overflow-visible">
+          <div className="flex justify-center items-center h-28 md:h-40">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-0 md:gap-4">
+              <div className="w-20 h-20 md:w-36 md:h-36 flex items-center justify-center overflow-visible">
                 <img 
                   src={logo2.url} 
                   alt="Territorial Imóveis Logo" 
                   className="w-full h-full object-contain mix-blend-multiply"
                 />
               </div>
-              <div className="flex flex-col justify-center items-center">
-                <span className="text-slate-900 font-black text-xl md:text-4xl lg:text-5xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight">TERRITORIAL IMÓVEIS</span>
+              <div className="flex flex-col items-center justify-center -mt-2 md:mt-0">
+                <span className="text-slate-900 font-black text-xl md:text-4xl lg:text-5xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight text-center">TERRITORIAL IMÓVEIS</span>
                 <span className="text-slate-500 font-black text-[10px] md:text-sm uppercase tracking-[0.2em] leading-none text-center">CRECI 38258-J</span>
               </div>
             </div>
