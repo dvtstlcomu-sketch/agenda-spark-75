@@ -556,73 +556,27 @@ function Index() {
         </div>
       </section>
 
-      {/* Technical Projects Section */}
-      <section id="projetos" className="py-32 bg-[#e2e2e2] border-y border-black/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-tr from-black/5 via-transparent to-black/5" />
+      {/* Technical Areas Section (Moved up) */}
+      <section className="py-24 bg-[#e2e2e2] border-b border-black/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-24">
-            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Portfólio de Inteligência</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight">Projetos & Tecnologia</h2>
-            <p className="text-slate-900 mt-6 max-w-2xl mx-auto font-black text-xl lg:text-2xl uppercase tracking-tight">Simulação de Construção e Modelagem 3D Urbana</p>
-          </div>
- 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-            {PROJETOS_3D.map((projeto) => (
-              <div key={projeto.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
-                <div className="relative aspect-video overflow-hidden">
-                  {projeto.id === 3 ? (
-                    <div className="w-full h-full relative">
-                      <video 
-                        autoPlay 
-                        loop 
-                        muted 
-                        playsInline
-                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                        poster={projeto.image}
-                      >
-                        <source src="https://assets.mixkit.co/videos/preview/mixkit-building-a-house-in-a-time-lapse-12347-large.mp4" type="video/mp4" />
-                      </video>
-                      <div className="absolute inset-0 bg-black/20" />
-                    </div>
-                  ) : (
-                    <img 
-                      src={projeto.image} 
-                      alt={projeto.title}
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                    />
-                  )}
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-[var(--color-navy)] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
-                      {projeto.tech}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-foreground mb-4 font-heading tracking-tight">{projeto.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed font-medium">{projeto.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
           <div className="text-center mb-16">
-            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-xs mb-4 block">Especialidades Técnicas</span>
-            <h3 className="text-2xl font-bold text-slate-900 uppercase tracking-tight font-heading">Áreas de Atuação</h3>
+            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Expertise Técnica</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight">Nossas Especialidades</h2>
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {TECHNICAL_SERVICES.map((service) => (
-              <div key={service.id} className="group p-10 rounded-[2.5rem] bg-white/40 backdrop-blur-md border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 relative overflow-hidden shadow-xl hover:-translate-y-3 flex flex-col items-center text-center">
-                <div className="mb-8 bg-[var(--color-accent)]/10 w-20 h-20 rounded-[1.5rem] flex items-center justify-center border border-[var(--color-accent)]/10 group-hover:bg-[var(--color-accent)] transition-all duration-500 scale-100 group-hover:scale-110">
+              <div key={service.id} className="group p-8 rounded-[2.5rem] bg-white/40 backdrop-blur-md border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 relative overflow-hidden shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+                <div className="mb-6 bg-[var(--color-accent)]/10 w-16 h-16 rounded-[1.25rem] flex items-center justify-center border border-[var(--color-accent)]/10 group-hover:bg-[var(--color-accent)] transition-all duration-500 scale-100 group-hover:scale-110">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight group-hover:text-[var(--color-navy)] transition-colors font-heading tracking-tight">{service.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed font-medium">{service.description}</p>
+                <h3 className="text-xl font-bold text-foreground mb-3 leading-tight group-hover:text-[var(--color-navy)] transition-colors font-heading tracking-tight">{service.title}</h3>
+                <p className="text-slate-600 text-xs leading-relaxed font-medium">{service.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* Property Showcase */}
       <section id="imoveis" className="py-32 bg-transparent relative overflow-hidden">
