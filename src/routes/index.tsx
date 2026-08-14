@@ -891,48 +891,6 @@ function Index() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section id="faq" className="py-32 bg-[#e2e2e2] relative overflow-hidden border-y border-black/5">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-black/5 -skew-x-12 translate-x-1/2 opacity-20 z-0" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-24">
-            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Suporte & Consultoria</span>
-            <h2 className="text-5xl md:text-7xl font-bold text-foreground uppercase tracking-tighter font-heading leading-none">Dúvidas Frequentes</h2>
-          </div>
-
-          <div className="space-y-6">
-            {[
-              {
-                q: "Como funciona o processo de Perícia e Avaliação Imobiliária?",
-                a: "A perícia realizada pelo Silvio Moura envolve vistorias técnicas, levantamento documental, análise de mercado e parecer fundamentado conforme as normas da ABNT, emitindo um laudo com valor legal."
-              },
-              {
-                q: "Qual a importância da medição topográfica ao comprar ou vender um terreno?",
-                a: "A topografia garante que as metragens reais do imóvel correspondem exatamente ao registrado na escritura pública, evitando litígios e garantindo aprovação de projetos."
-              },
-              {
-                q: "Como posso cadastrar meu imóvel para venda no site?",
-                a: "Basta utilizar a seção 'Anuncie Seu Imóvel', preencher os dados de contato e realizar o upload das fotos. Nossa equipe entrará em contato para agendar uma vistoria."
-              }
-            ].map((faq, i) => (
-              <div key={i} className="border border-black/5 rounded-[2rem] overflow-hidden bg-white/40 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:border-[var(--color-accent)]/30">
-                <button 
-                  onClick={() => toggleFaq(i)}
-                  className="w-full flex items-center justify-between p-8 hover:bg-black/5 transition-all text-left border-none cursor-pointer bg-transparent group"
-                >
-                  <span className="text-xl font-bold text-foreground font-heading tracking-wide group-hover:text-[var(--color-accent)] transition-colors">{faq.q}</span>
-                  <ChevronDown className={cn("text-[var(--color-accent)] transition-transform duration-500", activeFaq === i && "rotate-180")} />
-                </button>
-                {activeFaq === i && (
-                  <div className="px-8 pb-8 pt-0 text-slate-600 border-t border-black/5 leading-relaxed font-medium animate-in fade-in slide-in-from-top-4 duration-500">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Technical Projects Section (Section Order 8 - Final Content Section) */}
       <section id="projetos" className="py-32 bg-[#e2e2e2] border-t border-black/5 relative overflow-hidden">
