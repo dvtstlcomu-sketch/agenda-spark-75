@@ -467,8 +467,14 @@ function Index() {
                 <span className="text-slate-500 font-black text-[10px] md:text-lg uppercase tracking-[0.3em] leading-none mt-1">CRECI 38258-J</span>
               </div>
             </div>
-            
-
+            {/* Desktop Menu */}
+            <div className="hidden lg:flex items-center gap-8 ml-12">
+              <a href="#inicio" className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Início</a>
+              <a href="#projetos" className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Projetos</a>
+              <a href="#imoveis" className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Imóveis</a>
+              <a href="#sobre" className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Nossa História</a>
+              <a href="#anuncie" className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Anunciar</a>
+            </div>
             <div className="absolute right-4 md:right-8 flex items-center gap-4">
               <Button 
                 onClick={() => window.open('https://wa.me/551124050300', '_blank')}
