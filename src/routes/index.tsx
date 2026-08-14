@@ -466,12 +466,14 @@ function Index() {
               </a>
             </div>
 
-            <Button 
-              onClick={() => window.open('https://wa.me/551124050300', '_blank')}
-              className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
-            >
-              (11) 2405-0300
-            </Button>
+            <div className="mt-6">
+              <Button 
+                onClick={() => window.open('https://wa.me/551124050300', '_blank')}
+                className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
+              >
+                (11) 2405-0300
+              </Button>
+            </div>
           </div>
         </div>
       </nav>
