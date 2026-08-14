@@ -931,7 +931,7 @@ function Index() {
                   <div className="text-slate-400 font-medium flex-1">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                       <div>
-                        <p className="font-bold text-foreground text-2xl tracking-tighter leading-none">(11) 96462-4491</p>
+                        <p className="font-bold text-foreground text-2xl tracking-tighter leading-none">(11) 2405-0300</p>
                         <p className="text-[10px] uppercase tracking-[0.2em] mt-2 font-black opacity-50">WhatsApp / Celular</p>
                       </div>
                       <Button 
