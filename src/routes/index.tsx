@@ -41,7 +41,7 @@ const TECHNICAL_SERVICES = [
   },
   {
     id: 2,
-    title: "Avaliação Imobiliária e Laudo Pericial",
+    title: "Avaliação Mercadológica e Laudo Pericial",
     description: "Perícia judicial, laudos para usucapião e avaliações técnicas rigorosas.",
     icon: <UserCheck className="w-8 h-8 text-[var(--color-accent)]" />,
   },
