@@ -984,8 +984,65 @@ function Index() {
           </div>
         </div>
       </section>
+      {/* Testimonials (Section Order 7 - Post Projects) */}
+      <section id="depoimentos" className="py-32 bg-transparent relative overflow-hidden border-t border-black/5">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-200/20 via-transparent to-slate-200/20" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 md:mb-24">
+            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Credibilidade & Vozes</span>
+            <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading px-4">Vozes da Experiência</h2>
+          </div>
 
-
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                text: "O Silvio Moura foi fundamental na venda da nossa propriedade em Alphaville. Sua análise técnica nos deu a segurança necessária para fechar um negócio complexo.",
+                author: "Beatriz Oliveira",
+                role: "Proprietária em Alphaville",
+                image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150"
+              },
+              {
+                text: "Excepcional! A avaliação imobiliária foi precisa e o atendimento sofisticado. Encontramos o imóvel perfeito com a curadoria da Territorial.",
+                author: "Dr. Marcos Vinícius",
+                role: "Neurocirurgião",
+                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150"
+              },
+              {
+                text: "A transparência do Silvio e sua equipe é o que os diferencia. O uso de drones para mostrar nosso terreno fez toda a diferença na valorização.",
+                author: "Helena Castro",
+                role: "Empresária",
+                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150"
+              },
+              {
+                text: "Trabalho técnico impecável na regularização da nossa fazenda. Silvio é a maior autoridade que conhecemos em perícia territorial.",
+                author: "Ricardo Mendes",
+                role: "Investidor Agronegócio",
+                image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150"
+              },
+              {
+                text: "Gestão condominial de outro nível. A Territorial trouxe tecnologia e clareza para nossa administração.",
+                author: "Patrícia Lima",
+                role: "Síndica Profissional",
+                image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=150&h=150"
+              }
+            ].map((t, i) => (
+              <div key={i} className="bg-white/40 backdrop-blur-md p-8 rounded-3xl border border-black/5 hover:border-[var(--color-accent)]/50 transition-all duration-500 hover:-translate-y-2 group shadow-xl">
+                <MessageSquare className="text-[var(--color-accent)] mb-6 w-10 h-10 group-hover:scale-110 transition-transform" />
+                <p className="text-lg text-slate-600 mb-8 font-medium">"{t.text}"</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[var(--color-accent)]/30 group-hover:border-[var(--color-accent)] transition-colors">
+                    <img src={t.image} alt={t.author} className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-lg">{t.author}</p>
+                    <p className="text-[var(--color-accent)] text-sm font-medium">{t.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Footer */}
       <footer className="bg-[#e2e2e2] py-16 md:py-24 border-t border-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
