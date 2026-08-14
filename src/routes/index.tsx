@@ -1067,10 +1067,16 @@ function Index() {
               <h4 className="text-foreground font-bold text-xl mb-6 md:mb-8 uppercase tracking-widest font-heading">Localização</h4>
               <div className="flex flex-col md:flex-row items-center md:items-start gap-4 px-4 md:px-0">
                 <MapPin className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
-                <p className="text-slate-600 leading-relaxed font-medium text-sm md:text-base text-center md:text-left">
+                <a 
+                  href="https://www.google.com/maps/dir/?api=1&destination=Avenida+Otávio+Braga+de+Mesquita+3935+Parque+São+Geraldo+Guarulhos+SP" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-slate-600 leading-relaxed font-medium text-sm md:text-base text-center md:text-left hover:text-[var(--color-accent)] transition-colors group"
+                >
                   Avenida Otávio Braga de Mesquita, Nº 3935<br />
                   Parque São Geraldo - Guarulhos / SP
-                </p>
+                  <span className="block text-[10px] uppercase tracking-wider text-[var(--color-accent)] mt-2 font-bold group-hover:underline">Ver no Google Maps / Traçar Rota</span>
+                </a>
               </div>
               <div className="mt-8">
                 <img 
