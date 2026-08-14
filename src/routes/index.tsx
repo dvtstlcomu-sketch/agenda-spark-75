@@ -602,7 +602,7 @@ function Index() {
                 <div className="mb-4 md:mb-6 bg-[var(--color-accent)]/10 w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-[1.25rem] flex items-center justify-center border border-[var(--color-accent)]/10 group-hover:bg-[var(--color-accent)] transition-all duration-500 scale-100 group-hover:scale-110">
                   <div className="scale-75 md:scale-100">{service.icon}</div>
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3 leading-tight group-hover:text-[var(--color-navy)] transition-colors font-heading tracking-tight">{service.title}</h3>
+                <h3 className={cn("text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3 leading-tight group-hover:text-[var(--color-navy)] transition-colors font-heading tracking-tight", service.id === 2 && "text-base sm:text-lg md:text-xl")}>{service.title}</h3>
                 <p className="text-slate-600 text-[10px] md:text-xs leading-relaxed font-medium">{service.description}</p>
               </div>
             ))}
@@ -745,7 +745,7 @@ function Index() {
                   </div>
                   <div className="space-y-3">
                     <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Objetivo da Perícia</label>
-                    <select className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none text-[10px] md:text-sm">
+                    <select className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none text-[9px] sm:text-xs md:text-sm">
                       <option className="bg-white">Avaliação Mercadológica e Laudo Judicial</option>
                       <option className="bg-white">Usucapião / Regularização</option>
                       <option className="bg-white">Projetos de Inteligência</option>
@@ -811,7 +811,7 @@ function Index() {
                     <p className="text-slate-900 font-bold text-2xl md:text-4xl font-brand tracking-tighter inline-block border-b-4 border-[var(--color-accent)] pb-1 mb-2">
                       PERITO JUDICIAL E CEO
                     </p>
-                    <p className="text-slate-900 font-black text-[8px] sm:text-[10px] md:text-sm uppercase tracking-widest block opacity-90 max-w-full overflow-hidden break-words whitespace-normal leading-tight text-center lg:text-left">
+                    <p className="text-slate-900 font-black text-[7.5px] sm:text-[10px] md:text-sm uppercase tracking-normal sm:tracking-widest block opacity-90 max-w-full overflow-hidden break-words whitespace-normal leading-tight text-center lg:text-left">
                       OBJETIVO DA PERÍCIA AVALIAÇÃO MERCADOLÓGICA E LAUDO JUDICIAL
                     </p>
                   </div>
