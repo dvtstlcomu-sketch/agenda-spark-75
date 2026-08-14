@@ -278,7 +278,7 @@ const PROPERTIES = [
     status: "Venda",
     price: "R$ 4.000.000",
     location: "Vila Olímpia, São Paulo",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80",
     beds: 0,
     baths: 4,
     area: "400m²",
