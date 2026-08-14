@@ -96,7 +96,7 @@ const PROJETOS_3D = [
     id: 3,
     title: "Simulação de Construção",
     description: "Projeção 3D de futuras edificações em terrenos analisados, facilitando a tomada de decisão do investidor.",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1541888941295-184a621d4a90?auto=format&fit=crop&q=80",
     tech: "BIM & 3D"
   }
 ];
