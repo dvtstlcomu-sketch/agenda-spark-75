@@ -77,6 +77,30 @@ const TECHNICAL_SERVICES = [
   }
 ];
 
+const PROJETOS_3D = [
+  {
+    id: 1,
+    title: "Modelagem 3D Urbana",
+    description: "Visualização tridimensional de lotes e glebas para planejamento estratégico e análise de impacto.",
+    image: "https://images.unsplash.com/photo-1581291417067-b17f7cddcc0c?auto=format&fit=crop&q=80",
+    tech: "Renderização Realista"
+  },
+  {
+    id: 2,
+    title: "Mapeamento Digital com Drone",
+    description: "Nuvem de pontos e modelos 3D gerados a partir de fotogrametria aérea para alta precisão.",
+    image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80",
+    tech: "Fotogrametria"
+  },
+  {
+    id: 3,
+    title: "Simulação de Construção",
+    description: "Projeção 3D de futuras edificações em terrenos analisados, facilitando a tomada de decisão do investidor.",
+    image: "https://images.unsplash.com/photo-1503387762-592dea58ef21?auto=format&fit=crop&q=80",
+    tech: "BIM & 3D"
+  }
+];
+
 const PROPERTIES = [
   {
     id: 1,
@@ -537,10 +561,39 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-tr from-black/5 via-transparent to-black/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-24">
-            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Nossa Expertise</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight">Excelência (Área de Atuação)</h2>
+            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Portfólio de Inteligência</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight">Projetos 3D & Tecnologia</h2>
+            <p className="text-slate-600 mt-6 max-w-2xl mx-auto font-medium">Visualização avançada e modelagem tridimensional para máxima precisão territorial.</p>
           </div>
  
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+            {PROJETOS_3D.map((projeto) => (
+              <div key={projeto.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
+                <div className="relative aspect-video overflow-hidden">
+                  <img 
+                    src={projeto.image} 
+                    alt={projeto.title}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-[var(--color-navy)] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
+                      {projeto.tech}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-foreground mb-4 font-heading tracking-tight">{projeto.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed font-medium">{projeto.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mb-16">
+            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-xs mb-4 block">Especialidades Técnicas</span>
+            <h3 className="text-2xl font-bold text-slate-900 uppercase tracking-tight font-heading">Áreas de Atuação</h3>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {TECHNICAL_SERVICES.map((service) => (
               <div key={service.id} className="group p-10 rounded-[2.5rem] bg-white/40 backdrop-blur-md border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 relative overflow-hidden shadow-xl hover:-translate-y-3 flex flex-col items-center text-center">
