@@ -429,8 +429,12 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-slate-900 flex items-center justify-center rounded-2xl shadow-xl shadow-slate-900/10">
-                <Building2 className="text-[var(--color-accent)] w-7 h-7" />
+              <div className="w-16 h-16 bg-white flex items-center justify-center rounded-2xl shadow-xl shadow-slate-900/10 overflow-hidden">
+                <img 
+                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-14/122edf09-6e87-44ab-9bb3-6116c6021058.png" 
+                  alt="Territorial Imóveis Logo" 
+                  className="w-full h-full object-contain p-1"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-slate-900 font-black text-2xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL IMÓVEIS</span>
