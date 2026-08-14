@@ -602,7 +602,7 @@ function Index() {
                 <div className="mb-4 md:mb-6 bg-[var(--color-accent)]/10 w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-[1.25rem] flex items-center justify-center border border-[var(--color-accent)]/10 group-hover:bg-[var(--color-accent)] transition-all duration-500 scale-100 group-hover:scale-110">
                   <div className="scale-75 md:scale-100">{service.icon}</div>
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3 leading-tight group-hover:text-[var(--color-navy)] transition-colors font-heading tracking-tight">{service.title}</h3>
+                <h3 className={cn("text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3 leading-tight group-hover:text-[var(--color-navy)] transition-colors font-heading tracking-tight", service.id === 2 && "text-base sm:text-lg md:text-xl")}>{service.title}</h3>
                 <p className="text-slate-600 text-[10px] md:text-xs leading-relaxed font-medium">{service.description}</p>
               </div>
             ))}
