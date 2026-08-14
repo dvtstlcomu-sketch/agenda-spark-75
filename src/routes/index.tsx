@@ -807,9 +807,14 @@ function Index() {
                   <p className="text-sm md:text-xl">
                     Nossa história foi construída ao longo de anos de experiência, atuando em diversos segmentos imobiliários. A Territorial Imóveis tem amplo conhecimento em laudo pericial para usucapião, laudo de avaliação mercadológica, estruturação imobiliária e despachante imobiliário na área documental.
                   </p>
-                  <p className="text-slate-900 font-bold text-2xl md:text-4xl font-brand tracking-tighter mt-8 inline-block border-b-4 border-[var(--color-accent)] pb-1">
-                    PERITO JUDICIAL E CEO
-                  </p>
+                  <div className="mt-8">
+                    <p className="text-slate-900 font-bold text-2xl md:text-4xl font-brand tracking-tighter inline-block border-b-4 border-[var(--color-accent)] pb-1 mb-2">
+                      PERITO JUDICIAL E CEO
+                    </p>
+                    <p className="text-slate-900 font-black text-sm md:text-lg uppercase tracking-widest block opacity-90">
+                      OBJETIVO DA PERÍCIA AVALIAÇÃO MERCADOLÓGICA E LAUDO JUDICIAL
+                    </p>
+                  </div>
                 </div>
               </div>
               
