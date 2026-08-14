@@ -80,15 +80,15 @@ const TECHNICAL_SERVICES = [
 const PROJETOS_3D = [
   {
     id: 1,
-    title: "Modelagem 3D Urbana",
-    description: "Visualização tridimensional de lotes e glebas para planejamento estratégico e análise de impacto.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80",
-    tech: "Renderização Realista"
+    title: "Modelagem 3D Urbana e Rural",
+    description: "Visualização tridimensional de glebas, fazendas e áreas urbanas para planejamento estratégico e análise de impacto.",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
+    tech: "Precisão Territorial"
   },
   {
     id: 2,
     title: "Mapeamento Digital com Drone",
-    description: "Nuvem de pontos e modelos 3D gerados a partir de fotogrametria aérea para alta precisão.",
+    description: "Nuvem de pontos e modelos 3D gerados a partir de fotogrametria aérea para alta precisão em grandes áreas.",
     image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80",
     tech: "Fotogrametria"
   },
@@ -976,7 +976,7 @@ function Index() {
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-foreground mb-4 font-heading tracking-tight">{projeto.title}</h3>
+                  <h3 className="text-2xl font-black text-slate-900 mb-4 font-brand tracking-tighter uppercase">{projeto.title}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed font-medium">{projeto.description}</p>
                 </div>
               </div>
