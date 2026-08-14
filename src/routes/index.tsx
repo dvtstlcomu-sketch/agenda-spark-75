@@ -769,7 +769,7 @@ function Index() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-16 md:h-20 rounded-xl md:rounded-2xl font-black text-lg md:text-xl shadow-xl border-none cursor-pointer uppercase tracking-[0.2em] md:tracking-[0.3em] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center">
+                <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-16 md:h-20 rounded-xl md:rounded-2xl font-black text-lg md:text-xl shadow-xl border-none cursor-pointer uppercase tracking-[0.1em] md:tracking-[0.3em] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center text-center whitespace-normal leading-tight px-4">
                   Solicitar Perícia
                 </Button>
               </form>
@@ -807,11 +807,11 @@ function Index() {
                   <p className="text-sm md:text-xl">
                     Nossa história foi construída ao longo de anos de experiência, atuando em diversos segmentos imobiliários. A Territorial Imóveis tem amplo conhecimento em laudo pericial para usucapião, laudo de avaliação mercadológica, estruturação imobiliária e despachante imobiliário na área documental.
                   </p>
-                  <div className="mt-8">
+                  <div className="mt-8 flex flex-col items-center lg:items-start text-center lg:text-left">
                     <p className="text-slate-900 font-bold text-2xl md:text-4xl font-brand tracking-tighter inline-block border-b-4 border-[var(--color-accent)] pb-1 mb-2">
                       PERITO JUDICIAL E CEO
                     </p>
-                    <p className="text-slate-900 font-black text-sm md:text-lg uppercase tracking-widest block opacity-90">
+                    <p className="text-slate-900 font-black text-sm md:text-lg uppercase tracking-widest block opacity-90 max-w-full overflow-hidden break-words">
                       OBJETIVO DA PERÍCIA AVALIAÇÃO MERCADOLÓGICA E LAUDO JUDICIAL
                     </p>
                   </div>
