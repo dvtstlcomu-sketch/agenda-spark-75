@@ -976,7 +976,7 @@ function Index() {
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-foreground mb-4 font-heading tracking-tight">{projeto.title}</h3>
+                  <h3 className="text-2xl font-black text-slate-900 mb-4 font-brand tracking-tighter uppercase">{projeto.title}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed font-medium">{projeto.description}</p>
                 </div>
               </div>
