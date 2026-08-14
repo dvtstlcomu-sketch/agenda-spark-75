@@ -429,8 +429,12 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-slate-900 flex items-center justify-center rounded-2xl shadow-xl shadow-slate-900/10">
-                <Building2 className="text-[var(--color-accent)] w-7 h-7" />
+              <div className="w-16 h-16 bg-white flex items-center justify-center rounded-2xl shadow-xl shadow-slate-900/10 overflow-hidden">
+                <img 
+                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-14/122edf09-6e87-44ab-9bb3-6116c6021058.png" 
+                  alt="Territorial Imóveis Logo" 
+                  className="w-full h-full object-contain p-1"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-slate-900 font-black text-2xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL IMÓVEIS</span>
@@ -492,7 +496,7 @@ function Index() {
                 "A chave da sua casa própria não abre apenas uma porta, ela realiza o seu maior sonho e constrói o seu futuro."
               </p>
             </div>
-            <h1 className="text-2xl lg:text-4xl font-bold text-foreground mb-8 tracking-tighter uppercase leading-tight font-heading drop-shadow-2xl">
+            <h1 className="text-xl lg:text-3xl font-bold text-foreground mb-8 tracking-tighter uppercase leading-tight font-heading drop-shadow-2xl opacity-90">
               "Tudo posso naquele que me fortalece"
             </h1>
             <p className="text-xl lg:text-2xl text-foreground/70 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-relaxed">
@@ -927,15 +931,15 @@ function Index() {
                   <div className="text-slate-400 font-medium flex-1">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                       <div>
-                        <p className="font-bold text-foreground text-2xl tracking-tighter leading-none">(11) 96462-4491</p>
+                        <p className="font-bold text-foreground text-2xl tracking-tighter leading-none">(11) 2405-0300</p>
                         <p className="text-[10px] uppercase tracking-[0.2em] mt-2 font-black opacity-50">WhatsApp / Celular</p>
                       </div>
                       <Button 
-                        onClick={() => window.open('https://wa.me/5511964624491', '_blank')}
-                        className="bg-[var(--color-accent)] text-slate-900 hover:bg-white hover:text-slate-900 rounded-xl px-4 h-10 border-none font-black transition-all duration-300 shadow-lg text-[10px] uppercase tracking-widest flex items-center gap-2"
+                        onClick={() => window.open('https://wa.me/551124050300', '_blank')}
+                        className="bg-[#25D366] text-white hover:bg-white hover:text-slate-900 rounded-xl px-4 h-10 border-none font-black transition-all duration-300 shadow-lg text-[10px] uppercase tracking-widest flex items-center gap-2"
                       >
                         <MessageSquare size={14} />
-                        Conversar
+                        WhatsApp
                       </Button>
                     </div>
                   </div>
