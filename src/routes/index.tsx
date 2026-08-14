@@ -934,7 +934,7 @@ function Index() {
         </div>
       </section>
 
-      {/* Technical Projects Section (Moved to end) */}
+      {/* Technical Projects Section (Section Order 8 - Final Content Section) */}
       <section id="projetos" className="py-32 bg-[#e2e2e2] border-t border-black/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-tr from-black/5 via-transparent to-black/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
