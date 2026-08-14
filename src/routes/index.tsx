@@ -453,45 +453,23 @@ function Index() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#e2e2e2] shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20 md:h-32">
-            <div className="flex items-center gap-0">
-              <div className="w-20 h-20 md:w-40 md:h-40 flex items-center justify-center overflow-visible">
+          <div className="flex justify-center items-center h-28 md:h-48 relative">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-0 md:gap-6">
+              <div className="w-24 h-24 md:w-48 md:h-48 flex items-center justify-center overflow-visible">
                 <img 
                   src={logo2.url} 
                   alt="Territorial Imóveis Logo" 
                   className="w-full h-full object-contain mix-blend-multiply"
                 />
               </div>
-              <div className="flex flex-col justify-center items-center">
-                <span className="text-slate-900 font-black text-xl md:text-4xl lg:text-5xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight">TERRITORIAL IMÓVEIS</span>
-                <span className="text-slate-500 font-black text-[10px] md:text-sm uppercase tracking-[0.2em] leading-none text-center">CRECI 38258-J</span>
+              <div className="flex flex-col items-center justify-center -mt-4 md:mt-0">
+                <span className="text-slate-900 font-black text-2xl md:text-5xl lg:text-6xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight text-center">TERRITORIAL IMÓVEIS</span>
+                <span className="text-slate-500 font-black text-[12px] md:text-lg uppercase tracking-[0.3em] leading-none text-center mt-1">CRECI 38258-J</span>
               </div>
             </div>
             
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center gap-10 text-xs font-black uppercase tracking-[0.25em] text-slate-900">
-              <a href="#inicio" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
-                Início
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
-              </a>
-              <a href="#projetos" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
-                Projetos
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
-              </a>
-              <a href="#imoveis" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
-                Imóveis
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
-              </a>
-              <a href="#sobre" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
-                Nossa História
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
-              </a>
-              <a href="#anuncie" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
-                Anunciar
-              </a>
-            </div>
 
-            <div className="flex items-center gap-4">
+            <div className="absolute right-4 md:right-8 flex items-center gap-4">
               <Button 
                 onClick={() => window.open('https://wa.me/551124050300', '_blank')}
                 className="hidden md:flex bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
