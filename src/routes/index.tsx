@@ -562,8 +562,8 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-24">
             <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Portfólio de Inteligência</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight">Projetos 3D & Tecnologia</h2>
-            <p className="text-slate-600 mt-6 max-w-2xl mx-auto font-medium">Visualização avançada e modelagem tridimensional para máxima precisão territorial.</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight">Projetos & Tecnologia</h2>
+            <p className="text-slate-900 mt-6 max-w-2xl mx-auto font-black text-xl lg:text-2xl uppercase tracking-tight">Simulação de Construção e Modelagem 3D Urbana</p>
           </div>
  
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
