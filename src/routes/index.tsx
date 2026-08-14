@@ -1063,11 +1063,11 @@ function Index() {
               </ul>
             </div>
 
-            <div>
-              <h4 className="text-foreground font-bold text-xl mb-6 uppercase tracking-widest font-heading">Localização</h4>
-              <div className="flex items-start gap-4">
+            <div className="text-center md:text-left">
+              <h4 className="text-foreground font-bold text-xl mb-6 md:mb-8 uppercase tracking-widest font-heading">Localização</h4>
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-4 px-4 md:px-0">
                 <MapPin className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
-                <p className="text-slate-400 leading-relaxed font-medium">
+                <p className="text-slate-600 leading-relaxed font-medium text-sm md:text-base text-center md:text-left">
                   Avenida Otávio Braga de Mesquita, Nº 3935<br />
                   Guarulhos / SP
                 </p>
