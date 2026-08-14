@@ -429,7 +429,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-3">
-              <div className="w-16 h-16 flex items-center justify-center overflow-hidden">
+              <div className="w-24 h-24 flex items-center justify-center overflow-hidden">
                 <img 
                   src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-14/122edf09-6e87-44ab-9bb3-6116c6021058.png" 
                   alt="Territorial Imóveis Logo" 
