@@ -453,8 +453,8 @@ function Index() {
       <nav className="fixed top-0 w-full z-50 bg-[#e2e2e2] shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-32">
-            <div className="flex items-center gap-4">
-              <div className="w-40 h-40 flex items-center justify-center overflow-visible">
+            <div className="flex items-center gap-0">
+              <div className="w-32 h-32 flex items-center justify-center overflow-visible">
                 <img 
                   src={logo2.url} 
                   alt="Territorial Imóveis Logo" 
