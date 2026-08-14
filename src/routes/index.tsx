@@ -633,9 +633,9 @@ function Index() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-2 md:px-0">
             {PROPERTIES.slice(0, 6).map((property) => (
-              <div key={property.id} className="group bg-white/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-white/40 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
+              <div key={property.id} className="group bg-white/60 backdrop-blur-md rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-white/40 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
                     src={property.image} 
