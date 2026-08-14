@@ -1069,7 +1069,7 @@ function Index() {
                 <MapPin className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
                 <p className="text-slate-600 leading-relaxed font-medium text-sm md:text-base text-center md:text-left">
                   Avenida Otávio Braga de Mesquita, Nº 3935<br />
-                  Guarulhos / SP
+                  Parque São Geraldo - Guarulhos / SP
                 </p>
               </div>
               <div className="mt-8">
