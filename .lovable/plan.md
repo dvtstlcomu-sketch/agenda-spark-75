@@ -1,28 +1,29 @@
-# Plan - Reorder Website Sections
+# Plan - Restore Missing Sections and Finalize Order
 
-Reorganize the layout of `src/routes/index.tsx` to follow the user's requested narrative flow.
+Restore the missing "Imóveis" and "FAQ" sections to the website and ensure they follow the user's specific order.
 
 ## Proposed Changes
 
-### Content Reordering
-- Move "Nossa História" (CEO & Story) to the top position after the Hero.
-- Position "Nossas Especialidades" immediately after history.
-- Place the "Imóveis" (Curadoria) section next.
-- Follow with "Análise e Perícia" (Lead Generation).
-- Include the "FAQ" (Dúvidas Frequentes) section.
-- Move "Projetos & Tecnologia" to the final content position before the footer.
-- Relocate "Testemunhos" to follow Projects.
+### Frontend Implementation
+- Re-insert the `Imóveis` section after `Vozes da Experiência`.
+- Re-insert the `FAQ` (Dúvidas Frequentes) section after `Imóveis`.
+- Ensure all navigation links correctly anchor to these sections.
+- Verify the final sequence:
+  1. Início (Hero)
+  2. Nossa História (CEO/Bio)
+  3. Especialidades (Services)
+  4. Projetos & Tecnologia (3D/Drone)
+  5. Análise e Perícia (Lead Form)
+  6. Vozes da Experiência (Testimonials)
+  7. Imóveis (Property Grid)
+  8. Dúvidas Frequentes (FAQ)
+  9. Footer
 
-### Navigation Updates
-- Update the desktop header menu links to match the new order: Início, Nossa História, Especialidades, Imóveis, Projetos, Dúvidas.
-- Update the mobile menu dropdown links to maintain consistency.
-
-### Section Refinements
-- Ensure anchors (`id`) and section headers are consistent with the new hierarchy.
-- Verify visual transitions (gradients, borders) between reordered sections.
+### Content Updates
+- Restore the property grid with 21 fictional properties (or a slice for the showcase).
+- Restore the FAQ content regarding appraisals, technical mapping, and real estate services.
 
 ## Technical Details
-- The implementation involves moving large JSX blocks within the `Index` component in `src/routes/index.tsx`.
-- Anchor links (`href="#..."`) will be updated to reflect the logical flow.
-- "Analise Pericial" is mapped to the existing Lead Generation section.
-- "Curadoria" is mapped to the existing Property Showcase section.
+- Use `code--write` to overwrite `src/routes/index.tsx` to ensure a clean JSX structure and avoid fragment/nesting errors from iterative edits.
+- Maintain existing styles and animations (glassmorphism, scroll reveals).
+- Ensure mobile responsiveness for the newly added sections.

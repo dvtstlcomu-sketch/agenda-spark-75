@@ -474,8 +474,10 @@ function Index() {
               <a href="#inicio" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Início</a>
               <a href="#sobre" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Nossa História</a>
               <a href="#especialidades" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Especialidades</a>
-              <a href="#imoveis" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Imóveis</a>
               <a href="#projetos" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Projetos</a>
+              <a href="#anuncie" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Perícia</a>
+              <a href="#depoimentos" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Vozes</a>
+              <a href="#imoveis" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Imóveis</a>
               <a href="#faq" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Dúvidas</a>
             </div>
 
@@ -641,6 +643,8 @@ function Index() {
         </div>
       </section>
 
+
+
       {/* Technical Areas Section (Section Order 2) */}
       <section id="especialidades" className="py-16 md:py-24 bg-[#e2e2e2] border-y border-black/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -662,86 +666,59 @@ function Index() {
         </div>
       </section>
 
-
-      {/* Property Showcase */}
-      <section id="imoveis" className="py-20 md:py-32 bg-transparent relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 gap-6">
-            <div className="max-w-xl text-center md:text-left">
-              <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6 uppercase tracking-tighter font-heading">Curadoria Técnica</h2>
-              <p className="text-slate-600 font-medium text-base md:text-lg px-4 md:px-0">Ativos imobiliários selecionados sob rigorosa análise pericial e potencial de valorização estratégica.</p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 md:px-0">
-              <Button 
-                onClick={() => document.getElementById('anuncie')?.scrollIntoView({ behavior: 'smooth' })}
-                className="rounded-full bg-[var(--color-accent)] text-slate-900 hover:scale-105 transition-all px-8 h-12 md:h-14 font-black uppercase tracking-wider shadow-lg w-full sm:w-auto"
-              >
-                Incluir Imóvel <Plus size={18} className="ml-2" />
-              </Button>
-              <Button variant="outline" className="rounded-full border-slate-200 text-slate-900 hover:bg-white/50 transition-colors bg-white/30 px-8 h-12 md:h-14 w-full sm:w-auto">
-                Catálogo Completo <ArrowRight size={18} className="ml-2" />
-              </Button>
-            </div>
+      {/* Technical Projects Section (Section Order 3) */}
+      <section id="projetos" className="py-32 bg-[#e2e2e2] border-t border-black/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-tr from-black/5 via-transparent to-black/5" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16 md:mb-24">
+            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Portfólio de Inteligência</span>
+            <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight px-4">Projetos & Tecnologia</h2>
+            <p className="text-slate-900 mt-6 max-w-2xl mx-auto font-black text-lg md:text-2xl uppercase tracking-tight px-4 font-brand">Simulação de Construção e Modelagem 3D Urbana e Rural</p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-2 md:px-0">
-            {PROPERTIES.slice(0, 6).map((property) => (
-              <div key={property.id} className="group bg-white/60 backdrop-blur-md rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-white/40 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <img 
-                    src={property.image} 
-                    alt={property.title}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  />
-                  <div className="absolute top-4 left-4 flex gap-2">
+ 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {PROJETOS_3D.map((projeto) => (
+              <div key={projeto.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
+                <div className="relative aspect-video overflow-hidden">
+                  {projeto.id === 3 ? (
+                    <div className="w-full h-full relative">
+                      <video 
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                        poster={projeto.image}
+                      >
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-building-a-house-in-a-time-lapse-12347-large.mp4" type="video/mp4" />
+                      </video>
+                      <div className="absolute inset-0 bg-black/20" />
+                    </div>
+                  ) : (
+                    <img 
+                      src={projeto.image} 
+                      alt={projeto.title}
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    />
+                  )}
+                  <div className="absolute top-4 left-4">
                     <span className="bg-[var(--color-navy)] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
-                      {property.status}
-                    </span>
-                    <span className="bg-white/90 backdrop-blur-sm text-[var(--color-navy)] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border border-gray-200">
-                      {property.type}
+                      {projeto.tech}
                     </span>
                   </div>
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-1 text-slate-400 text-sm mb-2 font-medium">
-                    <MapPin size={14} />
-                    <span>{property.location}</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight group-hover:text-[var(--color-accent)] transition-colors font-heading tracking-wide">
-                    {property.title}
-                  </h3>
-                  <p className="text-slate-600 text-sm mb-8 line-clamp-2 leading-relaxed font-medium">{property.description}</p>
-                  
-                  <div className="flex items-center justify-between pt-8 border-t border-slate-100">
-                    <div className="flex gap-4 text-slate-400 text-sm font-bold uppercase tracking-wider">
-                      {property.beds > 0 && (
-                        <div className="flex items-center gap-1.5">
-                          <Bed size={16} className="text-[var(--color-accent)]" />
-                          <span>{property.beds}</span>
-                        </div>
-                      )}
-                      {property.baths > 0 && (
-                        <div className="flex items-center gap-1.5">
-                          <Bath size={16} className="text-[var(--color-accent)]" />
-                          <span>{property.baths}</span>
-                        </div>
-                      )}
-                      <div className="flex items-center gap-1.5">
-                        <Maximize size={16} className="text-[var(--color-accent)]" />
-                        <span>{property.area}</span>
-                      </div>
-                    </div>
-                    <span className="text-lg font-black text-slate-900">
-                      {property.price}
-                    </span>
-                  </div>
+                <div className="p-8">
+                  <h3 className="text-2xl font-black text-slate-900 mb-4 font-brand tracking-tighter uppercase">{projeto.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed font-medium">{projeto.description}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+
+
 
       {/* Lead Generation Premium */}
       <section id="anuncie" className="py-20 md:py-32 bg-[#e2e2e2] text-slate-900 overflow-hidden relative border-y border-black/5">
@@ -831,160 +808,7 @@ function Index() {
       </section>
 
 
-      {/* Testimonials */}
-      <section id="depoimentos" className="py-32 bg-transparent relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-200/20 via-transparent to-slate-200/20" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 md:mb-24">
-            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Credibilidade & Vozes</span>
-            <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading px-4">Vozes da Experiência</h2>
-          </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                text: "O Silvio Moura foi fundamental na venda da nossa propriedade em Alphaville. Sua análise técnica nos deu a segurança necessária para fechar um negócio complexo.",
-                author: "Beatriz Oliveira",
-                role: "Proprietária em Alphaville",
-                image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150"
-              },
-              {
-                text: "Excepcional! A avaliação imobiliária foi precisa e o atendimento sofisticado. Encontramos o imóvel perfeito com a curadoria da Territorial.",
-                author: "Dr. Marcos Vinícius",
-                role: "Neurocirurgião",
-                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150"
-              },
-              {
-                text: "A transparência do Silvio e sua equipe é o que os diferencia. O uso de drones para mostrar nosso terreno fez toda a diferença na valorização.",
-                author: "Helena Castro",
-                role: "Empresária",
-                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150"
-              },
-              {
-                text: "Trabalho técnico impecável na regularização da nossa fazenda. Silvio é a maior autoridade que conhecemos em perícia territorial.",
-                author: "Ricardo Mendes",
-                role: "Investidor Agronegócio",
-                image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150"
-              },
-              {
-                text: "Gestão condominial de outro nível. A Territorial trouxe tecnologia e clareza para nossa administração.",
-                author: "Patrícia Lima",
-                role: "Síndica Profissional",
-                image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=150&h=150"
-              }
-            ].map((t, i) => (
-              <div key={i} className="bg-white/40 backdrop-blur-md p-8 rounded-3xl border border-black/5 hover:border-[var(--color-accent)]/50 transition-all duration-500 hover:-translate-y-2 group shadow-xl">
-                <MessageSquare className="text-[var(--color-accent)] mb-6 w-10 h-10 group-hover:scale-110 transition-transform" />
-                <p className="text-lg text-slate-600 mb-8 font-medium">"{t.text}"</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[var(--color-accent)]/30 group-hover:border-[var(--color-accent)] transition-colors">
-                    <img src={t.image} alt={t.author} className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-slate-900 text-lg">{t.author}</p>
-                    <p className="text-[var(--color-accent)] text-sm font-medium">{t.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section id="faq" className="py-32 bg-[#e2e2e2] relative overflow-hidden border-y border-black/5">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-black/5 -skew-x-12 translate-x-1/2 opacity-20 z-0" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-24">
-            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Suporte & Consultoria</span>
-            <h2 className="text-5xl md:text-7xl font-bold text-foreground uppercase tracking-tighter font-heading leading-none">Dúvidas Frequentes</h2>
-          </div>
-
-          <div className="space-y-6">
-            {[
-              {
-                q: "Como funciona o processo de Perícia e Avaliação Imobiliária?",
-                a: "A perícia realizada pelo Silvio Moura envolve vistorias técnicas, levantamento documental, análise de mercado e parecer fundamentado conforme as normas da ABNT, emitindo um laudo com valor legal."
-              },
-              {
-                q: "Qual a importância da medição topográfica ao comprar ou vender um terreno?",
-                a: "A topografia garante que as metragens reais do imóvel correspondem exatamente ao registrado na escritura pública, evitando litígios e garantindo aprovação de projetos."
-              },
-              {
-                q: "Como posso cadastrar meu imóvel para venda no site?",
-                a: "Basta utilizar a seção 'Anuncie Seu Imóvel', preencher os dados de contato e realizar o upload das fotos. Nossa equipe entrará em contato para agendar uma vistoria."
-              }
-            ].map((faq, i) => (
-              <div key={i} className="border border-black/5 rounded-[2rem] overflow-hidden bg-white/40 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:border-[var(--color-accent)]/30">
-                <button 
-                  onClick={() => toggleFaq(i)}
-                  className="w-full flex items-center justify-between p-8 hover:bg-black/5 transition-all text-left border-none cursor-pointer bg-transparent group"
-                >
-                  <span className="text-xl font-bold text-foreground font-heading tracking-wide group-hover:text-[var(--color-accent)] transition-colors">{faq.q}</span>
-                  <ChevronDown className={cn("text-[var(--color-accent)] transition-transform duration-500", activeFaq === i && "rotate-180")} />
-                </button>
-                {activeFaq === i && (
-                  <div className="px-8 pb-8 pt-0 text-slate-600 border-t border-black/5 leading-relaxed font-medium animate-in fade-in slide-in-from-top-4 duration-500">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Technical Projects Section (Section Order 8 - Final Content Section) */}
-      <section id="projetos" className="py-32 bg-[#e2e2e2] border-t border-black/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-tr from-black/5 via-transparent to-black/5" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16 md:mb-24">
-            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Portfólio de Inteligência</span>
-            <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight px-4">Projetos & Tecnologia</h2>
-            <p className="text-slate-900 mt-6 max-w-2xl mx-auto font-black text-lg md:text-2xl uppercase tracking-tight px-4 font-brand">Simulação de Construção e Modelagem 3D Urbana e Rural</p>
-          </div>
- 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {PROJETOS_3D.map((projeto) => (
-              <div key={projeto.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
-                <div className="relative aspect-video overflow-hidden">
-                  {projeto.id === 3 ? (
-                    <div className="w-full h-full relative">
-                      <video 
-                        autoPlay 
-                        loop 
-                        muted 
-                        playsInline
-                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                        poster={projeto.image}
-                      >
-                        <source src="https://assets.mixkit.co/videos/preview/mixkit-building-a-house-in-a-time-lapse-12347-large.mp4" type="video/mp4" />
-                      </video>
-                      <div className="absolute inset-0 bg-black/20" />
-                    </div>
-                  ) : (
-                    <img 
-                      src={projeto.image} 
-                      alt={projeto.title}
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                    />
-                  )}
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-[var(--color-navy)] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
-                      {projeto.tech}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-black text-slate-900 mb-4 font-brand tracking-tighter uppercase">{projeto.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed font-medium">{projeto.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* Testimonials (Section Order 7 - Post Projects) */}
+      {/* Vozes da Experiência (Section Order 7) */}
       <section id="depoimentos" className="py-32 bg-transparent relative overflow-hidden border-t border-black/5">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-200/20 via-transparent to-slate-200/20" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
