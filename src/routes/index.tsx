@@ -1017,27 +1017,27 @@ function Index() {
               </div>
             </div>
 
-            <div>
-              <h4 className="text-foreground font-bold text-xl mb-6 uppercase tracking-widest font-heading">Atendimento</h4>
-              <ul className="space-y-6">
-                <li className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
-                    <Phone size={24} />
+            <div className="text-center md:text-left">
+              <h4 className="text-foreground font-bold text-xl mb-6 md:mb-8 uppercase tracking-widest font-heading">Atendimento</h4>
+              <ul className="space-y-6 flex flex-col items-center md:items-start">
+                <li className="flex flex-col md:flex-row items-center md:items-start gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
+                    <Phone size={20} md:size={24} />
                   </div>
                   <div className="text-slate-600 font-medium">
-                    <p className="font-bold text-foreground text-xl tracking-tighter leading-none">(11) 2405-0300</p>
+                    <p className="font-bold text-foreground text-lg md:text-xl tracking-tighter leading-none">(11) 2405-0300</p>
                     <p className="text-[10px] uppercase tracking-[0.2em] mt-1 font-black opacity-50">Fixo Comercial</p>
                   </div>
                 </li>
-                <li className="flex items-start gap-4 group">
-                  <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner shrink-0">
-                    <MessageSquare size={24} />
+                <li className="flex flex-col md:flex-row items-center md:items-start gap-4 group">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner shrink-0">
+                    <MessageSquare size={20} md:size={24} />
                   </div>
-                  <div className="text-slate-600 font-medium flex-1">
-                    <div className="flex flex-col gap-2">
+                  <div className="text-slate-600 font-medium flex-1 flex flex-col items-center md:items-start">
+                    <div className="flex flex-col gap-2 items-center md:items-start">
                       <div>
-                        <p className="font-bold text-foreground text-xl tracking-tighter leading-none">(11) 2405-0300</p>
-                        <p className="text-[10px] uppercase tracking-[0.2em] mt-1 font-black opacity-50">WhatsApp / Celular</p>
+                        <p className="font-bold text-foreground text-lg md:text-xl tracking-tighter leading-none">(11) 2405-0300</p>
+                        <p className="text-[10px] uppercase tracking-[0.2em] mt-1 font-black opacity-50 text-center md:text-left">WhatsApp / Celular</p>
                       </div>
                       <Button 
                         onClick={() => window.open('https://wa.me/551124050300', '_blank')}
