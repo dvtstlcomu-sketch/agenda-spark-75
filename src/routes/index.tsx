@@ -82,7 +82,7 @@ const PROJETOS_3D = [
     id: 1,
     title: "Modelagem 3D Urbana e Rural",
     description: "Visualização tridimensional de glebas, fazendas e áreas urbanas para planejamento estratégico e análise de impacto.",
-    image: "https://images.unsplash.com/photo-1581291417067-b17f7c4db5c3?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
     tech: "Precisão Territorial"
   },
   {
