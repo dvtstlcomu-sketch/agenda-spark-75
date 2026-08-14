@@ -1031,7 +1031,7 @@ function Index() {
                 </li>
                 <li className="flex flex-col md:flex-row items-center md:items-start gap-4 group">
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner shrink-0">
-                    <MessageSquare size={20} md:size={24} />
+                    <MessageSquare size={24} className="scale-75 md:scale-100" />
                   </div>
                   <div className="text-slate-600 font-medium flex-1 flex flex-col items-center md:items-start">
                     <div className="flex flex-col gap-2 items-center md:items-start">
