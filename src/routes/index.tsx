@@ -428,7 +428,7 @@ function Index() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#e2e2e2] shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-32">
+          <div className="flex flex-col items-center justify-center py-4">
             <div className="flex flex-col items-center flex-1">
               <div className="w-40 h-40 flex items-center justify-center overflow-visible">
                 <img 
