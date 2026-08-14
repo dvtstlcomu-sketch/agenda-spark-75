@@ -579,8 +579,70 @@ function Index() {
         </div>
       </section>
 
-      {/* Technical Areas Section (Moved up) */}
-      <section className="py-16 md:py-24 bg-[#e2e2e2] border-b border-black/5 relative overflow-hidden">
+      {/* Order: Nossa História -> Especialidades -> Imóveis -> Lead Generation (Analise Pericial) -> FAQ -> Projetos */}
+      
+      {/* CEO & Story (Section Order 1) */}
+      <section id="sobre" className="py-20 md:py-40 bg-transparent relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-200/50 -skew-x-12 translate-x-1/2 opacity-30 z-0" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-24 items-center">
+            <div className="order-2 lg:order-1 relative h-full min-h-[300px] md:min-h-[500px] flex items-center mb-12 lg:mb-0">
+              <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+                <img 
+                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/ab71f7bc-c10f-429e-b905-e3aa2e2c6943.jpg" 
+                  alt="Background Silvio Moura"
+                  className="w-full h-full object-cover opacity-40 transition-all duration-1000 grayscale-[30%] rounded-3xl"
+                />
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2 mb-12 lg:mb-0 text-center lg:text-left">
+              <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Trajetória de Liderança</span>
+              <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 md:mb-10 uppercase tracking-tighter leading-tight font-heading px-4 lg:px-0">
+                Nossa História
+              </h2>
+              <div className="space-y-6 md:space-y-10 text-slate-600 text-lg md:text-xl leading-relaxed font-medium px-4 lg:px-0">
+                <p className="border-l-4 border-[var(--color-accent)] pl-6 md:pl-8 py-4 bg-white/30 backdrop-blur-sm rounded-r-[1.5rem] md:rounded-r-[2rem] text-left">
+                  A <strong>Territorial Imóveis</strong> nasceu da necessidade de um mercado exigente que busca, em seus fornecedores de serviços, algo além do básico, tais como confiança, sigilo e segurança nas negociações imobiliárias.
+                </p>
+                <div className="space-y-4 text-left">
+                  <p className="text-sm md:text-xl">
+                    Nossa história foi construída ao longo de anos de experiência, atuando em diversos segmentos imobiliários. A Territorial Imóveis tem amplo conhecimento em laudo pericial para usucapião, laudo de avaliação mercadológica, estruturação imobiliária e despachante imobiliário na área documental.
+                  </p>
+                  <div className="mt-8 flex flex-col items-center lg:items-start text-center lg:text-left w-full max-w-full">
+                    <p className="text-slate-900 font-bold text-2xl md:text-4xl font-brand tracking-tighter inline-block border-b-4 border-[var(--color-accent)] pb-1 mb-2">
+                      PERITO JUDICIAL E CEO
+                    </p>
+                    <div className="w-full flex justify-center lg:justify-start px-2">
+                      <p className="text-slate-900 font-black text-[8px] min-[375px]:text-[10px] sm:text-[12px] md:text-sm uppercase tracking-tight sm:tracking-widest block opacity-90 w-full break-words whitespace-normal leading-tight text-center lg:text-left">
+                        OBJETIVO DA PERÍCIA AVALIAÇÃO MERCADOLÓGICA E LAUDO JUDICIAL
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8 px-4 lg:px-0">
+                <Button 
+                  onClick={() => window.open('https://wa.me/551124050300', '_blank')}
+                  className="w-full sm:w-auto bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 h-16 md:h-20 px-10 md:px-14 rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] border-none transition-all duration-500 shadow-xl"
+                >
+                  Fale com o CEO
+                </Button>
+              </div>
+              
+              <div className="mt-12 md:mt-16 p-6 md:p-10 bg-white/40 backdrop-blur-md border border-black/5 rounded-[2rem] md:rounded-[2.5rem] border-l-8 border-[var(--color-accent)] relative overflow-hidden group mx-4 lg:mx-0 text-left">
+                <p className="text-slate-700 italic text-xl md:text-2xl font-light mb-6 leading-relaxed relative z-10 font-heading">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta à segurança jurídica."</p>
+                <p className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-[10px] md:text-xs relative z-10 font-heading">— Silvio Moura</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Areas Section (Section Order 2) */}
+      <section id="especialidades" className="py-16 md:py-24 bg-[#e2e2e2] border-y border-black/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12 md:mb-16">
             <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Expertise Técnica</span>
