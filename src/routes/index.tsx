@@ -1096,7 +1096,7 @@ function Index() {
 
           <div className="pt-10 border-t border-white/5 text-center">
             <p className="text-slate-600 text-sm font-medium tracking-wide">
-              © 2026 Territorial Imóveis - CRECI 38258J. Inteligência de Precisão & Segurança Jurídica.
+              © 2026 Territorial Imóveis - CRECI 38258-J. Inteligência de Precisão & Segurança Jurídica.
             </p>
           </div>
         </div>
