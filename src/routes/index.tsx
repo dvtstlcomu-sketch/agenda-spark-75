@@ -504,10 +504,11 @@ function Index() {
           <div className="md:hidden bg-[#e2e2e2] border-t border-black/5 p-4 animate-in slide-in-from-top duration-300">
             <div className="flex flex-col gap-4 text-xs font-black uppercase tracking-[0.25em] text-slate-900">
               <a href="#inicio" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Início</a>
-              <a href="#projetos" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Projetos</a>
-              <a href="#imoveis" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Imóveis</a>
               <a href="#sobre" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Nossa História</a>
-              <a href="#anuncie" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Anunciar</a>
+              <a href="#especialidades" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Especialidades</a>
+              <a href="#imoveis" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Imóveis</a>
+              <a href="#projetos" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Projetos</a>
+              <a href="#faq" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Dúvidas Frequentes</a>
               <Button 
                 onClick={() => {
                   window.open('https://wa.me/551124050300', '_blank');
