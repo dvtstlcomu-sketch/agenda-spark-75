@@ -430,6 +430,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
