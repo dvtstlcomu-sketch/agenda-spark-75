@@ -991,19 +991,16 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
             <div className="text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-0 mb-6">
-                <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center overflow-visible">
+              <div className="flex flex-col items-center md:items-start gap-4 mb-8">
+                <div className="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center overflow-visible">
                   <img 
                     src={logo2.url} 
                     alt="Territorial Imóveis Logo" 
                     className="w-full h-full object-contain mix-blend-multiply"
                   />
                 </div>
-                <span className="text-foreground font-black text-lg md:text-xl tracking-tighter uppercase font-brand ml-2">TERRITORIAL IMÓVEIS</span>
+                <span className="text-foreground font-black text-2xl md:text-3xl tracking-tighter uppercase font-brand">TERRITORIAL IMÓVEIS</span>
               </div>
-              <p className="text-slate-600 mb-8 leading-relaxed font-medium px-4 md:px-0 text-sm md:text-base">
-                Inteligência de Precisão & Segurança Jurídica.
-              </p>
               <div className="flex justify-center md:justify-start gap-4">
                 <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-slate-900 hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
                   <Share2 size={20} />
