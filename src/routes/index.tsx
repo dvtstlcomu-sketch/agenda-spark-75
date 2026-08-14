@@ -468,28 +468,6 @@ function Index() {
               </div>
             </div>
             
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center gap-10 text-xs font-black uppercase tracking-[0.25em] text-slate-900">
-              <a href="#inicio" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
-                Início
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
-              </a>
-              <a href="#projetos" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
-                Projetos
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
-              </a>
-              <a href="#imoveis" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
-                Imóveis
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
-              </a>
-              <a href="#sobre" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
-                Nossa História
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
-              </a>
-              <a href="#anuncie" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
-                Anunciar
-              </a>
-            </div>
 
             <div className="flex items-center gap-4">
               <Button 
