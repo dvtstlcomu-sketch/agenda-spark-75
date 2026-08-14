@@ -82,21 +82,21 @@ const PROJETOS_3D = [
     id: 1,
     title: "Modelagem 3D Urbana",
     description: "Visualização tridimensional de lotes e glebas para planejamento estratégico e análise de impacto.",
-    image: "https://images.unsplash.com/photo-1576085898323-2183ba9b2243?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80",
     tech: "Renderização Realista"
   },
   {
     id: 2,
     title: "Mapeamento Digital com Drone",
     description: "Nuvem de pontos e modelos 3D gerados a partir de fotogrametria aérea para alta precisão.",
-    image: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80",
     tech: "Fotogrametria"
   },
   {
     id: 3,
     title: "Simulação de Construção",
     description: "Projeção 3D de futuras edificações em terrenos analisados, facilitando a tomada de decisão do investidor.",
-    image: "https://images.unsplash.com/photo-1503387762-592dea58ef21?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80",
     tech: "BIM & 3D"
   }
 ];
