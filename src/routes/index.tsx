@@ -462,7 +462,7 @@ function Index() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-slate-900 font-black text-2xl lg:text-3xl tracking-tighter uppercase font-heading drop-shadow-sm leading-none">TERRITORIAL IMÓVEIS</span>
+                <span className="text-slate-900 font-black text-3xl lg:text-4xl tracking-tight uppercase font-brand drop-shadow-sm leading-none">TERRITORIAL IMÓVEIS</span>
                 <span className="text-[var(--color-accent)] font-black text-xs uppercase tracking-[0.2em] leading-none mt-2">CRECI 38258-J</span>
               </div>
             </div>
