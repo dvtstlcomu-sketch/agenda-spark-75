@@ -745,7 +745,7 @@ function Index() {
                   </div>
                   <div className="space-y-3">
                     <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Objetivo da Perícia</label>
-                    <select className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none">
+                    <select className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none text-[10px] md:text-sm">
                       <option className="bg-white">Avaliação Mercadológica e Laudo Judicial</option>
                       <option className="bg-white">Usucapião / Regularização</option>
                       <option className="bg-white">Projetos de Inteligência</option>
@@ -811,7 +811,7 @@ function Index() {
                     <p className="text-slate-900 font-bold text-2xl md:text-4xl font-brand tracking-tighter inline-block border-b-4 border-[var(--color-accent)] pb-1 mb-2">
                       PERITO JUDICIAL E CEO
                     </p>
-                    <p className="text-slate-900 font-black text-sm md:text-lg uppercase tracking-widest block opacity-90 max-w-full overflow-hidden break-words">
+                    <p className="text-slate-900 font-black text-[10px] md:text-sm uppercase tracking-widest block opacity-90 max-w-full overflow-hidden break-words">
                       OBJETIVO DA PERÍCIA AVALIAÇÃO MERCADOLÓGICA E LAUDO JUDICIAL
                     </p>
                   </div>
