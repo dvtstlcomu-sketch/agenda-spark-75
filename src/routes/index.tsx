@@ -612,22 +612,22 @@ function Index() {
 
 
       {/* Property Showcase */}
-      <section id="imoveis" className="py-32 bg-transparent relative overflow-hidden">
+      <section id="imoveis" className="py-20 md:py-32 bg-transparent relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-            <div className="max-w-xl text-left">
-              <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6 uppercase tracking-tighter font-heading">Curadoria Técnica</h2>
-              <p className="text-slate-600 font-medium text-lg">Ativos imobiliários selecionados sob rigorosa análise pericial e potencial de valorização estratégica.</p>
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 gap-6">
+            <div className="max-w-xl text-center md:text-left">
+              <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6 uppercase tracking-tighter font-heading">Curadoria Técnica</h2>
+              <p className="text-slate-600 font-medium text-base md:text-lg px-4 md:px-0">Ativos imobiliários selecionados sob rigorosa análise pericial e potencial de valorização estratégica.</p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 md:px-0">
               <Button 
                 onClick={() => document.getElementById('anuncie')?.scrollIntoView({ behavior: 'smooth' })}
-                className="rounded-full bg-[var(--color-accent)] text-slate-900 hover:scale-105 transition-all px-8 font-black uppercase tracking-wider shadow-lg"
+                className="rounded-full bg-[var(--color-accent)] text-slate-900 hover:scale-105 transition-all px-8 h-12 md:h-14 font-black uppercase tracking-wider shadow-lg w-full sm:w-auto"
               >
                 Incluir Imóvel <Plus size={18} className="ml-2" />
               </Button>
-              <Button variant="outline" className="rounded-full border-slate-200 text-slate-900 hover:bg-white/50 transition-colors bg-white/30 px-8">
+              <Button variant="outline" className="rounded-full border-slate-200 text-slate-900 hover:bg-white/50 transition-colors bg-white/30 px-8 h-12 md:h-14 w-full sm:w-auto">
                 Catálogo Completo <ArrowRight size={18} className="ml-2" />
               </Button>
             </div>
