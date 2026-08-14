@@ -935,11 +935,11 @@ function Index() {
                         <p className="text-[10px] uppercase tracking-[0.2em] mt-2 font-black opacity-50">WhatsApp / Celular</p>
                       </div>
                       <Button 
-                        onClick={() => window.open('https://wa.me/5511964624491', '_blank')}
-                        className="bg-[var(--color-accent)] text-slate-900 hover:bg-white hover:text-slate-900 rounded-xl px-4 h-10 border-none font-black transition-all duration-300 shadow-lg text-[10px] uppercase tracking-widest flex items-center gap-2"
+                        onClick={() => window.open('https://wa.me/551124050300', '_blank')}
+                        className="bg-[#25D366] text-white hover:bg-white hover:text-slate-900 rounded-xl px-4 h-10 border-none font-black transition-all duration-300 shadow-lg text-[10px] uppercase tracking-widest flex items-center gap-2"
                       >
                         <MessageSquare size={14} />
-                        Conversar
+                        WhatsApp
                       </Button>
                     </div>
                   </div>
