@@ -534,7 +534,7 @@ function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative pt-32 pb-24 lg:pt-56 lg:pb-40 overflow-hidden">
+      <section id="inicio" className="relative pt-24 pb-16 md:pt-56 md:pb-40 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/c14a5ede-f10c-463a-84f2-86a49ec04d10.jpg" 
@@ -546,18 +546,18 @@ function Index() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="mb-8 space-y-4">
-              <span className="inline-block px-6 py-2 bg-slate-900/10 text-slate-900 font-black text-xs uppercase tracking-[0.4em] rounded-full border border-slate-900/20 shadow-sm">
+            <div className="mb-6 md:mb-8 space-y-4">
+              <span className="inline-block px-4 py-1.5 md:px-6 md:py-2 bg-slate-900/10 text-slate-900 font-black text-[10px] md:text-xs uppercase tracking-[0.4em] rounded-full border border-slate-900/20 shadow-sm">
                 Inteligência e Precisão
               </span>
-              <p className="text-slate-900 font-black uppercase tracking-[0.1em] text-sm drop-shadow-sm animate-pulse max-w-lg mx-auto">
+              <p className="text-slate-900 font-black uppercase tracking-[0.05em] md:tracking-[0.1em] text-xs md:text-sm drop-shadow-sm animate-pulse max-w-lg mx-auto leading-relaxed px-4">
                 "A chave da sua casa própria não abre apenas uma porta, ela realiza o seu maior sonho e constrói o seu futuro."
               </p>
             </div>
-            <h1 className="text-xl lg:text-3xl font-bold text-foreground mb-8 tracking-tighter uppercase leading-tight font-heading drop-shadow-2xl opacity-90">
+            <h1 className="text-lg md:text-3xl font-bold text-foreground mb-6 md:mb-8 tracking-tighter uppercase leading-tight font-heading drop-shadow-2xl opacity-90 px-4">
               "Tudo posso naquele que me fortalece"
             </h1>
-            <p className="text-xl lg:text-2xl text-foreground/70 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base md:text-2xl text-foreground/70 mb-10 md:mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-relaxed px-4">
               A inteligência imobiliária em primeiro lugar. Especialistas em Perícia Judicial e Inteligência de alta precisão.
             </p>
 
