@@ -1049,14 +1049,14 @@ function Index() {
                     </div>
                   </div>
                 </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-black/5 border border-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner shrink-0">
-                    <UserCheck size={24} />
+                <li className="flex flex-col md:flex-row items-center md:items-start gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner shrink-0">
+                    <UserCheck size={24} className="scale-75 md:scale-100" />
                   </div>
-                  <div className="text-slate-600 font-medium">
+                  <div className="text-slate-600 font-medium flex flex-col items-center md:items-start">
                     <div className="flex flex-col gap-2">
-                      <p className="font-bold text-foreground text-sm uppercase tracking-wider leading-tight">CRECI 38258-J (Imobiliária)</p>
-                      <p className="font-bold text-foreground text-sm uppercase tracking-wider leading-tight">CRECI 151545-F (Perito)</p>
+                      <p className="font-bold text-foreground text-xs md:text-sm uppercase tracking-wider leading-tight text-center md:text-left">CRECI 38258-J (Imobiliária)</p>
+                      <p className="font-bold text-foreground text-xs md:text-sm uppercase tracking-wider leading-tight text-center md:text-left">CRECI 151545-F (Perito)</p>
                     </div>
                   </div>
                 </li>
