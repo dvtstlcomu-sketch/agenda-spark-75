@@ -533,8 +533,8 @@ function Index() {
       </section>
 
       {/* Technical Projects Section */}
-      <section id="projetos" className="py-32 bg-white/30 backdrop-blur-sm border-y border-white/20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-tr from-slate-200/50 via-transparent to-slate-200/50" />
+      <section id="projetos" className="py-32 bg-[#e2e2e2] border-y border-black/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-tr from-black/5 via-transparent to-black/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-24">
             <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Nossa Expertise</span>
@@ -543,7 +543,7 @@ function Index() {
  
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {TECHNICAL_SERVICES.map((service) => (
-              <div key={service.id} className="group p-10 rounded-[2.5rem] bg-white/60 backdrop-blur-md border border-white/40 hover:border-[var(--color-accent)] transition-all duration-700 relative overflow-hidden shadow-xl hover:-translate-y-3 flex flex-col items-center text-center">
+              <div key={service.id} className="group p-10 rounded-[2.5rem] bg-white/40 backdrop-blur-md border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 relative overflow-hidden shadow-xl hover:-translate-y-3 flex flex-col items-center text-center">
                 <div className="mb-8 bg-[var(--color-accent)]/10 w-20 h-20 rounded-[1.5rem] flex items-center justify-center border border-[var(--color-accent)]/10 group-hover:bg-[var(--color-accent)] transition-all duration-500 scale-100 group-hover:scale-110">
                   {service.icon}
                 </div>
@@ -739,14 +739,12 @@ function Index() {
             </div>
 
             <div className="order-1 lg:order-2 mb-16 lg:mb-0">
-              <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Autoridade Territorial</span>
-              <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-10 uppercase tracking-tighter leading-tight font-heading">
-                Inteligência, <br />
-                Segurança <br />
-                & Solidez
+              <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Trajetória de Liderança</span>
+              <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-10 uppercase tracking-tighter leading-tight font-heading">
+                Nossa História
               </h2>
               <div className="space-y-10 text-slate-600 text-xl leading-relaxed font-medium">
-                <p className="border-l-4 border-[var(--color-accent)] pl-8 py-4 bg-white/40 backdrop-blur-sm rounded-r-[2rem]">
+                <p className="border-l-4 border-[var(--color-accent)] pl-8 py-4 bg-white/30 backdrop-blur-sm rounded-r-[2rem]">
                   A <strong>Territorial Imóveis</strong> nasceu da necessidade de um mercado que exige precisão técnica e segurança jurídica absoluta. Não somos apenas uma imobiliária; somos um hub de soluções para quem busca valorização real e proteção patrimonial.
                 </p>
                 <div className="space-y-4">
