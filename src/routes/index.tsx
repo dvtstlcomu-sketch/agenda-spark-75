@@ -429,11 +429,12 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-3">
-              <div className="w-32 h-32 flex items-center justify-center overflow-hidden">
+              <div className="w-40 h-40 flex items-center justify-center overflow-visible">
                 <img 
                   src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-14/122edf09-6e87-44ab-9bb3-6116c6021058.png" 
                   alt="Territorial Imóveis Logo" 
-                  className="w-full h-full object-contain mix-blend-multiply"
+                  className="w-full h-full object-contain brightness-110 contrast-125 [filter:drop-shadow(0_0_10px_rgba(255,255,255,0.5))_multiply]"
+                  style={{ mixBlendMode: 'multiply' }}
                 />
               </div>
               <div className="flex flex-col">
