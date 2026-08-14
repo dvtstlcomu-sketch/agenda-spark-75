@@ -96,7 +96,7 @@ const PROJETOS_3D = [
     id: 3,
     title: "Simulação de Construção",
     description: "Projeção 3D de futuras edificações em terrenos analisados, facilitando a tomada de decisão do investidor.",
-    image: "https://images.unsplash.com/photo-1541888941295-184a621d4a90?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1503387762-592dea58ef21?auto=format&fit=crop&q=80",
     tech: "BIM & 3D"
   }
 ];
@@ -570,11 +570,27 @@ function Index() {
             {PROJETOS_3D.map((projeto) => (
               <div key={projeto.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
                 <div className="relative aspect-video overflow-hidden">
-                  <img 
-                    src={projeto.image} 
-                    alt={projeto.title}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  />
+                  {projeto.id === 3 ? (
+                    <div className="w-full h-full relative">
+                      <video 
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                        poster={projeto.image}
+                      >
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-building-a-house-in-a-time-lapse-12347-large.mp4" type="video/mp4" />
+                      </video>
+                      <div className="absolute inset-0 bg-black/20" />
+                    </div>
+                  ) : (
+                    <img 
+                      src={projeto.image} 
+                      alt={projeto.title}
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    />
+                  )}
                   <div className="absolute top-4 left-4">
                     <span className="bg-[var(--color-navy)] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
                       {projeto.tech}
