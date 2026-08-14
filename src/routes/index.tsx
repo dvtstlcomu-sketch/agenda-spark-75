@@ -87,7 +87,7 @@ const PROJETOS_3D = [
   },
   {
     id: 2,
-    title: "Mapeamento Digital com Drone",
+    title: "Mapeamento Aéreo com Drone",
     description: "Nuvem de pontos e modelos 3D gerados a partir de fotogrametria aérea para alta precisão em grandes áreas.",
     image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80",
     tech: "Fotogrametria"
