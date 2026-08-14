@@ -430,6 +430,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -442,19 +443,19 @@ function Index() {
         href="https://wa.me/551124050300" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center group"
+        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[100] bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center group"
         aria-label="Fale conosco no WhatsApp"
       >
-        <MessageSquare className="w-7 h-7" />
-        <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 font-bold whitespace-nowrap">Fale Conosco</span>
+        <MessageSquare className="w-6 h-6 md:w-7 md:h-7" />
+        <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 font-bold whitespace-nowrap hidden md:inline">Fale Conosco</span>
       </a>
 
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#e2e2e2] shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-32">
+          <div className="flex justify-between items-center h-20 md:h-32">
             <div className="flex items-center gap-0">
-              <div className="w-32 h-32 flex items-center justify-center overflow-visible">
+              <div className="w-16 h-16 md:w-32 md:h-32 flex items-center justify-center overflow-visible">
                 <img 
                   src={logo2.url} 
                   alt="Territorial Imóveis Logo" 
@@ -462,11 +463,12 @@ function Index() {
                 />
               </div>
               <div className="flex flex-col justify-center">
-                <span className="text-slate-900 font-black text-3xl lg:text-4xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight">TERRITORIAL IMÓVEIS</span>
-                <span className="text-[var(--color-accent)] font-black text-xs uppercase tracking-[0.2em] leading-none">CRECI 38258-J</span>
+                <span className="text-slate-900 font-black text-lg md:text-3xl lg:text-4xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight">TERRITORIAL IMÓVEIS</span>
+                <span className="text-[var(--color-accent)] font-black text-[10px] md:text-xs uppercase tracking-[0.2em] leading-none">CRECI 38258-J</span>
               </div>
             </div>
             
+            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-10 text-xs font-black uppercase tracking-[0.25em] text-slate-900">
               <a href="#inicio" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
                 Início
@@ -486,22 +488,53 @@ function Index() {
               </a>
               <a href="#anuncie" className="hover:text-[var(--color-accent)] transition-all relative group py-2">
                 Anunciar
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full"></span>
               </a>
             </div>
 
-            <Button 
-              onClick={() => window.open('https://wa.me/551124050300', '_blank')}
-              className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
-            >
-              (11) 2405-0300
-            </Button>
+            <div className="flex items-center gap-4">
+              <Button 
+                onClick={() => window.open('https://wa.me/551124050300', '_blank')}
+                className="hidden md:flex bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
+              >
+                (11) 2405-0300
+              </Button>
+
+              {/* Mobile Menu Button */}
+              <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="md:hidden p-2 text-slate-900"
+              >
+                {isMenuOpen ? <Plus className="rotate-45 w-8 h-8" /> : <Layers className="w-8 h-8" />}
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-[#e2e2e2] border-t border-black/5 p-4 animate-in slide-in-from-top duration-300">
+            <div className="flex flex-col gap-4 text-xs font-black uppercase tracking-[0.25em] text-slate-900">
+              <a href="#inicio" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Início</a>
+              <a href="#projetos" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Projetos</a>
+              <a href="#imoveis" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Imóveis</a>
+              <a href="#sobre" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Nossa História</a>
+              <a href="#anuncie" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Anunciar</a>
+              <Button 
+                onClick={() => {
+                  window.open('https://wa.me/551124050300', '_blank');
+                  setIsMenuOpen(false);
+                }}
+                className="bg-slate-900 text-white rounded-xl h-14 font-black uppercase tracking-widest text-xs mt-2"
+              >
+                (11) 2405-0300
+              </Button>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative pt-32 pb-24 lg:pt-56 lg:pb-40 overflow-hidden">
+      <section id="inicio" className="relative pt-24 pb-16 md:pt-56 md:pb-40 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/c14a5ede-f10c-463a-84f2-86a49ec04d10.jpg" 
@@ -513,42 +546,42 @@ function Index() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="mb-8 space-y-4">
-              <span className="inline-block px-6 py-2 bg-slate-900/10 text-slate-900 font-black text-xs uppercase tracking-[0.4em] rounded-full border border-slate-900/20 shadow-sm">
+            <div className="mb-6 md:mb-8 space-y-4">
+              <span className="inline-block px-4 py-1.5 md:px-6 md:py-2 bg-slate-900/10 text-slate-900 font-black text-[10px] md:text-xs uppercase tracking-[0.4em] rounded-full border border-slate-900/20 shadow-sm">
                 Inteligência e Precisão
               </span>
-              <p className="text-slate-900 font-black uppercase tracking-[0.1em] text-sm drop-shadow-sm animate-pulse max-w-lg mx-auto">
+              <p className="text-slate-900 font-black uppercase tracking-[0.05em] md:tracking-[0.1em] text-xs md:text-sm drop-shadow-sm animate-pulse max-w-lg mx-auto leading-relaxed px-4">
                 "A chave da sua casa própria não abre apenas uma porta, ela realiza o seu maior sonho e constrói o seu futuro."
               </p>
             </div>
-            <h1 className="text-xl lg:text-3xl font-bold text-foreground mb-8 tracking-tighter uppercase leading-tight font-heading drop-shadow-2xl opacity-90">
+            <h1 className="text-lg md:text-3xl font-bold text-foreground mb-6 md:mb-8 tracking-tighter uppercase leading-tight font-heading drop-shadow-2xl opacity-90 px-4">
               "Tudo posso naquele que me fortalece"
             </h1>
-            <p className="text-xl lg:text-2xl text-foreground/70 mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base md:text-2xl text-foreground/70 mb-10 md:mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-relaxed px-4">
               A inteligência imobiliária em primeiro lugar. Especialistas em Perícia Judicial e Inteligência de alta precisão.
             </p>
 
             {/* Search Bar Premium */}
-            <div className="bg-white/60 backdrop-blur-2xl p-4 rounded-[2.5rem] border border-white/40 flex flex-col md:flex-row gap-3 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
+            <div className="bg-white/60 backdrop-blur-2xl p-4 md:p-4 rounded-[1.5rem] md:rounded-[2.5rem] border border-white/40 flex flex-col md:flex-row gap-3 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] ring-1 ring-black/5 mx-2 md:mx-0">
               <div className="flex-1 relative group">
                 <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[var(--color-accent)] transition-colors" size={20} />
-                <input type="text" placeholder="Pesquisar por localização, tipo ou código..." className="w-full h-16 pl-16 pr-8 rounded-2xl bg-white/70 text-slate-900 border-none focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium transition-all shadow-inner" />
+                <input type="text" placeholder="Pesquisar..." className="w-full h-14 md:h-16 pl-16 pr-8 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border-none focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium transition-all shadow-inner text-sm md:text-base" />
               </div>
-              <div className="flex gap-3">
-                <select className="h-16 px-6 rounded-2xl bg-white/70 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-[160px] shadow-sm">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <select className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] shadow-sm text-sm md:text-base">
                   <option>Residencial</option>
                   <option>Apartamento</option>
                   <option>Comercial</option>
                   <option>Terreno</option>
                 </select>
-                <select className="h-16 px-6 rounded-2xl bg-white/50 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-[160px]">
+                <select className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/50 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] text-sm md:text-base">
                   <option>Compra</option>
                   <option>Venda</option>
                   <option>Locação</option>
                   <option>Permuta</option>
                 </select>
               </div>
-              <Button className="h-16 px-10 bg-[var(--color-accent)] text-[var(--color-navy)] rounded-2xl font-black uppercase tracking-[0.2em] border-none shadow-[0_10px_20px_-5px_var(--color-accent)] hover:scale-[1.02] transition-transform">
+              <Button className="h-14 md:h-16 px-10 bg-[var(--color-accent)] text-[var(--color-navy)] rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] border-none shadow-[0_10px_20px_-5px_var(--color-accent)] hover:scale-[1.02] transition-transform text-xs md:text-sm">
                 Consultar
               </Button>
             </div>
@@ -557,20 +590,20 @@ function Index() {
       </section>
 
       {/* Technical Areas Section (Moved up) */}
-      <section className="py-24 bg-[#e2e2e2] border-b border-black/5 relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-[#e2e2e2] border-b border-black/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Expertise Técnica</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight">Nossas Especialidades</h2>
+          <div className="text-center mb-12 md:mb-16">
+            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Expertise Técnica</span>
+            <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight px-4">Nossas Especialidades</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {TECHNICAL_SERVICES.map((service) => (
-              <div key={service.id} className="group p-8 rounded-[2.5rem] bg-white/40 backdrop-blur-md border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 relative overflow-hidden shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
-                <div className="mb-6 bg-[var(--color-accent)]/10 w-16 h-16 rounded-[1.25rem] flex items-center justify-center border border-[var(--color-accent)]/10 group-hover:bg-[var(--color-accent)] transition-all duration-500 scale-100 group-hover:scale-110">
-                  {service.icon}
+              <div key={service.id} className="group p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] bg-white/40 backdrop-blur-md border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 relative overflow-hidden shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+                <div className="mb-4 md:mb-6 bg-[var(--color-accent)]/10 w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-[1.25rem] flex items-center justify-center border border-[var(--color-accent)]/10 group-hover:bg-[var(--color-accent)] transition-all duration-500 scale-100 group-hover:scale-110">
+                  <div className="scale-75 md:scale-100">{service.icon}</div>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3 leading-tight group-hover:text-[var(--color-navy)] transition-colors font-heading tracking-tight">{service.title}</h3>
-                <p className="text-slate-600 text-xs leading-relaxed font-medium">{service.description}</p>
+                <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3 leading-tight group-hover:text-[var(--color-navy)] transition-colors font-heading tracking-tight">{service.title}</h3>
+                <p className="text-slate-600 text-[10px] md:text-xs leading-relaxed font-medium">{service.description}</p>
               </div>
             ))}
           </div>
@@ -579,30 +612,30 @@ function Index() {
 
 
       {/* Property Showcase */}
-      <section id="imoveis" className="py-32 bg-transparent relative overflow-hidden">
+      <section id="imoveis" className="py-20 md:py-32 bg-transparent relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-            <div className="max-w-xl text-left">
-              <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6 uppercase tracking-tighter font-heading">Curadoria Técnica</h2>
-              <p className="text-slate-600 font-medium text-lg">Ativos imobiliários selecionados sob rigorosa análise pericial e potencial de valorização estratégica.</p>
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 gap-6">
+            <div className="max-w-xl text-center md:text-left">
+              <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6 uppercase tracking-tighter font-heading">Curadoria Técnica</h2>
+              <p className="text-slate-600 font-medium text-base md:text-lg px-4 md:px-0">Ativos imobiliários selecionados sob rigorosa análise pericial e potencial de valorização estratégica.</p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 md:px-0">
               <Button 
                 onClick={() => document.getElementById('anuncie')?.scrollIntoView({ behavior: 'smooth' })}
-                className="rounded-full bg-[var(--color-accent)] text-slate-900 hover:scale-105 transition-all px-8 font-black uppercase tracking-wider shadow-lg"
+                className="rounded-full bg-[var(--color-accent)] text-slate-900 hover:scale-105 transition-all px-8 h-12 md:h-14 font-black uppercase tracking-wider shadow-lg w-full sm:w-auto"
               >
                 Incluir Imóvel <Plus size={18} className="ml-2" />
               </Button>
-              <Button variant="outline" className="rounded-full border-slate-200 text-slate-900 hover:bg-white/50 transition-colors bg-white/30 px-8">
+              <Button variant="outline" className="rounded-full border-slate-200 text-slate-900 hover:bg-white/50 transition-colors bg-white/30 px-8 h-12 md:h-14 w-full sm:w-auto">
                 Catálogo Completo <ArrowRight size={18} className="ml-2" />
               </Button>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-2 md:px-0">
             {PROPERTIES.slice(0, 6).map((property) => (
-              <div key={property.id} className="group bg-white/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-white/40 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
+              <div key={property.id} className="group bg-white/60 backdrop-blur-md rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-white/40 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
                     src={property.image} 
@@ -659,37 +692,37 @@ function Index() {
       </section>
 
       {/* Lead Generation Premium */}
-      <section id="anuncie" className="py-32 bg-[#e2e2e2] text-slate-900 overflow-hidden relative border-y border-black/5">
+      <section id="anuncie" className="py-20 md:py-32 bg-[#e2e2e2] text-slate-900 overflow-hidden relative border-y border-black/5">
         <div className="absolute inset-0 z-0 opacity-5">
            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.05),transparent_70%)]" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-            <div className="mb-12 lg:mb-0">
-              <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Consultoria Técnica</span>
-              <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6 uppercase tracking-tighter">Análise e Perícia Profissional</h2>
-              <p className="text-xl text-slate-600 mb-8 leading-relaxed font-medium">
+            <div className="mb-12 lg:mb-0 text-center lg:text-left px-4">
+              <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-sm mb-4 block">Consultoria Técnica</span>
+              <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 uppercase tracking-tighter leading-tight">Análise e Perícia Profissional</h2>
+              <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed font-medium">
                 Deseja vender ou avaliar seu terreno/imóvel? Nossa equipe técnica realiza o levantamento completo com segurança jurídica.
               </p>
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6 flex flex-col items-center lg:items-start">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                    <CheckCircle2 className="text-[var(--color-accent)]" />
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-full flex items-center justify-center">
+                    <CheckCircle2 className="text-[var(--color-accent)]" size={20} />
                   </div>
-                  <p className="text-lg">Análise técnica profissional</p>
+                  <p className="text-base md:text-lg">Análise técnica profissional</p>
                 </div>
                 <div className="flex items-center gap-4">
-                   <div className="w-12 h-12 bg-black/5 rounded-full flex items-center justify-center">
-                    <CheckCircle2 className="text-[var(--color-accent)]" />
+                   <div className="w-10 h-10 md:w-12 md:h-12 bg-black/5 rounded-full flex items-center justify-center">
+                    <CheckCircle2 className="text-[var(--color-accent)]" size={20} />
                   </div>
-                  <p className="text-lg">Sigilo e segurança jurídica</p>
+                  <p className="text-base md:text-lg">Sigilo e segurança jurídica</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white/40 backdrop-blur-3xl p-10 lg:p-14 rounded-[3rem] border border-black/5 shadow-2xl">
-              <form className="space-y-8">
-                <div className="grid sm:grid-cols-2 gap-8">
+            <div className="bg-white/40 backdrop-blur-3xl p-6 md:p-14 rounded-[2rem] md:rounded-[3rem] border border-black/5 shadow-2xl mx-4 md:mx-0">
+              <form className="space-y-6 md:space-y-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
                   <div className="space-y-3">
                     <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Nome do Requerente</label>
                     <input type="text" className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none transition-all placeholder:text-slate-400 font-medium" placeholder="Ex: Silvio Moura" />
@@ -736,7 +769,7 @@ function Index() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-20 rounded-2xl font-black text-xl shadow-xl border-none cursor-pointer uppercase tracking-[0.3em] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center">
+                <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-16 md:h-20 rounded-xl md:rounded-2xl font-black text-lg md:text-xl shadow-xl border-none cursor-pointer uppercase tracking-[0.2em] md:tracking-[0.3em] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center">
                   Solicitar Perícia
                 </Button>
               </form>
@@ -746,61 +779,52 @@ function Index() {
       </section>
 
       {/* CEO & Story */}
-      <section id="sobre" className="py-40 bg-transparent relative overflow-hidden">
+      <section id="sobre" className="py-20 md:py-40 bg-transparent relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-200/50 -skew-x-12 translate-x-1/2 opacity-30 z-0" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="lg:grid lg:grid-cols-2 lg:gap-24 items-center">
-            <div className="order-2 lg:order-1 relative h-full min-h-[500px] flex items-center">
+            <div className="order-2 lg:order-1 relative h-full min-h-[300px] md:min-h-[500px] flex items-center mb-12 lg:mb-0">
               <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
                 <img 
                   src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/ab71f7bc-c10f-429e-b905-e3aa2e2c6943.jpg" 
                   alt="Background Silvio Moura"
-                  className="w-full h-full object-cover opacity-40 transition-all duration-1000 grayscale-[30%]"
+                  className="w-full h-full object-cover opacity-40 transition-all duration-1000 grayscale-[30%] rounded-3xl"
                 />
               </div>
             </div>
 
-            <div className="order-1 lg:order-2 mb-16 lg:mb-0">
-              <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Trajetória de Liderança</span>
-              <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-10 uppercase tracking-tighter leading-tight font-heading">
+            <div className="order-1 lg:order-2 mb-12 lg:mb-0 text-center lg:text-left">
+              <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Trajetória de Liderança</span>
+              <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 md:mb-10 uppercase tracking-tighter leading-tight font-heading px-4 lg:px-0">
                 Nossa História
               </h2>
-              <div className="space-y-10 text-slate-600 text-xl leading-relaxed font-medium">
-                <p className="border-l-4 border-[var(--color-accent)] pl-8 py-4 bg-white/30 backdrop-blur-sm rounded-r-[2rem]">
-                  A <strong>Territorial Imóveis</strong> nasceu da necessidade de um mercado exigente que busca, em seus fornecedores de serviços, algo além do básico, tais como confiança, sigilo e segurança nas negociações imobiliárias.
+              <div className="space-y-6 md:space-y-10 text-slate-600 text-lg md:text-xl leading-relaxed font-medium px-4 lg:px-0">
+                <p className="border-l-4 border-[var(--color-accent)] pl-6 md:pl-8 py-4 bg-white/30 backdrop-blur-sm rounded-r-[1.5rem] md:rounded-r-[2rem] text-left">
+                  A <strong>Territorial Imóveis</strong> nasceu da necessidade de um mercado exigente que busca, em seus fornecedores de serviços, algo além do básico.
                 </p>
-                <div className="space-y-4">
-                  <p>
-                    Nossa história foi construída ao longo de anos de experiência, atuando em diversos segmentos imobiliários. A Territorial Imóveis possui amplo conhecimento em laudos periciais para usucapião, laudos de avaliação mercadológica, estruturação imobiliária e na área documental como despachante imobiliário.
+                <div className="space-y-4 text-left">
+                  <p className="text-sm md:text-xl">
+                    Nossa história foi construída ao longo de anos de experiência, atuando em diversos segmentos imobiliários.
                   </p>
-                  <p>
-                    Atuamos com maestria desde a administração de condomínios até levantamentos topográficos complexos, garantindo que cada metro quadrado seja tratado com o rigor que a lei e a inteligência territorial exigem.
-                  </p>
-                  <p className="text-slate-900 font-bold text-xl font-heading tracking-tight mt-6">
+                  <p className="text-slate-900 font-bold text-lg md:text-xl font-heading tracking-tight mt-6">
                     CRECI 151545-F
                   </p>
                 </div>
-                <p>
-                  O cliente em primeiro lugar: nossa filosofia prioriza a transparência e a inteligência, transformando desafios em oportunidades reais de alto retorno.
-                </p>
               </div>
               
-              <div className="mt-8">
+              <div className="mt-8 px-4 lg:px-0">
                 <Button 
                   onClick={() => window.open('https://wa.me/551124050300', '_blank')}
-                  className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 h-20 px-14 rounded-2xl font-black uppercase tracking-[0.2em] border-none transition-all duration-500 shadow-xl scale-100 hover:scale-[1.05]"
+                  className="w-full sm:w-auto bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 h-16 md:h-20 px-10 md:px-14 rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] border-none transition-all duration-500 shadow-xl"
                 >
-                  Fale com o CEO & Perito
+                  Fale com o CEO
                 </Button>
               </div>
               
-              <div className="mt-16 p-10 bg-white/40 backdrop-blur-md border border-black/5 rounded-[2.5rem] border-l-8 border-[var(--color-accent)] relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity text-slate-900">
-                   <Building2 size={80} />
-                </div>
-                <p className="text-slate-700 italic text-2xl font-light mb-6 leading-relaxed relative z-10 font-heading">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta à segurança jurídica de uma perícia especializada."</p>
-                <p className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-xs relative z-10 font-heading">— Silvio Moura</p>
+              <div className="mt-12 md:mt-16 p-6 md:p-10 bg-white/40 backdrop-blur-md border border-black/5 rounded-[2rem] md:rounded-[2.5rem] border-l-8 border-[var(--color-accent)] relative overflow-hidden group mx-4 lg:mx-0 text-left">
+                <p className="text-slate-700 italic text-xl md:text-2xl font-light mb-6 leading-relaxed relative z-10 font-heading">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta à segurança jurídica."</p>
+                <p className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-[10px] md:text-xs relative z-10 font-heading">— Silvio Moura</p>
               </div>
             </div>
           </div>
@@ -811,9 +835,9 @@ function Index() {
       <section id="depoimentos" className="py-32 bg-transparent relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-200/20 via-transparent to-slate-200/20" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-24">
-            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Credibilidade & Vozes</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading">Vozes da Experiência</h2>
+          <div className="text-center mb-16 md:mb-24">
+            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Credibilidade & Vozes</span>
+            <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading px-4">Vozes da Experiência</h2>
           </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -914,10 +938,10 @@ function Index() {
       <section id="projetos" className="py-32 bg-[#e2e2e2] border-t border-black/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-tr from-black/5 via-transparent to-black/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-24">
-            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-sm">Portfólio de Inteligência</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight">Projetos & Tecnologia</h2>
-            <p className="text-slate-900 mt-6 max-w-2xl mx-auto font-black text-xl lg:text-2xl uppercase tracking-tight">Simulação de Construção e Modelagem 3D Urbana</p>
+          <div className="text-center mb-16 md:mb-24">
+            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Portfólio de Inteligência</span>
+            <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight px-4">Projetos & Tecnologia</h2>
+            <p className="text-slate-900 mt-6 max-w-2xl mx-auto font-black text-lg md:text-2xl uppercase tracking-tight px-4">Simulação de Construção e Modelagem 3D Urbana</p>
           </div>
  
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -963,57 +987,57 @@ function Index() {
 
 
       {/* Footer */}
-      <footer className="bg-[#e2e2e2] py-24 border-t border-black/5">
+      <footer className="bg-[#e2e2e2] py-16 md:py-24 border-t border-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-12 mb-16">
-            <div>
-              <div className="flex items-center gap-0 mb-6">
-                <div className="w-14 h-14 flex items-center justify-center overflow-visible">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+            <div className="text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start gap-0 mb-6">
+                <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center overflow-visible">
                   <img 
                     src={logo2.url} 
                     alt="Territorial Imóveis Logo" 
                     className="w-full h-full object-contain mix-blend-multiply"
                   />
                 </div>
-                <span className="text-foreground font-black text-xl tracking-tighter uppercase font-brand ml-2">TERRITORIAL IMÓVEIS</span>
+                <span className="text-foreground font-black text-lg md:text-xl tracking-tighter uppercase font-brand ml-2">TERRITORIAL IMÓVEIS</span>
               </div>
-              <p className="text-slate-600 mb-8 leading-relaxed font-medium">
+              <p className="text-slate-600 mb-8 leading-relaxed font-medium px-4 md:px-0 text-sm md:text-base">
                 A vanguarda em Inteligência Territorial, Perícia Judicial e Soluções Imobiliárias de Alto Padrão em Guarulhos e Região.
               </p>
-              <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] hover:text-slate-900 transition-all">
+              <div className="flex justify-center md:justify-start gap-4">
+                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-slate-900 hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
                   <Share2 size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
+                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-slate-900 hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
                   <Globe size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
+                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-slate-900 hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
                   <Link size={20} />
                 </a>
               </div>
             </div>
 
-            <div>
-              <h4 className="text-foreground font-bold text-xl mb-6 uppercase tracking-widest font-heading">Atendimento</h4>
-              <ul className="space-y-6">
-                <li className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
-                    <Phone size={24} />
+            <div className="text-center md:text-left">
+              <h4 className="text-foreground font-bold text-xl mb-6 md:mb-8 uppercase tracking-widest font-heading">Atendimento</h4>
+              <ul className="space-y-6 flex flex-col items-center md:items-start">
+                <li className="flex flex-col md:flex-row items-center md:items-start gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
+                    <Phone size={24} className="scale-75 md:scale-100" />
                   </div>
                   <div className="text-slate-600 font-medium">
-                    <p className="font-bold text-foreground text-xl tracking-tighter leading-none">(11) 2405-0300</p>
+                    <p className="font-bold text-foreground text-lg md:text-xl tracking-tighter leading-none">(11) 2405-0300</p>
                     <p className="text-[10px] uppercase tracking-[0.2em] mt-1 font-black opacity-50">Fixo Comercial</p>
                   </div>
                 </li>
-                <li className="flex items-start gap-4 group">
-                  <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner shrink-0">
-                    <MessageSquare size={24} />
+                <li className="flex flex-col md:flex-row items-center md:items-start gap-4 group">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner shrink-0">
+                    <MessageSquare size={24} className="scale-75 md:scale-100" />
                   </div>
-                  <div className="text-slate-600 font-medium flex-1">
-                    <div className="flex flex-col gap-2">
+                  <div className="text-slate-600 font-medium flex-1 flex flex-col items-center md:items-start">
+                    <div className="flex flex-col gap-2 items-center md:items-start">
                       <div>
-                        <p className="font-bold text-foreground text-xl tracking-tighter leading-none">(11) 2405-0300</p>
-                        <p className="text-[10px] uppercase tracking-[0.2em] mt-1 font-black opacity-50">WhatsApp / Celular</p>
+                        <p className="font-bold text-foreground text-lg md:text-xl tracking-tighter leading-none">(11) 2405-0300</p>
+                        <p className="text-[10px] uppercase tracking-[0.2em] mt-1 font-black opacity-50 text-center md:text-left">WhatsApp / Celular</p>
                       </div>
                       <Button 
                         onClick={() => window.open('https://wa.me/551124050300', '_blank')}
@@ -1025,25 +1049,25 @@ function Index() {
                     </div>
                   </div>
                 </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-black/5 border border-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner shrink-0">
-                    <UserCheck size={24} />
+                <li className="flex flex-col md:flex-row items-center md:items-start gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner shrink-0">
+                    <UserCheck size={24} className="scale-75 md:scale-100" />
                   </div>
-                  <div className="text-slate-600 font-medium">
+                  <div className="text-slate-600 font-medium flex flex-col items-center md:items-start">
                     <div className="flex flex-col gap-2">
-                      <p className="font-bold text-foreground text-sm uppercase tracking-wider leading-tight">CRECI 38258-J (Imobiliária)</p>
-                      <p className="font-bold text-foreground text-sm uppercase tracking-wider leading-tight">CRECI 151545-F (Perito)</p>
+                      <p className="font-bold text-foreground text-xs md:text-sm uppercase tracking-wider leading-tight text-center md:text-left">CRECI 38258-J (Imobiliária)</p>
+                      <p className="font-bold text-foreground text-xs md:text-sm uppercase tracking-wider leading-tight text-center md:text-left">CRECI 151545-F (Perito)</p>
                     </div>
                   </div>
                 </li>
               </ul>
             </div>
 
-            <div>
-              <h4 className="text-foreground font-bold text-xl mb-6 uppercase tracking-widest font-heading">Localização</h4>
-              <div className="flex items-start gap-4">
+            <div className="text-center md:text-left">
+              <h4 className="text-foreground font-bold text-xl mb-6 md:mb-8 uppercase tracking-widest font-heading">Localização</h4>
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-4 px-4 md:px-0">
                 <MapPin className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
-                <p className="text-slate-400 leading-relaxed font-medium">
+                <p className="text-slate-600 leading-relaxed font-medium text-sm md:text-base text-center md:text-left">
                   Avenida Otávio Braga de Mesquita, Nº 3935<br />
                   Guarulhos / SP
                 </p>
