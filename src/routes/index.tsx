@@ -807,13 +807,15 @@ function Index() {
                   <p className="text-sm md:text-xl">
                     Nossa história foi construída ao longo de anos de experiência, atuando em diversos segmentos imobiliários. A Territorial Imóveis tem amplo conhecimento em laudo pericial para usucapião, laudo de avaliação mercadológica, estruturação imobiliária e despachante imobiliário na área documental.
                   </p>
-                  <div className="mt-8 flex flex-col items-center lg:items-start text-center lg:text-left">
+                  <div className="mt-8 flex flex-col items-center lg:items-start text-center lg:text-left w-full max-w-full">
                     <p className="text-slate-900 font-bold text-2xl md:text-4xl font-brand tracking-tighter inline-block border-b-4 border-[var(--color-accent)] pb-1 mb-2">
                       PERITO JUDICIAL E CEO
                     </p>
-                    <p className="text-slate-900 font-black text-[7.5px] sm:text-[10px] md:text-sm uppercase tracking-normal sm:tracking-widest block opacity-90 max-w-full overflow-hidden break-words whitespace-normal leading-tight text-center lg:text-left">
-                      OBJETIVO DA PERÍCIA AVALIAÇÃO MERCADOLÓGICA E LAUDO JUDICIAL
-                    </p>
+                    <div className="w-full flex justify-center lg:justify-start px-2">
+                      <p className="text-slate-900 font-black text-[8px] min-[375px]:text-[10px] sm:text-[12px] md:text-sm uppercase tracking-tight sm:tracking-widest block opacity-90 w-full break-words whitespace-normal leading-tight text-center lg:text-left">
+                        OBJETIVO DA PERÍCIA AVALIAÇÃO MERCADOLÓGICA E LAUDO JUDICIAL
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
