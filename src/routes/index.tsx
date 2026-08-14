@@ -745,18 +745,21 @@ function Index() {
               </h2>
               <div className="space-y-10 text-slate-600 text-xl leading-relaxed font-medium">
                 <p className="border-l-4 border-[var(--color-accent)] pl-8 py-4 bg-white/30 backdrop-blur-sm rounded-r-[2rem]">
-                  A <strong>Territorial Imóveis</strong> nasceu da necessidade de um mercado que exige precisão técnica e segurança jurídica absoluta. Não somos apenas uma imobiliária; somos um hub de soluções para quem busca valorização real e proteção patrimonial.
+                  A <strong>Territorial Imóveis</strong> nasceu da necessidade de um mercado exigente que busca, em seus fornecedores de serviços, algo além do básico, tais como confiança, sigilo e segurança nas negociações imobiliárias.
                 </p>
                 <div className="space-y-4">
                   <p>
-                    Nossa história é criada em anos de experiência atuando em perícia técnica e gestão estratégica. Atuamos com maestria desde a administração de condomínios até levantamentos topográficos complexos, garantindo que cada metro quadrado seja tratado com o rigor que a lei e a inteligência territorial exigem.
+                    Nossa história foi construída ao longo de anos de experiência, atuando em diversos segmentos imobiliários. A Territorial Imóveis possui amplo conhecimento em laudos periciais para usucapião, laudos de avaliação mercadológica, estruturação imobiliária e na área documental como despachante imobiliário.
+                  </p>
+                  <p>
+                    Atuamos com maestria desde a administração de condomínios até levantamentos topográficos complexos, garantindo que cada metro quadrado seja tratado com o rigor que a lei e a inteligência territorial exigem.
                   </p>
                   <p className="text-slate-900 font-bold text-xl font-heading tracking-tight mt-6">
                     CRECI 151545-F
                   </p>
                 </div>
                 <p>
-                  O cliente em primeiro lugar: nossa filosofia coloca a transparência e a inteligência na frente, transformando desafios em futuras oportunidades de alto retorno.
+                  O cliente em primeiro lugar: nossa filosofia prioriza a transparência e a inteligência, transformando desafios em oportunidades reais de alto retorno.
                 </p>
               </div>
               
