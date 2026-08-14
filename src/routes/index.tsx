@@ -562,26 +562,26 @@ function Index() {
             </p>
 
             {/* Search Bar Premium */}
-            <div className="bg-white/60 backdrop-blur-2xl p-4 rounded-[2.5rem] border border-white/40 flex flex-col md:flex-row gap-3 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
+            <div className="bg-white/60 backdrop-blur-2xl p-4 md:p-4 rounded-[1.5rem] md:rounded-[2.5rem] border border-white/40 flex flex-col md:flex-row gap-3 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] ring-1 ring-black/5 mx-2 md:mx-0">
               <div className="flex-1 relative group">
                 <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[var(--color-accent)] transition-colors" size={20} />
-                <input type="text" placeholder="Pesquisar por localização, tipo ou código..." className="w-full h-16 pl-16 pr-8 rounded-2xl bg-white/70 text-slate-900 border-none focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium transition-all shadow-inner" />
+                <input type="text" placeholder="Pesquisar..." className="w-full h-14 md:h-16 pl-16 pr-8 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border-none focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium transition-all shadow-inner text-sm md:text-base" />
               </div>
-              <div className="flex gap-3">
-                <select className="h-16 px-6 rounded-2xl bg-white/70 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-[160px] shadow-sm">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <select className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] shadow-sm text-sm md:text-base">
                   <option>Residencial</option>
                   <option>Apartamento</option>
                   <option>Comercial</option>
                   <option>Terreno</option>
                 </select>
-                <select className="h-16 px-6 rounded-2xl bg-white/50 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-[160px]">
+                <select className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/50 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] text-sm md:text-base">
                   <option>Compra</option>
                   <option>Venda</option>
                   <option>Locação</option>
                   <option>Permuta</option>
                 </select>
               </div>
-              <Button className="h-16 px-10 bg-[var(--color-accent)] text-[var(--color-navy)] rounded-2xl font-black uppercase tracking-[0.2em] border-none shadow-[0_10px_20px_-5px_var(--color-accent)] hover:scale-[1.02] transition-transform">
+              <Button className="h-14 md:h-16 px-10 bg-[var(--color-accent)] text-[var(--color-navy)] rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] border-none shadow-[0_10px_20px_-5px_var(--color-accent)] hover:scale-[1.02] transition-transform text-xs md:text-sm">
                 Consultar
               </Button>
             </div>
