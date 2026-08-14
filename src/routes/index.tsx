@@ -996,24 +996,24 @@ function Index() {
                   <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
                     <Phone size={24} />
                   </div>
-                  <div className="text-slate-400 font-medium">
-                    <p className="font-bold text-foreground text-2xl tracking-tighter leading-none">(11) 2405-0300</p>
-                    <p className="text-[10px] uppercase tracking-[0.2em] mt-2 font-black opacity-50">Fixo Comercial</p>
+                  <div className="text-slate-600 font-medium">
+                    <p className="font-bold text-foreground text-xl tracking-tighter leading-none">(11) 2405-0300</p>
+                    <p className="text-[10px] uppercase tracking-[0.2em] mt-1 font-black opacity-50">Fixo Comercial</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4 group">
-                  <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
+                  <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner shrink-0">
                     <MessageSquare size={24} />
                   </div>
                   <div className="text-slate-600 font-medium flex-1">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div className="flex flex-col gap-2">
                       <div>
-                        <p className="font-bold text-foreground text-2xl tracking-tighter leading-none">(11) 2405-0300</p>
-                        <p className="text-[10px] uppercase tracking-[0.2em] mt-2 font-black opacity-50">WhatsApp / Celular</p>
+                        <p className="font-bold text-foreground text-xl tracking-tighter leading-none">(11) 2405-0300</p>
+                        <p className="text-[10px] uppercase tracking-[0.2em] mt-1 font-black opacity-50">WhatsApp / Celular</p>
                       </div>
                       <Button 
                         onClick={() => window.open('https://wa.me/551124050300', '_blank')}
-                        className="bg-[#25D366] text-white hover:bg-white hover:text-slate-900 rounded-xl px-4 h-10 border-none font-black transition-all duration-300 shadow-lg text-[10px] uppercase tracking-widest flex items-center gap-2"
+                        className="bg-[#25D366] text-white hover:bg-white hover:text-slate-900 rounded-xl px-4 h-10 border-none font-black transition-all duration-300 shadow-lg text-[10px] uppercase tracking-widest flex items-center gap-2 w-fit"
                       >
                         <MessageSquare size={14} />
                         WhatsApp
@@ -1022,13 +1022,13 @@ function Index() {
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-black/5 border border-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
+                  <div className="w-12 h-12 bg-black/5 border border-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner shrink-0">
                     <UserCheck size={24} />
                   </div>
                   <div className="text-slate-600 font-medium">
-                    <div className="flex flex-col gap-1">
-                      <p className="font-bold text-foreground text-sm uppercase tracking-wider">CRECI 38258-J (Imobiliária)</p>
-                      <p className="font-bold text-foreground text-sm uppercase tracking-wider">CRECI 151545-F (Perito)</p>
+                    <div className="flex flex-col gap-2">
+                      <p className="font-bold text-foreground text-sm uppercase tracking-wider leading-tight">CRECI 38258-J (Imobiliária)</p>
+                      <p className="font-bold text-foreground text-sm uppercase tracking-wider leading-tight">CRECI 151545-F (Perito)</p>
                     </div>
                   </div>
                 </li>
