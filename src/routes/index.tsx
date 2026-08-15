@@ -593,8 +593,8 @@ function Index() {
             <div className="order-2 lg:order-1 relative h-full min-h-[300px] md:min-h-[500px] flex items-center mb-12 lg:mb-0">
               <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
                 <img 
-                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/ab71f7bc-c10f-429e-b905-e3aa2e2c6943.jpg" 
-                  alt="Background Silvio Moura"
+                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/c14a5ede-f10c-463a-84f2-86a49ec04d10.jpg" 
+                  alt="Background Territorial"
                   className="w-full h-full object-cover opacity-40 transition-all duration-1000 grayscale-[30%] rounded-3xl"
                 />
               </div>
