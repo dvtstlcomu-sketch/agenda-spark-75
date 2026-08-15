@@ -544,7 +544,7 @@ function Index() {
                 Inteligência e Precisão
               </span>
               <p className="text-slate-900 font-black uppercase tracking-[0.05em] md:tracking-[0.1em] text-xs md:text-sm drop-shadow-sm animate-pulse max-w-lg mx-auto leading-relaxed px-4">
-                "A chave da sua casa própria não abre apenas uma porta, ela realiza o seu maior sonho e constrói o seu futuro."
+                SEJAM BEM VINDOS A ERA DA IMOBILIARIA DIGITAL, COM FACILIDADE COMODIDADE E SEGURANÇA NA PALMA DA SUA MAO
               </p>
             </div>
             <h1 className="text-lg md:text-3xl font-bold text-foreground mb-6 md:mb-8 tracking-tighter uppercase leading-tight font-heading drop-shadow-2xl opacity-90 px-4">
