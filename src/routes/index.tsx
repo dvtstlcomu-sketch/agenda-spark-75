@@ -59,7 +59,7 @@ const TECHNICAL_SERVICES = [
   },
   {
     id: 5,
-    title: "Drone para Avaliação Imobiliária",
+    title: "MAPEAMENTO AEREO COM DRONE",
     description: "Sobrevôo especializado para avaliações e mapeamento técnico de precisão.",
     icon: <Zap className="w-8 h-8 text-[var(--color-accent)]" />,
   },
