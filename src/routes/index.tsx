@@ -614,9 +614,19 @@ function Index() {
                 </Button>
               </div>
               
-              <div className="mt-12 md:mt-16 p-6 md:p-10 bg-white/40 backdrop-blur-md border border-black/5 rounded-[2rem] md:rounded-[2.5rem] border-l-8 border-[var(--color-accent)] relative overflow-hidden group mx-4 lg:mx-0 text-left">
-                <p className="text-slate-700 italic text-xl md:text-2xl font-light mb-6 leading-relaxed relative z-10 font-heading">"Nossa missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta à segurança jurídica."</p>
-                <p className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-[10px] md:text-xs relative z-10 font-heading">— Territorial Imóveis</p>
+              <div className="mt-12 md:mt-16 p-6 md:p-12 bg-white/40 backdrop-blur-md border border-black/5 rounded-[2.5rem] md:rounded-[3.5rem] border-l-[12px] border-[var(--color-accent)] relative overflow-hidden group mx-4 lg:mx-0 text-left shadow-2xl">
+                <div className="relative z-10">
+                  <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.5em] text-[10px] md:text-xs mb-4 block opacity-80 font-brand">Nossa Missão</span>
+                  <p className="text-slate-900 font-black text-2xl md:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-6 font-brand uppercase">
+                    "Elevar o padrão do mercado imobiliário, integrando tecnologia de ponta à segurança jurídica."
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="h-px w-12 bg-[var(--color-accent)]"></div>
+                    <p className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] text-[10px] md:text-xs font-brand">Territorial Imóveis</p>
+                  </div>
+                </div>
+                {/* Visual decoration */}
+                <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-[var(--color-accent)]/5 rounded-full blur-3xl group-hover:bg-[var(--color-accent)]/10 transition-colors"></div>
               </div>
             </div>
           </div>
