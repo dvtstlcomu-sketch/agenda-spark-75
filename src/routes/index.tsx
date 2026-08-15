@@ -455,7 +455,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-24 md:h-32 relative">
             {/* Logo and Branding - Left */}
-            <div className="flex items-center gap-2 md:gap-4 shrink-0">
+            <div className="flex items-center shrink-0">
               <div className="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center overflow-visible">
                 <img 
                   src={logo2.url} 
@@ -463,7 +463,7 @@ function Index() {
                   className="w-full h-full object-contain mix-blend-multiply"
                 />
               </div>
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center -ml-2 md:-ml-4">
                 <span className="text-slate-900 font-black text-xl md:text-4xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight whitespace-nowrap">TERRITORIAL IMÓVEIS</span>
                 <span className="text-slate-900 font-bold text-[9px] md:text-sm uppercase tracking-[0.25em] leading-none mt-0.5 w-full text-center">CRECI 38258-J</span>
               </div>
@@ -872,15 +872,20 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
             <div className="text-center md:text-left">
-              <div className="flex flex-col items-center gap-0 mb-8 text-center">
-                <div className="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center overflow-visible">
-                  <img 
-                    src={logo2.url} 
-                    alt="Territorial Imóveis Logo" 
-                    className="w-full h-full object-contain mix-blend-multiply"
-                  />
+              <div className="flex flex-col items-center text-center">
+                <div className="flex items-center">
+                  <div className="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center overflow-visible">
+                    <img 
+                      src={logo2.url} 
+                      alt="Territorial Imóveis Logo" 
+                      className="w-full h-full object-contain mix-blend-multiply"
+                    />
+                  </div>
+                  <div className="flex flex-col items-center -ml-2 md:-ml-4">
+                    <span className="text-foreground font-black text-2xl md:text-3xl tracking-tighter uppercase font-brand leading-tight whitespace-nowrap">TERRITORIAL IMÓVEIS</span>
+                    <span className="text-foreground font-bold text-[10px] md:text-xs uppercase tracking-[0.25em] leading-none mt-0.5 w-full text-center">CRECI 38258-J</span>
+                  </div>
                 </div>
-                <span className="text-foreground font-black text-2xl md:text-3xl tracking-tighter uppercase font-brand">TERRITORIAL IMÓVEIS</span>
               </div>
               <div className="flex justify-center md:justify-start gap-4">
                 <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-slate-900 hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
