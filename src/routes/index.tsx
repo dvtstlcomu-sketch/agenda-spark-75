@@ -601,7 +601,7 @@ function Index() {
             </div>
 
             <div className="order-1 lg:order-2 mb-12 lg:mb-0 text-center lg:text-left">
-              <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Trajetória de Liderança</span>
+              <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Trajetória de Sucesso</span>
               <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 md:mb-10 uppercase tracking-tighter leading-tight font-heading px-4 lg:px-0">
                 Nossa História
               </h2>
