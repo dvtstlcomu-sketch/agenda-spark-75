@@ -615,7 +615,7 @@ function Index() {
                   </p>
                   <div className="mt-8 flex flex-col items-center lg:items-start text-center lg:text-left w-full max-w-full">
                     <p className="text-slate-900 font-bold text-2xl md:text-4xl font-brand tracking-tighter inline-block border-b-4 border-[var(--color-accent)] pb-1 mb-2">
-                      PERITO JUDICIAL E CEO
+                      TERRITORIAL IMÓVEIS
                     </p>
                     <div className="w-full flex justify-center lg:justify-start px-2">
                       <p className="text-slate-900 font-black text-[8px] min-[375px]:text-[10px] sm:text-[12px] md:text-sm uppercase tracking-tight sm:tracking-widest block opacity-90 w-full break-words whitespace-normal leading-tight text-center lg:text-left">
