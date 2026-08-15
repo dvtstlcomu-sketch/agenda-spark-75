@@ -59,7 +59,7 @@ const TECHNICAL_SERVICES = [
   },
   {
     id: 5,
-    title: "Drone para Avaliação Imobiliária",
+    title: "MAPEAMENTO AEREO COM DRONE",
     description: "Sobrevôo especializado para avaliações e mapeamento técnico de precisão.",
     icon: <Zap className="w-8 h-8 text-[var(--color-accent)]" />,
   },
@@ -544,7 +544,7 @@ function Index() {
                 Inteligência e Precisão
               </span>
               <p className="text-slate-900 font-black uppercase tracking-[0.05em] md:tracking-[0.1em] text-xs md:text-sm drop-shadow-sm animate-pulse max-w-lg mx-auto leading-relaxed px-4">
-                "A chave da sua casa própria não abre apenas uma porta, ela realiza o seu maior sonho e constrói o seu futuro."
+                SEJAM BEM VINDOS A ERA DA IMOBILIARIA DIGITAL, COM FACILIDADE COMODIDADE E SEGURANÇA NA PALMA DA SUA MAO
               </p>
             </div>
             <h1 className="text-lg md:text-3xl font-bold text-foreground mb-6 md:mb-8 tracking-tighter uppercase leading-tight font-heading drop-shadow-2xl opacity-90 px-4">
@@ -554,30 +554,6 @@ function Index() {
               A inteligência imobiliária em primeiro lugar. Especialistas em Perícia Judicial e Inteligência de alta precisão.
             </p>
 
-            {/* Search Bar Premium */}
-            <div className="bg-white/60 backdrop-blur-2xl p-4 md:p-4 rounded-[1.5rem] md:rounded-[2.5rem] border border-white/40 flex flex-col md:flex-row gap-3 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] ring-1 ring-black/5 mx-2 md:mx-0">
-              <div className="flex-1 relative group">
-                <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[var(--color-accent)] transition-colors" size={20} />
-                <input type="text" placeholder="Pesquisar..." className="w-full h-14 md:h-16 pl-16 pr-8 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border-none focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium transition-all shadow-inner text-sm md:text-base" />
-              </div>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <select className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] shadow-sm text-sm md:text-base">
-                  <option>Residencial</option>
-                  <option>Apartamento</option>
-                  <option>Comercial</option>
-                  <option>Terreno</option>
-                </select>
-                <select className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/50 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] text-sm md:text-base">
-                  <option>Compra</option>
-                  <option>Venda</option>
-                  <option>Locação</option>
-                  <option>Permuta</option>
-                </select>
-              </div>
-              <Button className="h-14 md:h-16 px-10 bg-[var(--color-accent)] text-[var(--color-navy)] rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] border-none shadow-[0_10px_20px_-5px_var(--color-accent)] hover:scale-[1.02] transition-transform text-xs md:text-sm">
-                Consultar
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -593,15 +569,15 @@ function Index() {
             <div className="order-2 lg:order-1 relative h-full min-h-[300px] md:min-h-[500px] flex items-center mb-12 lg:mb-0">
               <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
                 <img 
-                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/ab71f7bc-c10f-429e-b905-e3aa2e2c6943.jpg" 
-                  alt="Background Silvio Moura"
+                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/c14a5ede-f10c-463a-84f2-86a49ec04d10.jpg" 
+                  alt="Background Territorial"
                   className="w-full h-full object-cover opacity-40 transition-all duration-1000 grayscale-[30%] rounded-3xl"
                 />
               </div>
             </div>
 
             <div className="order-1 lg:order-2 mb-12 lg:mb-0 text-center lg:text-left">
-              <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Trajetória de Liderança</span>
+              <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Trajetória de Sucesso</span>
               <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 md:mb-10 uppercase tracking-tighter leading-tight font-heading px-4 lg:px-0">
                 Nossa História
               </h2>
@@ -611,11 +587,11 @@ function Index() {
                 </p>
                 <div className="space-y-4 text-left">
                   <p className="text-sm md:text-xl">
-                    Nossa história foi construída ao longo de anos de experiência, atuando em diversos segmentos imobiliários. A Territorial Imóveis tem amplo conhecimento em laudo pericial para usucapião, laudo de avaliação mercadológica, estruturação imobiliária e despachante imobiliário na área documental.
+                    Nossa história foi construída ao longo de anos de experiência, atuando em diversos segmentos imobiliários. A Territorial Imóveis tem amplo conhecimento em laudo pericial para usucapião, laudo de avaliação mercadológica e estruturação imobiliária.
                   </p>
                   <div className="mt-8 flex flex-col items-center lg:items-start text-center lg:text-left w-full max-w-full">
                     <p className="text-slate-900 font-bold text-2xl md:text-4xl font-brand tracking-tighter inline-block border-b-4 border-[var(--color-accent)] pb-1 mb-2">
-                      PERITO JUDICIAL E CEO
+                      TERRITORIAL IMÓVEIS
                     </p>
                     <div className="w-full flex justify-center lg:justify-start px-2">
                       <p className="text-slate-900 font-black text-[8px] min-[375px]:text-[10px] sm:text-[12px] md:text-sm uppercase tracking-tight sm:tracking-widest block opacity-90 w-full break-words whitespace-normal leading-tight text-center lg:text-left">
@@ -636,8 +612,8 @@ function Index() {
               </div>
               
               <div className="mt-12 md:mt-16 p-6 md:p-10 bg-white/40 backdrop-blur-md border border-black/5 rounded-[2rem] md:rounded-[2.5rem] border-l-8 border-[var(--color-accent)] relative overflow-hidden group mx-4 lg:mx-0 text-left">
-                <p className="text-slate-700 italic text-xl md:text-2xl font-light mb-6 leading-relaxed relative z-10 font-heading">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta à segurança jurídica."</p>
-                <p className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-[10px] md:text-xs relative z-10 font-heading">— Silvio Moura</p>
+                <p className="text-slate-700 italic text-xl md:text-2xl font-light mb-6 leading-relaxed relative z-10 font-heading">"Nossa missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta à segurança jurídica."</p>
+                <p className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-[10px] md:text-xs relative z-10 font-heading">— Territorial Imóveis</p>
               </div>
             </div>
           </div>
@@ -750,59 +726,43 @@ function Index() {
               </div>
             </div>
 
-            <div className="bg-white/40 backdrop-blur-3xl p-6 md:p-14 rounded-[2rem] md:rounded-[3rem] border border-black/5 shadow-2xl mx-4 md:mx-0">
-              <form className="space-y-6 md:space-y-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
-                  <div className="space-y-3">
-                    <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Nome do Requerente</label>
-                    <input type="text" className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none transition-all placeholder:text-slate-400 font-medium" placeholder="Ex: Silvio Moura" />
+            <div className="space-y-8 mx-4 md:mx-0">
+              {/* Form 1: Solicitar Perícia */}
+              <div className="bg-white/40 backdrop-blur-3xl p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-black/5 shadow-2xl">
+                <h3 className="text-xl font-black text-slate-900 mb-6 uppercase tracking-tighter">Solicitar Perícia / Avaliação</h3>
+                <form className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input type="text" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Nome do Requerente" />
+                    <input type="tel" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Contato" />
                   </div>
-                  <div className="space-y-3">
-                    <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Contato Estratégico</label>
-                    <input type="tel" className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none transition-all placeholder:text-slate-400 font-medium" placeholder="(11) 2405-0300" />
-                  </div>
-                </div>
-                
-                <div className="grid sm:grid-cols-2 gap-8">
-                  <div className="space-y-3">
-                    <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Categoria do Ativo</label>
-                    <select className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none">
-                      <option className="bg-white">Terreno / Gleba</option>
-                      <option className="bg-white">Residência Alto Padrão</option>
-                      <option className="bg-white">Industrial / Logístico</option>
-                      <option className="bg-white">Comercial</option>
-                    </select>
-                  </div>
-                  <div className="space-y-3">
-                    <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Objetivo da Perícia</label>
-                    <select className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none text-[9px] sm:text-xs md:text-sm">
-                      <option className="bg-white">Avaliação Mercadológica e Laudo Judicial</option>
-                      <option className="bg-white">Usucapião / Regularização</option>
-                      <option className="bg-white">Projetos de Inteligência</option>
-                      <option className="bg-white">Venda Estratégica</option>
-                    </select>
-                  </div>
-                </div>
+                  <select className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none text-xs">
+                    <option className="bg-white">Avaliação Mercadológica e Laudo Judicial</option>
+                    <option className="bg-white">Usucapião / Regularização</option>
+                    <option className="bg-white">Projetos de Inteligência</option>
+                  </select>
+                  <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
+                    Solicitar Perícia
+                  </Button>
+                </form>
+              </div>
 
-                <div className="space-y-2">
-                  <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Descrição Estratégica</label>
-                  <textarea className="w-full p-5 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none min-h-[120px] transition-all placeholder:text-slate-400" placeholder="Detalhes técnicos ou localização específica..."></textarea>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Upload de Documentação/Fotos</label>
-                  <div className="border-2 border-dashed border-black/10 rounded-2xl p-10 text-center hover:border-[var(--color-accent)] transition-all cursor-pointer bg-white/40 group relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[var(--color-accent)]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <Upload className="mx-auto text-gray-500 mb-4 group-hover:text-[var(--color-accent)] transition-colors" size={32} />
-                    <p className="text-white font-bold text-lg mb-1 tracking-tight">Anexar arquivos técnicos</p>
-                    <p className="text-gray-500 text-xs uppercase tracking-widest font-black">Escrituras, Projetos ou Fotos (Até 50MB)</p>
+              {/* Form 2: Envio de Imóveis */}
+              <div className="bg-white/40 backdrop-blur-3xl p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-black/5 shadow-2xl">
+                <h3 className="text-xl font-black text-slate-900 mb-6 uppercase tracking-tighter">Enviar Imóvel para Análise</h3>
+                <form className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input type="text" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Nome Completo" />
+                    <input type="tel" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="WhatsApp" />
                   </div>
-                </div>
-
-                <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-16 md:h-20 rounded-xl md:rounded-2xl font-black text-lg md:text-xl shadow-xl border-none cursor-pointer uppercase tracking-[0.1em] md:tracking-[0.3em] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center text-center whitespace-normal leading-tight px-4">
-                  Solicitar Perícia
-                </Button>
-              </form>
+                  <div className="border-2 border-dashed border-black/10 rounded-2xl p-6 text-center hover:border-[var(--color-accent)] transition-all cursor-pointer bg-white/40 group relative">
+                    <Upload className="mx-auto text-gray-500 mb-2 group-hover:text-[var(--color-accent)]" size={24} />
+                    <p className="text-slate-900 font-bold text-sm tracking-tight">Anexar Fotos do Imóvel</p>
+                  </div>
+                  <Button className="w-full bg-slate-900 text-white h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
+                    Enviar para Imobiliária
+                  </Button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -868,6 +828,94 @@ function Index() {
           </div>
         </div>
       </section>
+      {/* Imóveis Section (Section Order 6) */}
+      <section id="imoveis" className="py-24 bg-[#e2e2e2] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] text-xs mb-4 block">Curadoria Exclusiva</span>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-8">Portfólio de Imóveis</h2>
+            
+            {/* Search Bar Premium - Relocated here */}
+            <div className="bg-white/60 backdrop-blur-2xl p-4 md:p-4 rounded-[1.5rem] md:rounded-[2.5rem] border border-white/40 flex flex-col md:flex-row gap-3 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] ring-1 ring-black/5 mx-auto max-w-4xl mb-16">
+              <div className="flex-1 relative group">
+                <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[var(--color-accent)] transition-colors" size={20} />
+                <input type="text" placeholder="Pesquisar..." className="w-full h-14 md:h-16 pl-16 pr-8 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border-none focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium transition-all shadow-inner text-sm md:text-base" />
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <select className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] shadow-sm text-sm md:text-base">
+                  <option>Residencial</option>
+                  <option>Apartamento</option>
+                  <option>Comercial</option>
+                  <option>Terreno</option>
+                </select>
+                <select className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/50 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] text-sm md:text-base">
+                  <option>Compra</option>
+                  <option>Venda</option>
+                  <option>Locação</option>
+                  <option>Permuta</option>
+                </select>
+              </div>
+              <Button className="h-14 md:h-16 px-10 bg-[var(--color-accent)] text-[var(--color-navy)] rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] border-none shadow-[0_10px_20px_-5px_var(--color-accent)] hover:scale-[1.02] transition-transform text-xs md:text-sm">
+                Consultar
+              </Button>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {PROPERTIES.map((property) => (
+              <div key={property.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img 
+                    src={property.image} 
+                    alt={property.title}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  />
+                  <div className="absolute top-4 left-4 flex flex-col gap-2">
+                    <span className="bg-white/90 backdrop-blur-md text-slate-900 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
+                      {property.type}
+                    </span>
+                    <span className="bg-[var(--color-accent)] text-[var(--color-navy)] text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
+                      {property.status}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-8">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-2xl font-black text-slate-900 font-brand tracking-tighter uppercase leading-none mb-2">{property.title}</h3>
+                      <p className="text-slate-500 text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                        <MapPin size={12} className="text-[var(--color-accent)]" /> {property.location}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-6 font-medium line-clamp-2">{property.description}</p>
+                  <div className="grid grid-cols-3 gap-4 py-6 border-y border-black/5 mb-6">
+                    <div className="flex flex-col items-center gap-1">
+                      <Bed size={16} className="text-[var(--color-accent)]" />
+                      <span className="text-xs font-black text-slate-900">{property.beds}</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-1">
+                      <Bath size={16} className="text-[var(--color-accent)]" />
+                      <span className="text-xs font-black text-slate-900">{property.baths}</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-1">
+                      <Maximize size={16} className="text-[var(--color-accent)]" />
+                      <span className="text-xs font-black text-slate-900">{property.area}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-black text-slate-900 font-brand tracking-tighter">{property.price}</span>
+                    <Button className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 h-12 w-12 rounded-xl flex items-center justify-center border-none transition-all shadow-lg p-0">
+                      <ArrowRight size={20} />
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-[#e2e2e2] py-16 md:py-24 border-t border-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -979,7 +1027,7 @@ function Index() {
 
           <div className="pt-10 border-t border-white/5 text-center">
             <p className="text-slate-600 text-sm font-medium tracking-wide">
-              © 2026 Territorial Imóveis - CRECI 38258-J. Inteligência de Precisão & Segurança Jurídica.
+              © 2026 Territorial Imóveis - CRECI 38258-J. Segurança Jurídica.
             </p>
           </div>
         </div>
