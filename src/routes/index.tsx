@@ -616,8 +616,8 @@ function Index() {
               
               <div className="mt-12 md:mt-16 p-6 md:p-12 bg-white/40 backdrop-blur-md border border-black/5 rounded-[2.5rem] md:rounded-[3.5rem] border-l-[12px] border-[var(--color-accent)] relative overflow-hidden group mx-4 lg:mx-0 text-left shadow-2xl">
                 <div className="relative z-10">
-                  <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.5em] text-[10px] md:text-xs mb-4 block opacity-80">Nossa Missão</span>
-                  <p className="text-slate-900 font-extrabold text-2xl md:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-6 uppercase">
+                  <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.5em] text-[10px] md:text-xs mb-4 block opacity-80 font-sans">Nossa Missão</span>
+                  <p className="text-slate-900 font-extrabold text-2xl md:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-6 uppercase font-sans">
                     "Elevar o padrão do mercado imobiliário, integrando tecnologia de ponta à segurança jurídica."
                   </p>
                   <div className="flex items-center gap-3">
