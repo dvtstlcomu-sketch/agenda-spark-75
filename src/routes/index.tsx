@@ -636,8 +636,8 @@ function Index() {
               </div>
               
               <div className="mt-12 md:mt-16 p-6 md:p-10 bg-white/40 backdrop-blur-md border border-black/5 rounded-[2rem] md:rounded-[2.5rem] border-l-8 border-[var(--color-accent)] relative overflow-hidden group mx-4 lg:mx-0 text-left">
-                <p className="text-slate-700 italic text-xl md:text-2xl font-light mb-6 leading-relaxed relative z-10 font-heading">"Minha missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta à segurança jurídica."</p>
-                <p className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-[10px] md:text-xs relative z-10 font-heading">— Silvio Moura</p>
+                <p className="text-slate-700 italic text-xl md:text-2xl font-light mb-6 leading-relaxed relative z-10 font-heading">"Nossa missão é elevar o padrão do mercado imobiliário, integrando tecnologia de ponta à segurança jurídica."</p>
+                <p className="text-[var(--color-accent)] font-black uppercase tracking-[0.4em] text-[10px] md:text-xs relative z-10 font-heading">— Territorial Imóveis</p>
               </div>
             </div>
           </div>
