@@ -455,7 +455,8 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-24 md:h-32 relative">
             {/* Logo and Branding - Left */}
-            <div className="flex items-center shrink-0">
+            {/* Branding - Left */}
+            <div className="flex items-center gap-2 md:gap-4 shrink-0">
               <div className="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center overflow-visible">
                 <img 
                   src={logo2.url} 
@@ -464,13 +465,13 @@ function Index() {
                 />
               </div>
               <div className="flex flex-col items-center -ml-2 md:-ml-4">
-                <span className="text-slate-900 font-black text-xl md:text-4xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight whitespace-nowrap">TERRITORIAL IMÓVEIS</span>
-                <span className="text-slate-900 font-bold text-[9px] md:text-sm uppercase tracking-[0.25em] leading-none mt-0.5 w-full text-center">CRECI 38258-J</span>
+                <span className="text-slate-900 font-black text-xl md:text-3xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight whitespace-nowrap">TERRITORIAL IMÓVEIS</span>
+                <span className="text-slate-900 font-bold text-[9px] md:text-xs uppercase tracking-[0.25em] leading-none mt-0.5 w-full text-center">CRECI 38258-J</span>
               </div>
             </div>
 
-            {/* Desktop Menu - Center */}
-            <div className="hidden lg:flex items-center gap-4 xl:gap-6 absolute left-1/2 -translate-x-1/2 whitespace-nowrap">
+            {/* Desktop Menu - Right */}
+            <div className="hidden lg:flex items-center gap-4 xl:gap-6 whitespace-nowrap">
               <a href="#inicio" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Início</a>
               <a href="#sobre" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Nossa História</a>
               <a href="#especialidades" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Especialidades</a>
