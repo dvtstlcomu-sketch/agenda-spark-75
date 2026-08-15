@@ -726,59 +726,43 @@ function Index() {
               </div>
             </div>
 
-            <div className="bg-white/40 backdrop-blur-3xl p-6 md:p-14 rounded-[2rem] md:rounded-[3rem] border border-black/5 shadow-2xl mx-4 md:mx-0">
-              <form className="space-y-6 md:space-y-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
-                  <div className="space-y-3">
-                    <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Nome do Requerente</label>
-                    <input type="text" className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none transition-all placeholder:text-slate-400 font-medium" placeholder="Ex: Silvio Moura" />
+            <div className="space-y-8 mx-4 md:mx-0">
+              {/* Form 1: Solicitar Perícia */}
+              <div className="bg-white/40 backdrop-blur-3xl p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-black/5 shadow-2xl">
+                <h3 className="text-xl font-black text-slate-900 mb-6 uppercase tracking-tighter">Solicitar Perícia / Avaliação</h3>
+                <form className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input type="text" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Nome do Requerente" />
+                    <input type="tel" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Contato" />
                   </div>
-                  <div className="space-y-3">
-                    <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Contato Estratégico</label>
-                    <input type="tel" className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none transition-all placeholder:text-slate-400 font-medium" placeholder="(11) 2405-0300" />
-                  </div>
-                </div>
-                
-                <div className="grid sm:grid-cols-2 gap-8">
-                  <div className="space-y-3">
-                    <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Categoria do Ativo</label>
-                    <select className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none">
-                      <option className="bg-white">Terreno / Gleba</option>
-                      <option className="bg-white">Residência Alto Padrão</option>
-                      <option className="bg-white">Industrial / Logístico</option>
-                      <option className="bg-white">Comercial</option>
-                    </select>
-                  </div>
-                  <div className="space-y-3">
-                    <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Objetivo da Perícia</label>
-                    <select className="w-full h-16 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none text-[9px] sm:text-xs md:text-sm">
-                      <option className="bg-white">Avaliação Mercadológica e Laudo Judicial</option>
-                      <option className="bg-white">Usucapião / Regularização</option>
-                      <option className="bg-white">Projetos de Inteligência</option>
-                      <option className="bg-white">Venda Estratégica</option>
-                    </select>
-                  </div>
-                </div>
+                  <select className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none text-xs">
+                    <option className="bg-white">Avaliação Mercadológica e Laudo Judicial</option>
+                    <option className="bg-white">Usucapião / Regularização</option>
+                    <option className="bg-white">Projetos de Inteligência</option>
+                  </select>
+                  <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
+                    Solicitar Perícia
+                  </Button>
+                </form>
+              </div>
 
-                <div className="space-y-2">
-                  <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Descrição Estratégica</label>
-                  <textarea className="w-full p-5 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none min-h-[120px] transition-all placeholder:text-slate-400" placeholder="Detalhes técnicos ou localização específica..."></textarea>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">Upload de Documentação/Fotos</label>
-                  <div className="border-2 border-dashed border-black/10 rounded-2xl p-10 text-center hover:border-[var(--color-accent)] transition-all cursor-pointer bg-white/40 group relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[var(--color-accent)]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <Upload className="mx-auto text-gray-500 mb-4 group-hover:text-[var(--color-accent)] transition-colors" size={32} />
-                    <p className="text-white font-bold text-lg mb-1 tracking-tight">Anexar arquivos técnicos</p>
-                    <p className="text-gray-500 text-xs uppercase tracking-widest font-black">Escrituras, Projetos ou Fotos (Até 50MB)</p>
+              {/* Form 2: Envio de Imóveis */}
+              <div className="bg-white/40 backdrop-blur-3xl p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-black/5 shadow-2xl">
+                <h3 className="text-xl font-black text-slate-900 mb-6 uppercase tracking-tighter">Enviar Imóvel para Análise</h3>
+                <form className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input type="text" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Nome Completo" />
+                    <input type="tel" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="WhatsApp" />
                   </div>
-                </div>
-
-                <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-16 md:h-20 rounded-xl md:rounded-2xl font-black text-lg md:text-xl shadow-xl border-none cursor-pointer uppercase tracking-[0.1em] md:tracking-[0.3em] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center text-center whitespace-normal leading-tight px-4">
-                  Solicitar Perícia
-                </Button>
-              </form>
+                  <div className="border-2 border-dashed border-black/10 rounded-2xl p-6 text-center hover:border-[var(--color-accent)] transition-all cursor-pointer bg-white/40 group relative">
+                    <Upload className="mx-auto text-gray-500 mb-2 group-hover:text-[var(--color-accent)]" size={24} />
+                    <p className="text-slate-900 font-bold text-sm tracking-tight">Anexar Fotos do Imóvel</p>
+                  </div>
+                  <Button className="w-full bg-slate-900 text-white h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
+                    Enviar para Imobiliária
+                  </Button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
