@@ -844,6 +844,94 @@ function Index() {
           </div>
         </div>
       </section>
+      {/* Imóveis Section (Section Order 6) */}
+      <section id="imoveis" className="py-24 bg-[#e2e2e2] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] text-xs mb-4 block">Curadoria Exclusiva</span>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-8">Portfólio de Imóveis</h2>
+            
+            {/* Search Bar Premium - Relocated here */}
+            <div className="bg-white/60 backdrop-blur-2xl p-4 md:p-4 rounded-[1.5rem] md:rounded-[2.5rem] border border-white/40 flex flex-col md:flex-row gap-3 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] ring-1 ring-black/5 mx-auto max-w-4xl mb-16">
+              <div className="flex-1 relative group">
+                <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[var(--color-accent)] transition-colors" size={20} />
+                <input type="text" placeholder="Pesquisar..." className="w-full h-14 md:h-16 pl-16 pr-8 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border-none focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium transition-all shadow-inner text-sm md:text-base" />
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <select className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] shadow-sm text-sm md:text-base">
+                  <option>Residencial</option>
+                  <option>Apartamento</option>
+                  <option>Comercial</option>
+                  <option>Terreno</option>
+                </select>
+                <select className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/50 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] text-sm md:text-base">
+                  <option>Compra</option>
+                  <option>Venda</option>
+                  <option>Locação</option>
+                  <option>Permuta</option>
+                </select>
+              </div>
+              <Button className="h-14 md:h-16 px-10 bg-[var(--color-accent)] text-[var(--color-navy)] rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] border-none shadow-[0_10px_20px_-5px_var(--color-accent)] hover:scale-[1.02] transition-transform text-xs md:text-sm">
+                Consultar
+              </Button>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {PROPERTIES.map((property) => (
+              <div key={property.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img 
+                    src={property.image} 
+                    alt={property.title}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  />
+                  <div className="absolute top-4 left-4 flex flex-col gap-2">
+                    <span className="bg-white/90 backdrop-blur-md text-slate-900 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
+                      {property.type}
+                    </span>
+                    <span className="bg-[var(--color-accent)] text-[var(--color-navy)] text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
+                      {property.status}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-8">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-2xl font-black text-slate-900 font-brand tracking-tighter uppercase leading-none mb-2">{property.title}</h3>
+                      <p className="text-slate-500 text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                        <MapPin size={12} className="text-[var(--color-accent)]" /> {property.location}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-6 font-medium line-clamp-2">{property.description}</p>
+                  <div className="grid grid-cols-3 gap-4 py-6 border-y border-black/5 mb-6">
+                    <div className="flex flex-col items-center gap-1">
+                      <Bed size={16} className="text-[var(--color-accent)]" />
+                      <span className="text-xs font-black text-slate-900">{property.beds}</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-1">
+                      <Bath size={16} className="text-[var(--color-accent)]" />
+                      <span className="text-xs font-black text-slate-900">{property.baths}</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-1">
+                      <Maximize size={16} className="text-[var(--color-accent)]" />
+                      <span className="text-xs font-black text-slate-900">{property.area}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-black text-slate-900 font-brand tracking-tighter">{property.price}</span>
+                    <Button className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 h-12 w-12 rounded-xl flex items-center justify-center border-none transition-all shadow-lg p-0">
+                      <ArrowRight size={20} />
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-[#e2e2e2] py-16 md:py-24 border-t border-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
