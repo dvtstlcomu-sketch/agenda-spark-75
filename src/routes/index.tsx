@@ -583,7 +583,7 @@ function Index() {
               </h2>
               <div className="space-y-6 md:space-y-10 text-slate-600 text-lg md:text-xl leading-relaxed font-medium px-4 lg:px-0">
                 <p className="border-l-4 border-[var(--color-accent)] pl-6 md:pl-8 py-4 bg-white/30 backdrop-blur-sm rounded-r-[1.5rem] md:rounded-r-[2rem] text-left">
-                  A <strong>Territorial Imóveis</strong> nasceu da necessidade de um mercado exigente que busca, em seus fornecedores de serviços, algo além do básico, tais como confiança, sigilo e segurança nas negociações imobiliárias.
+                  A Territorial Imóveis nasceu da necessidade de um mercado exigente que busca, em seus fornecedores de serviços, algo além do básico, tais como confiança, sigilo e segurança nas negociações imobiliárias.
                 </p>
                 <div className="space-y-6 text-left">
                   <p className="text-sm md:text-xl">
