@@ -939,7 +939,7 @@ function Index() {
                     <img 
                       src={logo2.url} 
                       alt="Territorial Imóveis Logo" 
-                      className="w-full h-full object-contain mix-blend-multiply"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                   <div className="flex flex-col items-center">
