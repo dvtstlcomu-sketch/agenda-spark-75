@@ -741,6 +741,26 @@ function Index() {
                     <option className="bg-white">Contrato de Compra e Venda</option>
                   </select>
                 </div>
+                
+                {/* File Upload Field */}
+                <div className="relative group">
+                  <div className="w-full h-32 rounded-2xl bg-white/40 border-2 border-dashed border-black/10 flex flex-col items-center justify-center gap-2 group-hover:border-[var(--color-accent)]/50 transition-colors cursor-pointer relative overflow-hidden">
+                    <input 
+                      type="file" 
+                      multiple 
+                      accept="image/*"
+                      className="absolute inset-0 opacity-0 cursor-pointer z-10"
+                      onChange={(e) => {
+                        // Logic for file handling could go here
+                        console.log(e.target.files);
+                      }}
+                    />
+                    <Upload className="w-8 h-8 text-slate-400 group-hover:text-[var(--color-accent)] transition-colors" />
+                    <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Subir fotos do imóvel</span>
+                    <span className="text-[10px] text-slate-400 font-medium">JPEG, PNG até 10MB</span>
+                  </div>
+                </div>
+
                 <Button className="w-full bg-slate-900 text-white h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
                   Enviar Imóvel
                 </Button>
