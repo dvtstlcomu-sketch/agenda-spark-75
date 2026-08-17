@@ -469,11 +469,11 @@ function Index() {
             {/* Logo and Branding - Left */}
             {/* Branding - Left */}
             <div className="flex items-center gap-2 md:gap-4 shrink-0 max-w-[70%] sm:max-w-none relative z-[110]">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex items-center justify-center overflow-visible relative z-[120]">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex items-center justify-center overflow-hidden relative z-[120] rounded-full bg-white">
                 <img 
                   src={logo2.url} 
                   alt="Territorial Imóveis Logo" 
-                  className="w-full h-full object-contain [mix-blend-mode:multiply]"
+                  className="w-full h-full object-contain mix-blend-multiply"
                 />
               </div>
               <div className="flex flex-col items-center -ml-2 md:-ml-4 relative z-[120]">
