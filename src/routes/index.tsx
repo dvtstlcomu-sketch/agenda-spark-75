@@ -527,15 +527,15 @@ function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative min-h-screen flex items-start justify-center overflow-hidden pt-32 md:pt-48 z-0">
-        <div className="absolute inset-0 z-[-1] flex items-start justify-center bg-[#e2e2e2]">
-
+      <section id="inicio" className="relative min-h-screen flex items-start justify-center pt-32 md:pt-48 bg-[#e2e2e2]">
+        <div className="fixed inset-0 z-0 flex items-start justify-center pointer-events-none">
           <img 
             src={logo2.url} 
             alt="Territorial Imóveis Fundo" 
             className="w-full h-auto max-w-[90vw] md:max-w-7xl object-contain opacity-10 mix-blend-multiply transition-all duration-1000 p-4 md:p-8 mt-48 md:mt-64 lg:mt-80" 
           />
         </div>
+
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           {/* CEO & Story Content Moved Here */}
