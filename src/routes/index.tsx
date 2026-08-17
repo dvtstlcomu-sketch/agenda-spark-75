@@ -745,6 +745,7 @@ function Index() {
                   Enviar Imóvel
                 </Button>
               </form>
+            </div>
           </div>
         </div>
       </section>
