@@ -527,33 +527,19 @@ function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative pt-24 pb-16 md:pt-56 md:pb-40 overflow-hidden">
+      <section id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[#e2e2e2]/80 z-10" />
           <img 
-            src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/c14a5ede-f10c-463a-84f2-86a49ec04d10.jpg" 
-            alt="Skyline da Cidade de Guarulhos" 
-            className="w-full h-full object-cover opacity-20 transition-all duration-700" 
+            src={logo2.url} 
+            alt="Territorial Imóveis Fundo" 
+            className="w-full h-full object-contain opacity-10 mix-blend-multiply scale-150" 
           />
-          <div className="absolute inset-0 bg-slate-900/2" />
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="mb-6 md:mb-8 space-y-4">
-              <span className="inline-block px-4 py-1.5 md:px-6 md:py-2 bg-slate-900/10 text-slate-900 font-black text-[10px] md:text-xs uppercase tracking-[0.4em] rounded-full border border-slate-900/20 shadow-sm">
-                Inteligência e Precisão
-              </span>
-              <p className="text-slate-900 font-black uppercase tracking-[0.05em] md:tracking-[0.1em] text-xs md:text-sm drop-shadow-sm animate-pulse max-w-lg mx-auto leading-relaxed px-4">
-                SEJAM BEM VINDOS A ERA DA IMOBILIARIA DIGITAL, COM FACILIDADE COMODIDADE E SEGURANÇA NA PALMA DA SUA MAO
-              </p>
-            </div>
-            <h1 className="text-lg md:text-3xl font-bold text-foreground mb-6 md:mb-8 tracking-tighter uppercase leading-tight font-heading drop-shadow-2xl opacity-90 px-4">
-              "Tudo posso naquele que me fortalece"
-            </h1>
-            <p className="text-base md:text-2xl text-foreground/70 mb-10 md:mb-14 font-medium tracking-tight max-w-2xl mx-auto leading-relaxed px-4">
-              A inteligência imobiliária em primeiro lugar. Especialistas em Perícia Judicial e Inteligência de alta precisão.
-            </p>
-
+            {/* Initial text removed as requested */}
           </div>
         </div>
       </section>
