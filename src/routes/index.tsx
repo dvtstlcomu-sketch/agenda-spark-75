@@ -528,12 +528,11 @@ function Index() {
 
       {/* Hero Section */}
       <section id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[#e2e2e2]/80 z-10" />
+        <div className="absolute inset-0 z-0 flex items-center justify-center bg-[#e2e2e2]">
           <img 
             src={logo2.url} 
             alt="Territorial Imóveis Fundo" 
-            className="w-full h-full object-contain opacity-10 mix-blend-multiply scale-150" 
+            className="w-[80%] max-w-4xl h-auto object-contain opacity-20 mix-blend-multiply transition-all duration-1000" 
           />
         </div>
         
