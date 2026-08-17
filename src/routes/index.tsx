@@ -538,31 +538,29 @@ function Index() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           {/* CEO & Story Content Moved Here */}
-          <div className="lg:grid lg:grid-cols-2 lg:gap-24 items-start">
-            {/* Removed the large photo div here */}
-            
-            <div className="col-span-2 lg:col-span-1 mb-12 lg:mb-0 text-center lg:text-left">
+          <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
+            <div className="w-full mb-12">
               <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Trajetória de Sucesso</span>
-              <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 md:mb-10 uppercase tracking-tighter leading-tight font-heading px-4 lg:px-0">
+              <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 md:mb-10 uppercase tracking-tighter leading-tight font-heading px-4">
                 Nossa História
               </h2>
-              <div className="space-y-6 md:space-y-10 text-slate-600 text-lg md:text-xl leading-relaxed font-medium px-4 lg:px-0">
-                <p className="border-l-4 border-[var(--color-accent)] pl-6 md:pl-8 py-4 bg-white/30 backdrop-blur-sm rounded-r-[1.5rem] md:rounded-r-[2rem] text-left">
+              <div className="space-y-6 md:space-y-10 text-slate-600 text-lg md:text-xl leading-relaxed font-medium px-4">
+                <p className="py-4 bg-white/30 backdrop-blur-sm rounded-[1.5rem] md:rounded-[2rem]">
                   A Territorial Imóveis nasceu da necessidade de um mercado exigente que busca, em seus fornecedores de serviços, algo além do básico, tais como confiança, sigilo e segurança nas negociações imobiliárias.
                 </p>
-                <div className="space-y-6 text-left">
+                <div className="space-y-6">
                   <p className="text-sm md:text-xl">
                     Nossa história foi construída ao longo de anos de experiência, atuando em diversos segmentos imobiliários. A Territorial Imóveis tem amplo conhecimento em laudo pericial para usucapião, laudo de avaliação mercadológica e estruturação imobiliária.
                   </p>
                   <p className="text-sm md:text-xl">
                     Com foco em resultados e transparência, desenvolvemos metodologias próprias para análise de terrenos e glebas, garantindo que cada projeto de inteligência territorial seja executado com o máximo de precisão técnica e suporte jurídico necessário para grandes empreendimentos.
                   </p>
-                  <div className="mt-8 flex flex-col items-center lg:items-start text-center lg:text-left w-full max-w-full">
+                  <div className="mt-8 flex flex-col items-center text-center w-full max-w-full">
                     <p className="text-slate-900 font-bold text-3xl md:text-5xl font-brand tracking-tighter inline-block border-b-4 border-[var(--color-accent)] pb-1 mb-2">
                       TERRITORIAL IMÓVEIS
                     </p>
-                    <div className="w-full flex justify-center lg:justify-start px-2">
-                      <p className="text-slate-900 font-black text-[9px] min-[375px]:text-[11px] sm:text-[13px] md:text-base uppercase tracking-tight sm:tracking-[0.2em] block opacity-90 w-full break-words whitespace-normal leading-tight text-center lg:text-left font-brand">
+                    <div className="w-full flex justify-center px-2">
+                      <p className="text-slate-900 font-black text-[9px] min-[375px]:text-[11px] sm:text-[13px] md:text-base uppercase tracking-tight sm:tracking-[0.2em] block opacity-90 w-full break-words whitespace-normal leading-tight text-center font-brand">
                         OBJETIVO DA PERÍCIA AVALIAÇÃO MERCADOLÓGICA E LAUDO JUDICIAL
                       </p>
                     </div>
@@ -570,30 +568,13 @@ function Index() {
                 </div>
               </div>
               
-              <div className="mt-8 px-4 lg:px-0 flex justify-center lg:justify-start">
+              <div className="mt-8 px-4 flex justify-center">
                 <Button 
                   onClick={() => window.open('https://wa.me/551124050300', '_blank')}
                   className="w-full sm:w-auto bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 h-16 md:h-20 px-10 md:px-14 rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] border-none transition-all duration-500 shadow-xl"
                 >
                   Fale com o CEO
                 </Button>
-              </div>
-            </div>
-
-            <div className="col-span-2 lg:col-span-1 mt-12 lg:mt-0">
-              <div className="p-6 md:p-12 bg-transparent border-black/5 rounded-[2.5rem] md:rounded-[3.5rem] border-l-[12px] border-[var(--color-accent)] relative overflow-hidden group text-left h-full flex flex-col justify-center">
-                <div className="relative z-10">
-                  <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.5em] text-[10px] md:text-xs mb-4 block opacity-80 font-sans">Nossa Missão</span>
-                  <p className="text-slate-900 font-extrabold text-2xl md:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-6 uppercase font-sans">
-                    "Elevar o padrão do mercado imobiliário, integrando tecnologia de ponta à segurança jurídica."
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <div className="h-px w-12 bg-[var(--color-accent)]"></div>
-                    <p className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] text-[10px] md:text-xs">Territorial Imóveis</p>
-                  </div>
-                </div>
-                {/* Visual decoration */}
-                <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-[var(--color-accent)]/5 rounded-full blur-3xl group-hover:bg-[var(--color-accent)]/10 transition-colors"></div>
               </div>
             </div>
           </div>
