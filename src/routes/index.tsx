@@ -544,21 +544,16 @@ function Index() {
               <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 md:mb-10 uppercase tracking-tighter leading-tight font-heading px-4">
                 Nossa História
               </h2>
-              <div className="space-y-6 md:space-y-10 text-slate-600 text-lg md:text-xl leading-relaxed font-medium px-4">
-                <p className="py-4 text-center">
+              <div className="space-y-6 md:space-y-8 text-slate-600 text-lg md:text-xl leading-relaxed font-medium px-4 text-center">
+                <p>
                   A Territorial Imóveis nasceu da necessidade de um mercado exigente que busca, em seus fornecedores de serviços, algo além do básico, tais como confiança, sigilo e segurança nas negociações imobiliárias.
                 </p>
-                <div className="space-y-6">
-                  <p className="text-sm md:text-xl">
-                    Nossa história foi construída ao longo de anos de experiência, atuando em diversos segmentos imobiliários. A Territorial Imóveis tem amplo conhecimento em laudo pericial para usucapião, laudo de avaliação mercadológica e estruturação imobiliária.
-                  </p>
-                  <p className="text-sm md:text-xl">
-                    Com foco em resultados e transparência, desenvolvemos metodologias próprias para análise de terrenos e glebas, garantindo que cada projeto de inteligência territorial seja executado com o máximo de precisão técnica e suporte jurídico necessário para grandes empreendimentos.
-                  </p>
-                  <div className="mt-8 flex flex-col items-center text-center w-full max-w-full">
-
-                  </div>
-                </div>
+                <p>
+                  Nossa história foi construída ao longo de anos de experiência, atuando em diversos segmentos imobiliários. A Territorial Imóveis tem amplo conhecimento em laudo pericial para usucapião, laudo de avaliação mercadológica e estruturação imobiliária.
+                </p>
+                <p>
+                  Com foco em resultados e transparência, desenvolvemos metodologias próprias para análise de terrenos e glebas, garantindo que cada projeto de inteligência territorial seja executado com o máximo de precisão técnica e suporte jurídico necessário para grandes empreendimentos.
+                </p>
               </div>
             </div>
           </div>
