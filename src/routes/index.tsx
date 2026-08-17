@@ -264,7 +264,7 @@ const PROPERTIES = [
     status: "Venda",
     price: "R$ 850.000",
     location: "Arujá, SP",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1599809275671-b5941c4b99d1?auto=format&fit=crop&q=80",
     beds: 0,
     baths: 0,
     area: "600m²",
