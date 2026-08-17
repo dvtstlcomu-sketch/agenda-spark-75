@@ -545,7 +545,7 @@ function Index() {
                 Nossa História
               </h2>
               <div className="space-y-6 md:space-y-10 text-slate-600 text-lg md:text-xl leading-relaxed font-medium px-4">
-                <p className="py-4 bg-white/30 backdrop-blur-sm rounded-[1.5rem] md:rounded-[2rem]">
+                <p className="py-4 text-center">
                   A Territorial Imóveis nasceu da necessidade de um mercado exigente que busca, em seus fornecedores de serviços, algo além do básico, tais como confiança, sigilo e segurança nas negociações imobiliárias.
                 </p>
                 <div className="space-y-6">
