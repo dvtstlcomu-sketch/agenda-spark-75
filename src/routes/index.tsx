@@ -745,29 +745,6 @@ function Index() {
                   Enviar Imóvel
                 </Button>
               </form>
-            </div>
-          </div>
-                      <option className="bg-white">Possui Escritura / Matrícula</option>
-                    </select>
-                  </div>
-
-                  <input type="text" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Localização / Endereço do Imóvel" />
-                  
-                  <textarea className="w-full p-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm min-h-[100px]" placeholder="Breve descrição do imóvel e valor pretendido (opcional)"></textarea>
-
-                  <div className="border-2 border-dashed border-black/10 rounded-2xl p-6 text-center hover:border-[var(--color-accent)] transition-all cursor-pointer bg-white/40 group relative">
-                    <input type="file" className="absolute inset-0 opacity-0 cursor-pointer" multiple />
-                    <Upload className="mx-auto text-gray-500 mb-2 group-hover:text-[var(--color-accent)]" size={24} />
-                    <p className="text-slate-900 font-bold text-sm tracking-tight">Anexar Fotos e Documentos</p>
-                    <p className="text-xs text-slate-400 mt-1">Imagens, IPTU ou Matrícula</p>
-                  </div>
-                  
-                  <Button className="w-full bg-slate-900 text-white h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
-                    Solicitar Análise de Venda
-                  </Button>
-                </form>
-              </div>
-            </div>
           </div>
         </div>
       </section>
