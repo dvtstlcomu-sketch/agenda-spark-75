@@ -532,13 +532,13 @@ function Index() {
           <img 
             src={logo2.url} 
             alt="Territorial Imóveis Fundo" 
-            className="w-full h-full object-cover opacity-15 mix-blend-multiply transition-all duration-1000" 
+            className="w-full h-full object-contain opacity-40 mix-blend-multiply transition-all duration-1000 p-8 md:p-16" 
           />
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-2xl md:text-5xl font-bold text-slate-900 tracking-tighter uppercase leading-tight font-heading drop-shadow-sm opacity-90 px-4">
+            <h1 className="text-3xl md:text-6xl font-black text-slate-900 tracking-tighter uppercase leading-tight font-heading drop-shadow-xl opacity-100 px-4 bg-[#e2e2e2]/60 py-4 backdrop-blur-sm rounded-2xl border border-white/20">
               "Tudo posso naquele que me fortalece"
             </h1>
           </div>
