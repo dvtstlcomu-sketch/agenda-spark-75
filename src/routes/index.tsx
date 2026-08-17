@@ -784,7 +784,7 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-br from-slate-200/20 via-transparent to-slate-200/20" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 md:mb-24">
-            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Credibilidade & Vozes</span>
+            
             <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading px-4">Vozes da Experiência</h2>
           </div>
 
@@ -842,7 +842,7 @@ function Index() {
       <section id="imoveis" className="py-24 bg-[#e2e2e2] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] text-xs mb-4 block">Curadoria Exclusiva</span>
+            
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-8">Portfólio de Imóveis</h2>
             
             {/* Search Bar Premium - Relocated here */}
