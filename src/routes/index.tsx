@@ -532,7 +532,7 @@ function Index() {
           <img 
             src={logo2.url} 
             alt="Territorial Imóveis Fundo" 
-            className="w-full h-full object-contain opacity-60 mix-blend-multiply transition-all duration-1000 p-4 md:p-8 mt-48 md:mt-64" 
+            className="w-full h-full object-contain opacity-20 mix-blend-multiply transition-all duration-1000 p-4 md:p-8 mt-48 md:mt-64" 
           />
         </div>
         
