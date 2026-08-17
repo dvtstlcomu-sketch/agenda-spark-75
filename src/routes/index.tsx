@@ -581,7 +581,7 @@ function Index() {
             </div>
 
             <div className="col-span-2 lg:col-span-1 mt-12 lg:mt-0">
-              <div className="p-6 md:p-12 bg-white/40 backdrop-blur-md border border-black/5 rounded-[2.5rem] md:rounded-[3.5rem] border-l-[12px] border-[var(--color-accent)] relative overflow-hidden group text-left shadow-2xl h-full flex flex-col justify-center">
+              <div className="p-6 md:p-12 bg-transparent border-black/5 rounded-[2.5rem] md:rounded-[3.5rem] border-l-[12px] border-[var(--color-accent)] relative overflow-hidden group text-left h-full flex flex-col justify-center">
                 <div className="relative z-10">
                   <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.5em] text-[10px] md:text-xs mb-4 block opacity-80 font-sans">Nossa Missão</span>
                   <p className="text-slate-900 font-extrabold text-2xl md:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-6 uppercase font-sans">
