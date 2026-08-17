@@ -554,11 +554,6 @@ function Index() {
                 <p>
                   Com foco em resultados e transparência, desenvolvemos metodologias próprias para análise de terrenos e glebas, garantindo que cada projeto de inteligência territorial seja executado com o máximo de precisão técnica e suporte jurídico necessário para grandes empreendimentos.
                 </p>
-
-                  <div className="mt-8 flex flex-col items-center text-center w-full max-w-full">
-
-                  </div>
-                </div>
               </div>
             </div>
           </div>
