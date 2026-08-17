@@ -527,8 +527,9 @@ function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative min-h-screen flex items-start justify-center overflow-hidden pt-32 md:pt-48">
-        <div className="absolute inset-0 z-0 flex items-start justify-center bg-[#e2e2e2]">
+      <section id="inicio" className="relative min-h-screen flex items-start justify-center overflow-hidden pt-32 md:pt-48 z-0">
+        <div className="absolute inset-0 z-[-1] flex items-start justify-center bg-[#e2e2e2]">
+
           <img 
             src={logo2.url} 
             alt="Territorial Imóveis Fundo" 
