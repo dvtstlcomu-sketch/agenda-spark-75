@@ -473,7 +473,7 @@ function Index() {
                 <img 
                   src={logo2.url} 
                   alt="Territorial Imóveis Logo" 
-                  className="w-full h-full object-contain mix-blend-multiply contrast-125 brightness-110"
+                  className="w-full h-full object-contain [mix-blend-mode:multiply] contrast-[1.2] brightness-[1.1] grayscale"
                 />
               </div>
               <div className="flex flex-col items-center -ml-2 md:-ml-4 overflow-hidden relative z-[120]">
