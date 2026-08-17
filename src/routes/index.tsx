@@ -708,9 +708,17 @@ function Index() {
                   <input type="tel" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Contato" />
                 </div>
                 <select className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none text-xs">
-                  <option className="bg-white">Avaliação Mercadológica e Laudo Judicial</option>
-                  <option className="bg-white">Usucapião / Regularização</option>
-                  <option className="bg-white">Projetos de Inteligência</option>
+                  <option className="bg-white">Avaliação Mercadológica</option>
+                  <option className="bg-white">Laudo Judicial para Usucapião</option>
+                  <option className="bg-white">Regularização</option>
+                  <option className="bg-white">Topografia e Medição</option>
+                  <option className="bg-white">Mapeamento Aéreo</option>
+                  <option className="bg-white">Demolição e Terraplanagem</option>
+                  <option className="bg-white">Estruturação Imobiliária</option>
+                  <option className="bg-white">Despachante Imobiliário</option>
+                  <option className="bg-white">Compra</option>
+                  <option className="bg-white">Locação</option>
+                  <option className="bg-white">Permuta</option>
                 </select>
                 <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
                   Solicitar
