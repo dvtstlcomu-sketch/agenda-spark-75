@@ -577,6 +577,32 @@ function Index() {
 
 
 
+      {/* Mission, Vision, Values Section */}
+      <section className="py-16 bg-[#e2e2e2] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="p-8 bg-white/40 backdrop-blur-md rounded-[2rem] border border-black/5 shadow-lg">
+              <h3 className="text-[var(--color-navy)] font-black uppercase tracking-wider mb-4 text-xl">Missão</h3>
+              <p className="text-slate-600 font-medium leading-relaxed">
+                Temos a missão de levar o que há de melhor e mais sofisticado ao mercado imobiliário digital, comodidade, segurança e agilidade sem perca de tempo e dinheiro.
+              </p>
+            </div>
+            <div className="p-8 bg-white/40 backdrop-blur-md rounded-[2rem] border border-black/5 shadow-lg">
+              <h3 className="text-[var(--color-navy)] font-black uppercase tracking-wider mb-4 text-xl">Visão</h3>
+              <p className="text-slate-600 font-medium leading-relaxed">
+                Revolucionar o mercado imobiliário, facilitando o dia a dia dos clientes e investidores trazendo para um só lugar o que ele buscaria em várias plataformas de serviços.
+              </p>
+            </div>
+            <div className="p-8 bg-white/40 backdrop-blur-md rounded-[2rem] border border-black/5 shadow-lg">
+              <h3 className="text-[var(--color-navy)] font-black uppercase tracking-wider mb-4 text-xl">Valores</h3>
+              <p className="text-slate-600 font-medium leading-relaxed">
+                Somos o que o mercado imobiliário precisa e temos o que o mercado imobiliário deseja, tratamos dos nossos clientes com segurança e total sigilo nas negociações imobiliárias.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Technical Areas Section (Section Order 2) */}
       <section id="especialidades" className="py-16 md:py-24 bg-[#e2e2e2] border-y border-black/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
