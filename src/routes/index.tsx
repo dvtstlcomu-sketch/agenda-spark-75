@@ -35,15 +35,21 @@ import { cn } from "@/lib/utils";
 const TECHNICAL_SERVICES = [
   {
     id: 1,
-    title: "Administração de Imóveis e Condomínios",
-    description: "Gestão completa de patrimônio imobiliário e administração condominial com transparência.",
+    title: "Administração de Condomínios",
+    description: "Gestão completa de administração condominial com transparência.",
     icon: <Building2 className="w-8 h-8 text-[var(--color-accent)]" />,
   },
   {
     id: 2,
-    title: "Avaliação Mercadológica e Laudo Pericial",
-    description: "Perícia judicial, laudos para usucapião e avaliações técnicas rigorosas.",
+    title: "Avaliação Mercadológica",
+    description: "Perícia técnica e avaliações rigorosas de mercado imobiliário.",
     icon: <UserCheck className="w-8 h-8 text-[var(--color-accent)]" />,
+  },
+  {
+    id: 8,
+    title: "Laudo Pericial",
+    description: "Perícia judicial e laudos técnicos para fins legais e usucapião.",
+    icon: <Activity className="w-8 h-8 text-[var(--color-accent)]" />,
   },
   {
     id: 3,
@@ -59,7 +65,7 @@ const TECHNICAL_SERVICES = [
   },
   {
     id: 5,
-    title: "MAPEAMENTO AEREO COM DRONE",
+    title: "Mapeamento Aéreo com Drone",
     description: "Sobrevôo especializado para avaliações e mapeamento técnico de precisão.",
     icon: <Zap className="w-8 h-8 text-[var(--color-accent)]" />,
   },
@@ -71,9 +77,15 @@ const TECHNICAL_SERVICES = [
   },
   {
     id: 7,
-    title: "Estruturação Imobiliária e Despachante",
-    description: "Regularização documental, estrutura planejada e consultoria especializada de despachante.",
+    title: "Estruturação Imobiliária",
+    description: "Regularização documental e estrutura planejada para empreendimentos.",
     icon: <Layers className="w-8 h-8 text-[var(--color-accent)]" />,
+  },
+  {
+    id: 9,
+    title: "Despachante",
+    description: "Consultoria especializada e agilidade em trâmites documentais imobiliários.",
+    icon: <CheckCircle2 className="w-8 h-8 text-[var(--color-accent)]" />,
   }
 ];
 
@@ -569,7 +581,6 @@ function Index() {
       <section id="especialidades" className="py-16 md:py-24 bg-[#e2e2e2] border-y border-black/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Expertise Técnica</span>
             <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight px-4">Nossas Especialidades</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
