@@ -329,7 +329,7 @@ const PROPERTIES = [
     status: "Venda",
     price: "R$ 1.200.000",
     location: "Santa Isabel, SP",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1599809275671-b5941c4b99d1?auto=format&fit=crop&q=80",
     beds: 3,
     baths: 2,
     area: "2.000m²",
