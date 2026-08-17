@@ -559,22 +559,8 @@ function Index() {
                     <p className="text-slate-900 font-bold text-3xl md:text-5xl font-brand tracking-tighter inline-block pb-1 mb-2">
                       TERRITORIAL IMÓVEIS
                     </p>
-                    <div className="w-full flex justify-center px-2">
-                      <p className="text-slate-900 font-black text-[9px] min-[375px]:text-[11px] sm:text-[13px] md:text-base uppercase tracking-tight sm:tracking-[0.2em] block opacity-90 w-full break-words whitespace-normal leading-tight text-center font-brand">
-                        OBJETIVO DA PERÍCIA AVALIAÇÃO MERCADOLÓGICA E LAUDO JUDICIAL
-                      </p>
-                    </div>
                   </div>
                 </div>
-              </div>
-              
-              <div className="mt-8 px-4 flex justify-center">
-                <Button 
-                  onClick={() => window.open('https://wa.me/551124050300', '_blank')}
-                  className="w-full sm:w-auto bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 h-16 md:h-20 px-10 md:px-14 rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] border-none transition-all duration-500 shadow-xl"
-                >
-                  Fale com o CEO
-                </Button>
               </div>
             </div>
           </div>
