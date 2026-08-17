@@ -538,9 +538,7 @@ function Index() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl md:text-6xl font-black text-slate-900 tracking-tighter uppercase leading-tight font-heading drop-shadow-xl opacity-100 px-4 bg-[#e2e2e2]/60 py-4 backdrop-blur-sm rounded-2xl border border-white/20">
-              "Tudo posso naquele que me fortalece"
-            </h1>
+            {/* Headline removed by user request */}
           </div>
         </div>
       </section>
