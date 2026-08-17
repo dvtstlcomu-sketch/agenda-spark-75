@@ -553,7 +553,7 @@ function Index() {
                   Nossa história foi construída ao longo de anos de experiência, atuando em diversos segmentos imobiliários. A Territorial Imóveis tem amplo conhecimento em laudo pericial para usucapião, laudo de avaliação mercadológica e estruturação imobiliária.
                 </p>
                 <p>
-                  Com foco em resultados e transparência, desenvolvemos metodologias próprias para análise de terrenos e glebas, garantindo que cada projeto de inteligência territorial seja executado com o máximo de precisão técnica e suporte jurídico necessário para grandes empreendimentos.
+                  Com foco em resultados e transparência, desenvolvemos metodologias próprias para análise de terrenos e glebas, garantindo que cada projeto seja executado com o máximo de precisão nós possibilitando o atendimento a clientes de perfis variados.
                 </p>
               </div>
             </div>
