@@ -594,6 +594,15 @@ function Index() {
               </div>
             ))}
           </div>
+          <div className="mt-12 flex justify-center">
+            <Button 
+              onClick={() => window.open('https://wa.me/551124050300', '_blank')}
+              className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-10 h-16 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.15em] text-sm md:text-base flex items-center gap-3"
+            >
+              <MessageSquare className="w-5 h-5 md:w-6 h-6" />
+              Fale com nossos especialistas
+            </Button>
+          </div>
         </div>
       </section>
 
