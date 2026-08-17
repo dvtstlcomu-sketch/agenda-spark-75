@@ -527,8 +527,9 @@ function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative min-h-screen flex items-start justify-center overflow-hidden pt-32 md:pt-48">
-        <div className="absolute inset-0 z-0 flex items-start justify-center bg-[#e2e2e2]">
+      <section id="inicio" className="relative min-h-screen flex items-start justify-center overflow-hidden pt-32 md:pt-48 z-0">
+        <div className="absolute inset-0 z-[-1] flex items-start justify-center bg-[#e2e2e2]">
+
           <img 
             src={logo2.url} 
             alt="Territorial Imóveis Fundo" 
@@ -552,7 +553,7 @@ function Index() {
                   Nossa história foi construída ao longo de anos de experiência, atuando em diversos segmentos imobiliários. A Territorial Imóveis tem amplo conhecimento em laudo pericial para usucapião, laudo de avaliação mercadológica e estruturação imobiliária.
                 </p>
                 <p>
-                  Com foco em resultados e transparência, desenvolvemos metodologias próprias para análise de terrenos e glebas, garantindo que cada projeto de inteligência territorial seja executado com o máximo de precisão técnica e suporte jurídico necessário para grandes empreendimentos.
+                  Com foco em resultados e transparência, desenvolvemos metodologias próprias para análise de terrenos e glebas, garantindo que cada projeto seja executado com o máximo de precisão nós possibilitando o atendimento a clientes de perfis variados.
                 </p>
               </div>
             </div>
