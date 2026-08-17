@@ -121,7 +121,7 @@ const PROPERTIES = [
     status: "Venda Técnica",
     price: "Sob Consulta",
     location: "Eixo Guarulhos-SP",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80",
     beds: 0,
     baths: 0,
     area: "85.000m²",
