@@ -527,41 +527,21 @@ function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section id="inicio" className="relative min-h-screen flex items-start justify-center overflow-hidden pt-32 md:pt-48">
         <div className="absolute inset-0 z-0 flex items-center justify-center bg-[#e2e2e2]">
           <img 
             src={logo2.url} 
             alt="Territorial Imóveis Fundo" 
-            className="w-full h-full object-contain opacity-10 mix-blend-multiply transition-all duration-1000 p-4 md:p-8 mt-48 md:mt-64" 
+            className="w-full h-full object-contain opacity-10 mix-blend-multiply transition-all duration-1000 p-4 md:p-8" 
           />
         </div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            {/* Headline removed by user request */}
-          </div>
-        </div>
-      </section>
-
-      {/* Order: Nossa História -> Especialidades -> Imóveis -> Lead Generation (Analise Pericial) -> FAQ -> Projetos */}
-      
-      {/* CEO & Story (Section Order 1) */}
-      <section id="sobre" className="py-20 md:py-40 bg-transparent relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-200/50 -skew-x-12 translate-x-1/2 opacity-30 z-0" />
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-24 items-center">
-            <div className="order-2 lg:order-1 relative h-full min-h-[300px] md:min-h-[500px] flex items-center mb-12 lg:mb-0">
-              <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
-                <img 
-                  src="https://ofjnackhyavgpkfwbacx.supabase.co/storage/v1/object/public/prompt-images/2026-08-13/c14a5ede-f10c-463a-84f2-86a49ec04d10.jpg" 
-                  alt="Background Territorial"
-                  className="w-full h-full object-cover opacity-40 transition-all duration-1000 grayscale-[30%] rounded-3xl"
-                />
-              </div>
-            </div>
-
-            <div className="order-1 lg:order-2 mb-12 lg:mb-0 text-center lg:text-left">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+          {/* CEO & Story Content Moved Here */}
+          <div className="lg:grid lg:grid-cols-2 lg:gap-24 items-start">
+            {/* Removed the large photo div here */}
+            
+            <div className="col-span-2 lg:col-span-1 mb-12 lg:mb-0 text-center lg:text-left">
               <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Trajetória de Sucesso</span>
               <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 md:mb-10 uppercase tracking-tighter leading-tight font-heading px-4 lg:px-0">
                 Nossa História
@@ -590,7 +570,7 @@ function Index() {
                 </div>
               </div>
               
-              <div className="mt-8 px-4 lg:px-0">
+              <div className="mt-8 px-4 lg:px-0 flex justify-center lg:justify-start">
                 <Button 
                   onClick={() => window.open('https://wa.me/551124050300', '_blank')}
                   className="w-full sm:w-auto bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 h-16 md:h-20 px-10 md:px-14 rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] border-none transition-all duration-500 shadow-xl"
@@ -598,8 +578,10 @@ function Index() {
                   Fale com o CEO
                 </Button>
               </div>
-              
-              <div className="mt-12 md:mt-16 p-6 md:p-12 bg-white/40 backdrop-blur-md border border-black/5 rounded-[2.5rem] md:rounded-[3.5rem] border-l-[12px] border-[var(--color-accent)] relative overflow-hidden group mx-4 lg:mx-0 text-left shadow-2xl">
+            </div>
+
+            <div className="col-span-2 lg:col-span-1 mt-12 lg:mt-0">
+              <div className="p-6 md:p-12 bg-white/40 backdrop-blur-md border border-black/5 rounded-[2.5rem] md:rounded-[3.5rem] border-l-[12px] border-[var(--color-accent)] relative overflow-hidden group text-left shadow-2xl h-full flex flex-col justify-center">
                 <div className="relative z-10">
                   <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.5em] text-[10px] md:text-xs mb-4 block opacity-80 font-sans">Nossa Missão</span>
                   <p className="text-slate-900 font-extrabold text-2xl md:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-6 uppercase font-sans">
@@ -617,6 +599,7 @@ function Index() {
           </div>
         </div>
       </section>
+
 
 
 
