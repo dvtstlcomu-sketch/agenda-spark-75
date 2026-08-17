@@ -199,7 +199,7 @@ const PROPERTIES = [
     status: "Venda",
     price: "R$ 8.000.000",
     location: "Atibaia, SP",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80",
     beds: 0,
     baths: 0,
     area: "50.000m²",
