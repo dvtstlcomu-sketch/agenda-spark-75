@@ -83,7 +83,7 @@ const TECHNICAL_SERVICES = [
   },
   {
     id: 9,
-    title: "Despachante",
+    title: "Despachante Imobiliário",
     description: "Consultoria especializada e agilidade em trâmites documentais imobiliários.",
     icon: <CheckCircle2 className="w-8 h-8 text-[var(--color-accent)]" />,
   }
