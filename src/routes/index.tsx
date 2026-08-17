@@ -692,84 +692,59 @@ function Index() {
            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.05),transparent_70%)]" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-            <div className="mb-12 lg:mb-0 text-center lg:text-left px-4">
-              <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-sm mb-4 block">Consultoria Técnica</span>
-              <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 uppercase tracking-tighter leading-tight">Análise e Perícia Profissional</h2>
-              <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed font-medium">
-                Deseja vender ou avaliar seu terreno/imóvel? Nossa equipe técnica realiza o levantamento completo com segurança jurídica.
-              </p>
-              <div className="space-y-4 md:space-y-6 flex flex-col items-center lg:items-start">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-full flex items-center justify-center">
-                    <CheckCircle2 className="text-[var(--color-accent)]" size={20} />
-                  </div>
-                  <p className="text-base md:text-lg">Análise técnica profissional</p>
-                </div>
-                <div className="flex items-center gap-4">
-                   <div className="w-10 h-10 md:w-12 md:h-12 bg-black/5 rounded-full flex items-center justify-center">
-                    <CheckCircle2 className="text-[var(--color-accent)]" size={20} />
-                  </div>
-                  <p className="text-base md:text-lg">Sigilo e segurança jurídica</p>
-                </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            {/* Form 1: Solicitar Serviços */}
+            <div className="bg-white/40 backdrop-blur-3xl p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-black/5 shadow-2xl h-full">
+              <div className="mb-8">
+                <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs mb-2 block">Consultoria Técnica</span>
+                <h3 className="text-xl md:text-3xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Solicitar Serviços</h3>
+                <p className="text-sm text-slate-600 font-medium leading-relaxed">
+                  Avaliação completa com segurança jurídica para o seu patrimônio.
+                </p>
               </div>
+              <form className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input type="text" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Nome do Requerente" />
+                  <input type="tel" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Contato" />
+                </div>
+                <select className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none text-xs">
+                  <option className="bg-white">Avaliação Mercadológica e Laudo Judicial</option>
+                  <option className="bg-white">Usucapião / Regularização</option>
+                  <option className="bg-white">Projetos de Inteligência</option>
+                </select>
+                <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
+                  Solicitar
+                </Button>
+              </form>
             </div>
 
-            <div className="space-y-8 mx-4 md:mx-0">
-              {/* Form 1: Solicitar Perícia */}
-              <div className="bg-white/40 backdrop-blur-3xl p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-black/5 shadow-2xl">
-                <h3 className="text-xl font-black text-slate-900 mb-6 uppercase tracking-tighter">Solicitar Perícia / Avaliação</h3>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <input type="text" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Nome do Requerente" />
-                    <input type="tel" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Contato" />
-                  </div>
+            {/* Form 2: Enviar Imóvel para Venda */}
+            <div className="bg-white/40 backdrop-blur-3xl p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-black/5 shadow-2xl h-full">
+              <div className="mb-8">
+                <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs mb-2 block">Imóvel & Glebas</span>
+                <h3 className="text-xl md:text-3xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Enviar Imóvel para Venda</h3>
+                <p className="text-sm text-slate-600 font-medium leading-relaxed">
+                  Deseja vender seu imóvel? Nossa equipe realiza a análise técnica com sigilo e segurança.
+                </p>
+              </div>
+              <form className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input type="text" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Nome Completo" />
+                  <input type="tel" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="WhatsApp / Contato" />
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input type="text" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Metragem (m²)" />
                   <select className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none text-xs">
-                    <option className="bg-white">Avaliação Mercadológica e Laudo Judicial</option>
-                    <option className="bg-white">Usucapião / Regularização</option>
-                    <option className="bg-white">Projetos de Inteligência</option>
+                    <option className="bg-white">Documentação Regularizada</option>
+                    <option className="bg-white">Em Processo de Regularização</option>
+                    <option className="bg-white">Contrato de Compra e Venda</option>
                   </select>
-                  <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
-                    Solicitar Perícia
-                  </Button>
-                </form>
-              </div>
-
-              {/* Form 2: Enviar Imóvel para Análise / Venda */}
-              <div className="bg-white/40 backdrop-blur-3xl p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-black/5 shadow-2xl">
-                <h3 className="text-xl font-black text-slate-900 mb-6 uppercase tracking-tighter">Enviar Imóvel para Venda</h3>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <input type="text" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Nome Completo" />
-                    <input type="tel" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="WhatsApp / Contato" />
-                  </div>
-                  
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <input type="text" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Metragem (m²)" />
-                    <select className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none text-xs">
-                      <option className="bg-white">Documentação Regularizada</option>
-                      <option className="bg-white">Em Processo de Regularização</option>
-                      <option className="bg-white">Contrato de Compra e Venda</option>
-                      <option className="bg-white">Possui Escritura / Matrícula</option>
-                    </select>
-                  </div>
-
-                  <input type="text" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Localização / Endereço do Imóvel" />
-                  
-                  <textarea className="w-full p-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm min-h-[100px]" placeholder="Breve descrição do imóvel e valor pretendido (opcional)"></textarea>
-
-                  <div className="border-2 border-dashed border-black/10 rounded-2xl p-6 text-center hover:border-[var(--color-accent)] transition-all cursor-pointer bg-white/40 group relative">
-                    <input type="file" className="absolute inset-0 opacity-0 cursor-pointer" multiple />
-                    <Upload className="mx-auto text-gray-500 mb-2 group-hover:text-[var(--color-accent)]" size={24} />
-                    <p className="text-slate-900 font-bold text-sm tracking-tight">Anexar Fotos e Documentos</p>
-                    <p className="text-xs text-slate-400 mt-1">Imagens, IPTU ou Matrícula</p>
-                  </div>
-                  
-                  <Button className="w-full bg-slate-900 text-white h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
-                    Solicitar Análise de Venda
-                  </Button>
-                </form>
-              </div>
+                </div>
+                <Button className="w-full bg-slate-900 text-white h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
+                  Enviar Imóvel
+                </Button>
+              </form>
             </div>
           </div>
         </div>
