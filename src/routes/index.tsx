@@ -582,9 +582,7 @@ function Index() {
         </div>
 
 
-        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          {/* CEO & Story Content Moved Here */}
           <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
             <div className="w-full mb-12">
               <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Trajetória de Sucesso</span>
