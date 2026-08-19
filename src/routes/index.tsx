@@ -773,8 +773,12 @@ function Index() {
                       accept="image/*"
                       className="absolute inset-0 opacity-0 cursor-pointer z-10"
                       onChange={(e) => {
-                        // Logic for file handling could go here
-                        console.log(e.target.files);
+                        const files = e.target.files;
+                        if (!files || files.length === 0) return;
+                        
+                        // Simulation of automatic ad creation
+                        const fileNames = Array.from(files).map(f => f.name).join(", ");
+                        alert(`Fotos recebidas: ${fileNames}\n\nO sistema está processando as imagens para gerar o anúncio automaticamente com as descrições técnicas baseadas nos metadados e análise visual.`);
                       }}
                     />
                     <Upload className="w-8 h-8 text-slate-400 group-hover:text-[var(--color-accent)] transition-colors" />
