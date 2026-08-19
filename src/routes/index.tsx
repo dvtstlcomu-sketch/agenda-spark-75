@@ -960,7 +960,6 @@ function Index() {
                   <Camera size={20} />
                 </a>
                 <a href="https://tiktok.com/@territorialimoveis" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white shadow-sm border border-black/5 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#000000] hover:text-white transition-all" title="TikTok - @territorialimoveis">
-                  <Video size={20} className="hidden" />
                   <span className="font-black text-[10px]">TK</span>
                 </a>
               </div>
