@@ -521,7 +521,7 @@ function Index() {
 
         {/* Mobile Menu Dropdown */}
         {isMenuOpen && (
-          <div className="md:hidden bg-[#e2e2e2] border-t border-black/5 p-4 animate-in slide-in-from-top duration-300">
+          <div className="md:hidden bg-[#c2c2c2] border-t border-black/5 p-4 animate-in slide-in-from-top duration-300">
             <div className="flex flex-col gap-4 text-xs font-black uppercase tracking-[0.25em] text-slate-900">
               <a href="#inicio" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Início</a>
               <a href="#sobre" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Nossa História</a>
