@@ -600,7 +600,7 @@ function Index() {
 
 
       {/* Mission, Vision, Values Section */}
-      <section className="py-16 bg-[#e2e2e2] relative overflow-hidden">
+      <section className="py-16 bg-[#c2c2c2] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="p-8 bg-white/40 backdrop-blur-md rounded-[2rem] border border-black/5 shadow-lg">
