@@ -549,7 +549,7 @@ function Index() {
           <img 
             src={logo2.url} 
             alt="Territorial Imóveis Fundo" 
-            className="w-[85%] md:w-[70%] lg:w-[60%] h-auto object-contain opacity-25 contrast-[1.8] brightness-[1.1] grayscale-0 transition-all duration-1000 p-4 md:p-8 mt-24 md:mt-32 lg:mt-40" 
+            className="w-[85%] md:w-[70%] lg:w-[60%] h-auto object-contain opacity-25 contrast-[1.8] brightness-[1.1] grayscale-0 transition-all duration-1000 p-4 md:p-8 mt-24 md:mt-32 lg:mt-40 mix-blend-multiply" 
           />
         </div>
 
@@ -607,6 +607,15 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Background Watermark for other sections */}
+      <div className="fixed inset-0 z-0 pointer-events-none flex items-center justify-center opacity-[0.03] overflow-hidden">
+        <img 
+          src={logo2.url} 
+          alt="" 
+          className="w-[90%] h-auto object-contain mix-blend-multiply grayscale" 
+        />
+      </div>
 
       {/* Technical Areas Section (Section Order 2) */}
       <section id="especialidades" className="py-16 md:py-24 bg-[#e2e2e2] border-y border-black/5 relative overflow-hidden">
