@@ -608,6 +608,15 @@ function Index() {
         </div>
       </section>
 
+      {/* Background Watermark for other sections */}
+      <div className="fixed inset-0 z-0 pointer-events-none flex items-center justify-center opacity-[0.03] overflow-hidden">
+        <img 
+          src={logo2.url} 
+          alt="" 
+          className="w-[90%] h-auto object-contain mix-blend-multiply grayscale" 
+        />
+      </div>
+
       {/* Technical Areas Section (Section Order 2) */}
       <section id="especialidades" className="py-16 md:py-24 bg-[#e2e2e2] border-y border-black/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
