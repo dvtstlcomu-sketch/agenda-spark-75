@@ -544,12 +544,40 @@ function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative min-h-screen flex items-start justify-center pt-32 md:pt-48 bg-[#e2e2e2]">
-        <div className="absolute inset-0 z-0 flex items-start justify-center pointer-events-none overflow-hidden">
+      <section id="inicio" className="relative min-h-[70vh] flex items-center justify-center pt-32 md:pt-48 bg-[#e2e2e2]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 uppercase tracking-tighter leading-none mb-8">
+            Sejam bem vindos a era da <br className="hidden md:block" />
+            <span className="text-[var(--color-accent)]">Imobiliária Digital</span>
+          </h1>
+          <p className="text-slate-600 text-lg md:text-xl font-medium max-w-2xl mx-auto mb-12">
+            Tecnologia, perícia e sofisticação no mercado imobiliário.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button 
+              onClick={() => document.getElementById('imoveis')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-slate-900 text-white rounded-2xl px-10 h-16 font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl"
+            >
+              Ver Imóveis
+            </Button>
+            <Button 
+              onClick={() => document.getElementById('sobre')?.scrollIntoView({ behavior: 'smooth' })}
+              variant="outline"
+              className="bg-white/40 backdrop-blur-md text-slate-900 border-black/10 rounded-2xl px-10 h-16 font-black uppercase tracking-widest text-sm hover:bg-white/60 transition-all"
+            >
+              Conheça Nossa História
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Nossa História Section */}
+      <section id="sobre" className="py-24 bg-[#e2e2e2] relative overflow-hidden">
+        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden opacity-[0.05]">
           <img 
             src={logo2.url} 
             alt="Territorial Imóveis Fundo" 
-            className="w-[85%] md:w-[70%] lg:w-[60%] h-auto object-contain opacity-25 contrast-[1.8] brightness-[1.1] grayscale-0 transition-all duration-1000 p-4 md:p-8 mt-24 md:mt-32 lg:mt-40 mix-blend-multiply" 
+            className="w-[85%] md:w-[70%] lg:w-[60%] h-auto object-contain mix-blend-multiply" 
           />
         </div>
 
