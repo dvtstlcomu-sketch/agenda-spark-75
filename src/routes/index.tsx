@@ -25,10 +25,7 @@ import {
   Zap,
   Layers,
   Activity,
-  Plus,
-  Facebook,
-  Instagram,
-  Video
+  Plus
 } from "lucide-react";
 import { useState } from "react";
 import logo2 from "@/assets/logo_2.jpg.asset.json";
@@ -956,14 +953,15 @@ function Index() {
                 </div>
               </div>
               <div className="flex justify-center md:justify-start gap-4">
-                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-slate-900 hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
+                <a href="https://facebook.com/territorialimoveis" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white shadow-sm border border-black/5 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#1877F2] hover:text-white transition-all" title="Facebook - Territorial Imóveis">
                   <Share2 size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-slate-900 hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
-                  <Globe size={20} />
+                <a href="https://instagram.com/territorialimoveis" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white shadow-sm border border-black/5 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#E4405F] hover:text-white transition-all" title="Instagram - territorialimoveis">
+                  <Camera size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-slate-900 hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all">
-                  <Link size={20} />
+                <a href="https://tiktok.com/@territorialimoveis" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white shadow-sm border border-black/5 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#000000] hover:text-white transition-all" title="TikTok - @territorialimoveis">
+                  <Video size={20} className="hidden" />
+                  <span className="font-black text-[10px]">TK</span>
                 </a>
               </div>
             </div>
