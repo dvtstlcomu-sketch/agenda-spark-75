@@ -544,22 +544,19 @@ function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative min-h-[70vh] flex items-center justify-center pt-32 md:pt-48 bg-[#c2c2c2]">
+      <section id="inicio" className="relative min-h-[40vh] flex items-center justify-center pt-24 md:pt-32 bg-[#c2c2c2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 uppercase tracking-tighter leading-none mb-8">
             Sejam bem vindos a era da <br className="hidden md:block" />
             <span className="text-[var(--color-accent)]">Imobiliária Digital</span>
           </h1>
-          <p className="text-slate-600 text-lg md:text-xl font-medium max-w-2xl mx-auto mb-12">
-            Tecnologia, perícia e sofisticação no mercado imobiliário.
-          </p>
           <div className="flex flex-wrap justify-center gap-4">
           </div>
         </div>
       </section>
 
       {/* Nossa História Section */}
-      <section id="sobre" className="py-24 bg-[#c2c2c2] relative overflow-hidden">
+      <section id="sobre" className="py-12 bg-[#c2c2c2] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
             <div className="w-full mb-12">
