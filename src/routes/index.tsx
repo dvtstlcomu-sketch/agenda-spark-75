@@ -449,7 +449,7 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-[#e2e2e2] text-foreground selection:bg-[var(--color-accent)] selection:text-[var(--color-navy)]">
+    <div className="min-h-screen font-sans bg-[#c2c2c2] text-foreground selection:bg-[var(--color-accent)] selection:text-[var(--color-navy)]">
       {/* WhatsApp Floating Button */}
       <a 
         href="https://wa.me/551124050300" 
@@ -521,7 +521,7 @@ function Index() {
 
         {/* Mobile Menu Dropdown */}
         {isMenuOpen && (
-          <div className="md:hidden bg-[#e2e2e2] border-t border-black/5 p-4 animate-in slide-in-from-top duration-300">
+          <div className="md:hidden bg-[#c2c2c2] border-t border-black/5 p-4 animate-in slide-in-from-top duration-300">
             <div className="flex flex-col gap-4 text-xs font-black uppercase tracking-[0.25em] text-slate-900">
               <a href="#inicio" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Início</a>
               <a href="#sobre" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Nossa História</a>
@@ -544,7 +544,7 @@ function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative min-h-[70vh] flex items-center justify-center pt-32 md:pt-48 bg-[#e2e2e2]">
+      <section id="inicio" className="relative min-h-[70vh] flex items-center justify-center pt-32 md:pt-48 bg-[#c2c2c2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 uppercase tracking-tighter leading-none mb-8">
             Sejam bem vindos a era da <br className="hidden md:block" />
@@ -572,7 +572,7 @@ function Index() {
       </section>
 
       {/* Nossa História Section */}
-      <section id="sobre" className="py-24 bg-[#e2e2e2] relative overflow-hidden">
+      <section id="sobre" className="py-24 bg-[#c2c2c2] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
             <div className="w-full mb-12">
@@ -600,7 +600,7 @@ function Index() {
 
 
       {/* Mission, Vision, Values Section */}
-      <section className="py-16 bg-[#e2e2e2] relative overflow-hidden">
+      <section className="py-16 bg-[#c2c2c2] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="p-8 bg-white/40 backdrop-blur-md rounded-[2rem] border border-black/5 shadow-lg">
@@ -635,7 +635,7 @@ function Index() {
       </div>
 
       {/* Technical Areas Section (Section Order 2) */}
-      <section id="especialidades" className="py-16 md:py-24 bg-[#e2e2e2] border-y border-black/5 relative overflow-hidden">
+      <section id="especialidades" className="py-16 md:py-24 bg-[#c2c2c2] border-y border-black/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight px-4">Nossas Especialidades</h2>
@@ -664,7 +664,7 @@ function Index() {
       </section>
 
       {/* Technical Projects Section (Section Order 3) */}
-      <section id="projetos" className="py-32 bg-[#e2e2e2] border-t border-black/5 relative overflow-hidden">
+      <section id="projetos" className="py-32 bg-[#c2c2c2] border-t border-black/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-tr from-black/5 via-transparent to-black/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 md:mb-24">
@@ -718,7 +718,7 @@ function Index() {
 
 
       {/* Lead Generation Premium */}
-      <section id="anuncie" className="py-20 md:py-32 bg-[#e2e2e2] text-slate-900 overflow-hidden relative border-y border-black/5">
+      <section id="anuncie" className="py-20 md:py-32 bg-[#c2c2c2] text-slate-900 overflow-hidden relative border-y border-black/5">
         <div className="absolute inset-0 z-0 opacity-5">
            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.05),transparent_70%)]" />
         </div>
@@ -815,7 +815,7 @@ function Index() {
 
 
       {/* Imóveis Section (Section Order 6) */}
-      <section id="imoveis" className="py-24 bg-[#e2e2e2] relative overflow-hidden">
+      <section id="imoveis" className="py-24 bg-[#c2c2c2] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             
@@ -963,7 +963,7 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#e2e2e2] py-16 md:py-24 border-t border-black/5">
+      <footer className="bg-[#c2c2c2] py-16 md:py-24 border-t border-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
             <div className="text-center md:text-left">
