@@ -573,15 +573,6 @@ function Index() {
 
       {/* Nossa História Section */}
       <section id="sobre" className="py-24 bg-[#e2e2e2] relative overflow-hidden">
-        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden opacity-[0.05]">
-          <img 
-            src={logo2.url} 
-            alt="Territorial Imóveis Fundo" 
-            className="w-[85%] md:w-[70%] lg:w-[60%] h-auto object-contain mix-blend-multiply" 
-          />
-        </div>
-
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
             <div className="w-full mb-12">
