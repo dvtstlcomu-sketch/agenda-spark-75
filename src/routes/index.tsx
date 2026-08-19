@@ -769,7 +769,7 @@ function Index() {
                 
                 {/* File Upload Field */}
                 <div className="relative group">
-                  <div className="w-full h-32 rounded-2xl bg-white/40 border-2 border-dashed border-black/10 flex flex-col items-center justify-center gap-2 group-hover:border-[var(--color-accent)]/50 transition-colors cursor-pointer relative overflow-hidden">
+                  <div className="w-full min-h-[180px] py-6 rounded-2xl bg-white/40 border-2 border-dashed border-black/10 flex flex-col items-center justify-center gap-2 group-hover:border-[var(--color-accent)]/50 transition-colors cursor-pointer relative overflow-hidden">
                     <input 
                       type="file" 
                       multiple 
