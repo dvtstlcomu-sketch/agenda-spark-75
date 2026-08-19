@@ -489,7 +489,7 @@ function Index() {
             {/* Desktop Menu - Right */}
             <div className="hidden lg:flex items-center gap-4 xl:gap-6 whitespace-nowrap">
               <a href="#inicio" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Início</a>
-              <a href="#sobre" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Nossa História</a>
+              <a href="#sobre" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Sobre</a>
               <a href="#especialidades" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Especialidades</a>
               <a href="#projetos" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Projetos</a>
               <a href="#anuncie" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Perícia</a>
@@ -524,7 +524,7 @@ function Index() {
           <div className="md:hidden bg-[#c2c2c2] border-t border-black/5 p-4 animate-in slide-in-from-top duration-300">
             <div className="flex flex-col gap-4 text-xs font-black uppercase tracking-[0.25em] text-slate-900">
               <a href="#inicio" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Início</a>
-              <a href="#sobre" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Nossa História</a>
+              <a href="#sobre" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Sobre</a>
               <a href="#especialidades" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Especialidades</a>
               <a href="#imoveis" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Imóveis</a>
               <a href="#projetos" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Projetos</a>
@@ -565,7 +565,7 @@ function Index() {
               variant="outline"
               className="bg-white/40 backdrop-blur-md text-slate-900 border-black/10 rounded-2xl px-10 h-16 font-black uppercase tracking-widest text-sm hover:bg-white/60 transition-all"
             >
-              Conheça Nossa História
+              Conheça Nossa Empresa
             </Button>
           </div>
         </div>
@@ -578,7 +578,7 @@ function Index() {
             <div className="w-full mb-12">
               <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Trajetória de Sucesso</span>
               <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 md:mb-10 uppercase tracking-tighter leading-tight font-heading px-4">
-                Nossa História
+                Sobre Nós
               </h2>
               <div className="space-y-6 md:space-y-8 text-slate-600 text-lg md:text-xl leading-relaxed font-medium px-4 text-center">
                 <p>
