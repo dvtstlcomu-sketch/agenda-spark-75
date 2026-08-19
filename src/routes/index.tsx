@@ -790,7 +790,7 @@ function Index() {
                             status: "Venda e Locação",
                             price: "Avaliação em curso...",
                             location: "Localização via GPS",
-                            image: URL.createObjectURL(files[0]),
+                            image: files[0] ? URL.createObjectURL(files[0]) : "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80",
                             beds: 2,
                             baths: 2,
                             area: "Aguardando medição",
