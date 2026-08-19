@@ -769,7 +769,7 @@ function Index() {
                 
                 {/* File Upload Field */}
                 <div className="relative group">
-                  <div className="w-full h-32 rounded-2xl bg-white/40 border-2 border-dashed border-black/10 flex flex-col items-center justify-center gap-2 group-hover:border-[var(--color-accent)]/50 transition-colors cursor-pointer relative overflow-hidden">
+                  <div className="w-full min-h-[180px] py-6 rounded-2xl bg-white/40 border-2 border-dashed border-black/10 flex flex-col items-center justify-center gap-2 group-hover:border-[var(--color-accent)]/50 transition-colors cursor-pointer relative overflow-hidden">
                     <input 
                       type="file" 
                       multiple 
@@ -811,7 +811,17 @@ function Index() {
                       <>
                         <Camera className="w-8 h-8 text-slate-400 group-hover:text-[var(--color-accent)] transition-colors" />
                         <span className="text-xs font-bold text-slate-500 uppercase tracking-widest text-center px-4">Tire fotos ou suba arquivos</span>
-                        <p className="text-[9px] text-slate-400 font-medium px-4 text-center mt-1 md:hidden">Dica: No celular, use o modo paisagem para melhores fotos do imóvel.</p>
+                        <div className="mt-4 px-6 text-left w-full space-y-2">
+                          <p className="text-[10px] font-black uppercase text-[var(--color-accent)] tracking-tighter">Guia de Fotos para Anúncio de Alta Qualidade:</p>
+                          <ul className="text-[9px] text-slate-500 font-bold space-y-1 list-disc pl-4 uppercase">
+                            <li><span className="text-slate-900">Fachada:</span> Foto frontal com boa iluminação natural.</li>
+                            <li><span className="text-slate-900">Sala:</span> Fotografe dos cantos para mostrar amplitude (Modo Paisagem).</li>
+                            <li><span className="text-slate-900">Cozinha:</span> Destaque bancadas, armários e iluminação.</li>
+                            <li><span className="text-slate-900">Quartos:</span> Mostre o espaço livre e janelas.</li>
+                            <li><span className="text-slate-900">Banheiros:</span> Foco em revestimentos e box (cuidado com o reflexo).</li>
+                            <li><span className="text-slate-900">Dica Pro:</span> Mantenha a câmera na altura dos olhos e use o celular deitado.</li>
+                          </ul>
+                        </div>
                       </>
                     )}
                   </div>
