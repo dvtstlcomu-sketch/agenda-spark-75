@@ -449,7 +449,7 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-[#e2e2e2] text-foreground selection:bg-[var(--color-accent)] selection:text-[var(--color-navy)]">
+    <div className="min-h-screen font-sans bg-[#c2c2c2] text-foreground selection:bg-[var(--color-accent)] selection:text-[var(--color-navy)]">
       {/* WhatsApp Floating Button */}
       <a 
         href="https://wa.me/551124050300" 
