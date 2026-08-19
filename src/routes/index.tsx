@@ -939,11 +939,11 @@ function Index() {
             <div className="text-center md:text-left">
               <div className="flex flex-col items-center text-center">
                 <div className="flex items-center gap-2 md:gap-4">
-                  <div className="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center relative overflow-hidden">
+                  <div className="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center relative overflow-hidden bg-transparent">
                     <img 
                       src={logo2.url} 
                       alt="Territorial Imóveis Logo" 
-                      className="w-full h-full object-contain [mix-blend-mode:multiply]"
+                      className="w-full h-full object-contain mix-blend-multiply"
                     />
                   </div>
                   <div className="flex flex-col items-center">
