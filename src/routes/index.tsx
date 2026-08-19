@@ -985,7 +985,53 @@ function Index() {
         </div>
       </section>
 
+      {/* Dúvidas Frequentes Section (FAQ) */}
+      <section id="faq" className="py-24 md:py-32 bg-[#c2c2c2] relative overflow-hidden border-t border-black/5">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-4">Dúvidas Frequentes</h2>
+            <p className="text-slate-600 font-medium">Esclareça suas principais dúvidas sobre nossos serviços técnicos e imobiliários.</p>
+          </div>
+          <div className="space-y-4">
+            {[
+              {
+                q: "Como funciona a avaliação mercadológica?",
+                a: "Nossa avaliação segue normas técnicas rigorosas (ABNT), analisando localização, estado de conservação, zoneamento e liquidez do mercado para definir o valor real do patrimônio."
+              },
+              {
+                q: "O que é o laudo pericial para usucapião?",
+                a: "É um documento técnico indispensável em processos judiciais que descreve detalhadamente o imóvel, suas confrontações e tempo de posse, garantindo segurança jurídica ao processo."
+              },
+              {
+                q: "Por que utilizar drones na avaliação imobiliária?",
+                a: "Drones permitem o mapeamento aéreo preciso, identificando patologias em telhados, limites de terrenos de difícil acesso e gerando modelos 3D que valorizam a apresentação do imóvel."
+              },
+              {
+                q: "Como enviar meu imóvel para venda ou locação?",
+                a: "Basta utilizar nosso formulário na seção 'Enviar Imóvel'. Você pode subir fotos diretamente pelo celular e nossa IA processará os dados iniciais para nossa equipe técnica entrar em contato."
+              }
+            ].map((item, i) => (
+              <div key={i} className="bg-white/40 backdrop-blur-md rounded-2xl overflow-hidden border border-black/5 shadow-sm">
+                <button 
+                  onClick={() => toggleFaq(i)}
+                  className="w-full px-6 py-5 flex items-center justify-between text-left group"
+                >
+                  <span className="font-bold text-slate-900 text-base md:text-lg">{item.q}</span>
+                  <ChevronDown className={cn("w-5 h-5 text-slate-400 transition-transform duration-300", activeFaq === i && "rotate-180")} />
+                </button>
+                {activeFaq === i && (
+                  <div className="px-6 pb-6 text-slate-600 font-medium leading-relaxed animate-in fade-in slide-in-from-top-2 duration-300">
+                    {item.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
+
       <footer className="bg-[#c2c2c2] py-16 md:py-24 border-t border-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
