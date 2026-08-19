@@ -544,7 +544,7 @@ function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative min-h-[70vh] flex items-center justify-center pt-32 md:pt-48 bg-[#e2e2e2]">
+      <section id="inicio" className="relative min-h-[70vh] flex items-center justify-center pt-32 md:pt-48 bg-[#c2c2c2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 uppercase tracking-tighter leading-none mb-8">
             Sejam bem vindos a era da <br className="hidden md:block" />
