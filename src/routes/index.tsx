@@ -825,7 +825,7 @@ function Index() {
                   <option>Permuta</option>
                 </select>
               </div>
-              <Button className="h-14 md:h-16 px-10 bg-[var(--color-accent)] text-[var(--color-navy)] rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] border-none shadow-[0_10px_20px_-5px_var(--color-accent)] hover:scale-[1.02] transition-transform text-xs md:text-sm">
+              <Button className="h-14 md:h-16 px-10 bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] border-none shadow-xl hover:scale-[1.02] transition-transform text-xs md:text-sm">
                 Consultar
               </Button>
             </div>
