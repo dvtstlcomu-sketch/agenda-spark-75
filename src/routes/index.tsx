@@ -815,7 +815,7 @@ function Index() {
 
 
       {/* Imóveis Section (Section Order 6) */}
-      <section id="imoveis" className="py-24 bg-[#e2e2e2] relative overflow-hidden">
+      <section id="imoveis" className="py-24 bg-[#c2c2c2] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             
