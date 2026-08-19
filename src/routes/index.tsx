@@ -528,9 +528,11 @@ function Index() {
               <a href="#inicio" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Início</a>
               <a href="#sobre" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Sobre</a>
               <a href="#especialidades" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Especialidades</a>
-              <a href="#imoveis" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Imóveis</a>
               <a href="#projetos" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Projetos</a>
-              <a href="#faq" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Dúvidas Frequentes</a>
+              <a href="#anuncie" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Perícia</a>
+              <a href="#depoimentos" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Vozes</a>
+              <a href="#imoveis" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Imóveis</a>
+              <a href="#faq" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Dúvidas</a>
               <Button 
                 onClick={() => {
                   window.open('https://wa.me/551124050300', '_blank');
