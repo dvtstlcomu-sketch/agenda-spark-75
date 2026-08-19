@@ -799,6 +799,12 @@ function Index() {
                           
                           setUploadedProperties(prev => [newProperty, ...prev]);
                           setIsUploading(false);
+                          
+                          // Scroll to properties section to show the created ad
+                          const propertiesSection = document.getElementById('imoveis');
+                          if (propertiesSection) {
+                            propertiesSection.scrollIntoView({ behavior: 'smooth' });
+                          }
                         }, 2000);
                       }}
                     />
