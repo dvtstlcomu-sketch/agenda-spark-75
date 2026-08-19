@@ -963,7 +963,7 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#e2e2e2] py-16 md:py-24 border-t border-black/5">
+      <footer className="bg-[#c2c2c2] py-16 md:py-24 border-t border-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
             <div className="text-center md:text-left">
