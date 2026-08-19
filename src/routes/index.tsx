@@ -572,7 +572,7 @@ function Index() {
       </section>
 
       {/* Nossa História Section */}
-      <section id="sobre" className="py-24 bg-[#e2e2e2] relative overflow-hidden">
+      <section id="sobre" className="py-24 bg-[#c2c2c2] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
             <div className="w-full mb-12">
