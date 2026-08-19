@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { 
   Building2, 
   Map, 
-  Camera, 
+  Instagram, 
   UserCheck, 
   Phone, 
   Mail, 
@@ -11,7 +11,7 @@ import {
   ChevronDown,
   Upload,
   CheckCircle2,
-  Share2,
+  Facebook,
   Globe,
   Link,
   Search,
@@ -954,13 +954,21 @@ function Index() {
               </div>
               <div className="flex justify-center md:justify-start gap-4">
                 <a href="https://facebook.com/territorialimoveis" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white shadow-sm border border-black/5 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#1877F2] hover:text-white transition-all" title="Facebook - Territorial Imóveis">
-                  <Share2 size={20} />
+                  <Facebook size={20} fill="currentColor" />
                 </a>
                 <a href="https://instagram.com/territorialimoveis" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white shadow-sm border border-black/5 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#E4405F] hover:text-white transition-all" title="Instagram - territorialimoveis">
-                  <Camera size={20} />
+                  <Instagram size={20} />
                 </a>
                 <a href="https://tiktok.com/@territorialimoveis" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white shadow-sm border border-black/5 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#000000] hover:text-white transition-all" title="TikTok - @territorialimoveis">
-                  <span className="font-black text-[10px]">TK</span>
+                  <svg 
+                    viewBox="0 0 24 24" 
+                    width="20" 
+                    height="20" 
+                    fill="currentColor" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+                  </svg>
                 </a>
               </div>
             </div>
