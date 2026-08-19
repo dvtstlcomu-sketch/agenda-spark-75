@@ -469,7 +469,7 @@ function Index() {
             {/* Logo and Branding - Left */}
             {/* Branding - Left */}
             <div className="flex items-center gap-2 md:gap-4 shrink-0 max-w-[70%] sm:max-w-none relative z-[110]">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex items-center justify-center relative z-[120]">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex items-center justify-center relative">
                 <img 
                   src={logo2.url} 
                   alt="Territorial Imóveis Logo" 
@@ -477,8 +477,8 @@ function Index() {
                 />
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-slate-900 font-black text-xl md:text-3xl tracking-tighter uppercase font-brand leading-tight whitespace-nowrap">TERRITORIAL IMÓVEIS</span>
-                <span className="text-slate-900 font-bold text-[9px] md:text-xs uppercase tracking-[0.25em] leading-none mt-1 w-full text-center">CRECI 38258-J</span>
+                <span className="text-foreground font-black text-xl md:text-3xl tracking-tighter uppercase font-brand leading-tight whitespace-nowrap">TERRITORIAL IMÓVEIS</span>
+                <span className="text-foreground font-bold text-[9px] md:text-xs uppercase tracking-[0.25em] leading-none mt-1 w-full text-center">CRECI 38258-J</span>
               </div>
             </div>
 
