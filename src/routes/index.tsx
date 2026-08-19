@@ -469,11 +469,11 @@ function Index() {
             {/* Logo and Branding - Left */}
             {/* Branding - Left */}
             <div className="flex items-center gap-2 md:gap-4 shrink-0 max-w-[70%] sm:max-w-none relative z-[110]">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex items-center justify-center relative z-[120] rounded-full overflow-hidden bg-white">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex items-center justify-center relative z-[120]">
                 <img 
                   src={logo2.url} 
                   alt="Territorial Imóveis Logo" 
-                  className="w-full h-full object-cover scale-105"
+                  className="w-full h-full object-contain mix-blend-multiply block"
                 />
               </div>
               <div className="flex flex-col items-center">
@@ -935,11 +935,11 @@ function Index() {
             <div className="text-center md:text-left">
               <div className="flex flex-col items-center text-center">
                 <div className="flex items-center gap-2 md:gap-4">
-                  <div className="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center relative rounded-full overflow-hidden bg-white">
+                  <div className="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center relative">
                     <img 
                       src={logo2.url} 
                       alt="Territorial Imóveis Logo" 
-                      className="w-full h-full object-cover scale-105"
+                      className="w-full h-full object-contain mix-blend-multiply block"
                     />
                   </div>
                   <div className="flex flex-col items-center">
