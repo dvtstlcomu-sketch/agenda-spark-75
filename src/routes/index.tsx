@@ -554,19 +554,6 @@ function Index() {
             Tecnologia, perícia e sofisticação no mercado imobiliário.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button 
-              onClick={() => document.getElementById('imoveis')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-slate-900 text-white rounded-2xl px-10 h-16 font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl"
-            >
-              Ver Imóveis
-            </Button>
-            <Button 
-              onClick={() => document.getElementById('sobre')?.scrollIntoView({ behavior: 'smooth' })}
-              variant="outline"
-              className="bg-white/40 backdrop-blur-md text-slate-900 border-black/10 rounded-2xl px-10 h-16 font-black uppercase tracking-widest text-sm hover:bg-white/60 transition-all"
-            >
-              Conheça Nossa Empresa
-            </Button>
           </div>
         </div>
       </section>
@@ -576,7 +563,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
             <div className="w-full mb-12">
-              <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Trajetória de Sucesso</span>
+              <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-xs md:text-lg mb-4 md:mb-6 block drop-shadow-sm">Trajetória de Sucesso</span>
               <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 md:mb-10 uppercase tracking-tighter leading-tight font-heading px-4">
                 Sobre Nós
               </h2>
@@ -670,7 +657,7 @@ function Index() {
           <div className="text-center mb-16 md:mb-24">
             
             <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight px-4">Projetos & Tecnologia</h2>
-            <p className="text-slate-900 mt-6 max-w-2xl mx-auto font-black text-lg md:text-2xl uppercase tracking-tight px-4 font-brand">Simulação de Construção e Modelagem 3D Urbana e Rural</p>
+            <p className="text-slate-900 mt-6 max-w-4xl mx-auto font-black text-xl md:text-3xl uppercase tracking-tight px-4 font-brand">Simulação de Construção e Modelagem 3D Urbana e Rural</p>
           </div>
  
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
