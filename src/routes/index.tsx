@@ -635,7 +635,7 @@ function Index() {
       </div>
 
       {/* Technical Areas Section (Section Order 2) */}
-      <section id="especialidades" className="py-16 md:py-24 bg-[#e2e2e2] border-y border-black/5 relative overflow-hidden">
+      <section id="especialidades" className="py-16 md:py-24 bg-[#c2c2c2] border-y border-black/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight px-4">Nossas Especialidades</h2>
