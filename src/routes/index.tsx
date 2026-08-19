@@ -622,7 +622,7 @@ function Index() {
       <section id="especialidades" className="py-16 md:py-24 bg-[#c2c2c2] border-y border-black/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight px-4">Nossas Especialidades</h2>
+            <h2 className="text-2xl md:text-5xl font-bold text-[var(--color-accent)] uppercase tracking-tighter font-heading leading-tight px-4">Nossas Especialidades</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {TECHNICAL_SERVICES.map((service) => (
@@ -654,7 +654,7 @@ function Index() {
           <div className="text-center mb-16 md:mb-24">
             
             <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight px-4">Projetos & Tecnologia</h2>
-            <p className="text-slate-900 mt-6 max-w-4xl mx-auto font-black text-xl md:text-3xl uppercase tracking-tight px-4 font-brand">Simulação de Construção e Modelagem 3D Urbana e Rural</p>
+            <p className="text-[var(--color-accent)] mt-6 max-w-4xl mx-auto font-black text-xl md:text-3xl uppercase tracking-tight px-4 font-brand">Simulação de Construção e Modelagem 3D Urbana e Rural</p>
           </div>
  
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
