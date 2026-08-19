@@ -799,7 +799,6 @@ function Index() {
                           
                           setUploadedProperties(prev => [newProperty, ...prev]);
                           setIsUploading(false);
-                          alert("Imóvel processado com sucesso! O anúncio foi criado automaticamente e já está visível no site.");
                         }, 2000);
                       }}
                     />
