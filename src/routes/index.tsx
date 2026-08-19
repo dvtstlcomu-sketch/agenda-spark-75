@@ -443,6 +443,8 @@ export const Route = createFileRoute("/")({
 function Index() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [uploadedProperties, setUploadedProperties] = useState<typeof PROPERTIES>([]);
+  const [isUploading, setIsUploading] = useState(false);
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -773,18 +775,46 @@ function Index() {
                       multiple 
                       accept="image/*"
                       className="absolute inset-0 opacity-0 cursor-pointer z-10"
-                      onChange={(e) => {
+                      onChange={async (e) => {
                         const files = e.target.files;
                         if (!files || files.length === 0) return;
                         
-                        // Simulation of automatic ad creation
-                        const fileNames = Array.from(files).map(f => f.name).join(", ");
-                        alert(`Fotos recebidas: ${fileNames}\n\nO sistema está processando as imagens para gerar o anúncio automaticamente com as descrições técnicas baseadas nos metadados e análise visual.`);
+                        setIsUploading(true);
+                        
+                        // Simulação de processamento inteligente e criação automática
+                        setTimeout(() => {
+                          const newProperty = {
+                            id: Date.now(),
+                            title: "Novo Imóvel Detectado",
+                            type: "Residencial",
+                            status: "Venda e Locação",
+                            price: "Avaliação em curso...",
+                            location: "Localização via GPS",
+                            image: URL.createObjectURL(files[0]),
+                            beds: 2,
+                            baths: 2,
+                            area: "Aguardando medição",
+                            description: "Anúncio gerado automaticamente via inteligência visual. Descrições técnicas sendo processadas."
+                          };
+                          
+                          setUploadedProperties(prev => [newProperty, ...prev]);
+                          setIsUploading(false);
+                          alert("Imóvel processado com sucesso! O anúncio foi criado automaticamente e já está visível no site.");
+                        }, 2000);
                       }}
                     />
-                    <Upload className="w-8 h-8 text-slate-400 group-hover:text-[var(--color-accent)] transition-colors" />
-                    <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Subir fotos do imóvel</span>
-                    <span className="text-[10px] text-slate-400 font-medium">JPEG, PNG até 10MB</span>
+                    {isUploading ? (
+                      <div className="flex flex-col items-center animate-pulse">
+                        <Activity className="w-8 h-8 text-[var(--color-accent)] animate-spin mb-2" />
+                        <span className="text-[10px] font-black uppercase text-[var(--color-accent)]">Processando IA...</span>
+                      </div>
+                    ) : (
+                      <>
+                        <Camera className="w-8 h-8 text-slate-400 group-hover:text-[var(--color-accent)] transition-colors" />
+                        <span className="text-xs font-bold text-slate-500 uppercase tracking-widest text-center px-4">Tire fotos ou suba arquivos</span>
+                        <p className="text-[9px] text-slate-400 font-medium px-4 text-center mt-1 md:hidden">Dica: No celular, use o modo paisagem para melhores fotos do imóvel.</p>
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -832,7 +862,7 @@ function Index() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {PROPERTIES.map((property) => (
+            {[...uploadedProperties, ...PROPERTIES].map((property) => (
               <div key={property.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
