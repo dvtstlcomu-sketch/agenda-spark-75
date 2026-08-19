@@ -718,7 +718,7 @@ function Index() {
 
 
       {/* Lead Generation Premium */}
-      <section id="anuncie" className="py-20 md:py-32 bg-[#e2e2e2] text-slate-900 overflow-hidden relative border-y border-black/5">
+      <section id="anuncie" className="py-20 md:py-32 bg-[#c2c2c2] text-slate-900 overflow-hidden relative border-y border-black/5">
         <div className="absolute inset-0 z-0 opacity-5">
            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.05),transparent_70%)]" />
         </div>
