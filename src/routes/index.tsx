@@ -788,7 +788,7 @@ function Index() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-slate-900 text-white h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
+                <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
                   Enviar Imóvel para Venda e Locação
                 </Button>
               </form>
