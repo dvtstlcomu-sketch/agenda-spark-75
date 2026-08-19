@@ -476,9 +476,9 @@ function Index() {
                   className="w-full h-full object-contain [mix-blend-mode:multiply] block"
                 />
               </div>
-              <div className="flex flex-col items-center -ml-2 md:-ml-4 relative z-[120]">
-                <span className="text-slate-900 font-black text-[12px] sm:text-[14px] md:text-2xl tracking-tighter uppercase font-brand drop-shadow-sm leading-tight whitespace-nowrap">TERRITORIAL IMÓVEIS</span>
-                <span className="text-slate-900 font-bold text-[7px] sm:text-[9px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.25em] leading-none mt-0.5 w-full text-center">CRECI 38258-J</span>
+              <div className="flex flex-col items-center">
+                <span className="text-slate-900 font-black text-xl md:text-3xl tracking-tighter uppercase font-brand leading-tight whitespace-nowrap">TERRITORIAL IMÓVEIS</span>
+                <span className="text-slate-900 font-bold text-[9px] md:text-xs uppercase tracking-[0.25em] leading-none mt-1 w-full text-center">CRECI 38258-J</span>
               </div>
             </div>
 
