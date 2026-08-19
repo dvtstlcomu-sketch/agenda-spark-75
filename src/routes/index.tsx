@@ -735,7 +735,7 @@ function Index() {
                   <option className="bg-white">Locação</option>
                   <option className="bg-white">Permuta</option>
                 </select>
-                <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
+                <Button className="w-full bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
                   Solicitar
                 </Button>
               </form>
@@ -788,7 +788,7 @@ function Index() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-[var(--color-accent)] text-slate-900 h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
+                <Button className="w-full bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
                   Enviar Imóvel para Venda e Locação
                 </Button>
               </form>
