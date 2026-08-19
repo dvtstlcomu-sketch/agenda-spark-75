@@ -745,7 +745,7 @@ function Index() {
             <div className="bg-white/40 backdrop-blur-3xl p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-black/5 shadow-2xl h-full">
               <div className="mb-8">
                 <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs mb-2 block">Imóvel & Glebas</span>
-                <h3 className="text-xl md:text-3xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Enviar Imóvel para Venda e Locação</h3>
+                <h3 className="text-xl md:text-3xl font-black text-[var(--color-accent)] mb-4 uppercase tracking-tighter">Enviar Imóvel para Venda e Locação</h3>
                 <p className="text-sm text-slate-600 font-medium leading-relaxed">
                   Deseja vender seu imóvel? Nossa equipe realiza a análise técnica com sigilo e segurança.
                 </p>
