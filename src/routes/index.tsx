@@ -626,7 +626,7 @@ function Index() {
       </section>
 
       {/* Background Watermark for other sections */}
-      <div className="fixed inset-0 z-0 pointer-events-none flex items-center justify-center opacity-[0.03] overflow-hidden">
+      <div className="fixed inset-0 z-0 pointer-events-none flex items-center justify-center opacity-[0.08] overflow-hidden">
         <img 
           src={logo2.url} 
           alt="" 
