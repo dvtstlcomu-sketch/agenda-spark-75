@@ -25,7 +25,10 @@ import {
   Zap,
   Layers,
   Activity,
-  Plus
+  Plus,
+  Facebook,
+  Instagram,
+  Video
 } from "lucide-react";
 import { useState } from "react";
 import logo2 from "@/assets/logo_2.jpg.asset.json";
