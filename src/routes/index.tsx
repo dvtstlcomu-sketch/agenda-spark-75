@@ -524,14 +524,6 @@ function Index() {
               </Button>
 
 
-              <Button 
-                onClick={() => {
-                  alert("Para instalar este app:\n\nNo iPhone: Toque em Compartilhar e 'Adicionar à Tela de Início'.\n\nNo Android: Toque nos três pontos e 'Adicionar à tela inicial'.");
-                }}
-                className="hidden lg:flex bg-[var(--color-accent)] text-slate-900 hover:bg-slate-900 hover:text-white rounded-2xl px-4 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-[10px]"
-              >
-                Instalar App
-              </Button>
 
               {/* Mobile Menu Button */}
               <button 
