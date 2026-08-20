@@ -25,9 +25,13 @@ import {
   Zap,
   Layers,
   Activity,
-  Plus
+  Plus,
+  Smartphone,
+  Info,
+  QrCode
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { QRCodeSVG } from 'qrcode.react';
 import logo2 from "@/assets/logo_2.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -459,6 +463,8 @@ function Index() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [uploadedProperties, setUploadedProperties] = useState<typeof PROPERTIES>([]);
   const [isUploading, setIsUploading] = useState(false);
+  const [showPwaModal, setShowPwaModal] = useState(false);
+  const [pwaPlatform, setPwaPlatform] = useState<'ios' | 'android' | null>(null);
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -1195,30 +1201,120 @@ function Index() {
           </div>
 
           <div className="pt-10 border-t border-white/5 text-center flex flex-col items-center gap-6">
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                onClick={() => {
-                  alert("Instalação para iOS (iPhone/iPad):\n\n1. Abra este site no Safari\n2. Toque no ícone 'Compartilhar' (quadrado com seta)\n3. Role para baixo e toque em 'Adicionar à Tela de Início'");
-                }}
-                className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs flex items-center gap-2"
-              >
-                <Globe size={16} />
-                Instalar no iOS
-              </Button>
-              <Button 
-                onClick={() => {
-                  alert("Instalação para Android:\n\n1. Abra este site no Chrome\n2. Toque nos três pontos no canto superior direito\n3. Toque em 'Instalar aplicativo' ou 'Adicionar à tela inicial'");
-                }}
-                className="bg-[var(--color-accent)] text-slate-900 hover:bg-slate-900 hover:text-white rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs flex items-center gap-2"
-              >
-                <Zap size={16} />
-                Instalar no Android
-              </Button>
+            <div className="flex flex-col items-center gap-6 bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm max-w-2xl w-full">
+              <div className="flex flex-col items-center gap-2">
+                <Smartphone className="w-10 h-10 text-[var(--color-accent)]" />
+                <h5 className="text-foreground font-black text-xl uppercase tracking-tighter">Instale o Nosso Aplicativo</h5>
+                <p className="text-slate-500 text-sm font-medium">Acesse a Territorial Imóveis com um toque, direto da sua tela inicial.</p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
+                <Button 
+                  onClick={() => {
+                    setPwaPlatform('ios');
+                    setShowPwaModal(true);
+                  }}
+                  className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl flex items-center justify-center gap-2 flex-1"
+                >
+                  <Smartphone size={16} />
+                  Versão iPhone / iOS
+                </Button>
+                <Button 
+                  onClick={() => {
+                    setPwaPlatform('android');
+                    setShowPwaModal(true);
+                  }}
+                  className="bg-[var(--color-accent)] text-slate-900 hover:bg-slate-900 hover:text-white rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl flex items-center justify-center gap-2 flex-1"
+                >
+                  <Smartphone size={16} />
+                  Versão Android
+                </Button>
+              </div>
+              
+              <div className="flex flex-col items-center gap-4 mt-2">
+                <div className="p-3 bg-white rounded-2xl shadow-lg border-4 border-[var(--color-accent)]/20">
+                  <QRCodeSVG 
+                    value="https://territorialimoveis.com.br" 
+                    size={120}
+                    level="H"
+                    includeMargin={false}
+                    imageSettings={{
+                      src: logo2.url,
+                      height: 24,
+                      width: 24,
+                      excavate: true,
+                    }}
+                  />
+                </div>
+                <p className="text-[10px] uppercase tracking-widest font-black text-slate-400">Escaneie para acessar no celular</p>
+              </div>
             </div>
+
             <p className="text-slate-600 text-sm font-medium tracking-wide">
               © 2026 Territorial Imóveis - CRECI 38258-J. Segurança Jurídica.
             </p>
           </div>
+
+          {/* PWA Instruction Modal */}
+          {showPwaModal && (
+            <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-in fade-in duration-300">
+              <div className="bg-white rounded-[2.5rem] w-full max-w-md overflow-hidden shadow-2xl border border-black/5 animate-in zoom-in-95 duration-300">
+                <div className="bg-slate-900 p-8 text-center relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--color-accent)]/10 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+                  <Smartphone className="w-16 h-16 text-[var(--color-accent)] mx-auto mb-4 relative z-10" />
+                  <h3 className="text-white text-2xl font-black uppercase tracking-tighter leading-none relative z-10">
+                    Instalar Territorial
+                  </h3>
+                  <p className="text-white/60 text-sm mt-2 font-medium relative z-10">
+                    Siga os passos abaixo para instalar em seu {pwaPlatform === 'ios' ? 'iPhone' : 'Android'}
+                  </p>
+                </div>
+                
+                <div className="p-8">
+                  <div className="space-y-6">
+                    {pwaPlatform === 'ios' ? (
+                      <>
+                        <div className="flex gap-4 items-start">
+                          <div className="w-10 h-10 rounded-full bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black shrink-0">1</div>
+                          <p className="text-slate-700 font-medium">Toque no ícone de <span className="font-black">Compartilhar</span> (quadrado com seta) na barra inferior do Safari.</p>
+                        </div>
+                        <div className="flex gap-4 items-start">
+                          <div className="w-10 h-10 rounded-full bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black shrink-0">2</div>
+                          <p className="text-slate-700 font-medium">Role a lista para baixo e selecione a opção <span className="font-black">"Adicionar à Tela de Início"</span>.</p>
+                        </div>
+                        <div className="flex gap-4 items-start">
+                          <div className="w-10 h-10 rounded-full bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black shrink-0">3</div>
+                          <p className="text-slate-700 font-medium">Toque em <span className="font-black text-[var(--color-accent)]">Adicionar</span> no canto superior direito para confirmar.</p>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="flex gap-4 items-start">
+                          <div className="w-10 h-10 rounded-full bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black shrink-0">1</div>
+                          <p className="text-slate-700 font-medium">Toque nos <span className="font-black">três pontos</span> (menu) no canto superior direito do Chrome.</p>
+                        </div>
+                        <div className="flex gap-4 items-start">
+                          <div className="w-10 h-10 rounded-full bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black shrink-0">2</div>
+                          <p className="text-slate-700 font-medium">Selecione <span className="font-black">"Instalar aplicativo"</span> ou <span className="font-black">"Adicionar à tela inicial"</span>.</p>
+                        </div>
+                        <div className="flex gap-4 items-start">
+                          <div className="w-10 h-10 rounded-full bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black shrink-0">3</div>
+                          <p className="text-slate-700 font-medium">Confirme a instalação clicando em <span className="font-black text-[var(--color-accent)]">Instalar</span> no pop-up.</p>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                  
+                  <Button 
+                    onClick={() => setShowPwaModal(false)}
+                    className="w-full mt-10 bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 h-14 rounded-2xl font-black uppercase tracking-widest transition-all duration-300 shadow-xl"
+                  >
+                    Entendi, vou instalar
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </footer>
     </div>
