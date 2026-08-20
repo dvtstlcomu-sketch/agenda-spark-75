@@ -31,6 +31,20 @@ import { useState } from "react";
 import logo2 from "@/assets/logo_2.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { 
+  ShieldCheck, 
+  ChevronRight,
+  ExternalLink 
+} from "lucide-react";
+
+const INSURERS = [
+  { name: "Porto Seguro", color: "#005EB8", url: "https://www.portoseguro.com.br/seguro-fianca-locaticia" },
+  { name: "Tokio Marine", color: "#008751", url: "https://www.tokiomarine.com.br/seguro-fianca-locaticia/" },
+  { name: "Liberty Seguros", color: "#004890", url: "https://www.libertyseguros.com.br/Pages/nossos-seguros/fianca-locaticia.aspx" },
+  { name: "Sompo Seguros", color: "#E30613", url: "https://sompo.com.br/produtos/sompo-fianca-locaticia/" },
+  { name: "Too Seguros", color: "#FFC600", url: "https://tooseguros.com.br/seguro-fianca/" },
+  { name: "Pottencial Seguradora", color: "#FF6600", url: "https://pottencial.com.br/seguro-fianca-locaticia/" }
+];
 
 const TECHNICAL_SERVICES = [
   {
@@ -851,6 +865,37 @@ function Index() {
           <div className="text-center mb-16">
             
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-8">Portfólio de Imóveis</h2>
+            
+            {/* Seguro Fiança Section */}
+            <div className="mb-12 max-w-4xl mx-auto">
+              <div className="bg-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-black/5 shadow-xl">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="bg-[var(--color-accent)]/20 p-4 rounded-2xl">
+                      <ShieldCheck className="w-10 h-10 text-[var(--color-accent)]" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl md:text-2xl font-black text-slate-900 uppercase tracking-tighter">Seguro Fiança Locatícia</h3>
+                      <p className="text-sm text-slate-600 font-medium">Contrate agora com as melhores seguradoras do mercado</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    {INSURERS.map((insurers) => (
+                      <a 
+                        key={insurers.name}
+                        href={insurers.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-2 bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all duration-300 hover:scale-105 active:scale-95 shadow-md"
+                      >
+                        {insurers.name}
+                        <ExternalLink size={12} className="opacity-50 group-hover:opacity-100" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
             
             {/* Search Bar Premium - Relocated here */}
             <div className="bg-white/60 backdrop-blur-2xl p-4 md:p-4 rounded-[1.5rem] md:rounded-[2.5rem] border border-white/40 flex flex-col md:flex-row gap-3 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] ring-1 ring-black/5 mx-auto max-w-4xl mb-16">
