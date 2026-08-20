@@ -1195,14 +1195,26 @@ function Index() {
           </div>
 
           <div className="pt-10 border-t border-white/5 text-center flex flex-col items-center gap-6">
-            <Button 
-              onClick={() => {
-                alert("Para instalar este app:\n\nNo iPhone: Toque em Compartilhar e 'Adicionar à Tela de Início'.\n\nNo Android: Toque nos três pontos e 'Adicionar à tela inicial'.");
-              }}
-              className="bg-[var(--color-accent)] text-slate-900 hover:bg-slate-900 hover:text-white rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
-            >
-              Instalar App
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                onClick={() => {
+                  alert("Instalação para iOS (iPhone/iPad):\n\n1. Abra este site no Safari\n2. Toque no ícone 'Compartilhar' (quadrado com seta)\n3. Role para baixo e toque em 'Adicionar à Tela de Início'");
+                }}
+                className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs flex items-center gap-2"
+              >
+                <Globe size={16} />
+                Instalar no iOS
+              </Button>
+              <Button 
+                onClick={() => {
+                  alert("Instalação para Android:\n\n1. Abra este site no Chrome\n2. Toque nos três pontos no canto superior direito\n3. Toque em 'Instalar aplicativo' ou 'Adicionar à tela inicial'");
+                }}
+                className="bg-[var(--color-accent)] text-slate-900 hover:bg-slate-900 hover:text-white rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs flex items-center gap-2"
+              >
+                <Zap size={16} />
+                Instalar no Android
+              </Button>
+            </div>
             <p className="text-slate-600 text-sm font-medium tracking-wide">
               © 2026 Territorial Imóveis - CRECI 38258-J. Segurança Jurídica.
             </p>
