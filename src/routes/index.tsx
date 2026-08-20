@@ -882,8 +882,8 @@ function Index() {
                       <ShieldCheck className="w-10 h-10 text-[var(--color-accent)]" />
                     </div>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-black text-slate-900 uppercase tracking-tighter">Seguro Fiança Locatícia</h3>
-                      <p className="text-sm text-slate-600 font-medium">Contrate agora com as melhores seguradoras do mercado</p>
+                      <h3 className="text-xl md:text-2xl font-black text-slate-900 uppercase tracking-tighter">Todas as Seguradoras</h3>
+                      <p className="text-sm text-slate-600 font-medium">Contratação imediata com suporte técnico especializado</p>
                     </div>
                   </div>
                   <div className="flex flex-wrap justify-center gap-3">
@@ -1231,23 +1231,6 @@ function Index() {
                 </Button>
               </div>
               
-              <div className="flex flex-col items-center gap-4 mt-2">
-                <div className="p-3 bg-white rounded-2xl shadow-lg border-4 border-[var(--color-accent)]/20">
-                  <QRCodeSVG 
-                    value="https://territorialimoveis.com.br" 
-                    size={120}
-                    level="H"
-                    includeMargin={false}
-                    imageSettings={{
-                      src: logo2.url,
-                      height: 24,
-                      width: 24,
-                      excavate: true,
-                    }}
-                  />
-                </div>
-                <p className="text-[10px] uppercase tracking-widest font-black text-slate-400">Escaneie para acessar no celular</p>
-              </div>
             </div>
 
             <p className="text-slate-600 text-sm font-medium tracking-wide">
