@@ -31,6 +31,20 @@ import { useState } from "react";
 import logo2 from "@/assets/logo_2.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { 
+  ShieldCheck, 
+  ChevronRight,
+  ExternalLink 
+} from "lucide-react";
+
+const INSURERS = [
+  { name: "Porto Seguro", color: "#005EB8", url: "https://www.portoseguro.com.br/seguro-fianca-locaticia" },
+  { name: "Tokio Marine", color: "#008751", url: "https://www.tokiomarine.com.br/seguro-fianca-locaticia/" },
+  { name: "Liberty Seguros", color: "#004890", url: "https://www.libertyseguros.com.br/Pages/nossos-seguros/fianca-locaticia.aspx" },
+  { name: "Sompo Seguros", color: "#E30613", url: "https://sompo.com.br/produtos/sompo-fianca-locaticia/" },
+  { name: "Too Seguros", color: "#FFC600", url: "https://tooseguros.com.br/seguro-fianca/" },
+  { name: "Pottencial Seguradora", color: "#FF6600", url: "https://pottencial.com.br/seguro-fianca-locaticia/" }
+];
 
 const TECHNICAL_SERVICES = [
   {
