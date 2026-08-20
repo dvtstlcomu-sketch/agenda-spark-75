@@ -12,7 +12,12 @@ export const Route = createRootRouteWithContext<{
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+      { name: "apple-mobile-web-app-title", content: "Territorial" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "theme-color", content: "#0f172a" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
