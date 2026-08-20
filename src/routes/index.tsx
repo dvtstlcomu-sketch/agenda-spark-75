@@ -1240,8 +1240,6 @@ function Index() {
                     includeMargin={false}
                     imageSettings={{
                       src: logo2.url,
-                      x: undefined,
-                      y: undefined,
                       height: 24,
                       width: 24,
                       excavate: true,
