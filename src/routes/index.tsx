@@ -1194,7 +1194,15 @@ function Index() {
             </div>
           </div>
 
-          <div className="pt-10 border-t border-white/5 text-center">
+          <div className="pt-10 border-t border-white/5 text-center flex flex-col items-center gap-6">
+            <Button 
+              onClick={() => {
+                alert("Para instalar este app:\n\nNo iPhone: Toque em Compartilhar e 'Adicionar à Tela de Início'.\n\nNo Android: Toque nos três pontos e 'Adicionar à tela inicial'.");
+              }}
+              className="bg-[var(--color-accent)] text-slate-900 hover:bg-slate-900 hover:text-white rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
+            >
+              Instalar App
+            </Button>
             <p className="text-slate-600 text-sm font-medium tracking-wide">
               © 2026 Territorial Imóveis - CRECI 38258-J. Segurança Jurídica.
             </p>
