@@ -41,6 +41,9 @@ import {
   ExternalLink 
 } from "lucide-react";
 
+// Asset-serving paths are hosted by Lovable, not by external deployments.
+const logoUrl = new URL(logo2.url, "https://agenda-spark-75.lovable.app").href;
+
 const INSURERS = [
   { name: "Porto Seguro", color: "#005EB8", url: "https://www.portoseguro.com.br/seguro-fianca-locaticia" },
   { name: "Tokio Marine", color: "#008751", url: "https://www.tokiomarine.com.br/seguro-fianca-locaticia/" },
@@ -495,7 +498,7 @@ function Index() {
               <div className="flex items-center gap-2 md:gap-4">
                 <div className="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center relative bg-transparent">
                   <img 
-                    src={logo2.url} 
+                    src={logoUrl} 
                     alt="Territorial Imóveis Logo" 
                     className="w-full h-full object-contain mix-blend-multiply"
                   />
@@ -637,7 +640,7 @@ function Index() {
       {/* Background Watermark for other sections */}
       <div className="fixed inset-0 z-0 pointer-events-none flex items-center justify-center opacity-[0.08] overflow-hidden">
         <img 
-          src={logo2.url} 
+          src={logoUrl} 
           alt="" 
           className="w-[90%] h-auto object-contain mix-blend-multiply grayscale" 
         />
@@ -1100,7 +1103,7 @@ function Index() {
                 <div className="flex items-center gap-2 md:gap-4">
                   <div className="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center relative bg-transparent">
                     <img 
-                      src={logo2.url} 
+                      src={logoUrl} 
                       alt="Territorial Imóveis Logo" 
                       className="w-full h-full object-contain mix-blend-multiply"
                     />
