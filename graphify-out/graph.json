@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-08T02:21:52.107406+00:00",
+  "generated_at": "2026-10-08T02:51:20.444911+00:00",
   "files": [
     {
       "path": "AGENTS.md",
-      "bytes": 480
+      "bytes": 666
     },
     {
       "path": "tsconfig.json",
@@ -36,6 +36,10 @@
     {
       "path": ".lovable/project.json",
       "bytes": 124
+    },
+    {
+      "path": ".lovasiri/sync.json",
+      "bytes": 80
     },
     {
       "path": "src/routeTree.gen.ts",
@@ -107,7 +111,7 @@
     },
     {
       "path": "src/routes/index.tsx",
-      "bytes": 73198
+      "bytes": 73348
     },
     {
       "path": "src/integrations/supabase/auth-middleware.ts",
@@ -119,7 +123,7 @@
     },
     {
       "path": "src/integrations/supabase/types.ts",
-      "bytes": 7166
+      "bytes": 7165
     },
     {
       "path": "src/integrations/supabase/client.ts",
