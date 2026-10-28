@@ -31,6 +31,9 @@ import {
   QrCode
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { fetchPublishedListings, MAX_LISTINGS } from "@/lib/listings";
+import { SubmitListingForm } from "@/components/SubmitListingForm";
 import { QRCodeSVG } from 'qrcode.react';
 import logo2 from "@/assets/logo_2.jpg.asset.json";
 import { Button } from "@/components/ui/button";
@@ -464,8 +467,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [uploadedProperties, setUploadedProperties] = useState<typeof PROPERTIES>([]);
-  const [isUploading, setIsUploading] = useState(false);
+  const { data: dbListings } = useQuery({ queryKey: ["listings"], queryFn: fetchPublishedListings });
   const [showPwaModal, setShowPwaModal] = useState(false);
   const [pwaPlatform, setPwaPlatform] = useState<'ios' | 'android' | null>(null);
 
@@ -778,91 +780,7 @@ function Index() {
                   Deseja vender seu imóvel? Nossa equipe realiza a análise técnica com sigilo e segurança.
                 </p>
               </div>
-              <form className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input type="text" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Nome Completo" />
-                  <input type="tel" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="WhatsApp / Contato" />
-                </div>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input type="text" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Metragem (m²)" />
-                  <select className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none text-xs">
-                    <option className="bg-white">Documentação Regularizada</option>
-                    <option className="bg-white">Em Processo de Regularização</option>
-                    <option className="bg-white">Contrato de Compra e Venda</option>
-                  </select>
-                </div>
-                
-                {/* File Upload Field */}
-                <div className="relative group">
-                  <div className="w-full min-h-[180px] py-6 rounded-2xl bg-white/40 border-2 border-dashed border-black/10 flex flex-col items-center justify-center gap-2 group-hover:border-[var(--color-accent)]/50 transition-colors cursor-pointer relative overflow-hidden">
-                    <input 
-                      type="file" 
-                      multiple 
-                      accept="image/*"
-                      className="absolute inset-0 opacity-0 cursor-pointer z-10"
-                      onChange={async (e) => {
-                        const files = e.target.files;
-                        if (!files || files.length === 0) return;
-                        
-                        setIsUploading(true);
-                        
-                        // Simulação de processamento inteligente e criação automática
-                        setTimeout(() => {
-                          const newProperty = {
-                            id: Date.now(),
-                            title: "Novo Imóvel Detectado",
-                            type: "Residencial",
-                            status: "Venda e Locação",
-                            price: "Avaliação em curso...",
-                            location: "Localização via GPS",
-                            image: files[0] ? URL.createObjectURL(files[0]) : "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80",
-                            beds: 2,
-                            baths: 2,
-                            area: "Aguardando medição",
-                            description: "Anúncio gerado automaticamente via inteligência visual. Descrições técnicas sendo processadas."
-                          };
-                          
-                          setUploadedProperties(prev => [newProperty, ...prev]);
-                          setIsUploading(false);
-                          
-                          // Scroll to properties section to show the created ad
-                          const propertiesSection = document.getElementById('imoveis');
-                          if (propertiesSection) {
-                            propertiesSection.scrollIntoView({ behavior: 'smooth' });
-                          }
-                        }, 2000);
-                      }}
-                    />
-                    {isUploading ? (
-                      <div className="flex flex-col items-center animate-pulse">
-                        <Activity className="w-8 h-8 text-[var(--color-accent)] animate-spin mb-2" />
-                        <span className="text-[10px] font-black uppercase text-[var(--color-accent)]">Processando IA...</span>
-                      </div>
-                    ) : (
-                      <>
-                        <Camera className="w-8 h-8 text-slate-400 group-hover:text-[var(--color-accent)] transition-colors" />
-                        <span className="text-xs font-bold text-slate-500 uppercase tracking-widest text-center px-4">Tire fotos ou suba arquivos</span>
-                        <div className="mt-4 px-6 text-left w-full space-y-2">
-                          <p className="text-[10px] font-black uppercase text-[var(--color-accent)] tracking-tighter">Guia de Fotos para Anúncio de Alta Qualidade:</p>
-                          <ul className="text-[9px] text-slate-500 font-bold space-y-1 list-disc pl-4 uppercase">
-                            <li><span className="text-slate-900">Fachada:</span> Foto frontal com boa iluminação natural.</li>
-                            <li><span className="text-slate-900">Sala:</span> Fotografe dos cantos para mostrar amplitude (Modo Paisagem).</li>
-                            <li><span className="text-slate-900">Cozinha:</span> Destaque bancadas, armários e iluminação.</li>
-                            <li><span className="text-slate-900">Quartos:</span> Mostre o espaço livre e janelas.</li>
-                            <li><span className="text-slate-900">Banheiros:</span> Foco em revestimentos e box (cuidado com o reflexo).</li>
-                            <li><span className="text-slate-900">Dica Pro:</span> Mantenha a câmera na altura dos olhos e use o celular deitado.</li>
-                          </ul>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                </div>
-
-                <Button className="w-full bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
-                  Enviar Imóvel para Venda e Locação
-                </Button>
-              </form>
+              <SubmitListingForm />
             </div>
           </div>
         </div>
@@ -934,7 +852,7 @@ function Index() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[...uploadedProperties, ...PROPERTIES].map((property) => (
+            {[...(dbListings ?? []), ...PROPERTIES].slice(0, MAX_LISTINGS).map((property) => (
               <div key={property.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
