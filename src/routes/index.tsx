@@ -45,11 +45,11 @@ import {
 const logoUrl = new URL(logo2.url, "https://agenda-spark-75.lovable.app").href;
 
 const INSURERS = [
-  { name: "Porto Seguro", color: "#005EB8", url: "https://www.portoseguro.com.br/seguro-fianca-locaticia" },
+  { name: "Porto Seguro", color: "#005EB8", url: "https://www.portoseguro.com.br/seguro-fianca" },
   { name: "Tokio Marine", color: "#008751", url: "https://www.tokiomarine.com.br/seguro-fianca-locaticia/" },
-  { name: "Liberty Seguros", color: "#004890", url: "https://www.libertyseguros.com.br/Pages/nossos-seguros/fianca-locaticia.aspx" },
-  { name: "Sompo Seguros", color: "#E30613", url: "https://sompo.com.br/produtos/sompo-fianca-locaticia/" },
-  { name: "Too Seguros", color: "#FFC600", url: "https://tooseguros.com.br/seguro-fianca/" },
+  { name: "Yelum (ex-Liberty)", color: "#004890", url: "https://www.yelumseguros.com.br" },
+  { name: "Sompo Seguros", color: "#E30613", url: "https://www.sompo.com.br" },
+  { name: "Too Seguros", color: "#FFC600", url: "https://www.tooseguros.com.br" },
   { name: "Pottencial Seguradora", color: "#FF6600", url: "https://pottencial.com.br/seguro-fianca-locaticia/" }
 ];
 
