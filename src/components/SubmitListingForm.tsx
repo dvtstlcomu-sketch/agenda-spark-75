@@ -17,8 +17,8 @@ export function SubmitListingForm() {
     const form = e.currentTarget;
     const f = new FormData(form);
     const s = (k: string) => String(f.get(k) ?? "").trim();
-    if (files.length === 0) {
-      setMsg({ ok: false, text: "Adicione pelo menos uma foto do imóvel." });
+    if (files.length < 3) {
+      setMsg({ ok: false, text: "Envie no mínimo 3 fotos do imóvel (fachada, sala e cozinha, por exemplo)." });
       return;
     }
     setBusy(true);
