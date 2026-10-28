@@ -1,6 +1,6 @@
 # Design system
 
-Generated: 2026-10-28T11:14:36.511996+00:00
+Generated: 2026-10-28T11:17:34.475157+00:00
 
 ## Tokens
 - --color-gold: #ca8a04 (src/styles.css)
