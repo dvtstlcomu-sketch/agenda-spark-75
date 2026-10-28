@@ -23,7 +23,7 @@ async function signPaths(paths: string[], staff = false): Promise<Record<string,
   const clean = paths.filter((p): p is string => !!p && !p.startsWith("http"));
   if (!clean.length) return {};
   const { signPublicImages, signStaffImages } = await import("@/lib/listings.server");
-  return staff ? signStaffImages({ paths: clean }) : signPublicImages({ paths: clean });
+  return staff ? signStaffImages({ data: { paths: clean } }) : signPublicImages({ data: { paths: clean } });
 }
 
 export async function resolveImages<T extends { image_url: string | null; images: string[] | null }>(rows: T[], staff = false) {

@@ -33,8 +33,8 @@ export const signPublicImages = createServerFn({ method: "POST" })
     const { paths } = data;
     if (!paths.length) return {};
     const { createClient } = await import("@supabase/supabase-js");
-    const url = process.env.SUPABASE_URL;
-    const key = process.env.SUPABASE_PUBLISHABLE_KEY;
+    const url = process.env['SUPABASE_URL'];
+    const key = process.env['SUPABASE_PUBLISHABLE_KEY'];
     if (!url || !key) throw new Error("Configuração do servidor ausente.");
     const client = createClient(url, key, {
       auth: { storage: undefined, persistSession: false, autoRefreshToken: false },
