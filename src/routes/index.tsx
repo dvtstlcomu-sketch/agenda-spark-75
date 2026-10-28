@@ -1157,7 +1157,14 @@ function Index() {
             <p className="text-slate-600 text-sm font-medium tracking-wide">
               © 2026 Territorial Imóveis - CRECI 38258-J. Segurança Jurídica.
             </p>
-            <a href="/auth" className="text-[10px] text-slate-500 hover:text-slate-900 uppercase tracking-widest font-bold">Acesso CEO</a>
+            <div className="flex justify-center pt-4">
+              <a
+                href="/auth"
+                className="inline-flex items-center gap-2 h-11 px-8 rounded-xl bg-slate-900 text-white text-xs uppercase tracking-widest font-black hover:bg-[var(--color-accent)] hover:text-slate-900 transition-all duration-300 shadow-lg"
+              >
+                Acesso CEO
+              </a>
+            </div>
           </div>
 
           {/* PWA Instruction Modal */}
