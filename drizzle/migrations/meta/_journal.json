@@ -15,6 +15,13 @@
       "when": 1793185977121,
       "tag": "0001_manager_moderation",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793187574152,
+      "tag": "0002_restrict_photo_downloads",
+      "breakpoints": true
     }
   ]
 }
