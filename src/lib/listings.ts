@@ -26,9 +26,9 @@ async function signPaths(paths: string[], staff = false): Promise<Record<string,
   return staff ? signStaffImages({ paths: clean }) : signPublicImages({ paths: clean });
 }
 
-export async function resolveImages<T extends { image_url: string | null; images: string[] | null }>(rows: T[]) {
+export async function resolveImages<T extends { image_url: string | null; images: string[] | null }>(rows: T[], staff = false) {
   const paths = rows.flatMap((r) => [r.image_url, ...(r.images ?? [])]).filter((p): p is string => !!p && !p.startsWith("http"));
-  const map = await signPaths([...new Set(paths)]);
+  const map = await signPaths([...new Set(paths)], staff);
   const url = (p: string | null) => (p ? (p.startsWith("http") ? p : map[p] ?? "") : "");
   return rows.map((r) => ({ ...r, imageSrc: url(r.image_url), imageSrcs: (r.images ?? []).map(url).filter(Boolean) }));
 }
