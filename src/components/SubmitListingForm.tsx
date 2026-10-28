@@ -92,7 +92,7 @@ export function SubmitListingForm() {
           />
           <Camera className="w-8 h-8 text-slate-400 group-hover:text-[var(--color-accent)]" />
           <span className="text-xs font-bold text-slate-500 uppercase tracking-widest text-center px-4">
-            {files.length ? `${files.length} foto(s) selecionada(s)` : "Tire fotos ou suba arquivos (até 10)"}
+            {files.length ? `${files.length} foto(s) selecionada(s)${files.length < 3 ? " — mínimo 3" : ""}` : "Tire fotos ou suba arquivos (mínimo 3, até 10)"}
           </span>
           <div className="mt-3 px-6 text-left w-full space-y-2">
             <p className="text-[10px] font-black uppercase text-[var(--color-accent)]">Guia de Fotos:</p>

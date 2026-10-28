@@ -21,7 +21,9 @@ export const Route = createFileRoute("/_authenticated/painel")({
   component: Painel,
 });
 
-type Filter = "pending" | "published" | "all";
+type Filter = "pending" | "published" | "all" | "contacts";
+
+const COMPANY_WA = "551124050300";
 
 function waLink(phone: string | null, text: string) {
   let d = (phone ?? "").replace(/\D/g, "");
