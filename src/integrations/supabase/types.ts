@@ -27,9 +27,11 @@ export type Database = {
           image_url: string | null
           images: string[] | null
           location: string | null
+          manager_reply: string | null
           owner_name: string | null
           owner_phone: string | null
           price: string | null
+          replied_at: string | null
           status: string | null
           title: string
           type: string | null
@@ -47,9 +49,11 @@ export type Database = {
           image_url?: string | null
           images?: string[] | null
           location?: string | null
+          manager_reply?: string | null
           owner_name?: string | null
           owner_phone?: string | null
           price?: string | null
+          replied_at?: string | null
           status?: string | null
           title: string
           type?: string | null
@@ -67,9 +71,11 @@ export type Database = {
           image_url?: string | null
           images?: string[] | null
           location?: string | null
+          manager_reply?: string | null
           owner_name?: string | null
           owner_phone?: string | null
           price?: string | null
+          replied_at?: string | null
           status?: string | null
           title?: string
           type?: string | null
@@ -107,6 +113,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      is_staff: { Args: { _user_id: string }; Returns: boolean }
     }
     Enums: {
       app_role: "admin" | "moderator" | "user"

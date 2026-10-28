@@ -41,8 +41,7 @@ export function SubmitListingForm() {
       form.reset();
       setFiles([]);
       await qc.invalidateQueries({ queryKey: ["listings"] });
-      setMsg({ ok: true, text: "Anúncio publicado com sucesso!" });
-      setTimeout(() => document.getElementById("imoveis")?.scrollIntoView({ behavior: "smooth" }), 400);
+      setMsg({ ok: true, text: "Anúncio enviado! Ele aparecerá no site assim que for aprovado pela nossa equipe." });
     } catch (err) {
       console.error(err);
       setMsg({ ok: false, text: "Não foi possível enviar. Verifique os dados e tente novamente." });
