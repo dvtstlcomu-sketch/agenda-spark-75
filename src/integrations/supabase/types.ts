@@ -22,9 +22,13 @@ export type Database = {
           created_at: string | null
           created_by: string | null
           description: string | null
+          documentation: string | null
           id: string
           image_url: string | null
+          images: string[] | null
           location: string | null
+          owner_name: string | null
+          owner_phone: string | null
           price: string | null
           status: string | null
           title: string
@@ -38,9 +42,13 @@ export type Database = {
           created_at?: string | null
           created_by?: string | null
           description?: string | null
+          documentation?: string | null
           id?: string
           image_url?: string | null
+          images?: string[] | null
           location?: string | null
+          owner_name?: string | null
+          owner_phone?: string | null
           price?: string | null
           status?: string | null
           title: string
@@ -54,9 +62,13 @@ export type Database = {
           created_at?: string | null
           created_by?: string | null
           description?: string | null
+          documentation?: string | null
           id?: string
           image_url?: string | null
+          images?: string[] | null
           location?: string | null
+          owner_name?: string | null
+          owner_phone?: string | null
           price?: string | null
           status?: string | null
           title?: string
