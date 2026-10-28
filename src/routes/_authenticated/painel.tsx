@@ -21,7 +21,9 @@ export const Route = createFileRoute("/_authenticated/painel")({
   component: Painel,
 });
 
-type Filter = "pending" | "published" | "all";
+type Filter = "pending" | "published" | "all" | "contacts";
+
+const COMPANY_WA = "551124050300";
 
 function waLink(phone: string | null, text: string) {
   let d = (phone ?? "").replace(/\D/g, "");
@@ -124,6 +126,7 @@ function Painel() {
                 ["pending", `Aguardando aprovação (${pending})`],
                 ["published", `Publicados (${published})`],
                 ["all", `Todos (${rows?.length ?? 0})`],
+                ["contacts", `Contatos / CRM (${rows?.length ?? 0})`],
               ] as [Filter, string][]).map(([k, label]) => (
                 <button
                   key={k}
@@ -135,7 +138,39 @@ function Painel() {
               ))}
             </div>
 
-            {isLoading ? (
+            {filter === "contacts" ? (
+              isLoading ? (
+                <p className="text-slate-600">Carregando contatos...</p>
+              ) : (rows?.length ?? 0) === 0 ? (
+                <p className="bg-white rounded-2xl p-6 text-slate-700">Nenhum contato ainda.</p>
+              ) : (
+                <div className="grid gap-3">
+                  {rows!.map((r) => {
+                    const wa = waLink(r.owner_phone, `Olá ${r.owner_name ?? ""}, aqui é da Territorial Imóveis sobre o seu anúncio "${r.title}".`);
+                    return (
+                      <div key={r.id} className="bg-white/80 rounded-2xl p-4 shadow flex flex-col md:flex-row md:items-center gap-3">
+                        <div className="flex-1 min-w-0 text-sm text-slate-700">
+                          <p className="font-black text-slate-900 text-lg break-words">{r.owner_name ?? "Sem nome"}</p>
+                          <p>{r.owner_phone ?? "Sem telefone"}</p>
+                          <p className="text-slate-500">Anúncio: {r.title} · {r.location}</p>
+                          <p className="text-xs text-slate-400">
+                            {r.created_at ? new Date(r.created_at).toLocaleString("pt-BR") : ""} ·{" "}
+                            {r.validated ? "Publicado" : "Aguardando aprovação"} ·{" "}
+                            {r.replied_at ? `Respondido em ${new Date(r.replied_at).toLocaleString("pt-BR")}` : "Ainda não respondido"}
+                          </p>
+                        </div>
+                        <div className="flex gap-2 shrink-0 flex-wrap">
+                          {wa && (
+                            <a href={wa} target="_blank" rel="noreferrer" className="px-4 h-10 flex items-center rounded-xl bg-green-600 text-white font-bold text-sm">Chamar no WhatsApp</a>
+                          )}
+                          <button onClick={() => setFilter("all")} className="px-4 h-10 rounded-xl bg-slate-900 text-white font-bold text-sm">Ver anúncio</button>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )
+            ) : isLoading ? (
               <p className="text-slate-600">Carregando anúncios...</p>
             ) : shown.length === 0 ? (
               <p className="bg-white rounded-2xl p-6 text-slate-700">Nenhum anúncio nesta lista.</p>
@@ -187,7 +222,17 @@ function Painel() {
                         {r.validated ? (
                           <button onClick={() => setValidated(r.id, false)} className="px-4 h-10 rounded-xl bg-amber-500 text-white font-bold text-sm">Ocultar do site</button>
                         ) : (
-                          <button onClick={() => setValidated(r.id, true)} className="px-4 h-10 rounded-xl bg-green-600 text-white font-bold text-sm">Aprovar e publicar</button>
+                          <>
+                            <button onClick={() => setValidated(r.id, true)} className="px-4 h-10 rounded-xl bg-green-600 text-white font-bold text-sm">Aprovar e publicar</button>
+                            <a
+                              href={`https://wa.me/${COMPANY_WA}?text=${encodeURIComponent(`Novo anúncio aguardando aprovação no painel:\n\n"${r.title}" — ${r.type} em ${r.location}\nAnunciante: ${r.owner_name ?? "-"} (${r.owner_phone ?? "-"})\nValor: ${r.price ?? "Sob consulta"}`)}`}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="px-4 h-10 flex items-center rounded-xl bg-[#25D366] text-white font-bold text-sm"
+                            >
+                              Avisar no WhatsApp
+                            </a>
+                          </>
                         )}
                         <button onClick={() => remove(r.id, (r.images?.length ? r.images : [r.image_url]).filter((p): p is string => !!p && !p.startsWith("http")))} className="px-4 h-10 rounded-xl bg-red-600 text-white font-bold text-sm">Excluir</button>
                       </div>

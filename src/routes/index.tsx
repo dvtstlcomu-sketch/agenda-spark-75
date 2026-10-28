@@ -527,6 +527,12 @@ function Index() {
 
             {/* Contact - Right */}
             <div className="flex items-center gap-4 shrink-0">
+              <a
+                href="/auth"
+                className="hidden md:flex items-center bg-white text-slate-900 border-2 border-slate-900 hover:bg-slate-900 hover:text-white rounded-2xl px-5 lg:px-6 h-12 font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
+              >
+                CEO
+              </a>
               <Button 
                 onClick={() => window.open('https://wa.me/551124050300', '_blank')}
                 className="hidden md:flex bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-6 lg:px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
