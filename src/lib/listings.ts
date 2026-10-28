@@ -17,19 +17,18 @@ export type Listing = {
   description: string;
 };
 
-async function signPaths(paths: string[]): Promise<Record<string, string>> {
-  if (paths.length === 0) return {};
-  const { data } = await supabase.storage.from(BUCKET).createSignedUrls(paths, 60 * 60 * 24 * 7);
-  const map: Record<string, string> = {};
-  data?.forEach((d) => {
-    if (d.path && d.signedUrl) map[d.path] = d.signedUrl;
-  });
-  return map;
+async function signPaths(paths: string[], staff = false): Promise<Record<string, string>> {
+  // O bucket é privado: ninguém baixa fotos direto pelo Storage.
+  // Os links temporários são gerados no servidor (verificado e limitado lá).
+  const clean = paths.filter((p): p is string => !!p && !p.startsWith("http"));
+  if (!clean.length) return {};
+  const { signPublicImages, signStaffImages } = await import("@/lib/listings.server");
+  return staff ? signStaffImages({ data: { paths: clean } }) : signPublicImages({ data: { paths: clean } });
 }
 
-export async function resolveImages<T extends { image_url: string | null; images: string[] | null }>(rows: T[]) {
+export async function resolveImages<T extends { image_url: string | null; images: string[] | null }>(rows: T[], staff = false) {
   const paths = rows.flatMap((r) => [r.image_url, ...(r.images ?? [])]).filter((p): p is string => !!p && !p.startsWith("http"));
-  const map = await signPaths([...new Set(paths)]);
+  const map = await signPaths([...new Set(paths)], staff);
   const url = (p: string | null) => (p ? (p.startsWith("http") ? p : map[p] ?? "") : "");
   return rows.map((r) => ({ ...r, imageSrc: url(r.image_url), imageSrcs: (r.images ?? []).map(url).filter(Boolean) }));
 }
