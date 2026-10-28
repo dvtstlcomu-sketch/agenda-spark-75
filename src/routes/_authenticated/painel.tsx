@@ -222,7 +222,17 @@ function Painel() {
                         {r.validated ? (
                           <button onClick={() => setValidated(r.id, false)} className="px-4 h-10 rounded-xl bg-amber-500 text-white font-bold text-sm">Ocultar do site</button>
                         ) : (
-                          <button onClick={() => setValidated(r.id, true)} className="px-4 h-10 rounded-xl bg-green-600 text-white font-bold text-sm">Aprovar e publicar</button>
+                          <>
+                            <button onClick={() => setValidated(r.id, true)} className="px-4 h-10 rounded-xl bg-green-600 text-white font-bold text-sm">Aprovar e publicar</button>
+                            <a
+                              href={`https://wa.me/${COMPANY_WA}?text=${encodeURIComponent(`Novo anúncio aguardando aprovação no painel:\n\n"${r.title}" — ${r.type} em ${r.location}\nAnunciante: ${r.owner_name ?? "-"} (${r.owner_phone ?? "-"})\nValor: ${r.price ?? "Sob consulta"}`)}`}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="px-4 h-10 flex items-center rounded-xl bg-[#25D366] text-white font-bold text-sm"
+                            >
+                              Avisar no WhatsApp
+                            </a>
+                          </>
                         )}
                         <button onClick={() => remove(r.id, (r.images?.length ? r.images : [r.image_url]).filter((p): p is string => !!p && !p.startsWith("http")))} className="px-4 h-10 rounded-xl bg-red-600 text-white font-bold text-sm">Excluir</button>
                       </div>
