@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Resolve Lovable-hosted logo asset pointers against the published Lovable origin for image sources, because relative asset-serving paths do not exist on external hosts such as Vercel.
+- Listing photos live in the private `property-photos` bucket and are shown via signed URLs (public buckets are blocked by workspace policy); the first account to sign up becomes admin via a DB trigger.
