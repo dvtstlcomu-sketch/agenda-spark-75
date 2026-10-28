@@ -1,5 +1,5 @@
 # Code graph report
 
-- Generated: 2026-10-28T11:37:04.041789+00:00
-- Files mapped: 49
-- Dependency links: 82
+- Generated: 2026-10-28T11:44:50.737783+00:00
+- Files mapped: 54
+- Dependency links: 87
