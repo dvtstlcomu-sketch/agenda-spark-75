@@ -126,6 +126,7 @@ function Painel() {
                 ["pending", `Aguardando aprovação (${pending})`],
                 ["published", `Publicados (${published})`],
                 ["all", `Todos (${rows?.length ?? 0})`],
+                ["contacts", `Contatos / CRM (${rows?.length ?? 0})`],
               ] as [Filter, string][]).map(([k, label]) => (
                 <button
                   key={k}
@@ -137,7 +138,39 @@ function Painel() {
               ))}
             </div>
 
-            {isLoading ? (
+            {filter === "contacts" ? (
+              isLoading ? (
+                <p className="text-slate-600">Carregando contatos...</p>
+              ) : (rows?.length ?? 0) === 0 ? (
+                <p className="bg-white rounded-2xl p-6 text-slate-700">Nenhum contato ainda.</p>
+              ) : (
+                <div className="grid gap-3">
+                  {rows!.map((r) => {
+                    const wa = waLink(r.owner_phone, `Olá ${r.owner_name ?? ""}, aqui é da Territorial Imóveis sobre o seu anúncio "${r.title}".`);
+                    return (
+                      <div key={r.id} className="bg-white/80 rounded-2xl p-4 shadow flex flex-col md:flex-row md:items-center gap-3">
+                        <div className="flex-1 min-w-0 text-sm text-slate-700">
+                          <p className="font-black text-slate-900 text-lg break-words">{r.owner_name ?? "Sem nome"}</p>
+                          <p>{r.owner_phone ?? "Sem telefone"}</p>
+                          <p className="text-slate-500">Anúncio: {r.title} · {r.location}</p>
+                          <p className="text-xs text-slate-400">
+                            {r.created_at ? new Date(r.created_at).toLocaleString("pt-BR") : ""} ·{" "}
+                            {r.validated ? "Publicado" : "Aguardando aprovação"} ·{" "}
+                            {r.replied_at ? `Respondido em ${new Date(r.replied_at).toLocaleString("pt-BR")}` : "Ainda não respondido"}
+                          </p>
+                        </div>
+                        <div className="flex gap-2 shrink-0 flex-wrap">
+                          {wa && (
+                            <a href={wa} target="_blank" rel="noreferrer" className="px-4 h-10 flex items-center rounded-xl bg-green-600 text-white font-bold text-sm">Chamar no WhatsApp</a>
+                          )}
+                          <button onClick={() => setFilter("all")} className="px-4 h-10 rounded-xl bg-slate-900 text-white font-bold text-sm">Ver anúncio</button>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )
+            ) : isLoading ? (
               <p className="text-slate-600">Carregando anúncios...</p>
             ) : shown.length === 0 ? (
               <p className="bg-white rounded-2xl p-6 text-slate-700">Nenhum anúncio nesta lista.</p>
