@@ -8,7 +8,8 @@ async function signPaths(paths: string[]): Promise<Record<string, string>> {
   // Assinatura de URLs é operação privilegiada: o armazenamento é privado e
   // nenhuma policy de leitura é aberta ao público.
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-  const { data } = await supabaseAdmin.storage.from(BUCKET).createSignedUrls(paths, TTL);
+  const { data, error } = await supabaseAdmin.storage.from(BUCKET).createSignedUrls(paths, TTL);
+  if (error) throw new Error("Não foi possível carregar as fotos. Atualize e tente novamente.");
   const map: Record<string, string> = {};
   data?.forEach((d) => {
     if (d.path && d.signedUrl) map[d.path] = d.signedUrl;
@@ -18,7 +19,7 @@ async function signPaths(paths: string[]): Promise<Record<string, string>> {
 
 function sanitizePaths(input: { paths?: unknown }) {
   const paths = Array.isArray(input?.paths)
-    ? (input!.paths as unknown[]).filter((p): p is string => typeof p === "string" && p.length > 0 && !p.startsWith("http"))
+    ? input.paths.filter((p): p is string => typeof p === "string" && p.length > 0 && !p.startsWith("http"))
     : [];
   return { paths: [...new Set(paths)].slice(0, 120) };
 }

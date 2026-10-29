@@ -6,7 +6,7 @@ import { submitListing } from "@/lib/listings";
 const field =
   "w-full h-14 px-5 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm";
 
-export function SubmitListingForm() {
+export function SubmitListingForm({ onSubmitted }: { onSubmitted?: () => void } = {}) {
   const qc = useQueryClient();
   const [files, setFiles] = useState<File[]>([]);
   const [busy, setBusy] = useState(false);
@@ -41,7 +41,9 @@ export function SubmitListingForm() {
       form.reset();
       setFiles([]);
       await qc.invalidateQueries({ queryKey: ["listings"] });
+      await qc.invalidateQueries({ queryKey: ["admin-properties"] });
       setMsg({ ok: true, text: "Anúncio enviado! Ele aparecerá no site assim que for aprovado pela nossa equipe." });
+      onSubmitted?.();
     } catch (err) {
       console.error(err);
       setMsg({ ok: false, text: "Não foi possível enviar. Verifique os dados e tente novamente." });

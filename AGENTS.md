@@ -10,4 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Resolve Lovable-hosted logo asset pointers against the published Lovable origin for image sources, because relative asset-serving paths do not exist on external hosts such as Vercel.
-- Listing photos live in the private `property-photos` bucket; signed URLs are generated only server-side (`src/lib/listings.server.ts`: public = approved listings only, staff = any listing). Direct Storage reads are staff-only by policy; never re-add an anon SELECT policy or call `createSignedUrls` from browser code. The first account to sign up becomes admin via a DB trigger.
+- Listing photos live in the private `property-photos` bucket; signed URLs are generated through statically imported `src/lib/listings.functions.ts` RPCs (public = approved listings only, staff = any listing); callable RPCs must not use the `.server.ts` suffix because that blocks client imports. Direct Storage reads are staff-only by policy; never re-add an anon SELECT policy or call `createSignedUrls` from browser code. The first account to sign up becomes admin via a DB trigger.

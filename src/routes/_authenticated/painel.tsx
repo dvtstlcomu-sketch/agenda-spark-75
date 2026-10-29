@@ -5,6 +5,9 @@ import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { resolveImages, BUCKET } from "@/lib/listings";
 import { listManagers, createManager, removeManager } from "@/lib/managers.functions";
+import { Button } from "@/components/ui/button";
+import { SubmitListingForm } from "@/components/SubmitListingForm";
+import { Plus, RefreshCw } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/painel")({
   head: () => ({
@@ -35,7 +38,9 @@ function waLink(phone: string | null, text: string) {
 function Painel() {
   const qc = useQueryClient();
   const navigate = useNavigate();
-  const [filter, setFilter] = useState<Filter>("pending");
+  const [filter, setFilter] = useState<Filter>("all");
+  const [adding, setAdding] = useState(false);
+  const [actionError, setActionError] = useState<string | null>(null);
   const [drafts, setDrafts] = useState<Record<string, string>>({});
   const [savedId, setSavedId] = useState<string | null>(null);
 
@@ -43,7 +48,8 @@ function Painel() {
     queryKey: ["my-role"],
     queryFn: async () => {
       const { data: u } = await supabase.auth.getUser();
-      const id = u.user!.id;
+      if (!u.user) throw new Error("Entre novamente para acessar o painel.");
+      const id = u.user.id;
       const [{ data: a }, { data: m }] = await Promise.all([
         supabase.rpc("has_role", { _user_id: id, _role: "admin" }),
         supabase.rpc("has_role", { _user_id: id, _role: "moderator" }),
@@ -52,9 +58,11 @@ function Painel() {
     },
   });
 
-  const { data: rows, isLoading } = useQuery({
+  const { data: rows, isLoading, error: listingError } = useQuery({
     queryKey: ["admin-properties"],
     enabled: !!role,
+    refetchInterval: 30000,
+    retry: 1,
     queryFn: async () => {
       const { data, error } = await supabase.from("properties").select("*").order("created_at", { ascending: false });
       if (error) throw error;
@@ -68,14 +76,21 @@ function Painel() {
   }
 
   async function setValidated(id: string, validated: boolean) {
-    await supabase.from("properties").update({ validated }).eq("id", id);
+    setActionError(null);
+    const { data, error } = await supabase.from("properties").update({ validated }).eq("id", id).select("id");
+    if (error || !data?.length) { setActionError("Não foi possível atualizar o anúncio. Confira seu acesso e tente novamente."); return; }
     refresh();
   }
 
   async function remove(id: string, paths: string[]) {
     if (!confirm("Excluir este anúncio definitivamente? Esta ação não pode ser desfeita.")) return;
-    if (paths.length) await supabase.storage.from(BUCKET).remove(paths);
-    await supabase.from("properties").delete().eq("id", id);
+    setActionError(null);
+    if (paths.length) {
+      const { error } = await supabase.storage.from(BUCKET).remove(paths);
+      if (error) { setActionError("Não foi possível excluir as fotos. Tente novamente."); return; }
+    }
+    const { data, error } = await supabase.from("properties").delete().eq("id", id).select("id");
+    if (error || !data?.length) { setActionError("Não foi possível excluir o anúncio. Tente novamente."); return; }
     refresh();
   }
 
@@ -122,6 +137,13 @@ function Painel() {
             {role === "admin" && <ManagersBox />}
 
             <div className="flex flex-wrap gap-2 mb-4">
+              <Button onClick={() => setAdding(!adding)}><Plus size={16} className="mr-2" />{adding ? "Fechar cadastro de anúncio" : "Incluir anúncio"}</Button>
+              <Button variant="outline" onClick={refresh}><RefreshCw size={16} className="mr-2" />Atualizar anúncios</Button>
+            </div>
+            {adding && <section className="mb-6 max-w-3xl"><h2 className="text-xl font-bold mb-4">Novo anúncio</h2><SubmitListingForm onSubmitted={() => { setAdding(false); setFilter("pending"); refresh(); }} /></section>}
+            {(listingError || actionError) && <div role="alert" className="mb-4 text-destructive"><p>{actionError ?? "Não foi possível carregar os anúncios e fotos. Clique em Atualizar anúncios."}</p></div>}
+
+            <div className="flex flex-wrap gap-2 mb-4">
               {([
                 ["pending", `Aguardando aprovação (${pending})`],
                 ["published", `Publicados (${published})`],
@@ -145,7 +167,7 @@ function Painel() {
                 <p className="bg-white rounded-2xl p-6 text-slate-700">Nenhum contato ainda.</p>
               ) : (
                 <div className="grid gap-3">
-                  {rows!.map((r) => {
+                  {(rows ?? []).map((r) => {
                     const wa = waLink(r.owner_phone, `Olá ${r.owner_name ?? ""}, aqui é da Territorial Imóveis sobre o seu anúncio "${r.title}".`);
                     return (
                       <div key={r.id} className="bg-white/80 rounded-2xl p-4 shadow flex flex-col md:flex-row md:items-center gap-3">
@@ -183,8 +205,9 @@ function Painel() {
                     <div key={r.id} className="bg-white/80 rounded-2xl p-4 flex flex-col md:flex-row gap-4 shadow">
                       <div className="flex gap-2 overflow-x-auto md:w-72 shrink-0">
                         {(r.imageSrcs.length ? r.imageSrcs : [r.imageSrc]).filter(Boolean).map((src, i) => (
-                          <a key={i} href={src} target="_blank" rel="noreferrer"><img src={src} alt="" className="w-24 h-24 object-cover rounded-lg shrink-0" /></a>
+                          <a key={i} href={src} target="_blank" rel="noreferrer" className="shrink-0"><img src={src} alt={`Foto ${i + 1} de ${r.title}`} className="w-24 h-24 object-cover rounded-lg shrink-0" /></a>
                         ))}
+                        {!r.imageSrcs.length && !r.imageSrc && <p className="text-muted-foreground text-sm">Nenhuma foto vinculada a este anúncio.</p>}
                       </div>
                       <div className="flex-1 min-w-0 text-sm text-slate-700 space-y-1">
                         <div className="flex items-center gap-2 flex-wrap">
