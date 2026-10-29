@@ -243,10 +243,10 @@ function Painel() {
                       </div>
                       <div className="flex md:flex-col gap-2 shrink-0 flex-wrap">
                         {r.validated ? (
-                          <button onClick={() => setValidated(r.id, false)} className="px-4 h-10 rounded-xl bg-amber-500 text-white font-bold text-sm">Ocultar do site</button>
+                          <Button variant="outline" onClick={() => setValidated(r.id, false)}>Ocultar do site</Button>
                         ) : (
                           <>
-                            <button onClick={() => setValidated(r.id, true)} className="px-4 h-10 rounded-xl bg-green-600 text-white font-bold text-sm">Aprovar e publicar</button>
+                            <Button onClick={() => setValidated(r.id, true)}>Aprovar e publicar</Button>
                             <a
                               href={`https://wa.me/${COMPANY_WA}?text=${encodeURIComponent(`Novo anúncio aguardando aprovação no painel:\n\n"${r.title}" — ${r.type} em ${r.location}\nAnunciante: ${r.owner_name ?? "-"} (${r.owner_phone ?? "-"})\nValor: ${r.price ?? "Sob consulta"}`)}`}
                               target="_blank"
@@ -257,7 +257,7 @@ function Painel() {
                             </a>
                           </>
                         )}
-                        <button onClick={() => remove(r.id, (r.images?.length ? r.images : [r.image_url]).filter((p): p is string => !!p && !p.startsWith("http")))} className="px-4 h-10 rounded-xl bg-red-600 text-white font-bold text-sm">Excluir</button>
+                        <Button variant="destructive" onClick={() => remove(r.id, [...new Set([r.image_url, ...(r.images ?? [])])].filter((p): p is string => !!p && !p.startsWith("http")))}>Excluir</Button>
                       </div>
                     </div>
                   );
