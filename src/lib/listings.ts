@@ -1,4 +1,5 @@
 import { supabase } from "@/integrations/supabase/client";
+import { signPublicImages, signStaffImages } from "@/lib/listings.functions";
 
 export const BUCKET = "property-photos";
 export const MAX_LISTINGS = 6;
@@ -22,7 +23,6 @@ async function signPaths(paths: string[], staff = false): Promise<Record<string,
   // Os links temporários são gerados no servidor (verificado e limitado lá).
   const clean = paths.filter((p): p is string => !!p && !p.startsWith("http"));
   if (!clean.length) return {};
-  const { signPublicImages, signStaffImages } = await import("@/lib/listings.server");
   return staff ? signStaffImages({ data: { paths: clean } }) : signPublicImages({ data: { paths: clean } });
 }
 
@@ -30,7 +30,7 @@ export async function resolveImages<T extends { image_url: string | null; images
   const paths = rows.flatMap((r) => [r.image_url, ...(r.images ?? [])]).filter((p): p is string => !!p && !p.startsWith("http"));
   const map = await signPaths([...new Set(paths)], staff);
   const url = (p: string | null) => (p ? (p.startsWith("http") ? p : map[p] ?? "") : "");
-  return rows.map((r) => ({ ...r, imageSrc: url(r.image_url), imageSrcs: (r.images ?? []).map(url).filter(Boolean) }));
+  return rows.map((r) => ({ ...r, imageSrc: url(r.image_url), imageSrcs: [...new Set([r.image_url, ...(r.images ?? [])])].map(url).filter(Boolean) }));
 }
 
 export async function fetchPublishedListings(): Promise<Listing[]> {

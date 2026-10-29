@@ -2,5 +2,8 @@
 
 - [ ] Conectar WhatsApp Business para avisos automáticos de novos anúncios (adiado: usuário precisa confirmar o número antes)
 - [x] Tirar o botão "CEO" do cabeçalho e manter apenas o acesso no rodapé
-- [ ] Usuário quer testar o fluxo: cadastro, envio de imóvel com fotos, aprovação no painel
-- [x] Corrigir falhas de segurança nas fotos (download direto bloqueado; links gerados no servidor) e publicar para o cliente testar
+- [x] Testar envio de imóvel com três fotos, aprovação e exclusão pelo painel
+- [x] Corrigir falhas de segurança nas fotos (download direto bloqueado; links gerados no servidor)
+- [x] Corrigir cadastro de gestores com configuração ausente e validar cadastro e remoção de gestor temporário com sessão real
+- [x] Corrigir fotos pendentes e ações de incluir, publicar e excluir no painel
+- [ ] Publicar versão corrigida (aguarda autorização do usuário; pedido anterior de publicação foi cancelado)
