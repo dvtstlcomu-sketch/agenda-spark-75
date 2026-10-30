@@ -36,8 +36,23 @@ function AuthPage() {
       if (error) setMsg("E-mail ou senha incorretos (ou e-mail ainda não confirmado).");
       else navigate({ to: "/painel", replace: true });
     } else {
-      const { error } = await supabase.auth.signUp({ email, password, options: { emailRedirectTo: window.location.origin + "/auth" } });
-      setMsg(error ? error.message : "Cadastro feito! Confirme pelo link enviado ao seu e-mail e depois entre.");
+      const { data, error } = await supabase.auth.signUp({ email, password, options: { emailRedirectTo: window.location.origin + "/auth" } });
+      if (error) {
+        const m = error.message.toLowerCase();
+        setMsg(
+          m.includes("weak") || m.includes("pwned") || m.includes("password")
+            ? "Senha muito fácil de adivinhar. Use uma senha mais forte (misture letras, números e símbolos)."
+            : m.includes("registered") || m.includes("exists")
+              ? "Este e-mail já tem cadastro. Clique em \"Já tenho cadastro\" e entre."
+              : m.includes("environment") || m.includes("fetch")
+                ? "Falha de conexão. Use o endereço oficial do site e tente novamente."
+                : "Não foi possível cadastrar. Confira o e-mail e tente novamente.",
+        );
+      } else if (data.session) {
+        navigate({ to: "/painel", replace: true });
+      } else {
+        setMsg("Cadastro feito! Agora clique em \"Já tenho cadastro\" e entre.");
+      }
     }
     setBusy(false);
   }
