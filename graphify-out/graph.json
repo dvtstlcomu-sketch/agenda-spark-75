@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T20:27:09.493835+00:00",
+  "generated_at": "2026-10-30T20:46:21.741710+00:00",
   "files": [
     {
       "path": "roadmap.md",
@@ -98,6 +98,10 @@
       "bytes": 403
     },
     {
+      "path": "drizzle/migrations/0006_auto_publish_all_inserts.sql",
+      "bytes": 569
+    },
+    {
       "path": "drizzle/migrations/meta/0004_snapshot.json",
       "bytes": 336
     },
@@ -111,10 +115,14 @@
     },
     {
       "path": "drizzle/migrations/meta/_journal.json",
-      "bytes": 965
+      "bytes": 1117
     },
     {
       "path": "drizzle/migrations/meta/0002_snapshot.json",
+      "bytes": 336
+    },
+    {
+      "path": "drizzle/migrations/meta/0006_snapshot.json",
       "bytes": 336
     },
     {
@@ -163,7 +171,7 @@
     },
     {
       "path": "src/routes/auth.tsx",
-      "bytes": 3430
+      "bytes": 4193
     },
     {
       "path": "src/routes/index.tsx",
