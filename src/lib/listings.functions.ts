@@ -34,8 +34,8 @@ export const signPublicImages = createServerFn({ method: "POST" })
     const { paths } = data;
     if (!paths.length) return {};
     const { createClient } = await import("@supabase/supabase-js");
-    const url = process.env['SUPABASE_URL'] || import.meta.env.VITE_SUPABASE_URL;
-    const key = process.env['SUPABASE_PUBLISHABLE_KEY'] || import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+    const url = process.env['SUPABASE_URL'] || import.meta.env['VITE_SUPABASE_URL'];
+    const key = process.env['SUPABASE_PUBLISHABLE_KEY'] || import.meta.env['VITE_SUPABASE_PUBLISHABLE_KEY'];
     if (!url || !key) throw new Error("Configuração do servidor ausente.");
     // Chaves sb_publishable_ são opacas: envia apikey, nunca Authorization Bearer.
     const client = createClient(url, key, {
