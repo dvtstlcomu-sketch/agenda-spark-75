@@ -42,7 +42,7 @@ export function SubmitListingForm({ onSubmitted }: { onSubmitted?: () => void } 
       setFiles([]);
       await qc.invalidateQueries({ queryKey: ["listings"] });
       await qc.invalidateQueries({ queryKey: ["admin-properties"] });
-      setMsg({ ok: true, text: "Anúncio enviado! Ele aparecerá no site assim que for aprovado pela nossa equipe." });
+      setMsg({ ok: true, text: "Anúncio publicado! Ele já aparece no site." });
       onSubmitted?.();
     } catch (err) {
       console.error(err);
