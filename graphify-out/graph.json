@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T13:55:18.243266+00:00",
+  "generated_at": "2026-10-30T20:27:09.493835+00:00",
   "files": [
     {
       "path": "roadmap.md",
@@ -74,12 +74,20 @@
       "bytes": 1940
     },
     {
+      "path": "drizzle/migrations/0005_allow_visitor_auto_publish.sql",
+      "bytes": 245
+    },
+    {
       "path": "drizzle/migrations/0000_public_listings_and_ceo.sql",
       "bytes": 1792
     },
     {
       "path": "drizzle/migrations/0001_manager_moderation.sql",
       "bytes": 2179
+    },
+    {
+      "path": "drizzle/migrations/0004_auto_publish_listings.sql",
+      "bytes": 429
     },
     {
       "path": "drizzle/migrations/0003_no_instant_publish.sql",
@@ -90,12 +98,20 @@
       "bytes": 403
     },
     {
+      "path": "drizzle/migrations/meta/0004_snapshot.json",
+      "bytes": 336
+    },
+    {
       "path": "drizzle/migrations/meta/0001_snapshot.json",
       "bytes": 336
     },
     {
+      "path": "drizzle/migrations/meta/0005_snapshot.json",
+      "bytes": 336
+    },
+    {
       "path": "drizzle/migrations/meta/_journal.json",
-      "bytes": 662
+      "bytes": 965
     },
     {
       "path": "drizzle/migrations/meta/0002_snapshot.json",
@@ -119,7 +135,7 @@
     },
     {
       "path": "src/components/SubmitListingForm.tsx",
-      "bytes": 7113
+      "bytes": 7075
     },
     {
       "path": "src/lib/error-capture.ts",
