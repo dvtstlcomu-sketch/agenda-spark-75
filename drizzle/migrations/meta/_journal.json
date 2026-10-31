@@ -50,6 +50,13 @@
       "when": 1793393145016,
       "tag": "0006_auto_publish_all_inserts",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1793424670392,
+      "tag": "0007_restore_ceo_approval_flow",
+      "breakpoints": true
     }
   ]
 }
