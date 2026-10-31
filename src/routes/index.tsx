@@ -577,7 +577,7 @@ function Index() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[...(dbListings ?? []), ...PROPERTIES].slice(0, MAX_LISTINGS).map((property) => (
+            {(dbListings ?? []).slice(0, MAX_LISTINGS).map((property) => (
               <div key={property.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
@@ -758,7 +758,7 @@ function Index() {
                 </div>
               </div>
               <div className="flex justify-center md:justify-start gap-4">
-                <a href="https://facebook.com/territorialimoveis" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white shadow-sm border border-black/5 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#1877F2] hover:text-white transition-all" title="Facebook - Territorial Imóveis">
+                <a href="https://www.facebook.com/_territorialimoveis_" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white shadow-sm border border-black/5 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#1877F2] hover:text-white transition-all" title="Facebook - Territorial Imóveis">
                   <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                 </a>
                 <a href="https://instagram.com/_territorialimoveis_/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white shadow-sm border border-black/5 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#E4405F] hover:text-white transition-all" title="Instagram - territorialimoveis">
