@@ -1,6 +1,6 @@
 # Design system
 
-Generated: 2026-10-30T20:46:21.741710+00:00
+Generated: 2026-10-31T05:00:37.523129+00:00
 
 ## Tokens
 - --color-gold: #ca8a04 (src/styles.css)
@@ -11,6 +11,8 @@ Generated: 2026-10-30T20:46:21.741710+00:00
 - --color-foreground: #0f172a (src/styles.css)
 - --color-accent: #ca8a04 (src/styles.css)
 - --color-muted: #f1f5f9 (src/styles.css)
+- --color-destructive: #dc2626 (src/styles.css)
+- --color-destructive-foreground: #ffffff (src/styles.css)
 - --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif (src/styles.css)
 - --font-heading: "Montserrat", sans-serif (src/styles.css)
 - --font-brand: "Bebas Neue", sans-serif (src/styles.css)
