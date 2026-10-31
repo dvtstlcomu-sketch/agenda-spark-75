@@ -7,7 +7,7 @@ import { resolveImages, BUCKET } from "@/lib/listings";
 import { listManagers, createManager, removeManager } from "@/lib/managers.functions";
 import { Button } from "@/components/ui/button";
 import { SubmitListingForm } from "@/components/SubmitListingForm";
-import { Plus, RefreshCw } from "lucide-react";
+import { Plus, RefreshCw, Trash2 } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/painel")({
   head: () => ({
@@ -257,7 +257,13 @@ function Painel() {
                             </a>
                           </>
                         )}
-                        <Button variant="destructive" onClick={() => remove(r.id, [...new Set([r.image_url, ...(r.images ?? [])])].filter((p): p is string => !!p && !p.startsWith("http")))}>Excluir</Button>
+                        <Button
+                          variant="destructive"
+                          className="w-full md:w-auto h-11 text-sm font-black uppercase"
+                          onClick={() => remove(r.id, [...new Set([r.image_url, ...(r.images ?? [])])].filter((p): p is string => !!p && !p.startsWith("http")))}
+                        >
+                          <Trash2 size={16} className="mr-2" />Excluir anúncio
+                        </Button>
                       </div>
                     </div>
                   );
