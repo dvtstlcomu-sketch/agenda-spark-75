@@ -628,6 +628,12 @@ function Index() {
               </div>
             ))}
           </div>
+          {(dbListings ?? []).length === 0 && (
+            <div className="mt-4 bg-white/40 backdrop-blur-md rounded-[2.5rem] border border-black/5 shadow-xl p-12 text-center">
+              <p className="text-xl md:text-2xl font-black text-slate-900 uppercase tracking-tighter mb-2">Nenhum imóvel disponível no momento</p>
+              <p className="text-slate-600 font-medium">Seja o primeiro a anunciar! Envie seu imóvel pelo formulário abaixo.</p>
+            </div>
+          )}
         </div>
       </section>
 
