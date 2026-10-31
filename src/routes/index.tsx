@@ -137,281 +137,6 @@ const PROJETOS_3D = [
   }
 ];
 
-const PROPERTIES = [
-  {
-    id: 1,
-    title: "Gleba Prime",
-    type: "Terreno / Expansão",
-    status: "Venda Técnica",
-    price: "Sob Consulta",
-    location: "Eixo Guarulhos-SP",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80",
-    beds: 0,
-    baths: 0,
-    area: "85.000m²",
-    description: "Área com alto potencial de valorização, zoneamento favorável e análise pericial completa."
-  },
-  {
-    id: 2,
-    title: "Loteamento Santa Isabel",
-    type: "Loteamento / Gleba",
-    status: "Oportunidade",
-    price: "Sob Consulta",
-    location: "Santa Isabel - SP",
-    image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80",
-    beds: 0,
-    baths: 0,
-    area: "120.000m²",
-    description: "Excelente gleba para loteamento residencial ou industrial em Santa Isabel, com topografia favorável e acesso facilitado."
-  },
-  {
-    id: 3,
-    title: "Residência de Autoridade Alphaville",
-    type: "Alto Padrão",
-    status: "Venda",
-    price: "R$ 6.800.000",
-    location: "Alphaville, Barueri",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80",
-    beds: 5,
-    baths: 7,
-    area: "650m²",
-    description: "Projeto arquitetônico premiado com automação total e segurança fortificada."
-  },
-  {
-    id: 4,
-    title: "Casa de Vila Jardim Europa",
-    type: "Residencial",
-    status: "Venda",
-    price: "R$ 3.200.000",
-    location: "Jardim Europa, São Paulo",
-    image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&q=80",
-    beds: 3,
-    baths: 3,
-    area: "180m²",
-    description: "Charme e exclusividade em uma das vilas mais cobiçadas."
-  },
-  {
-    id: 5,
-    title: "Office Boutique Faria Lima",
-    type: "Comercial",
-    status: "Locação",
-    price: "R$ 15.000/mês",
-    location: "Av. Faria Lima, São Paulo",
-    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80",
-    beds: 0,
-    baths: 2,
-    area: "120m²",
-    description: "Laje corporativa pronta para uso em edifício Triple A."
-  },
-  {
-    id: 6,
-    title: "Residência Minimalista Swiss Park",
-    type: "Residencial",
-    status: "Venda",
-    price: "R$ 2.800.000",
-    location: "Swiss Park, Campinas",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80",
-    beds: 4,
-    baths: 5,
-    area: "320m²",
-    description: "Conceito aberto com piscina de borda infinita."
-  },
-  {
-    id: 7,
-    title: "Gleba para Loteamento",
-    type: "Terreno",
-    status: "Venda",
-    price: "R$ 8.000.000",
-    location: "Atibaia, SP",
-    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80",
-    beds: 0,
-    baths: 0,
-    area: "50.000m²",
-    description: "Área ideal para desenvolvimento urbano de alto padrão."
-  },
-  {
-    id: 8,
-    title: "Apartamento Garden Moema",
-    type: "Apartamento",
-    status: "Locação",
-    price: "R$ 12.000/mês",
-    location: "Moema, São Paulo",
-    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80",
-    beds: 2,
-    baths: 3,
-    area: "150m²",
-    description: "Terraço privativo amplo em rua arborizada."
-  },
-  {
-    id: 9,
-    title: "Vila Toscana em Condomínio",
-    type: "Residencial",
-    status: "Venda",
-    price: "R$ 5.900.000",
-    location: "Quinta da Baronesa, Bragança",
-    image: "https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&q=80",
-    beds: 6,
-    baths: 8,
-    area: "800m²",
-    description: "Arquitetura clássica com vista permanente para o golf."
-  },
-  {
-    id: 10,
-    title: "Loft Design Pinheiros",
-    type: "Apartamento",
-    status: "Locação",
-    price: "R$ 8.500/mês",
-    location: "Pinheiros, São Paulo",
-    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80",
-    beds: 1,
-    baths: 2,
-    area: "95m²",
-    description: "Pé direito duplo e acabamento em concreto aparente."
-  },
-  {
-    id: 11,
-    title: "Sítio de Lazer em Ibiúna",
-    type: "Residencial",
-    status: "Venda",
-    price: "R$ 1.500.000",
-    location: "Ibiúna, SP",
-    image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80",
-    beds: 4,
-    baths: 3,
-    area: "5.000m²",
-    description: "Casa de campo completa com pomar e piscina."
-  },
-  {
-    id: 12,
-    title: "Lote em Condomínio Fechado",
-    type: "Terreno",
-    status: "Venda",
-    price: "R$ 850.000",
-    location: "Arujá, SP",
-    image: "https://images.unsplash.com/photo-1599809275671-b5941c4b99d1?auto=format&fit=crop&q=80",
-    beds: 0,
-    baths: 0,
-    area: "600m²",
-    description: "Terreno com leve aclive e vista privilegiada."
-  },
-  {
-    id: 13,
-    title: "Apartamento Alto Padrão Perdizes",
-    type: "Apartamento",
-    status: "Venda",
-    price: "R$ 2.400.000",
-    location: "Perdizes, São Paulo",
-    image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&q=80",
-    beds: 3,
-    baths: 4,
-    area: "165m²",
-    description: "Próximo à futura estação do metrô e Parque da Água Branca."
-  },
-  {
-    id: 14,
-    title: "Showroom Comercial",
-    type: "Comercial",
-    status: "Venda",
-    price: "R$ 4.000.000",
-    location: "Vila Olímpia, São Paulo",
-    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80",
-    beds: 0,
-    baths: 4,
-    area: "400m²",
-    description: "Fachada em vidro e localização de alta visibilidade."
-  },
-  {
-    id: 15,
-    title: "Casa de Praia Juquehy",
-    type: "Residencial",
-    status: "Venda",
-    price: "R$ 3.800.000",
-    location: "Juquehy, São Sebastião",
-    image: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&q=80",
-    beds: 4,
-    baths: 5,
-    area: "250m²",
-    description: "Pé na areia com deck privativo e projeto náutico."
-  },
-  {
-    id: 16,
-    title: "Flat Design Jardins",
-    type: "Apartamento",
-    status: "Locação",
-    price: "R$ 6.000/mês",
-    location: "Jardins, São Paulo",
-    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80",
-    beds: 1,
-    baths: 1,
-    area: "45m²",
-    description: "Mobiliado por designer renomado, pronto para morar."
-  },
-  {
-    id: 17,
-    title: "Chácara Próxima a São Paulo",
-    type: "Residencial",
-    status: "Venda",
-    price: "R$ 1.200.000",
-    location: "Santa Isabel, SP",
-    image: "https://images.unsplash.com/photo-1599809275671-b5941c4b99d1?auto=format&fit=crop&q=80",
-    beds: 3,
-    baths: 2,
-    area: "2.000m²",
-    description: "Fácil acesso pela Rodovia Dutra, ideal para lazer."
-  },
-  {
-    id: 18,
-    title: "Apartamento Studio Vila Madalena",
-    type: "Apartamento",
-    status: "Venda",
-    price: "R$ 750.000",
-    location: "Vila Madalena, São Paulo",
-    image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80",
-    beds: 1,
-    baths: 1,
-    area: "35m²",
-    description: "Condomínio com lazer completo e rooftop."
-  },
-  {
-    id: 19,
-    title: "Prédio Inteiro para Investimento",
-    type: "Comercial",
-    status: "Venda",
-    price: "R$ 12.000.000",
-    location: "Centro, São Paulo",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80",
-    beds: 0,
-    baths: 10,
-    area: "2.500m²",
-    description: "Ideal para retrofit ou sede corporativa."
-  },
-  {
-    id: 20,
-    title: "Casa Suspensa Campo Belo",
-    type: "Apartamento",
-    status: "Venda",
-    price: "R$ 3.500.000",
-    location: "Campo Belo, São Paulo",
-    image: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&q=80",
-    beds: 4,
-    baths: 5,
-    area: "240m²",
-    description: "Varanda gourmet integrada e 4 suítes plenas."
-  },
-  {
-    id: 21,
-    title: "Refúgio na Serra da Mantiqueira",
-    type: "Residencial",
-    status: "Venda",
-    price: "R$ 2.100.000",
-    location: "Campos do Jordão, SP",
-    image: "https://images.unsplash.com/photo-1449156003053-c304209c11e5?auto=format&fit=crop&q=80",
-    beds: 4,
-    baths: 4,
-    area: "300m²",
-    description: "Arquitetura em madeira e pedra com vista para o vale."
-  }
-];
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -852,7 +577,7 @@ function Index() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[...(dbListings ?? []), ...PROPERTIES].slice(0, MAX_LISTINGS).map((property) => (
+            {(dbListings ?? []).slice(0, MAX_LISTINGS).map((property) => (
               <div key={property.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
@@ -903,6 +628,12 @@ function Index() {
               </div>
             ))}
           </div>
+          {(dbListings ?? []).length === 0 && (
+            <div className="mt-4 bg-white/40 backdrop-blur-md rounded-[2.5rem] border border-black/5 shadow-xl p-12 text-center">
+              <p className="text-xl md:text-2xl font-black text-slate-900 uppercase tracking-tighter mb-2">Nenhum imóvel disponível no momento</p>
+              <p className="text-slate-600 font-medium">Seja o primeiro a anunciar! Envie seu imóvel pelo formulário abaixo.</p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -1033,7 +764,7 @@ function Index() {
                 </div>
               </div>
               <div className="flex justify-center md:justify-start gap-4">
-                <a href="https://facebook.com/territorialimoveis" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white shadow-sm border border-black/5 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#1877F2] hover:text-white transition-all" title="Facebook - Territorial Imóveis">
+                <a href="https://www.facebook.com/_territorialimoveis_" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white shadow-sm border border-black/5 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#1877F2] hover:text-white transition-all" title="Facebook - Territorial Imóveis">
                   <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                 </a>
                 <a href="https://instagram.com/_territorialimoveis_/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white shadow-sm border border-black/5 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#E4405F] hover:text-white transition-all" title="Instagram - territorialimoveis">
