@@ -6,4 +6,5 @@
 - [x] Corrigir falhas de segurança nas fotos (download direto bloqueado; links gerados no servidor)
 - [x] Corrigir cadastro de gestores com configuração ausente e validar cadastro e remoção de gestor temporário com sessão real
 - [x] Corrigir fotos pendentes e ações de incluir, publicar e excluir no painel
-- [ ] Publicar versão corrigida (aguarda autorização do usuário; pedido anterior de publicação foi cancelado)
+- [x] Dar acesso de CEO ao Silvio, publicar anúncios novos na hora, botão Excluir visível, mensagens de cadastro em português
+- [ ] Publicar versão corrigida (aguarda o usuário clicar em Publicar)
