@@ -9,6 +9,8 @@
   --color-foreground: #0f172a;
   --color-accent: #ca8a04;
   --color-muted: #f1f5f9;
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #ffffff;
   
   --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --font-heading: "Montserrat", sans-serif;
