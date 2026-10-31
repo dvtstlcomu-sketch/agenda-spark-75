@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T05:22:13.646142+00:00",
+  "generated_at": "2026-10-31T05:32:08.456213+00:00",
   "files": [
     {
       "path": "roadmap.md",
@@ -86,6 +86,10 @@
       "bytes": 2179
     },
     {
+      "path": "drizzle/migrations/0007_restore_ceo_approval_flow.sql",
+      "bytes": 721
+    },
+    {
       "path": "drizzle/migrations/0004_auto_publish_listings.sql",
       "bytes": 429
     },
@@ -106,6 +110,10 @@
       "bytes": 336
     },
     {
+      "path": "drizzle/migrations/meta/0007_snapshot.json",
+      "bytes": 336
+    },
+    {
       "path": "drizzle/migrations/meta/0001_snapshot.json",
       "bytes": 336
     },
@@ -115,7 +123,7 @@
     },
     {
       "path": "drizzle/migrations/meta/_journal.json",
-      "bytes": 1117
+      "bytes": 1270
     },
     {
       "path": "drizzle/migrations/meta/0002_snapshot.json",
@@ -143,7 +151,7 @@
     },
     {
       "path": "src/components/SubmitListingForm.tsx",
-      "bytes": 7075
+      "bytes": 7120
     },
     {
       "path": "src/lib/error-capture.ts",
@@ -175,7 +183,7 @@
     },
     {
       "path": "src/routes/index.tsx",
-      "bytes": 67489
+      "bytes": 59562
     },
     {
       "path": "src/routes/__root.tsx",
