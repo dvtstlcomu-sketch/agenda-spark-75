@@ -1,13 +1,13 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { resolveImages, BUCKET } from "@/lib/listings";
 import { listManagers, createManager, removeManager } from "@/lib/managers.functions";
 import { Button } from "@/components/ui/button";
 import { SubmitListingForm } from "@/components/SubmitListingForm";
-import { Plus, RefreshCw, Trash2 } from "lucide-react";
+import { Bell, Plus, RefreshCw, Trash2 } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/painel")({
   head: () => ({
@@ -112,6 +112,33 @@ function Painel() {
   const published = rows?.filter((r) => r.validated).length ?? 0;
   const shown = rows?.filter((r) => (filter === "all" ? true : filter === "pending" ? !r.validated : r.validated)) ?? [];
 
+  const seenPending = useRef<Set<string> | null>(null);
+  const [newAlert, setNewAlert] = useState(0);
+  const [notifyOn, setNotifyOn] = useState(false);
+  useEffect(() => {
+    if (typeof Notification !== "undefined") setNotifyOn(Notification.permission === "granted");
+  }, []);
+  useEffect(() => {
+    if (!rows) return;
+    const ids = rows.filter((r) => !r.validated).map((r) => r.id as string);
+    if (seenPending.current === null) { seenPending.current = new Set(ids); return; }
+    const fresh = ids.filter((id) => !seenPending.current!.has(id));
+    ids.forEach((id) => seenPending.current!.add(id));
+    if (!fresh.length) return;
+    setNewAlert((n) => n + fresh.length);
+    try {
+      const ctx = new AudioContext(); const o = ctx.createOscillator(); o.frequency.value = 880;
+      o.connect(ctx.destination); o.start(); o.stop(ctx.currentTime + 0.3);
+    } catch { /* som indisponível */ }
+    if (typeof Notification !== "undefined" && Notification.permission === "granted") {
+      new Notification("Novo anúncio aguardando aprovação", { body: `${fresh.length} novo(s) anúncio(s) no painel.` });
+    }
+  }, [rows]);
+  async function enableNotify() {
+    if (typeof Notification === "undefined") return;
+    setNotifyOn((await Notification.requestPermission()) === "granted");
+  }
+
   return (
     <div className="min-h-screen bg-slate-200 p-4 md:p-10">
       <div className="max-w-6xl mx-auto">
@@ -139,6 +166,16 @@ function Painel() {
             <div className="flex flex-wrap gap-2 mb-4">
               <Button onClick={() => setAdding(!adding)}><Plus size={16} className="mr-2" />{adding ? "Fechar cadastro de anúncio" : "Incluir anúncio"}</Button>
               <Button variant="outline" onClick={refresh}><RefreshCw size={16} className="mr-2" />Atualizar anúncios</Button>
+              <Button variant="outline" onClick={() => setFilter("pending")}>Revisar pendentes ({pending})</Button>
+              {!notifyOn && <Button variant="outline" onClick={enableNotify}><Bell size={16} className="mr-2" />Ativar avisos de anúncios</Button>}
+            </div>
+            {newAlert > 0 && (
+              <div role="status" className="mb-4 flex flex-wrap items-center justify-between gap-2 rounded-2xl bg-primary p-4 text-primary-foreground font-bold">
+                <span><Bell size={16} className="inline mr-2" />{newAlert} novo(s) anúncio(s) chegou(aram) para aprovação!</span>
+                <Button variant="secondary" onClick={() => { setFilter("pending"); setNewAlert(0); }}>Revisar agora</Button>
+              </div>
+            )}
+            <div className="hidden">
             </div>
             {adding && <section className="mb-6 max-w-3xl"><h2 className="text-xl font-bold mb-4">Novo anúncio</h2><SubmitListingForm onSubmitted={() => { setAdding(false); setFilter("pending"); refresh(); }} /></section>}
             {(listingError || actionError) && <div role="alert" className="mb-4 text-destructive"><p>{actionError ?? "Não foi possível carregar os anúncios e fotos. Clique em Atualizar anúncios."}</p></div>}
