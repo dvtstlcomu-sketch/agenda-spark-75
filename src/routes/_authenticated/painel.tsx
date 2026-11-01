@@ -66,7 +66,13 @@ function Painel() {
     queryFn: async () => {
       const { data, error } = await supabase.from("properties").select("*").order("created_at", { ascending: false });
       if (error) throw error;
-      return resolveImages(data ?? [], true);
+      try {
+        return await resolveImages(data ?? [], true);
+      } catch (e) {
+        // Se as fotos falharem, ainda mostra os anúncios (com botões de aprovar/excluir).
+        console.error(e);
+        return (data ?? []).map((r) => ({ ...r, imageSrc: "", imageSrcs: [] as string[] }));
+      }
     },
   });
 
