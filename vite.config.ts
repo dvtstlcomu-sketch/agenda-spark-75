@@ -12,8 +12,8 @@ const PUBLIC_URL = "https://lhncoaaqitzneyazptam.supabase.co";
 const PUBLIC_KEY = "sb_publishable_yE1Me6bZ8teP5e56H6k08g_GhTiGTIN";
 
 const define: Record<string, string> = {};
-if (!process.env.VITE_SUPABASE_URL) define["import.meta.env.VITE_SUPABASE_URL"] = JSON.stringify(PUBLIC_URL);
-if (!process.env.VITE_SUPABASE_PUBLISHABLE_KEY)
+if (!process.env['VITE_SUPABASE_URL']) define["import.meta.env.VITE_SUPABASE_URL"] = JSON.stringify(PUBLIC_URL);
+if (!process.env['VITE_SUPABASE_PUBLISHABLE_KEY'])
   define["import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY"] = JSON.stringify(PUBLIC_KEY);
 
 export default defineConfig({
