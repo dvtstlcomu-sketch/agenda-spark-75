@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T16:44:15.456801+00:00",
+  "generated_at": "2026-11-02T17:41:08.086779+00:00",
   "files": [
     {
       "path": "eslint.config.js",
@@ -235,7 +235,7 @@
     },
     {
       "path": "src/integrations/supabase/client.ts",
-      "bytes": 1686
+      "bytes": 1704
     },
     {
       "path": "src/integrations/supabase/auth-middleware.ts",
