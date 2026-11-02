@@ -247,7 +247,7 @@ function Painel() {
                   return (
                     <div key={r.id} className="bg-white/80 rounded-2xl p-4 flex flex-col md:flex-row gap-4 shadow">
                       <div className="flex gap-2 overflow-x-auto md:w-72 shrink-0">
-                        {(r.imageSrcs.length ? r.imageSrcs : [r.imageSrc]).filter(Boolean).map((src, i) => (
+                        {((r.imageSrcs.length ? r.imageSrcs : [r.imageSrc]) as string[]).filter(Boolean).map((src: string, i: number) => (
                           <a key={i} href={src} target="_blank" rel="noreferrer" className="shrink-0"><img src={src} alt={`Foto ${i + 1} de ${r.title}`} className="w-24 h-24 object-cover rounded-lg shrink-0" /></a>
                         ))}
                         {!r.imageSrcs.length && !r.imageSrc && <p className="text-muted-foreground text-sm">Nenhuma foto vinculada a este anúncio.</p>}
