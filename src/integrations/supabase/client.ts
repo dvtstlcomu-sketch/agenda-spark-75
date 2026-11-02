@@ -1,6 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 
-// Conexão direta definitiva com o Supabase
+// Conexão direta definitiva ao projeto Supabase
 export const SUPABASE_URL = "https://enthethwinrmgrndwzh.supabase.co";
 export const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_hJPoKQ7CWW1MpyQ1lVb8XA_4FxJ6XZC";
 
@@ -11,7 +11,7 @@ export const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
   },
 });
 
-// Imagem padrão caso o imóvel não tenha foto
+// Foto imobiliária padrão caso o imóvel não tenha imagem
 export const FOTO_PADRAO =
   "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80";
 
