@@ -1,10 +1,10 @@
 import { createClient } from "@supabase/supabase-js";
 
 // 1. CREDENCIAIS DIRETAS DO SEU SUPABASE (Elimina a dependência de variáveis da Vercel/Lovable)
-const SUPABASE_URL = import.meta.env?.VITE_SUPABASE_URL || "https://enthethwinrmgrndwzh.supabase.co";
+const SUPABASE_URL = import.meta.env?.["VITE_SUPABASE_URL"] || "https://lhncoaaqitzneyazptam.supabase.co";
 
 const SUPABASE_PUBLISHABLE_KEY =
-  import.meta.env?.VITE_SUPABASE_PUBLISHABLE_KEY || "sb_publishable_hJPoKQ7CWW1MpyQ1lVb8XA_4FxJ6XZC";
+  import.meta.env?.["VITE_SUPABASE_PUBLISHABLE_KEY"] || "sb_publishable_yE1Me6bZ8teP5e56H6k08g_GhTiGTIN";
 
 // 2. INSTÂNCIA PRINCIPAL RESILIENTE (Sem throw new Error)
 export const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
