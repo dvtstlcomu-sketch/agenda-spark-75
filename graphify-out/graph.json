@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T14:27:20.999227+00:00",
+  "generated_at": "2026-11-02T15:46:43.639293+00:00",
   "files": [
     {
       "path": "eslint.config.js",
@@ -235,7 +235,7 @@
     },
     {
       "path": "src/integrations/supabase/client.ts",
-      "bytes": 2493
+      "bytes": 465
     },
     {
       "path": "src/integrations/supabase/auth-middleware.ts",
@@ -534,18 +534,6 @@
     {
       "source": "src/integrations/supabase/client.ts",
       "target": "@supabase/supabase-js"
-    },
-    {
-      "source": "src/integrations/supabase/client.ts",
-      "target": "./types"
-    },
-    {
-      "source": "src/integrations/supabase/client.ts",
-      "target": "./previewAuthStorage"
-    },
-    {
-      "source": "src/integrations/supabase/client.ts",
-      "target": "@/integrations/supabase/client"
     },
     {
       "source": "src/integrations/supabase/auth-middleware.ts",
