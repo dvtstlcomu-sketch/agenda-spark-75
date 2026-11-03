@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T19:10:18.714183+00:00",
+  "generated_at": "2026-11-03T19:14:53.544400+00:00",
   "files": [
     {
       "path": "eslint.config.js",
@@ -211,7 +211,7 @@
     },
     {
       "path": "src/lib/listings.ts",
-      "bytes": 4446
+      "bytes": 4549
     },
     {
       "path": "src/lib/listings.functions.ts",
