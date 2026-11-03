@@ -23,7 +23,18 @@ async function signPaths(paths: string[], staff = false): Promise<Record<string,
   // Os links temporários são gerados no servidor (verificado e limitado lá).
   const clean = paths.filter((p): p is string => !!p && !p.startsWith("http"));
   if (!clean.length) return {};
-  return staff ? signStaffImages({ data: { paths: clean } }) : signPublicImages({ data: { paths: clean } });
+  try {
+    const map = staff ? await signStaffImages({ data: { paths: clean } }) : await signPublicImages({ data: { paths: clean } });
+    if (Object.keys(map).length) return map;
+  } catch (e) {
+    console.warn("Assinatura no servidor falhou, usando o navegador", e);
+  }
+  // Fallback (ex.: Vercel sem chave do servidor): o RLS só libera fotos de
+  // anúncios aprovados ao público, e qualquer foto à equipe.
+  const { data } = await supabase.storage.from(BUCKET).createSignedUrls(clean, 60 * 60 * 24 * 7);
+  const map: Record<string, string> = {};
+  data?.forEach((d) => { if (d.path && d.signedUrl) map[d.path] = d.signedUrl; });
+  return map;
 }
 
 export async function resolveImages<T extends { image_url: string | null; images: string[] | null }>(rows: T[], staff = false) {

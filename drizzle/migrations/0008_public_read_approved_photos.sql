@@ -1,0 +1,2 @@
+CREATE POLICY "Public can view approved listing photos" ON storage.objects FOR SELECT TO anon, authenticated
+USING (bucket_id = 'property-photos' AND EXISTS (SELECT 1 FROM public.properties p WHERE p.validated = true AND (p.image_url = storage.objects.name OR storage.objects.name = ANY(p.images))));
