@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T20:33:29.146117+00:00",
+  "generated_at": "2026-11-03T20:40:55.573427+00:00",
   "files": [
     {
       "path": "eslint.config.js",
@@ -183,7 +183,7 @@
     },
     {
       "path": "src/routes/index.tsx",
-      "bytes": 62632
+      "bytes": 15124
     },
     {
       "path": "src/components/SubmitListingForm.tsx",
@@ -417,23 +417,7 @@
     },
     {
       "source": "src/routes/index.tsx",
-      "target": "qrcode.react"
-    },
-    {
-      "source": "src/routes/index.tsx",
-      "target": "@/assets/logo_2.jpg.asset.json"
-    },
-    {
-      "source": "src/routes/index.tsx",
       "target": "@/components/ui/button"
-    },
-    {
-      "source": "src/routes/index.tsx",
-      "target": "@/lib/utils"
-    },
-    {
-      "source": "src/routes/index.tsx",
-      "target": "lucide-react"
     },
     {
       "source": "src/components/SubmitListingForm.tsx",
