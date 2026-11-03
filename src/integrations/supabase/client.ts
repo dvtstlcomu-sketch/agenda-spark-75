@@ -1,8 +1,12 @@
 import { createClient } from "@supabase/supabase-js";
 
-// Conexão direta definitiva ao projeto Supabase
-export const SUPABASE_URL = "https://enthethwinrmgrndwzh.supabase.co";
-export const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_hJPoKQ7CWW1MpyQ1lVb8XA_4FxJ6XZC";
+// Conexão com o banco de dados do site (Lovable Cloud).
+// Usa as variáveis de ambiente quando existem; caso contrário, usa o endereço
+// público do projeto como fallback (necessário para hosts externos como Vercel).
+export const SUPABASE_URL =
+  import.meta.env["VITE_SUPABASE_URL"] || "https://lhncoaaqitzneyazptam.supabase.co";
+export const SUPABASE_PUBLISHABLE_KEY =
+  import.meta.env["VITE_SUPABASE_PUBLISHABLE_KEY"] || "sb_publishable_yE1Me6bZ8teP5e56H6k08g_GhTiGTIN";
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
   auth: {
