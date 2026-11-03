@@ -580,28 +580,90 @@ function Index() {
             {(dbListings ?? []).slice(0, MAX_LISTINGS).map((property) => (
               <div key={property.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <{/* Galeria deslizante no card */}
+                 {/* Galeria interativa com setas e contador */}
 {(() => {
-  const listaFotos = (Array.isArray(property.fotos) && property.fotos.length > 0 ? property.fotos : null) ||
-                     (Array.isArray(property.images) && property.images.length > 0 ? property.images : null) ||
-                     [property.image || property.imagem || "/placeholder.svg"];
+  // Trata fotos se vierem como Array, como JSON em texto ou link único
+  let lista: any[] = [];
+  try {
+    const raw = property.fotos || property.images || property.photos || property.galeria;
+    if (Array.isArray(raw)) {
+      lista = raw;
+    } else if (typeof raw === "string" && raw.trim().startsWith("[")) {
+      lista = JSON.parse(raw);
+    } else if (typeof raw === "string" && raw.trim() !== "") {
+      lista = [raw];
+    }
+  } catch (e) {
+    lista = [];
+  }
+
+  if (lista.length === 0) {
+    const unica = property.image || property.imagem || property.foto || property.foto_capa || "/placeholder.svg";
+    lista = [unica];
+  }
+
+  const urlsFinais = lista.map((item) => (typeof item === "string" ? item : item?.url || item?.foto_url || "/placeholder.svg"));
 
   return (
-    <div className="relative w-full h-full flex overflow-x-auto snap-x snap-mandatory scrollbar-none">
-      {listaFotos.map((foto: any, idx: number) => {
-        const url = typeof foto === "string" ? foto : foto?.url || "/placeholder.svg";
-        return (
+    <div className="relative w-full h-full group/galeria">
+      {/* Exibição da primeira foto com scroll horizontal suave */}
+      <div
+        id={`galeria-${property.id || Math.random()}`}
+        className="w-full h-full flex overflow-x-auto scroll-smooth snap-x snap-mandatory"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        {urlsFinais.map((url, idx) => (
           <img
             key={idx}
             src={url}
-            alt={`${property.title || 'Imóvel'} - Foto ${idx + 1}`}
+            alt={`${property.title || "Imóvel"} - Foto ${idx + 1}`}
             className="w-full h-full object-cover shrink-0 snap-center"
             onError={(e) => {
               (e.target as HTMLImageElement).src = "/placeholder.svg";
             }}
           />
-        );
-      })}
+        ))}
+      </div>
+
+      {/* Setas de navegação (só aparecem se tiver mais de 1 foto) */}
+      {urlsFinais.length > 1 && (
+        <>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              const el = e.currentTarget.parentElement?.firstElementChild;
+              if (el) el.scrollLeft -= el.clientWidth;
+            }}
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center text-xs font-bold z-10 transition-all opacity-80 hover:opacity-100 shadow"
+            title="Foto anterior"
+          >
+            &#10094;
+          </button>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              const el = e.currentTarget.parentElement?.firstElementChild;
+              if (el) el.scrollLeft += el.clientWidth;
+            }}
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center text-xs font-bold z-10 transition-all opacity-80 hover:opacity-100 shadow"
+            title="Próxima foto"
+          >
+            &#10095;
+          </button>
+
+          {/* Indicador de fotos (ex: 1/4) */}
+          <span className="absolute bottom-2 right-2 bg-black/60 backdrop-blur-sm text-white text-[10px] px-2 py-0.5 rounded-full z-10">
+            {urlsFinais.length} fotos
+          </span>
+        </>
+      )}
+    </div>
+  );
+})()}
     </div>
   );
 })()}
