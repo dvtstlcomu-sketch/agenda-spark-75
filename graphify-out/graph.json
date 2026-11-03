@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T18:47:34.478893+00:00",
+  "generated_at": "2026-11-03T18:52:45.591762+00:00",
   "files": [
     {
       "path": "eslint.config.js",
@@ -183,7 +183,7 @@
     },
     {
       "path": "src/routes/index.tsx",
-      "bytes": 60380
+      "bytes": 62632
     },
     {
       "path": "src/components/SubmitListingForm.tsx",
