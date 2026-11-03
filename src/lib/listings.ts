@@ -60,7 +60,9 @@ export async function fetchPublishedListings(): Promise<Listing[]> {
     status: r.status ?? "Venda e Locação",
     price: r.price ?? "Sob Consulta",
     location: r.location ?? "Consulte",
-    image: r.imageSrc || "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80",
+   imagem: r.fonte_de_imagem || r.URL_de_imagem || (Array.isArray(r.imagens) ? r.imagens[0] : null) || (Array.isArray(r.fotos) ? r.fotos[0] : null) || "/placeholder.svg",
+fotos: r.imagens || r.fotos || (r.URL_de_imagem ? [r.URL_de_imagem] : []),
+images: r.imagens || r.fotos || (r.URL_de_imagem ? [r.URL_de_imagem] : []),
     beds: r.beds ?? 0,
     baths: r.baths ?? 0,
     area: r.area ?? "-",
@@ -104,7 +106,9 @@ export async function submitListing(input: SubmitInput) {
     price: input.price || "Sob Consulta",
     documentation: input.documentation,
     description:
-      input.description ||
+      URL_de_imagem: caminhos[0] ?? null,
+imagens: caminhos,
+fotos: caminhos,
       `${input.type} em ${input.location}${input.area ? `, ${input.area}m²` : ""}${input.beds ? `, ${input.beds} quarto(s)` : ""}${input.baths ? `, ${input.baths} banheiro(s)` : ""}. ${input.documentation}.`,
     owner_name: input.ownerName,
     owner_phone: input.ownerPhone,
