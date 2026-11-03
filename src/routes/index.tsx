@@ -581,9 +581,22 @@ function Index() {
               <div key={property.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
-                    src={property.image} 
-                    alt={property.title}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                   src={
+  (Array.isArray(property.fotos) && property.fotos.length > 0
+    ? (typeof property.fotos[0] === 'string' ? property.fotos[0] : property.fotos[0]?.url)
+    : null) ||
+  (Array.isArray(property.images) && property.images.length > 0
+    ? (typeof property.images[0] === 'string' ? property.images[0] : property.images[0]?.url)
+    : null) ||
+  property.image ||
+  property.imagem ||
+  property.foto ||
+  property.foto_capa ||
+  "/placeholder.svg"
+}
+onError={(e) => {
+  (e.target as HTMLImageElement).src = "/placeholder.svg";
+}}
                   />
                   <div className="absolute top-4 left-4 flex flex-col gap-2">
                     <span className="bg-white/90 backdrop-blur-md text-slate-900 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
