@@ -44,13 +44,9 @@ export async function resolveImages<T extends { image_url: string | null; images
   return rows.map((r) => ({ ...r, imageSrc: url(r.image_url), imageSrcs: [...new Set([r.image_url, ...(r.images ?? [])])].map(url).filter(Boolean) }));
 }
 
-export async function fetchPublishedListings(): Promise<Listing[]> {
-  const { data, error } = await supabase
-    .from("properties")
-    .select("*")
-    .eq("validated", true)
-    .order("created_at", { ascending: false })
-    .limit(MAX_LISTINGS);
+const { dados, erro } = await supabase
+  .de("propriedades")
+  .selecionar("*")
   if (error) throw error;
   const rows = await resolveImages(data ?? []);
   return rows.map((r) => ({
