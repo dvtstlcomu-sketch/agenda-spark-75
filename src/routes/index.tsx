@@ -580,7 +580,31 @@ function Index() {
             {(dbListings ?? []).slice(0, MAX_LISTINGS).map((property) => (
               <div key={property.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img 
+                  <{/* Galeria deslizante no card */}
+{(() => {
+  const listaFotos = (Array.isArray(property.fotos) && property.fotos.length > 0 ? property.fotos : null) ||
+                     (Array.isArray(property.images) && property.images.length > 0 ? property.images : null) ||
+                     [property.image || property.imagem || "/placeholder.svg"];
+
+  return (
+    <div className="relative w-full h-full flex overflow-x-auto snap-x snap-mandatory scrollbar-none">
+      {listaFotos.map((foto: any, idx: number) => {
+        const url = typeof foto === "string" ? foto : foto?.url || "/placeholder.svg";
+        return (
+          <img
+            key={idx}
+            src={url}
+            alt={`${property.title || 'Imóvel'} - Foto ${idx + 1}`}
+            className="w-full h-full object-cover shrink-0 snap-center"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = "/placeholder.svg";
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+})()}
                    src={
   (Array.isArray(property.fotos) && property.fotos.length > 0
     ? (typeof property.fotos[0] === 'string' ? property.fotos[0] : property.fotos[0]?.url)
