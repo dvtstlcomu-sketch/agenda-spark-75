@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T17:41:08.086779+00:00",
+  "generated_at": "2026-11-03T04:03:32.010989+00:00",
   "files": [
     {
       "path": "eslint.config.js",
@@ -219,7 +219,7 @@
     },
     {
       "path": "src/integrations/supabase/auth-attacher.ts",
-      "bytes": 5562
+      "bytes": 611
     },
     {
       "path": "src/integrations/supabase/types.ts",
@@ -235,7 +235,7 @@
     },
     {
       "path": "src/integrations/supabase/client.ts",
-      "bytes": 1704
+      "bytes": 1975
     },
     {
       "path": "src/integrations/supabase/auth-middleware.ts",
@@ -513,15 +513,11 @@
     },
     {
       "source": "src/integrations/supabase/auth-attacher.ts",
-      "target": "react"
+      "target": "@tanstack/react-start"
     },
     {
       "source": "src/integrations/supabase/auth-attacher.ts",
-      "target": "react-router-dom"
-    },
-    {
-      "source": "src/integrations/supabase/auth-attacher.ts",
-      "target": "../integrations/supabase/client"
+      "target": "./client"
     },
     {
       "source": "src/integrations/supabase/client.server.ts",
