@@ -55,21 +55,28 @@ const { dados, erro } = await supabase
     type: r.type ?? "Imóvel",
     status: r.status ?? "Venda e Locação",
     price: r.price ?? "Sob Consulta",
-    location: r.location ?? "Consulte",
-   imagem: r.fonte_de_imagem || r.URL_de_imagem || (Array.isArray(r.imagens) ? r.imagens[0] : null) || (Array.isArray(r.fotos) ? r.fotos[0] : null) || "/placeholder.svg",
-fotos: r.imagens || r.fotos || (r.URL_de_imagem ? [r.URL_de_imagem] : []),
-images: r.imagens || r.fotos || (r.URL_de_imagem ? [r.URL_de_imagem] : []),
-    beds: r.beds ?? 0,
-    baths: r.baths ?? 0,
-    area: r.area ?? "-",
-    description: r.description ?? "",
-  }));
-}
-
-export type SubmitInput = {
-  ownerName: string;
-  ownerPhone: string;
-  title: string;
+return linhas.map((r) => ({
+      id: r.id,
+      titulo: r.titulo,
+      title: r.titulo,
+      tipo: r.tipo ?? "Imóvel",
+      status: r.status ?? "Venda e Locação",
+      preco: r.preco ?? "Sob Consulta",
+      price: r.preco ?? "Sob Consulta",
+      localizacao: r.localizacao ?? "Consultar",
+      imagem: r.fonte_de_imagem || r.URL_de_imagem || "/placeholder.svg",
+      image: r.fonte_de_imagem || r.URL_de_imagem || "/placeholder.svg",
+      fotos: (Array.isArray(r.imagens) && r.imagens.length > 0 ? r.imagens : null) ||
+             (Array.isArray(r.fotos) && r.fotos.length > 0 ? r.fotos : null) ||
+             (r.URL_de_imagem ? [r.URL_de_imagem] : []),
+      images: (Array.isArray(r.imagens) && r.imagens.length > 0 ? r.imagens : null) ||
+              (Array.isArray(r.fotos) && r.fotos.length > 0 ? r.fotos : null) ||
+              (r.URL_de_imagem ? [r.URL_de_imagem] : []),
+      quartos: r.quartos ?? 0,
+      banheiros: r.banhos ?? 0,
+      area: r.area ?? "--",
+      descricao: r.descricao ?? "",
+    }));
   type: string;
   location: string;
   area: string;
@@ -95,17 +102,9 @@ export async function submitListing(input: SubmitInput) {
     title: input.title.slice(0, 120),
     type: input.type,
     status: "Venda e Locação",
-    location: input.location,
-    area: input.area ? `${input.area}m²` : null,
-    beds: input.beds,
-    baths: input.baths,
-    price: input.price || "Sob Consulta",
-    documentation: input.documentation,
-    description:
-      URL_de_imagem: caminhos[0] ?? null,
-imagens: caminhos,
-fotos: caminhos,
-      `${input.type} em ${input.location}${input.area ? `, ${input.area}m²` : ""}${input.beds ? `, ${input.beds} quarto(s)` : ""}${input.baths ? `, ${input.baths} banheiro(s)` : ""}. ${input.documentation}.`,
+   URL_de_imagem: caminhos[0] ?? null,
+      imagens: caminhos,
+      fotos: caminhos,hs ? `, ${input.baths} banheiro(s)` : ""}. ${input.documentation}.`,
     owner_name: input.ownerName,
     owner_phone: input.ownerPhone,
     image_url: paths[0] ?? null,
