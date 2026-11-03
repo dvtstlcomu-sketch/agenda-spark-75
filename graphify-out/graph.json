@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T04:03:32.010989+00:00",
+  "generated_at": "2026-11-03T18:08:46.542680+00:00",
   "files": [
     {
       "path": "eslint.config.js",
@@ -11,7 +11,7 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 1302
+      "bytes": 1369
     },
     {
       "path": "package.json",
@@ -114,6 +114,10 @@
       "bytes": 569
     },
     {
+      "path": "drizzle/migrations/0008_public_read_approved_photos.sql",
+      "bytes": 300
+    },
+    {
       "path": "drizzle/migrations/0002_restrict_photo_downloads.sql",
       "bytes": 403
     },
@@ -138,6 +142,10 @@
       "bytes": 336
     },
     {
+      "path": "drizzle/migrations/meta/0008_snapshot.json",
+      "bytes": 336
+    },
+    {
       "path": "drizzle/migrations/meta/0003_snapshot.json",
       "bytes": 336
     },
@@ -151,7 +159,7 @@
     },
     {
       "path": "drizzle/migrations/meta/_journal.json",
-      "bytes": 1270
+      "bytes": 1425
     },
     {
       "path": "drizzle/migrations/meta/0007_snapshot.json",
@@ -203,7 +211,7 @@
     },
     {
       "path": "src/lib/listings.ts",
-      "bytes": 3811
+      "bytes": 4356
     },
     {
       "path": "src/lib/listings.functions.ts",
