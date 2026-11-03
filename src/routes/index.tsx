@@ -1,1061 +1,335 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { 
-  Building2, 
-  Map, 
-  Camera, 
-  UserCheck, 
-  Phone, 
-  Mail, 
-  MapPin, 
-  MessageSquare,
-  ChevronDown,
-  Upload,
-  CheckCircle2,
-  Share2,
-  Globe,
-  Link,
+import {
+  Building2,
+  Home,
+  Briefcase,
   Search,
-  Bed,
+  CheckCircle2,
+  ShieldCheck,
+  ChevronRight,
+  Phone,
+  Mail,
+  MapPin,
+  MessageSquare,
+  FileText,
+  Upload,
+  Calendar,
+  Layers,
+  Award,
+  Globe,
   Bath,
   Maximize,
-  ArrowRight,
   Filter,
-  Ruler,
-  Compass,
-  Zap,
-  Layers,
-  Activity,
-  Plus,
-  Smartphone,
-  Info,
-  QrCode
+  Check,
+  Share2,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { fetchPublishedListings, MAX_LISTINGS } from "@/lib/listings";
+import { buscarListagensPublicadas, LISTAGENS_MAXIMAS } from "@/lib/listings";
 import { SubmitListingForm } from "@/components/SubmitListingForm";
-import { QRCodeSVG } from 'qrcode.react';
-import logo2 from "@/assets/logo_2.jpg.asset.json";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { 
-  ShieldCheck, 
-  ChevronRight,
-  ExternalLink 
-} from "lucide-react";
-
-// Asset-serving paths are hosted by Lovable, not by external deployments.
-const logoUrl = new URL(logo2.url, "https://agenda-spark-75.lovable.app").href;
 
 const INSURERS = [
-  { name: "Porto Seguro", color: "#005EB8", url: "https://www.portoseguro.com.br/seguro-fianca" },
-  { name: "Tokio Marine", color: "#008751", url: "https://www.tokiomarine.com.br/seguro-fianca-locaticia/" },
-  { name: "Yelum (ex-Liberty)", color: "#004890", url: "https://www.yelumseguros.com.br" },
-  { name: "Sompo Seguros", color: "#E30613", url: "https://www.sompo.com.br" },
-  { name: "Too Seguros", color: "#FFC600", url: "https://www.tooseguros.com.br" },
-  { name: "Pottencial Seguradora", color: "#FF6600", url: "https://pottencial.com.br/seguro-fianca-locaticia/" }
+  { name: "Porto Seguro", color: "#00529B", URL: "https://www.portoseguro.com.br/seguro-fianca/" },
+  { name: "Tokio Marine", color: "#0072CE", URL: "https://www.tokiomarine.com.br/seguro-fianca-locaticia/" },
+  { name: "Velum (Ex-Liberty)", color: "#00A859", URL: "https://www.velumseguros.com.br/" },
+  { name: "Sompo Seguros", color: "#ED1C24", URL: "https://www.sompo.com.br/" },
+  { name: "Pottencial Seguradora", color: "#FF5C00", URL: "https://www.pottencialseguradora.com.br/seguro-fianca/" },
 ];
 
 const TECHNICAL_SERVICES = [
   {
-    id: 1,
     title: "Administração de Condomínios",
-    description: "Gestão completa de administração condominial com transparência.",
-    icon: <Building2 className="w-8 h-8 text-[var(--color-accent)]" />,
+    desc: "Gestão completa de administração condominial com transparência.",
+    icon: Building2,
   },
   {
-    id: 2,
     title: "Avaliação Mercadológica",
-    description: "Perícia técnica e avaliações rigorosas de mercado imobiliário.",
-    icon: <UserCheck className="w-8 h-8 text-[var(--color-accent)]" />,
+    desc: "Perícia técnica e avaliações rigorosas de mercado imobiliário.",
+    icon: Award,
   },
   {
-    id: 8,
     title: "Laudo Pericial",
-    description: "Perícia judicial e laudos técnicos para fins legais e usucapião.",
-    icon: <Activity className="w-8 h-8 text-[var(--color-accent)]" />,
+    desc: "Perícia judicial e laudos técnicos para fins legais e usucapião.",
+    icon: FileText,
   },
   {
-    id: 3,
     title: "Compra, Venda e Locação",
-    description: "Intermediação especializada para compra, venda, locação e permuta de imóveis.",
-    icon: <Search className="w-8 h-8 text-[var(--color-accent)]" />,
+    desc: "Intermediação especializada para compra, venda, locação e permuta de imóveis.",
+    icon: Home,
   },
   {
-    id: 4,
     title: "Topografia e Medição",
-    description: "Levantamento planialtimétrico, georreferenciamento e medição de precisão.",
-    icon: <Ruler className="w-8 h-8 text-[var(--color-accent)]" />,
+    desc: "Levantamento planialtimétrico, georreferenciamento e medição de precisão.",
+    icon: Layers,
   },
   {
-    id: 5,
     title: "Mapeamento Aéreo com Drone",
-    description: "Sobrevôo especializado para avaliações e mapeamento técnico de precisão.",
-    icon: <Zap className="w-8 h-8 text-[var(--color-accent)]" />,
+    desc: "Sobrevôo especializado para avaliações e mapeamento técnico de precisão.",
+    icon: Globe,
   },
   {
-    id: 6,
     title: "Demolição e Terraplanagem",
-    description: "Serviços de limpeza de terrenos, demolição técnica e preparação de solo.",
-    icon: <Activity className="w-8 h-8 text-[var(--color-accent)]" />,
+    desc: "Serviços de limpeza de terrenos, demolição técnica e preparação de solo.",
+    icon: Briefcase,
   },
   {
-    id: 7,
     title: "Estruturação Imobiliária",
-    description: "Regularização documental e estrutura planejada para empreendimentos.",
-    icon: <Layers className="w-8 h-8 text-[var(--color-accent)]" />,
+    desc: "Regularização documental e estrutura planejada para empreendimentos.",
+    icon: ShieldCheck,
   },
-  {
-    id: 9,
-    title: "Despachante Imobiliário",
-    description: "Consultoria especializada e agilidade em trâmites documentais imobiliários.",
-    icon: <CheckCircle2 className="w-8 h-8 text-[var(--color-accent)]" />,
-  }
 ];
 
-const PROJETOS_3D = [
-  {
-    id: 1,
-    title: "Modelagem 3D Urbana e Rural",
-    description: "Visualização tridimensional de glebas, fazendas e áreas urbanas para planejamento estratégico e análise de impacto.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80",
-    tech: "Precisão Territorial"
-  },
-  {
-    id: 2,
-    title: "Mapeamento Aéreo com Drone",
-    description: "Nuvem de pontos e modelos 3D gerados a partir de fotogrametria aérea para alta precisão em grandes áreas.",
-    image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80",
-    tech: "Fotogrametria"
-  },
-  {
-    id: 3,
-    title: "Precisão e Simulação Comercial",
-    description: "Modelagem técnica e projeção 3D de empreendimentos comerciais de alta complexidade com rigor pericial.",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80",
-    tech: "Inteligência Comercial"
-  }
-];
-
-
-export const Route = createFileRoute("/")({
-  component: Index,
-  head: () => ({
-    title: "Territorial | Perícia Judicial & Inteligência em Guarulhos",
-    links: [
-      {
-        rel: "canonical",
-        href: "https://territorialimoveis.com.br"
-      }
-    ],
-    meta: [
-      { name: "description", content: "Liderança em Perícia Judicial e Inteligência em Guarulhos. Administração, Avaliação e Consultoria Técnica com excelência. CRECI 38258J | Silvio Moura CRECI 151545." },
-      { property: "og:title", content: "Territorial | Excelência em Inteligência Imobiliária" },
-      { property: "og:description", content: "Especialistas em Perícia Judicial e Soluções de Alto Padrão em Guarulhos e Região." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      {
-        name: "keywords",
-        content: "perícia judicial guarulhos, avaliação imobiliária, topografia guarulhos, inteligência, administração de imóveis alto padrão, silvio moura creci 151545"
-      }
-    ],
-    script: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "RealEstateAgent",
-          "name": "Territorial",
-          "image": "https://images.unsplash.com/photo-1500382017468-9049fee74a62?auto=format&fit=crop&q=80",
-          "@id": "",
-          "url": "https://territorialimoveis.com.br",
-          "telephone": "+551124050300",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Avenida Otávio Braga de Mesquita, 3935",
-            "addressLocality": "Guarulhos",
-            "addressRegion": "SP",
-            "postalCode": "07191-000",
-            "addressCountry": "BR"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": -23.444,
-            "longitude": -46.508
-          }
-        })
-      }
-    ]
-  })
+export const Route = createFileRoute("/rotas/")({
+  component: IndexComponent,
 });
 
-function Index() {
-  const [activeFaq, setActiveFaq] = useState<number | null>(null);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { data: dbListings } = useQuery({ queryKey: ["listings"], queryFn: fetchPublishedListings });
-  const [showPwaModal, setShowPwaModal] = useState(false);
-  const [pwaPlatform, setPwaPlatform] = useState<'ios' | 'android' | null>(null);
+function IndexComponent() {
+  const [tipoFiltro, setTipoFiltro] = useState<string>("todos");
+  const [operacaoFiltro, setOperacaoFiltro] = useState<string>("todos");
+  const [buscaTexto, setBuscaTexto] = useState<string>("");
 
-  const toggleFaq = (index: number) => {
-    setActiveFaq(activeFaq === index ? null : index);
-  };
+  const { data: listings = [], isLoading } = useQuery({
+    queryKey: ["public-listings"],
+    queryFn: () => buscarListagensPublicadas(),
+  });
+
+  const listingsFiltrados = listings.filter((item: any) => {
+    const matchTipo = tipoFiltro === "todos" || item.tipo?.toLowerCase() === tipoFiltro.toLowerCase();
+    const matchOperacao = operacaoFiltro === "todos" || item.status?.toLowerCase() === operacaoFiltro.toLowerCase();
+    const matchBusca =
+      !buscaTexto ||
+      item.titulo?.toLowerCase().includes(buscaTexto.toLowerCase()) ||
+      item.localizacao?.toLowerCase().includes(buscaTexto.toLowerCase());
+    return matchTipo && matchOperacao && matchBusca;
+  });
 
   return (
-    <div className="min-h-screen font-sans bg-[#c2c2c2] text-foreground selection:bg-[var(--color-accent)] selection:text-[var(--color-navy)]">
-      {/* WhatsApp Floating Button */}
-      <a 
-        href="https://wa.me/551124050300" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[100] bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center group"
-        aria-label="Fale conosco no WhatsApp"
-      >
-        <MessageSquare className="w-6 h-6 md:w-7 md:h-7" />
-        <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 font-bold whitespace-nowrap hidden md:inline">Fale Conosco</span>
-      </a>
+    <div className="min-h-screen bg-slate-50 text-slate-800">
+      {/* Secção de Consulta e Vitrine */}
+      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">
+            Portfólio de Imóveis
+          </h2>
+          <p className="mt-3 max-w-2xl mx-auto text-sm text-slate-500">
+            Encontre o imóvel ideal com segurança técnica e jurídica especializada.
+          </p>
+        </div>
 
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-[100] bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-24 md:h-32 relative">
-            {/* Logo and Branding - Left */}
-            {/* Branding - Left */}
-            <div className="flex items-center gap-2 md:gap-4 shrink-0 max-w-[70%] sm:max-w-none relative z-[110]">
-            <div className="flex flex-col items-center text-center">
-              <div className="flex items-center gap-2 md:gap-4">
-                <div className="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center relative bg-transparent">
-                  <img 
-                    src={logoUrl} 
-                    alt="Territorial Imóveis Logo" 
-                    className="w-full h-full object-contain mix-blend-multiply"
-                  />
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="text-foreground font-black text-xl md:text-3xl tracking-tighter uppercase font-brand leading-tight whitespace-nowrap">TERRITORIAL IMÓVEIS</span>
-                  <span className="text-foreground font-bold text-[9px] md:text-xs uppercase tracking-[0.25em] leading-none mt-1 w-full text-center">CRECI 38258-J</span>
-                </div>
-              </div>
-            </div>
-            </div>
+        {/* Barra de Filtros */}
+        <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200/80 mb-10 flex flex-col md:flex-row gap-4 items-center justify-between">
+          <div className="relative w-full md:w-1/3">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            <input
+              type="text"
+              placeholder="Pesquisar por título, bairro..."
+              value={buscaTexto}
+              onChange={(e) => setBuscaTexto(e.target.value)}
+              className="w-full pl-9 pr-4 py-2 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-900"
+            />
+          </div>
 
-            {/* Desktop Menu - Right */}
-            <div className="hidden lg:flex items-center gap-4 xl:gap-6 whitespace-nowrap">
-              <a href="#inicio" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Início</a>
-              <a href="#sobre" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Sobre</a>
-              <a href="#especialidades" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Especialidades</a>
-              <a href="#projetos" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Projetos</a>
-              <a href="#anuncie" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Perícia</a>
-              <a href="#depoimentos" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Vozes</a>
-              <a href="#imoveis" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Imóveis</a>
-              <a href="#faq" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:text-[var(--color-accent)] transition-colors">Dúvidas</a>
-            </div>
+          <div className="flex flex-wrap gap-2 w-full md:w-auto">
+            <select
+              value={tipoFiltro}
+              onChange={(e) => setTipoFiltro(e.target.value)}
+              className="text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 font-medium"
+            >
+              <option value="todos">Todos os Tipos</option>
+              <option value="Casa">Casa</option>
+              <option value="Apartamento">Apartamento</option>
+              <option value="Terreno">Terreno</option>
+              <option value="Comercial">Comercial</option>
+              <option value="Chácara / Sítio">Chácara / Sítio</option>
+            </select>
 
-            {/* Contact - Right */}
-            <div className="flex items-center gap-4 shrink-0">
-              <Button 
-                onClick={() => window.open('https://wa.me/551124050300', '_blank')}
-                className="hidden md:flex bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-6 lg:px-8 h-12 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.1em] text-xs"
-              >
-                Falar Agora
-              </Button>
-
-
-
-              {/* Mobile Menu Button */}
-              <button 
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="md:hidden p-2 text-slate-900"
-              >
-                {isMenuOpen ? <Plus className="rotate-45 w-8 h-8" /> : <Layers className="w-8 h-8" />}
-              </button>
-            </div>
+            <select
+              value={operacaoFiltro}
+              onChange={(e) => setOperacaoFiltro(e.target.value)}
+              className="text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 font-medium"
+            >
+              <option value="todos">Todas Operações</option>
+              <option value="Venda e Locação">Venda e Locação</option>
+              <option value="Venda">Venda</option>
+              <option value="Locação">Locação</option>
+            </select>
           </div>
         </div>
 
-        {/* Mobile Menu Dropdown */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-[#c2c2c2] border-t border-black/5 p-4 animate-in slide-in-from-top duration-300">
-            <div className="flex flex-col gap-4 text-xs font-black uppercase tracking-[0.25em] text-slate-900">
-              <a href="#inicio" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Início</a>
-              <a href="#sobre" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Sobre</a>
-              <a href="#especialidades" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Especialidades</a>
-              <a href="#projetos" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Projetos</a>
-              <a href="#anuncie" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Perícia</a>
-              <a href="#depoimentos" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Vozes</a>
-              <a href="#imoveis" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Imóveis</a>
-              <a href="#faq" onClick={() => setIsMenuOpen(false)} className="p-4 hover:bg-black/5 rounded-xl">Dúvidas</a>
-              <Button 
-                onClick={() => {
-                  window.open('https://wa.me/551124050300', '_blank');
-                  setIsMenuOpen(false);
-                }}
-                className="bg-slate-900 text-white rounded-xl h-14 font-black uppercase tracking-widest text-xs mt-2"
-              >
-                (11) 2405-0300
-              </Button>
-            </div>
+        {/* Grelha de Imóveis */}
+        {isLoading ? (
+          <div className="text-center py-12 text-slate-500 text-sm">A carregar imóveis...</div>
+        ) : listingsFiltrados.length === 0 ? (
+          <div className="text-center py-12 text-slate-500 text-sm">Nenhum imóvel encontrado nesta categoria.</div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {listingsFiltrados.slice(0, LISTAGENS_MAXIMAS).map((property: any) => {
+              // Extração de todas as fotos disponíveis
+              const fotosCruas =
+                (Array.isArray(property.fotos) && property.fotos.length > 0 ? property.fotos : null) ||
+                (Array.isArray(property.images) && property.images.length > 0 ? property.images : null) ||
+                (property.image ? [property.image] : null) ||
+                (property.imagem ? [property.imagem] : null) ||
+                ["/placeholder.svg"];
+
+              const listaFotos = fotosCruas.map((f: any) =>
+                typeof f === "string" ? f : f?.url || "/placeholder.svg"
+              );
+
+              const galeriaId = `galeria-${property.id || Math.random()}`;
+
+              return (
+                <div
+                  key={property.id}
+                  className="group bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                >
+                  <div>
+                    {/* Área da Galeria com Carrossel e Setas */}
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100 group/img">
+                      <div
+                        id={galeriaId}
+                        className="w-full h-full flex overflow-x-auto scroll-smooth snap-x snap-mandatory"
+                        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+                      >
+                        {listaFotos.map((url: string, idx: number) => (
+                          <img
+                            key={idx}
+                            src={url}
+                            alt={`${property.titulo || property.title || "Imóvel"} - Foto ${idx + 1}`}
+                            className="w-full h-full object-cover shrink-0 snap-center select-none"
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).src = "/placeholder.svg";
+                            }}
+                          />
+                        ))}
+                      </div>
+
+                      {/* Botões de Navegação (só se tiver mais de 1 foto) */}
+                      {listaFotos.length > 1 && (
+                        <>
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              const container = document.getElementById(galeriaId);
+                              if (container) container.scrollLeft -= container.clientWidth;
+                            }}
+                            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center text-sm font-bold z-20 shadow transition-all cursor-pointer"
+                          >
+                            &#10094;
+                          </button>
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              const container = document.getElementById(galeriaId);
+                              if (container) container.scrollLeft += container.clientWidth;
+                            }}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center text-sm font-bold z-20 shadow transition-all cursor-pointer"
+                          >
+                            &#10095;
+                          </button>
+
+                          <span className="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-md z-20 pointer-events-none">
+                            {listaFotos.length} fotos
+                          </span>
+                        </>
+                      )}
+
+                      {/* Etiqueta de Categoria */}
+                      <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10 pointer-events-none">
+                        <span className="bg-slate-900/80 backdrop-blur-sm text-white text-[10px] font-semibold px-2 py-0.5 rounded-md uppercase tracking-wider">
+                          {property.tipo || "Imóvel"}
+                        </span>
+                        {property.status && (
+                          <span className="bg-[#d4a017] text-white text-[10px] font-semibold px-2 py-0.5 rounded-md uppercase tracking-wider">
+                            {property.status}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Dados do Imóvel */}
+                    <div className="p-5">
+                      <h3 className="text-base font-bold text-slate-900 uppercase tracking-wide line-clamp-1">
+                        {property.titulo || property.title || "Imóvel Disponível"}
+                      </h3>
+
+                      <div className="flex items-center gap-1.5 text-xs text-slate-500 mt-1">
+                        <MapPin className="w-3.5 h-3.5 text-[#d4a017] shrink-0" />
+                        <span className="truncate">{property.localizacao || "Localização sob consulta"}</span>
+                      </div>
+
+                      {property.descricao && (
+                        <p className="text-xs text-slate-600 mt-2.5 line-clamp-2 leading-relaxed">
+                          {property.descricao}
+                        </p>
+                      )}
+
+                      <div className="grid grid-cols-3 gap-2 py-3 mt-4 border-t border-b border-slate-100 text-slate-600 text-xs text-center">
+                        <div className="flex items-center justify-center gap-1">
+                          <Home className="w-3.5 h-3.5 text-slate-400" />
+                          <span>{property.quartos || 0} qtos</span>
+                        </div>
+                        <div className="flex items-center justify-center gap-1">
+                          <Bath className="w-3.5 h-3.5 text-slate-400" />
+                          <span>{property.banhos || property.banheiros || 0} banhos</span>
+                        </div>
+                        <div className="flex items-center justify-center gap-1">
+                          <Maximize className="w-3.5 h-3.5 text-slate-400" />
+                          <span>{property.area ? `${property.area}m²` : "--"}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Preço e Botão de Ação */}
+                  <div className="p-5 pt-0 flex items-center justify-between">
+                    <div>
+                      <span className="text-xs text-slate-400 block font-medium">Valor</span>
+                      <span className="text-base font-bold text-slate-900">
+                        {property.preco || property.price || "Sob Consulta"}
+                      </span>
+                    </div>
+
+                    <a
+                      href={`https://wa.me/551124050300?text=${encodeURIComponent(
+                        `Olá! Gostaria de mais informações sobre o imóvel: ${property.titulo || property.title}`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-9 h-9 rounded-xl bg-slate-900 hover:bg-slate-800 text-white flex items-center justify-center transition-colors shadow-sm"
+                      title="Falar sobre este imóvel"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         )}
-      </nav>
-
-      {/* Hero Section */}
-      <section id="inicio" className="relative min-h-[40vh] flex items-center justify-center pt-24 md:pt-32 bg-[#c2c2c2]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 uppercase tracking-tighter leading-none mb-8">
-            Sejam bem vindos a era da <br className="hidden md:block" />
-            <span className="text-[var(--color-accent)]">Imobiliária Digital</span>
-          </h1>
-          <div className="flex flex-wrap justify-center gap-4">
-          </div>
-        </div>
       </section>
 
-      {/* Nossa História Section */}
-      <section id="sobre" className="py-12 bg-[#c2c2c2] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
-            <div className="w-full mb-12">
-              <span className="text-[var(--color-accent)] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-xs md:text-lg mb-4 md:mb-6 block drop-shadow-sm">Trajetória de Sucesso</span>
-              <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 md:mb-10 uppercase tracking-tighter leading-tight font-heading px-4">
-                Sobre Nós
-              </h2>
-              <div className="space-y-6 md:space-y-8 text-slate-600 text-lg md:text-xl leading-relaxed font-medium px-4 text-center">
-                <p>
-                  A Territorial Imóveis nasceu da necessidade de um mercado exigente que busca, em seus fornecedores de serviços, algo além do básico, tais como confiança, sigilo e segurança nas negociações imobiliárias.
-                </p>
-                <p>
-                  Nossa história foi construída ao longo de anos de experiência, atuando em diversos segmentos imobiliários. A Territorial Imóveis tem amplo conhecimento em laudo pericial para usucapião, laudo de avaliação mercadológica e estruturação imobiliária.
-                </p>
-                <p>
-                  Com foco em resultados e transparência, desenvolvemos metodologias próprias para análise de terrenos e glebas, garantindo que cada projeto seja executado com o máximo de precisão nós possibilitando o atendimento a clientes de perfis variados.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-
-
-      {/* Mission, Vision, Values Section */}
-      <section className="py-16 bg-[#c2c2c2] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="p-8 bg-white/40 backdrop-blur-md rounded-[2rem] border border-black/5 shadow-lg">
-              <h3 className="text-[var(--color-navy)] font-black uppercase tracking-wider mb-4 text-xl">Missão</h3>
-              <p className="text-slate-600 font-medium leading-relaxed">
-                Temos a missão de levar o que há de melhor e mais sofisticado ao mercado imobiliário digital, comodidade, segurança e agilidade sem perca de tempo e dinheiro.
-              </p>
-            </div>
-            <div className="p-8 bg-white/40 backdrop-blur-md rounded-[2rem] border border-black/5 shadow-lg">
-              <h3 className="text-[var(--color-navy)] font-black uppercase tracking-wider mb-4 text-xl">Visão</h3>
-              <p className="text-slate-600 font-medium leading-relaxed">
-                Revolucionar o mercado imobiliário, facilitando o dia a dia dos clientes e investidores trazendo para um só lugar o que ele buscaria em várias plataformas de serviços.
-              </p>
-            </div>
-            <div className="p-8 bg-white/40 backdrop-blur-md rounded-[2rem] border border-black/5 shadow-lg">
-              <h3 className="text-[var(--color-navy)] font-black uppercase tracking-wider mb-4 text-xl">Valores</h3>
-              <p className="text-slate-600 font-medium leading-relaxed">
-                Somos o que o mercado imobiliário precisa e temos o que o mercado imobiliário deseja, tratamos dos nossos clientes com segurança e total sigilo nas negociações imobiliárias.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Background Watermark for other sections */}
-      <div className="fixed inset-0 z-0 pointer-events-none flex items-center justify-center opacity-[0.08] overflow-hidden">
-        <img 
-          src={logoUrl} 
-          alt="" 
-          className="w-[90%] h-auto object-contain mix-blend-multiply grayscale" 
-        />
-      </div>
-
-      {/* Technical Areas Section (Section Order 2) */}
-      <section id="especialidades" className="py-16 md:py-24 bg-[#c2c2c2] border-y border-black/5 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-2xl md:text-5xl font-bold text-[var(--color-accent)] uppercase tracking-tighter font-heading leading-tight px-4">Nossas Especialidades</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-            {TECHNICAL_SERVICES.map((service) => (
-              <div key={service.id} className="group p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] bg-white/40 backdrop-blur-md border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 relative overflow-hidden shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
-                <div className="mb-4 md:mb-6 bg-[var(--color-accent)]/10 w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-[1.25rem] flex items-center justify-center border border-[var(--color-accent)]/10 group-hover:bg-[var(--color-accent)] transition-all duration-500 scale-100 group-hover:scale-110">
-                  <div className="scale-75 md:scale-100">{service.icon}</div>
-                </div>
-                <h3 className={cn("text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3 leading-tight group-hover:text-[var(--color-navy)] transition-colors font-heading tracking-tight", service.id === 2 && "text-base sm:text-lg md:text-xl")}>{service.title}</h3>
-                <p className="text-slate-600 text-[10px] md:text-xs leading-relaxed font-medium">{service.description}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-12 flex justify-center">
-            <Button 
-              onClick={() => window.open('https://wa.me/551124050300', '_blank')}
-              className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-10 h-16 border-none font-black transition-all duration-500 shadow-xl hover:scale-105 active:scale-95 uppercase tracking-[0.15em] text-sm md:text-base flex items-center gap-3"
-            >
-              <MessageSquare className="w-5 h-5 md:w-6 h-6" />
-              Fale com nossos especialistas
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Technical Projects Section (Section Order 3) */}
-      <section id="projetos" className="py-32 bg-[#c2c2c2] border-t border-black/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-tr from-black/5 via-transparent to-black/5" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16 md:mb-24">
-            
-            <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading leading-tight px-4">Projetos & Tecnologia</h2>
-            <p className="text-[var(--color-accent)] mt-6 max-w-4xl mx-auto font-black text-xl md:text-3xl uppercase tracking-tight px-4 font-brand">Simulação de Construção e Modelagem 3D Urbana e Rural</p>
-          </div>
- 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {PROJETOS_3D.map((projeto) => (
-              <div key={projeto.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
-                <div className="relative aspect-video overflow-hidden">
-                  {projeto.id === 3 ? (
-                    <div className="w-full h-full relative">
-                      <video 
-                        autoPlay 
-                        loop 
-                        muted 
-                        playsInline
-                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                        poster={projeto.image}
-                      >
-                        <source src="https://assets.mixkit.co/videos/preview/mixkit-building-a-house-in-a-time-lapse-12347-large.mp4" type="video/mp4" />
-                      </video>
-                      <div className="absolute inset-0 bg-black/20" />
-                    </div>
-                  ) : (
-                    <img 
-                      src={projeto.image} 
-                      alt={projeto.title}
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                    />
-                  )}
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-[var(--color-navy)] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
-                      {projeto.tech}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-black text-slate-900 mb-4 font-brand tracking-tighter uppercase">{projeto.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed font-medium">{projeto.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-
-
-      {/* Lead Generation Premium */}
-      <section id="anuncie" className="py-20 md:py-32 bg-[#c2c2c2] text-slate-900 overflow-hidden relative border-y border-black/5">
-        <div className="absolute inset-0 z-0 opacity-5">
-           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.05),transparent_70%)]" />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            {/* Form 1: Solicitar Serviços */}
-            <div className="bg-white/40 backdrop-blur-3xl p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-black/5 shadow-2xl h-full">
-              <div className="mb-8">
-                <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs mb-2 block">Consultoria Técnica</span>
-                <h3 className="text-xl md:text-3xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Solicitar Serviços</h3>
-                <p className="text-sm text-slate-600 font-medium leading-relaxed">
-                  Avaliação completa com segurança jurídica para o seu patrimônio.
-                </p>
-              </div>
-              <form className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input type="text" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Nome do Requerente" />
-                  <input type="tel" className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium text-sm" placeholder="Contato" />
-                </div>
-                <select className="w-full h-14 px-6 rounded-2xl bg-white/40 border border-black/5 text-slate-900 focus:ring-2 focus:ring-[var(--color-accent)] outline-none cursor-pointer font-bold appearance-none text-xs">
-                  <option className="bg-white">Avaliação Mercadológica</option>
-                  <option className="bg-white">Laudo Judicial para Usucapião</option>
-                  <option className="bg-white">Regularização</option>
-                  <option className="bg-white">Topografia e Medição</option>
-                  <option className="bg-white">Mapeamento Aéreo</option>
-                  <option className="bg-white">Demolição e Terraplanagem</option>
-                  <option className="bg-white">Estruturação Imobiliária</option>
-                  <option className="bg-white">Despachante Imobiliário</option>
-                  <option className="bg-white">Compra</option>
-                  <option className="bg-white">Locação</option>
-                  <option className="bg-white">Permuta</option>
-                </select>
-                <Button className="w-full bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 h-14 rounded-xl font-black text-sm shadow-xl border-none uppercase tracking-widest hover:scale-[1.02] transition-all">
-                  Solicitar
-                </Button>
-              </form>
-            </div>
-
-            {/* Form 2: Enviar Imóvel para Venda */}
-            <div className="bg-white/40 backdrop-blur-3xl p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-black/5 shadow-2xl h-full">
-              <div className="mb-8">
-                <span className="text-[var(--color-accent)] font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs mb-2 block">Imóvel & Glebas</span>
-                <h3 className="text-xl md:text-3xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Enviar Imóvel para Venda e Locação</h3>
-                <p className="text-sm text-slate-600 font-medium leading-relaxed">
-                  Deseja vender seu imóvel? Nossa equipe realiza a análise técnica com sigilo e segurança.
-                </p>
-              </div>
-              <SubmitListingForm />
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* Imóveis Section (Section Order 6) */}
-      <section id="imoveis" className="py-24 bg-[#c2c2c2] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-8">Portfólio de Imóveis</h2>
-            
-            {/* Seguro Fiança Section */}
-            <div className="mb-12 max-w-4xl mx-auto">
-              <div className="bg-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-black/5 shadow-xl">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                  <div className="flex items-center gap-4 text-left">
-                    <div className="bg-[var(--color-accent)]/20 p-4 rounded-2xl">
-                      <ShieldCheck className="w-10 h-10 text-[var(--color-accent)]" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-black text-slate-900 uppercase tracking-tighter">Todas as Seguradoras</h3>
-                      <p className="text-sm text-slate-600 font-medium">Contratação imediata com suporte técnico especializado</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap justify-center gap-3">
-                    {INSURERS.map((insurers) => (
-                      <a 
-                        key={insurers.name}
-                        href={insurers.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group flex items-center gap-2 bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all duration-300 hover:scale-105 active:scale-95 shadow-md"
-                      >
-                        {insurers.name}
-                        <ExternalLink size={12} className="opacity-50 group-hover:opacity-100" />
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Search Bar Premium - Relocated here */}
-            <div className="bg-white/60 backdrop-blur-2xl p-4 md:p-4 rounded-[1.5rem] md:rounded-[2.5rem] border border-white/40 flex flex-col md:flex-row gap-3 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] ring-1 ring-black/5 mx-auto max-w-4xl mb-16">
-              <div className="flex-1 relative group">
-                <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[var(--color-accent)] transition-colors" size={20} />
-                <input type="text" placeholder="Pesquisar..." className="w-full h-14 md:h-16 pl-16 pr-8 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border-none focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium transition-all shadow-inner text-sm md:text-base" />
-              </div>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <select className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] shadow-sm text-sm md:text-base">
-                  <option>Residencial</option>
-                  <option>Apartamento</option>
-                  <option>Comercial</option>
-                  <option>Terreno</option>
-                </select>
-                <select className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/50 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] text-sm md:text-base">
-                  <option>Compra</option>
-                  <option>Venda</option>
-                  <option>Locação</option>
-                  <option>Permuta</option>
-                </select>
-              </div>
-              <Button className="h-14 md:h-16 px-10 bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] border-none shadow-xl hover:scale-[1.02] transition-transform text-xs md:text-sm">
-                Consultar
-              </Button>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {(dbListings ?? []).slice(0, MAX_LISTINGS).map((property) => (
-              <div key={property.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                 {/* Galeria interativa com setas e contador */}
-{(() => {
-  // Trata fotos se vierem como Array, como JSON em texto ou link único
-  let lista: any[] = [];
-  try {
-    const raw = property.fotos || property.images || property.photos || property.galeria;
-    if (Array.isArray(raw)) {
-      lista = raw;
-    } else if (typeof raw === "string" && raw.trim().startsWith("[")) {
-      lista = JSON.parse(raw);
-    } else if (typeof raw === "string" && raw.trim() !== "") {
-      lista = [raw];
-    }
-  } catch (e) {
-    lista = [];
-  }
-
-  if (lista.length === 0) {
-    const unica = property.image || property.imagem || property.foto || property.foto_capa || "/placeholder.svg";
-    lista = [unica];
-  }
-
-  const urlsFinais = lista.map((item) => (typeof item === "string" ? item : item?.url || item?.foto_url || "/placeholder.svg"));
-
-  return (
-    <div className="relative w-full h-full group/galeria">
-      {/* Exibição da primeira foto com scroll horizontal suave */}
-      <div
-        id={`galeria-${property.id || Math.random()}`}
-        className="w-full h-full flex overflow-x-auto scroll-smooth snap-x snap-mandatory"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-      >
-        {urlsFinais.map((url, idx) => (
-          <img
-            key={idx}
-            src={url}
-            alt={`${property.title || "Imóvel"} - Foto ${idx + 1}`}
-            className="w-full h-full object-cover shrink-0 snap-center"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = "/placeholder.svg";
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Setas de navegação (só aparecem se tiver mais de 1 foto) */}
-      {urlsFinais.length > 1 && (
-        <>
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              const el = e.currentTarget.parentElement?.firstElementChild;
-              if (el) el.scrollLeft -= el.clientWidth;
-            }}
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center text-xs font-bold z-10 transition-all opacity-80 hover:opacity-100 shadow"
-            title="Foto anterior"
-          >
-            &#10094;
-          </button>
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              const el = e.currentTarget.parentElement?.firstElementChild;
-              if (el) el.scrollLeft += el.clientWidth;
-            }}
-            className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center text-xs font-bold z-10 transition-all opacity-80 hover:opacity-100 shadow"
-            title="Próxima foto"
-          >
-            &#10095;
-          </button>
-
-          {/* Indicador de fotos (ex: 1/4) */}
-          <span className="absolute bottom-2 right-2 bg-black/60 backdrop-blur-sm text-white text-[10px] px-2 py-0.5 rounded-full z-10">
-            {urlsFinais.length} fotos
-          </span>
-        </>
-      )}
-    </div>
-  );
-})()}
-    </div>
-  );
-})()}
-                   src={
-  (Array.isArray(property.fotos) && property.fotos.length > 0
-    ? (typeof property.fotos[0] === 'string' ? property.fotos[0] : property.fotos[0]?.url)
-    : null) ||
-  (Array.isArray(property.images) && property.images.length > 0
-    ? (typeof property.images[0] === 'string' ? property.images[0] : property.images[0]?.url)
-    : null) ||
-  property.image ||
-  property.imagem ||
-  property.foto ||
-  property.foto_capa ||
-  "/placeholder.svg"
-}
-onError={(e) => {
-  (e.target as HTMLImageElement).src = "/placeholder.svg";
-}}
-                  />
-                  <div className="absolute top-4 left-4 flex flex-col gap-2">
-                    <span className="bg-white/90 backdrop-blur-md text-slate-900 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
-                      {property.type}
-                    </span>
-                    <span className="bg-[var(--color-accent)] text-[var(--color-navy)] text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
-                      {property.status}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-8">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 className="text-2xl font-black text-slate-900 font-brand tracking-tighter uppercase leading-none mb-2">{property.title}</h3>
-                      <p className="text-slate-500 text-xs font-bold uppercase tracking-widest flex items-center gap-2">
-                        <MapPin size={12} className="text-[var(--color-accent)]" /> {property.location}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6 font-medium line-clamp-2">{property.description}</p>
-                  <div className="grid grid-cols-3 gap-4 py-6 border-y border-black/5 mb-6">
-                    <div className="flex flex-col items-center gap-1">
-                      <Bed size={16} className="text-[var(--color-accent)]" />
-                      <span className="text-xs font-black text-slate-900">{property.beds}</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-1">
-                      <Bath size={16} className="text-[var(--color-accent)]" />
-                      <span className="text-xs font-black text-slate-900">{property.baths}</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-1">
-                      <Maximize size={16} className="text-[var(--color-accent)]" />
-                      <span className="text-xs font-black text-slate-900">{property.area}</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-black text-slate-900 font-brand tracking-tighter">{property.price}</span>
-                    <Button className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 h-12 w-12 rounded-xl flex items-center justify-center border-none transition-all shadow-lg p-0">
-                      <ArrowRight size={20} />
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          {(dbListings ?? []).length === 0 && (
-            <div className="mt-4 bg-white/40 backdrop-blur-md rounded-[2.5rem] border border-black/5 shadow-xl p-12 text-center">
-              <p className="text-xl md:text-2xl font-black text-slate-900 uppercase tracking-tighter mb-2">Nenhum imóvel disponível no momento</p>
-              <p className="text-slate-600 font-medium">Seja o primeiro a anunciar! Envie seu imóvel pelo formulário abaixo.</p>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Vozes da Experiência (Section Order 7) */}
-      <section id="depoimentos" className="py-32 bg-transparent relative overflow-hidden border-t border-black/5">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-200/20 via-transparent to-slate-200/20" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 md:mb-24">
-            
-            <h2 className="text-2xl md:text-5xl font-bold text-foreground uppercase tracking-tighter font-heading px-4">Vozes da Experiência</h2>
-          </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                text: "O Silvio Moura foi fundamental na venda da nossa propriedade em Alphaville. Sua análise técnica nos deu a segurança necessária para fechar um negócio complexo.",
-                author: "Beatriz Oliveira",
-                role: "Proprietária em Alphaville",
-                image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150"
-              },
-              {
-                text: "Excepcional! A avaliação imobiliária foi precisa e o atendimento sofisticado. Encontramos o imóvel perfeito com a curadoria da Territorial.",
-                author: "Dr. Marcos Vinícius",
-                role: "Neurocirurgião",
-                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150"
-              },
-              {
-                text: "A transparência do Silvio e sua equipe é o que os diferencia. O uso de drones para mostrar nosso terreno fez toda a diferença na valorização.",
-                author: "Helena Castro",
-                role: "Empresária",
-                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150"
-              },
-              {
-                text: "Trabalho técnico impecável na regularização da nossa fazenda. Silvio é a maior autoridade que conhecemos em perícia territorial.",
-                author: "Ricardo Mendes",
-                role: "Investidor Agronegócio",
-                image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150"
-              },
-              {
-                text: "Gestão condominial de outro nível. A Territorial trouxe tecnologia e clareza para nossa administração.",
-                author: "Patrícia Lima",
-                role: "Síndica Profissional",
-                image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=150&h=150"
-              }
-            ].map((t, i) => (
-              <div key={i} className="bg-white/40 backdrop-blur-md p-8 rounded-3xl border border-black/5 hover:border-[var(--color-accent)]/50 transition-all duration-500 hover:-translate-y-2 group shadow-xl">
-                <MessageSquare className="text-[var(--color-accent)] mb-6 w-10 h-10 group-hover:scale-110 transition-transform" />
-                <p className="text-lg text-slate-600 mb-8 font-medium">"{t.text}"</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[var(--color-accent)]/30 group-hover:border-[var(--color-accent)] transition-colors">
-                    <img src={t.image} alt={t.author} className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-slate-900 text-lg">{t.author}</p>
-                    <p className="text-[var(--color-accent)] text-sm font-medium">{t.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Dúvidas Frequentes Section (FAQ) */}
-      <section id="faq" className="py-24 md:py-32 bg-[#c2c2c2] relative overflow-hidden border-t border-black/5">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-4">Dúvidas Frequentes</h2>
-            <p className="text-slate-600 font-medium">Esclareça suas principais dúvidas sobre nossos serviços técnicos e imobiliários.</p>
-          </div>
-          <div className="space-y-4">
-            {[
-              {
-                q: "Como funciona a avaliação mercadológica?",
-                a: "Nossa avaliação segue normas técnicas rigorosas (ABNT), analisando localização, estado de conservação, zoneamento e liquidez do mercado para definir o valor real do patrimônio."
-              },
-              {
-                q: "O que é o laudo pericial para usucapião?",
-                a: "É um documento técnico indispensável em processos judiciais que descreve detalhadamente o imóvel, suas confrontações e tempo de posse, garantindo segurança jurídica ao processo."
-              },
-              {
-                q: "Por que utilizar drones na avaliação imobiliária?",
-                a: "Drones permitem o mapeamento aéreo preciso, identificando patologias em telhados, limites de terrenos de difícil acesso e gerando modelos 3D que valorizam a apresentação do imóvel."
-              },
-              {
-                q: "Como enviar meu imóvel para venda ou locação?",
-                a: "Basta utilizar nosso formulário na seção 'Enviar Imóvel'. Você pode subir fotos diretamente pelo celular e nossa IA processará os dados iniciais para nossa equipe técnica entrar em contato."
-              }
-            ].map((item, i) => (
-              <div key={i} className="bg-white/40 backdrop-blur-md rounded-2xl overflow-hidden border border-black/5 shadow-sm">
-                <button 
-                  onClick={() => toggleFaq(i)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left group"
-                >
-                  <span className="font-bold text-slate-900 text-base md:text-lg">{item.q}</span>
-                  <ChevronDown className={cn("w-5 h-5 text-slate-400 transition-transform duration-300", activeFaq === i && "rotate-180")} />
-                </button>
-                {activeFaq === i && (
-                  <div className="px-6 pb-6 text-slate-600 font-medium leading-relaxed animate-in fade-in slide-in-from-top-2 duration-300">
-                    {item.a}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-
-      <footer className="bg-[#c2c2c2] py-16 md:py-24 border-t border-black/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-            <div className="text-center md:text-left">
-              <div className="flex flex-col items-center text-center">
-                <div className="flex items-center gap-2 md:gap-4">
-                  <div className="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center relative bg-transparent">
-                    <img 
-                      src={logoUrl} 
-                      alt="Territorial Imóveis Logo" 
-                      className="w-full h-full object-contain mix-blend-multiply"
-                    />
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <span className="text-foreground font-black text-xl md:text-3xl tracking-tighter uppercase font-brand leading-tight whitespace-nowrap">TERRITORIAL IMÓVEIS</span>
-                    <span className="text-foreground font-bold text-[9px] md:text-xs uppercase tracking-[0.25em] leading-none mt-1 w-full text-center">CRECI 38258-J</span>
-                  </div>
-                </div>
-              </div>
-              <div className="flex justify-center md:justify-start gap-4">
-                <a href="https://instagram.com/_territorialimoveis_/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white shadow-sm border border-black/5 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#E4405F] hover:text-white transition-all" title="Instagram - territorialimoveis">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                </a>
-                <a href="https://tiktok.com/@territorialimoveis" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white shadow-sm border border-black/5 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#000000] hover:text-white transition-all" title="TikTok - @territorialimoveis">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></svg>
-                </a>
-              </div>
-            </div>
-
-            <div className="text-center md:text-left">
-              <h4 className="text-foreground font-bold text-xl mb-6 md:mb-8 uppercase tracking-widest font-heading">Atendimento</h4>
-              <ul className="space-y-6 flex flex-col items-center md:items-start">
-                <li className="flex flex-col md:flex-row items-center md:items-start gap-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner">
-                    <Phone size={24} className="scale-75 md:scale-100" />
-                  </div>
-                  <div className="text-slate-600 font-medium">
-                    <p className="font-bold text-foreground text-lg md:text-xl tracking-tighter leading-none">(11) 2405-0300 / 2407-6900</p>
-                    <p className="text-[10px] uppercase tracking-[0.2em] mt-1 font-black opacity-50">Fixo Comercial</p>
-                  </div>
-                </li>
-                <li className="flex flex-col md:flex-row items-center md:items-start gap-4 group">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner shrink-0">
-                    <MessageSquare size={24} className="scale-75 md:scale-100" />
-                  </div>
-                  <div className="text-slate-600 font-medium flex-1 flex flex-col items-center md:items-start">
-                    <div className="flex flex-col gap-2 items-center md:items-start">
-                      <div>
-                        <p className="font-bold text-foreground text-lg md:text-xl tracking-tighter leading-none">(11) 2405-0300</p>
-                      </div>
-                      <Button 
-                        onClick={() => window.open('https://wa.me/551124050300', '_blank')}
-                        className="bg-[#25D366] text-white hover:bg-white hover:text-slate-900 rounded-xl px-4 h-10 border-none font-black transition-all duration-300 shadow-lg text-[10px] uppercase tracking-widest flex items-center gap-2 w-fit"
-                      >
-                        <MessageSquare size={14} />
-                        WhatsApp
-                      </Button>
-                    </div>
-                  </div>
-                </li>
-                <li className="flex flex-col md:flex-row items-center md:items-start gap-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-black/5 rounded-2xl flex items-center justify-center text-[var(--color-accent)] shadow-inner shrink-0">
-                    <UserCheck size={24} className="scale-75 md:scale-100" />
-                  </div>
-                  <div className="text-slate-600 font-medium flex flex-col items-center md:items-start">
-                    <div className="flex flex-col gap-2">
-                      <p className="font-bold text-foreground text-xs md:text-sm uppercase tracking-wider leading-tight text-center md:text-left">CRECI 151545-F (Perito)</p>
-                      <p className="font-bold text-foreground text-[10px] md:text-xs uppercase tracking-[0.1em] opacity-70 text-center md:text-left">CNAE 49386</p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <div className="text-center md:text-left">
-              <h4 className="text-foreground font-bold text-xl mb-6 md:mb-8 uppercase tracking-widest font-heading">Localização</h4>
-              <div className="flex flex-col md:flex-row items-center md:items-start gap-4 px-4 md:px-0">
-                <MapPin className="text-[var(--color-accent)] shrink-0 mt-1" size={20} />
-                <a 
-                  href="https://www.google.com/maps/dir/?api=1&destination=Avenida+Otávio+Braga+de+Mesquita+3935+Parque+São+Geraldo+Guarulhos+SP" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-slate-600 leading-relaxed font-medium text-sm md:text-base text-center md:text-left hover:text-[var(--color-accent)] transition-colors group"
-                >
-                  Avenida Otávio Braga de Mesquita, Nº 3935<br />
-                  Parque São Geraldo - Guarulhos / SP
-                  <span className="block text-[10px] uppercase tracking-wider text-[var(--color-accent)] mt-2 font-bold group-hover:underline">Ver no Google Maps / Traçar Rota</span>
-                </a>
-              </div>
-              <div className="mt-8 rounded-xl overflow-hidden border border-white/10 shadow-lg h-48">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.366479155255!2d-46.51065792471616!3d-23.4472097788816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce8b598d73b0a7%3A0x633d74c8b6b15805!2sAv.%20Ot%C3%A1vio+Braga+de+Mesquita%2C+3935+-+Vila+Florida%2C+Guarulhos+-+SP%2C+07191-000!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen={true} 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Mapa de Localização Territorial Imóveis"
-                  className="grayscale hover:grayscale-0 transition-all duration-500"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-10 border-t border-white/5 text-center flex flex-col items-center gap-6">
-            <div className="flex flex-col items-center gap-6 bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm max-w-2xl w-full">
-              <div className="flex flex-col items-center gap-2">
-                <Smartphone className="w-10 h-10 text-[var(--color-accent)]" />
-                <h5 className="text-foreground font-black text-xl uppercase tracking-tighter">Instale o Nosso Aplicativo</h5>
-                <p className="text-slate-500 text-sm font-medium">Acesse a Territorial Imóveis com um toque, direto da sua tela inicial.</p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
-                <Button 
-                  onClick={() => {
-                    setPwaPlatform('ios');
-                    setShowPwaModal(true);
-                  }}
-                  className="bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl flex items-center justify-center gap-2 flex-1"
-                >
-                  <Smartphone size={16} />
-                  Versão iPhone / iOS
-                </Button>
-                <Button 
-                  onClick={() => {
-                    setPwaPlatform('android');
-                    setShowPwaModal(true);
-                  }}
-                  className="bg-[var(--color-accent)] text-slate-900 hover:bg-slate-900 hover:text-white rounded-2xl px-8 h-12 border-none font-black transition-all duration-500 shadow-xl flex items-center justify-center gap-2 flex-1"
-                >
-                  <Smartphone size={16} />
-                  Versão Android
-                </Button>
-              </div>
-              
-            </div>
-
-            <p className="text-slate-600 text-sm font-medium tracking-wide">
-              © 2026 Territorial Imóveis - CRECI 38258-J. Segurança Jurídica.
+      {/* Formulário de Envio de Imóvel */}
+      <section className="py-16 bg-white border-t border-slate-200/80">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-slate-900 uppercase tracking-tight">
+              Anuncie Seu Imóvel
+            </h2>
+            <p className="text-xs text-slate-500 mt-1">
+              Preencha os dados e anexe as fotos para avaliação e publicação técnica.
             </p>
-            <div className="flex justify-center pt-4">
-              <a
-                href="/auth"
-                className="inline-flex items-center gap-2 h-11 px-8 rounded-xl bg-slate-900 text-white text-xs uppercase tracking-widest font-black hover:bg-[var(--color-accent)] hover:text-slate-900 transition-all duration-300 shadow-lg"
-              >
-                Acesso CEO
-              </a>
-            </div>
           </div>
-
-          {/* PWA Instruction Modal */}
-          {showPwaModal && (
-            <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-in fade-in duration-300">
-              <div className="bg-white rounded-[2.5rem] w-full max-w-md overflow-hidden shadow-2xl border border-black/5 animate-in zoom-in-95 duration-300">
-                <div className="bg-slate-900 p-8 text-center relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--color-accent)]/10 rounded-full -mr-16 -mt-16 blur-3xl"></div>
-                  <Smartphone className="w-16 h-16 text-[var(--color-accent)] mx-auto mb-4 relative z-10" />
-                  <h3 className="text-white text-2xl font-black uppercase tracking-tighter leading-none relative z-10">
-                    Instalar Territorial
-                  </h3>
-                  <p className="text-white/60 text-sm mt-2 font-medium relative z-10">
-                    Siga os passos abaixo para instalar em seu {pwaPlatform === 'ios' ? 'iPhone' : 'Android'}
-                  </p>
-                </div>
-                
-                <div className="p-8">
-                  <div className="space-y-6">
-                    {pwaPlatform === 'ios' ? (
-                      <>
-                        <div className="flex gap-4 items-start">
-                          <div className="w-10 h-10 rounded-full bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black shrink-0">1</div>
-                          <p className="text-slate-700 font-medium">Toque no ícone de <span className="font-black">Compartilhar</span> (quadrado com seta) na barra inferior do Safari.</p>
-                        </div>
-                        <div className="flex gap-4 items-start">
-                          <div className="w-10 h-10 rounded-full bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black shrink-0">2</div>
-                          <p className="text-slate-700 font-medium">Role a lista para baixo e selecione a opção <span className="font-black">"Adicionar à Tela de Início"</span>.</p>
-                        </div>
-                        <div className="flex gap-4 items-start">
-                          <div className="w-10 h-10 rounded-full bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black shrink-0">3</div>
-                          <p className="text-slate-700 font-medium">Toque em <span className="font-black text-[var(--color-accent)]">Adicionar</span> no canto superior direito para confirmar.</p>
-                        </div>
-                      </>
-                    ) : (
-                      <>
-                        <div className="flex gap-4 items-start">
-                          <div className="w-10 h-10 rounded-full bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black shrink-0">1</div>
-                          <p className="text-slate-700 font-medium">Toque nos <span className="font-black">três pontos</span> (menu) no canto superior direito do Chrome.</p>
-                        </div>
-                        <div className="flex gap-4 items-start">
-                          <div className="w-10 h-10 rounded-full bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black shrink-0">2</div>
-                          <p className="text-slate-700 font-medium">Selecione <span className="font-black">"Instalar aplicativo"</span> ou <span className="font-black">"Adicionar à tela inicial"</span>.</p>
-                        </div>
-                        <div className="flex gap-4 items-start">
-                          <div className="w-10 h-10 rounded-full bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black shrink-0">3</div>
-                          <p className="text-slate-700 font-medium">Confirme a instalação clicando em <span className="font-black text-[var(--color-accent)]">Instalar</span> no pop-up.</p>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                  
-                  <Button 
-                    onClick={() => setShowPwaModal(false)}
-                    className="w-full mt-10 bg-slate-900 text-white hover:bg-[var(--color-accent)] hover:text-slate-900 h-14 rounded-2xl font-black uppercase tracking-widest transition-all duration-300 shadow-xl"
-                  >
-                    Entendi, vou instalar
-                  </Button>
-                </div>
-              </div>
-            </div>
-          )}
+          <SubmitListingForm />
         </div>
-      </footer>
+      </section>
     </div>
   );
 }
+
+export default IndexComponent;
