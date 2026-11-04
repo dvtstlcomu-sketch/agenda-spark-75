@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T02:32:07.206698+00:00",
+  "generated_at": "2026-11-04T02:52:57.101626+00:00",
   "files": [
     {
       "path": "eslint.config.js",
@@ -7,11 +7,11 @@
     },
     {
       "path": "roadmap.md",
-      "bytes": 904
+      "bytes": 1040
     },
     {
       "path": "AGENTS.md",
-      "bytes": 1369
+      "bytes": 1689
     },
     {
       "path": "package.json",
@@ -126,6 +126,10 @@
       "bytes": 1792
     },
     {
+      "path": "drizzle/migrations/0009_browser_manager_access.sql",
+      "bytes": 2434
+    },
+    {
       "path": "drizzle/migrations/0001_manager_moderation.sql",
       "bytes": 2179
     },
@@ -159,7 +163,7 @@
     },
     {
       "path": "drizzle/migrations/meta/_journal.json",
-      "bytes": 1425
+      "bytes": 1575
     },
     {
       "path": "drizzle/migrations/meta/0007_snapshot.json",
@@ -171,6 +175,10 @@
     },
     {
       "path": "drizzle/migrations/meta/0004_snapshot.json",
+      "bytes": 336
+    },
+    {
+      "path": "drizzle/migrations/meta/0009_snapshot.json",
       "bytes": 336
     },
     {
@@ -198,6 +206,10 @@
       "bytes": 438
     },
     {
+      "path": "src/lib/managers.ts",
+      "bytes": 1265
+    },
+    {
       "path": "src/lib/utils.ts",
       "bytes": 165
     },
@@ -214,12 +226,20 @@
       "bytes": 5132
     },
     {
+      "path": "src/lib/manager-registration.ts",
+      "bytes": 955
+    },
+    {
       "path": "src/lib/listings.functions.ts",
       "bytes": 3256
     },
     {
       "path": "src/lib/error-page.ts",
       "bytes": 645
+    },
+    {
+      "path": "src/lib/manager-registration.test.ts",
+      "bytes": 1763
     },
     {
       "path": "src/components/ui/button.tsx",
@@ -231,7 +251,7 @@
     },
     {
       "path": "src/integrations/supabase/types.ts",
-      "bytes": 7906
+      "bytes": 8249
     },
     {
       "path": "src/integrations/supabase/previewAuthStorage.ts",
@@ -255,7 +275,7 @@
     },
     {
       "path": "src/routes/_authenticated/painel.tsx",
-      "bytes": 20682
+      "bytes": 20724
     }
   ],
   "dependencies": [
@@ -452,6 +472,18 @@
       "target": "@/lib/listings"
     },
     {
+      "source": "src/lib/managers.ts",
+      "target": "@supabase/supabase-js"
+    },
+    {
+      "source": "src/lib/managers.ts",
+      "target": "@/integrations/supabase/client"
+    },
+    {
+      "source": "src/lib/managers.ts",
+      "target": "./manager-registration"
+    },
+    {
       "source": "src/lib/utils.ts",
       "target": "clsx"
     },
@@ -502,6 +534,14 @@
     {
       "source": "src/lib/listings.functions.ts",
       "target": "@supabase/supabase-js"
+    },
+    {
+      "source": "src/lib/manager-registration.test.ts",
+      "target": "bun:test"
+    },
+    {
+      "source": "src/lib/manager-registration.test.ts",
+      "target": "./manager-registration"
     },
     {
       "source": "src/components/ui/button.tsx",
@@ -577,10 +617,6 @@
     },
     {
       "source": "src/routes/_authenticated/painel.tsx",
-      "target": "@tanstack/react-start"
-    },
-    {
-      "source": "src/routes/_authenticated/painel.tsx",
       "target": "react"
     },
     {
@@ -593,7 +629,7 @@
     },
     {
       "source": "src/routes/_authenticated/painel.tsx",
-      "target": "@/lib/managers.functions"
+      "target": "@/lib/managers"
     },
     {
       "source": "src/routes/_authenticated/painel.tsx",
