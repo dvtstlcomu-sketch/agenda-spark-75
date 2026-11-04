@@ -1,10 +1,9 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { resolveImages, BUCKET } from "@/lib/listings";
-import { listManagers, createManager, removeManager } from "@/lib/managers.functions";
+import { listManagers, createManager, removeManager } from "@/lib/managers";
 import { Button } from "@/components/ui/button";
 import { SubmitListingForm } from "@/components/SubmitListingForm";
 import { Bell, Plus, RefreshCw, Trash2 } from "lucide-react";
@@ -321,23 +320,20 @@ function Painel() {
 }
 
 function ManagersBox() {
-  const list = useServerFn(listManagers);
-  const create = useServerFn(createManager);
-  const del = useServerFn(removeManager);
   const qc = useQueryClient();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
   const [busy, setBusy] = useState(false);
 
-  const { data: managers } = useQuery({ queryKey: ["managers"], queryFn: () => list() });
+  const { data: managers, error: managersError } = useQuery({ queryKey: ["managers"], queryFn: listManagers });
 
   async function onCreate(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true);
     setMsg(null);
     try {
-      await create({ data: { email, password } });
+      await createManager({ email, password });
       setMsg({ ok: true, text: `Gestor ${email} cadastrado. Ele já pode entrar em "Acesso CEO" no rodapé do site.` });
       setEmail("");
       setPassword("");
@@ -351,8 +347,13 @@ function ManagersBox() {
 
   async function onRemove(id: string, mail: string) {
     if (!confirm(`Remover o acesso de ${mail}?`)) return;
-    await del({ data: { id } });
-    qc.invalidateQueries({ queryKey: ["managers"] });
+    try {
+      await removeManager(id);
+      qc.invalidateQueries({ queryKey: ["managers"] });
+      setMsg({ ok: true, text: "Acesso de gestor removido." });
+    } catch (err) {
+      setMsg({ ok: false, text: err instanceof Error ? err.message : "Não foi possível remover o acesso." });
+    }
   }
 
   return (
@@ -360,16 +361,17 @@ function ManagersBox() {
       <h2 className="font-black uppercase text-slate-900 mb-3">Gestores com acesso</h2>
       <form onSubmit={onCreate} className="flex flex-col md:flex-row gap-2">
         <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email do gestor" className="flex-1 h-11 rounded-xl border border-slate-300 px-3 text-sm" />
-        <input type="text" required minLength={8} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Senha (mín. 8 caracteres)" className="flex-1 h-11 rounded-xl border border-slate-300 px-3 text-sm" />
-        <button disabled={busy} className="px-5 h-11 rounded-xl bg-slate-900 text-white font-bold text-sm disabled:opacity-50">{busy ? "Cadastrando..." : "Cadastrar gestor"}</button>
+        <input type="password" autoComplete="new-password" required minLength={8} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Senha (mín. 8 caracteres)" className="flex-1 h-11 rounded-xl border border-slate-300 px-3 text-sm" />
+        <Button disabled={busy} type="submit">{busy ? "Cadastrando..." : "Cadastrar gestor"}</Button>
       </form>
       {msg && <p className={`mt-2 text-sm font-bold ${msg.ok ? "text-green-700" : "text-red-600"}`}>{msg.text}</p>}
+      {managersError && <p role="alert" className="mt-2 text-sm">{managersError.message}</p>}
       <ul className="mt-4 divide-y divide-slate-200">
         {managers?.length === 0 && <li className="py-2 text-sm text-slate-500">Nenhum gestor cadastrado ainda.</li>}
         {managers?.map((m) => (
           <li key={m.id} className="py-2 flex items-center justify-between gap-2 text-sm">
             <span className="break-all">{m.email}</span>
-            <button onClick={() => onRemove(m.id, m.email)} className="px-3 h-9 rounded-lg bg-red-100 text-red-700 font-bold text-xs">Remover acesso</button>
+            <Button variant="destructive" size="sm" onClick={() => onRemove(m.id, m.email)}>Remover acesso</Button>
           </li>
         ))}
       </ul>
