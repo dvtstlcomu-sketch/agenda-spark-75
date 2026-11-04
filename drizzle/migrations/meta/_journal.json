@@ -64,6 +64,13 @@
       "when": 1793729281659,
       "tag": "0008_public_read_approved_photos",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1793760727025,
+      "tag": "0009_browser_manager_access",
+      "breakpoints": true
     }
   ]
 }
