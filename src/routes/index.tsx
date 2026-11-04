@@ -562,7 +562,14 @@ function Index() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <select value={fType} onChange={(e) => setFType(e.target.value)} className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] shadow-sm text-sm md:text-base">
                   <option value="todos">Todos os tipos</option>
-                  {["Casa","Apartamento","Terreno","Comercial","Chácara / Sítio","Gleba"].map((t) => <option key={t}>{t}</option>)}
+                  <optgroup label="Categorias">
+                    <option value="cat:residencial">Residencial (casas, aptos, chácaras)</option>
+                    <option value="cat:comercial">Comercial</option>
+                    <option value="cat:terrenos">Terrenos e glebas</option>
+                  </optgroup>
+                  <optgroup label="Tipo exato">
+                    {["Casa","Apartamento","Terreno","Comercial","Chácara / Sítio","Gleba"].map((t) => <option key={t}>{t}</option>)}
+                  </optgroup>
                 </select>
                 <select value={fOp} onChange={(e) => setFOp(e.target.value)} className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/50 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] text-sm md:text-base">
                   <option value="todos">Todas as finalidades</option>
@@ -580,7 +587,8 @@ function Index() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {(dbListings ?? []).filter((p) => {
               const n = (x: string) => x.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-              if (fType !== "todos" && n(p.type) !== n(fType)) return false;
+              const cats: Record<string, string[]> = { "cat:residencial": ["casa", "apartamento", "chacara / sitio"], "cat:comercial": ["comercial"], "cat:terrenos": ["terreno", "gleba"] };
+              if (fType !== "todos" && !(cats[fType] ? cats[fType].includes(n(p.type)) || (fType === "cat:comercial" && n(p.title).includes("comercia")) : n(p.type) === n(fType))) return false;
               if (fOp !== "todos" && !n(p.status).includes(n(fOp))) return false;
               return !q.trim() || n(`${p.title} ${p.location} ${p.description}`).includes(n(q.trim()));
             }).slice(0, MAX_LISTINGS).map((property) => (
@@ -965,10 +973,11 @@ function Index() {
 function PhotoCarousel({ images, alt }: { images: string[]; alt: string }) {
   const [i, setI] = useState(0);
   const n = images.length;
+  useEffect(() => { images.slice(1).forEach((src) => { const im = new Image(); im.src = src; }); }, [images]);
   const go = (d: number) => (e: React.MouseEvent) => { e.stopPropagation(); e.preventDefault(); setI((v) => (v + d + n) % n); };
   return (
     <>
-      <img src={images[i]} alt={alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+      <img src={images[i]} alt={alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
       {n > 1 && (
         <>
           <button type="button" aria-label="Foto anterior" onClick={go(-1)} className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 text-slate-900 rounded-full w-9 h-9 flex items-center justify-center shadow">‹</button>
