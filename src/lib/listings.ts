@@ -1,162 +1,118 @@
 import { supabase } from "@/integrations/supabase/client";
+import { signPublicImages, signStaffImages } from "@/lib/listings.functions";
 
-export const BALDE = "fotos de imóveis";
-export const LISTAGENS_MAXIMAS = 20;
+export const BUCKET = "property-photos";
+export const MAX_LISTINGS = 6;
 
-export type Anuncio = {
+export type Listing = {
   id: string;
-  titulo: string;
-  title?: string;
-  tipo: string;
+  title: string;
+  type: string;
   status: string;
-  preco: string;
-  price?: string;
-  localizacao: string;
-  imagem: string;
-  image?: string;
-  fotos?: string[];
-  images?: string[];
-  quartos: number;
-  banhos: number;
+  price: string;
+  location: string;
+  image: string;
+  images: string[];
+  beds: number;
+  baths: number;
   area: string;
-  descricao: string;
-  validado?: boolean;
+  description: string;
 };
 
-// Converte os nomes dos arquivos salvos em links públicos acessíveis
-export async function resolverImagens<T extends Record<string, any>>(linhas: T[]): Promise<T[]> {
-  return linhas.map((r) => {
-    const rawFotos = Array.isArray(r.imagens) && r.imagens.length > 0 
-      ? r.imagens 
-      : Array.isArray(r.fotos) && r.fotos.length > 0 
-      ? r.fotos 
-      : r.URL_de_imagem ? [r.URL_de_imagem] : [];
-
-    const listaResolvida = rawFotos.map((caminho: any) => {
-      const p = typeof caminho === "string" ? caminho : caminho?.url;
-      if (!p) return "/placeholder.svg";
-      if (p.startsWith("http")) return p;
-      const { data } = supabase.storage.from(BALDE).getPublicUrl(p);
-      return data.publicUrl;
-    });
-
-    const fotoCapa = listaResolvida[0] || (r.URL_de_imagem?.startsWith("http") ? r.URL_de_imagem : "/placeholder.svg");
-
-    return {
-      ...r,
-      fonte_de_imagem: fotoCapa,
-      lista_de_imagens: listaResolvida.length > 0 ? listaResolvida : [fotoCapa],
-    };
-  });
-}
-
-// Busca todos os imóveis aprovados para exibir na vitrine inicial
-export async function buscarListagensPublicadas(): Promise<Anuncio[]> {
+async function signPaths(paths: string[], staff = false): Promise<Record<string, string>> {
+  // O bucket é privado: ninguém baixa fotos direto pelo Storage.
+  // Os links temporários são gerados no servidor (verificado e limitado lá).
+  const clean = paths.filter((p): p is string => !!p && !p.startsWith("http"));
+  if (!clean.length) return {};
   try {
-    const { data: dados, error } = await supabase
-      .from("propriedades")
-      .select("*")
-      .order("criado_em", { ascending: false })
-      .limit(LISTAGENS_MAXIMAS);
-
-    if (error) throw error;
-    if (!dados || dados.length === 0) return [];
-
-    const dadosComImagens = await resolverImagens(dados);
-
-    return dadosComImagens.map((r: any) => {
-      const galeria = r.lista_de_imagens && r.lista_de_imagens.length > 0 
-        ? r.lista_de_imagens 
-        : [r.fonte_de_imagem || "/placeholder.svg"];
-
-      return {
-        id: String(r.id),
-        titulo: r.titulo || r.title || "Imóvel Disponível",
-        title: r.titulo || r.title || "Imóvel Disponível",
-        tipo: r.tipo || "Imóvel",
-        status: r.status || "Venda e Locação",
-        preco: r.preco || "Sob Consulta",
-        price: r.preco || "Sob Consulta",
-        localizacao: r.localizacao || r.bairro || "Consultar",
-        imagem: galeria[0],
-        image: galeria[0],
-        fotos: galeria,
-        images: galeria,
-        quartos: Number(r.quartos || 0),
-        banhos: Number(r.banhos || r.banheiros || 0),
-        area: String(r.area || "--"),
-        descricao: r.descricao || "",
-        validado: r.validado ?? true,
-      };
-    });
-  } catch (err) {
-    console.error("Erro ao carregar anúncios:", err);
-    return [];
+    const map = staff ? await signStaffImages({ data: { paths: clean } }) : await signPublicImages({ data: { paths: clean } });
+    if (Object.keys(map).length) return map;
+  } catch (e) {
+    console.warn("Assinatura no servidor falhou, usando o navegador", e);
   }
+  // Fallback (ex.: Vercel sem chave do servidor): o RLS só libera fotos de
+  // anúncios aprovados ao público, e qualquer foto à equipe.
+  const { data } = await supabase.storage.from(BUCKET).createSignedUrls(clean, 60 * 60 * 24 * 7);
+  const map: Record<string, string> = {};
+  data?.forEach((d) => { if (d.path && d.signedUrl) map[d.path] = d.signedUrl; });
+  return map;
 }
 
-export type EnviarEntrada = {
-  nome_do_proprietario: string;
-  telefone_do_proprietário: string;
-  titulo: string;
-  tipo: string;
-  localizacao: string;
-  area?: string;
-  quartos?: number;
-  banhos?: number;
-  documentacao?: string;
-  preco?: string;
-  descricao?: string;
-  arquivos?: File[];
-  files?: File[];
-  fotos?: File[];
+export async function resolveImages<T extends { image_url: string | null; images: string[] | null }>(rows: T[], staff = false) {
+  const paths = rows.flatMap((r) => [r.image_url, ...(r.images ?? [])]).filter((p): p is string => !!p && !p.startsWith("http"));
+  const map = await signPaths([...new Set(paths)], staff);
+  const url = (p: string | null) => (p ? (p.startsWith("http") ? p : map[p] ?? "") : "");
+  return rows.map((r) => ({ ...r, imageSrc: url(r.image_url), imageSrcs: [...new Set([r.image_url, ...(r.images ?? [])])].map(url).filter(Boolean) }));
+}
+
+export async function fetchPublishedListings(): Promise<Listing[]> {
+  const { data, error } = await supabase
+    .from("properties")
+    .select("*")
+    .eq("validated", true)
+    .order("created_at", { ascending: false })
+    .limit(MAX_LISTINGS);
+  if (error) throw error;
+  const rows = await resolveImages(data ?? []);
+  return rows.map((r) => ({
+    id: r.id,
+    title: r.title,
+    type: r.type ?? "Imóvel",
+    status: r.status ?? "Venda e Locação",
+    price: r.price ?? "Sob Consulta",
+    location: r.location ?? "Consulte",
+    image: r.imageSrc || "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80",
+    images: r.imageSrcs,
+    beds: r.beds ?? 0,
+    baths: r.baths ?? 0,
+    area: r.area ?? "-",
+    description: r.description ?? "",
+  }));
+}
+
+export type SubmitInput = {
+  ownerName: string;
+  ownerPhone: string;
+  title: string;
+  type: string;
+  location: string;
+  area: string;
+  beds: number;
+  baths: number;
+  price: string;
+  documentation: string;
+  description: string;
+  files: File[];
 };
 
-// Faz o upload das fotos selecionadas e grava o anúncio já com as URLs
-export async function enviarAnuncio(entrada: EnviarEntrada) {
-  const listaArquivos = entrada.arquivos || entrada.files || entrada.fotos || [];
-  const caminhos: string[] = [];
-
-  for (const arquivo of listaArquivos.slice(0, 10)) {
-    const extensao = arquivo.name.split(".").pop() || "jpg";
-    const nomeUnico = `${Date.now()}-${Math.random().toString(36).substring(2, 9)}.${extensao}`;
-    
-    const { error: uploadErro } = await supabase.storage
-      .from(BALDE)
-      .upload(nomeUnico, arquivo, {
-        contentType: arquivo.type,
-        upsert: true,
-      });
-
-    if (uploadErro) {
-      console.error("Falha ao subir imagem:", uploadErro);
-    } else {
-      caminhos.push(nomeUnico);
-    }
+export async function submitListing(input: SubmitInput) {
+  const paths: string[] = [];
+  for (const file of input.files.slice(0, 10)) {
+    const ext = (file.name.split(".").pop() || "jpg").toLowerCase().replace(/[^a-z0-9]/g, "");
+    const path = `${crypto.randomUUID()}.${ext}`;
+    const { error } = await supabase.storage.from(BUCKET).upload(path, file, { contentType: file.type });
+    if (error) throw error;
+    paths.push(path);
   }
-
-  const { data: authData } = await supabase.auth.getSession();
-
-  const payload: any = {
-    titulo: entrada.titulo,
-    tipo: entrada.tipo,
+  const { data: sess } = await supabase.auth.getSession();
+  const { error } = await supabase.from("properties").insert({
+    title: input.title.slice(0, 120),
+    type: input.type,
     status: "Venda e Locação",
-    localizacao: entrada.localizacao,
-    area: entrada.area,
-    quartos: entrada.quartos,
-    banhos: entrada.banhos,
-    preco: entrada.preco || "Sob Consulta",
-    documentacao: entrada.documentacao,
-    descricao: entrada.descricao,
-    nome_do_proprietario: entrada.nome_do_proprietario,
-    telefone_do_proprietário: entrada.telefone_do_proprietário,
-    URL_de_imagem: caminhos[0] || null,
-    imagens: caminhos,
-    fotos: caminhos,
-    validado: true,
-    criado_por: authData?.session?.user?.id || null,
-  };
-
-  const { error: insertErro } = await supabase.from("propriedades").insert(payload);
-  if (insertErro) throw insertErro;
+    location: input.location,
+    area: input.area ? `${input.area}m²` : null,
+    beds: input.beds,
+    baths: input.baths,
+    price: input.price || "Sob Consulta",
+    documentation: input.documentation,
+    description:
+      input.description ||
+      `${input.type} em ${input.location}${input.area ? `, ${input.area}m²` : ""}${input.beds ? `, ${input.beds} quarto(s)` : ""}${input.baths ? `, ${input.baths} banheiro(s)` : ""}. ${input.documentation}.`,
+    owner_name: input.ownerName,
+    owner_phone: input.ownerPhone,
+    image_url: paths[0] ?? null,
+    images: paths,
+    created_by: sess.session?.user.id ?? null,
+  });
+  if (error) throw error;
 }
