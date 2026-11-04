@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Remover dependência de variáveis do servidor no cadastro de gestores, preservando autorização exclusiva do CEO e sua sessão
+
 - [ ] Conectar WhatsApp Business para avisos automáticos de novos anúncios (adiado: usuário precisa confirmar o número antes)
 - [x] Tirar o botão "CEO" do cabeçalho e manter apenas o acesso no rodapé
 - [x] Testar envio de imóvel com três fotos, aprovação e exclusão pelo painel
