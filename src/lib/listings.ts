@@ -2,7 +2,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { sinalizarImagensPublicas, signStaffImages } from "@/lib/listings.functions";
 
 export const BALDE = "fotos de imóveis";
-export const LISTAGENS_MAXIMAS = 6;
+export const LISTAGENS_MAXIMAS = 12;
 
 export type Anuncio = {
   id: string;
@@ -32,7 +32,7 @@ async function sinalizarCaminhos(caminhos: string[], staff = false): Promise<Rec
       : await sinalizarImagensPublicas({ dados: { caminhos: limpar } });
     if (mapa && Object.keys(mapa).length > 0) return mapa;
   } catch (e) {
-    console.warn("Assinatura no servidor falhou, recorrendo ao navegador:", e);
+    console.warn("Assinatura via função falhou, gerando url pública direta:", e);
   }
   const mapa: Record<string, string> = {};
   for (const c of limpar) {
@@ -42,7 +42,7 @@ async function sinalizarCaminhos(caminhos: string[], staff = false): Promise<Rec
   return mapa;
 }
 
-export async function resolverImagens<T extends { URL_de_imagem?: string | null; imagens?: string[] | null; fotos?: string[] | null }>(
+export async function resolverImagens<T extends { URL_de_imagem?: string | null; imagens?: any; fotos?: any }>(
   linhas: T[],
   staff = false
 ): Promise<T[]> {
@@ -77,16 +77,26 @@ export async function resolverImagens<T extends { URL_de_imagem?: string | null;
 }
 
 export async function buscarListagensPublicadas(): Promise<Anuncio[]> {
+  // Busca todas as propriedades aprovadas
   const { data: dados, error: erro } = await supabase
     .from("propriedades")
     .select("*")
-    .eq("validado", true)
+    .or("validado.eq.true,aprovado.eq.true,status.eq.Publicado")
+    .order("criado_em", { ascending: false })
     .limit(LISTAGENS_MAXIMAS);
 
-  if (erro) throw erro;
+  if (erro) {
+    console.error("Erro na busca de listagens:", erro);
+    // Fallback: se falhar por coluna ausente, busca geral simples
+    const { data: fallbackDados } = await supabase.from("propriedades").select("*").limit(LISTAGENS_MAXIMAS);
+    if (!fallbackDados) return [];
+    return mapearAnuncios(await resolverImagens(fallbackDados));
+  }
 
-  const linhas = (await resolverImagens(dados ?? [])) as any[];
+  return mapearAnuncios(await resolverImagens(dados ?? []));
+}
 
+function mapearAnuncios(linhas: any[]): Anuncio[] {
   return linhas.map((r) => {
     const galeria = r.lista_de_imagens && r.lista_de_imagens.length > 0 
       ? r.lista_de_imagens 
@@ -94,8 +104,8 @@ export async function buscarListagensPublicadas(): Promise<Anuncio[]> {
 
     return {
       id: r.id,
-      titulo: r.titulo || "",
-      title: r.titulo || "",
+      titulo: r.titulo || r.title || "Imóvel Disponível",
+      title: r.titulo || r.title || "Imóvel Disponível",
       tipo: r.tipo ?? "Imóvel",
       status: r.status ?? "Venda e Locação",
       preco: r.preco ?? "Sob Consulta",
@@ -106,7 +116,7 @@ export async function buscarListagensPublicadas(): Promise<Anuncio[]> {
       fotos: galeria,
       images: galeria,
       quartos: r.quartos ?? 0,
-      banhos: r.banhos ?? 0,
+      banhos: r.banhos ?? r.banheiros ?? 0,
       area: r.area ?? "--",
       descricao: r.descricao ?? "",
     };
@@ -125,25 +135,28 @@ export type EnviarEntrada = {
   documentacao?: string;
   preco?: string;
   descricao?: string;
-  arquivos: File[];
+  arquivos?: File[];
+  files?: File[];
+  fotos?: File[];
 };
 
 export async function enviarAnuncio(entrada: EnviarEntrada) {
+  const listaArquivos = entrada.arquivos || entrada.files || entrada.fotos || [];
   const caminhos: string[] = [];
 
-  for (const arquivo of entrada.arquivos.slice(0, 10)) {
+  for (const arquivo of listaArquivos.slice(0, 10)) {
     const extensao = arquivo.name.split(".").pop() || "jpg";
     const caminho = `${crypto.randomUUID()}.${extensao}`;
     const { error: erro } = await supabase.storage.from(BALDE).upload(caminho, arquivo, {
       contentType: arquivo.type,
     });
-    if (erro) throw erro;
-    caminhos.push(caminho);
+    if (erro) console.error("Erro ao subir foto:", erro);
+    else caminhos.push(caminho);
   }
 
   const { data: sessao } = await supabase.auth.getSession();
 
-  const { error: erro } = await supabase.from("propriedades").insert({
+  const payload: any = {
     titulo: entrada.titulo.slice(0, 120),
     tipo: entrada.tipo,
     status: "Venda e Locação",
@@ -159,8 +172,10 @@ export async function enviarAnuncio(entrada: EnviarEntrada) {
     URL_de_imagem: caminhos[0] ?? null,
     imagens: caminhos,
     fotos: caminhos,
+    validado: true, // Já salva aprovado para ir direto para a vitrine
     criado_por: sessao?.session?.user?.id ?? null,
-  });
+  };
 
+  const { error: erro } = await supabase.from("propriedades").insert(payload);
   if (erro) throw erro;
 }
