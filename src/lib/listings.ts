@@ -85,9 +85,23 @@ export type SubmitInput = {
   files: File[];
 };
 
+// Reduz a foto antes de enviar (máx. 1600px, JPEG) para o carrossel abrir rápido.
+async function shrink(file: File): Promise<File> {
+  try {
+    const bmp = await createImageBitmap(file);
+    const scale = Math.min(1, 1600 / Math.max(bmp.width, bmp.height));
+    const c = document.createElement("canvas");
+    c.width = Math.round(bmp.width * scale); c.height = Math.round(bmp.height * scale);
+    c.getContext("2d")!.drawImage(bmp, 0, 0, c.width, c.height);
+    const blob = await new Promise<Blob | null>((r) => c.toBlob(r, "image/jpeg", 0.82));
+    return blob && blob.size < file.size ? new File([blob], "foto.jpg", { type: "image/jpeg" }) : file;
+  } catch { return file; }
+}
+
 export async function submitListing(input: SubmitInput) {
   const paths: string[] = [];
-  for (const file of input.files.slice(0, 10)) {
+  for (const original of input.files.slice(0, 10)) {
+    const file = await shrink(original);
     const ext = (file.name.split(".").pop() || "jpg").toLowerCase().replace(/[^a-z0-9]/g, "");
     const path = `${crypto.randomUUID()}.${ext}`;
     const { error } = await supabase.storage.from(BUCKET).upload(path, file, { contentType: file.type });
