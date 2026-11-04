@@ -12,6 +12,7 @@ export type Listing = {
   price: string;
   location: string;
   image: string;
+  images: string[];
   beds: number;
   baths: number;
   area: string;
@@ -61,6 +62,7 @@ export async function fetchPublishedListings(): Promise<Listing[]> {
     price: r.price ?? "Sob Consulta",
     location: r.location ?? "Consulte",
     image: r.imageSrc || "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80",
+    images: r.imageSrcs,
     beds: r.beds ?? 0,
     baths: r.baths ?? 0,
     area: r.area ?? "-",

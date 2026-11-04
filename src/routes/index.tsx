@@ -192,6 +192,9 @@ export const Route = createFileRoute("/")({
 function Index() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [q, setQ] = useState("");
+  const [fType, setFType] = useState("todos");
+  const [fOp, setFOp] = useState("todos");
   const { data: dbListings } = useQuery({ queryKey: ["listings"], queryFn: fetchPublishedListings });
   const [showPwaModal, setShowPwaModal] = useState(false);
   const [pwaPlatform, setPwaPlatform] = useState<'ios' | 'android' | null>(null);
@@ -554,17 +557,15 @@ function Index() {
             <div className="bg-white/60 backdrop-blur-2xl p-4 md:p-4 rounded-[1.5rem] md:rounded-[2.5rem] border border-white/40 flex flex-col md:flex-row gap-3 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] ring-1 ring-black/5 mx-auto max-w-4xl mb-16">
               <div className="flex-1 relative group">
                 <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[var(--color-accent)] transition-colors" size={20} />
-                <input type="text" placeholder="Pesquisar..." className="w-full h-14 md:h-16 pl-16 pr-8 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border-none focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium transition-all shadow-inner text-sm md:text-base" />
+                <input type="text" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Pesquisar por título, bairro ou cidade..." className="w-full h-14 md:h-16 pl-16 pr-8 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border-none focus:ring-2 focus:ring-[var(--color-accent)] outline-none placeholder:text-slate-400 font-medium transition-all shadow-inner text-sm md:text-base" />
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
-                <select className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] shadow-sm text-sm md:text-base">
-                  <option>Residencial</option>
-                  <option>Apartamento</option>
-                  <option>Comercial</option>
-                  <option>Terreno</option>
+                <select value={fType} onChange={(e) => setFType(e.target.value)} className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/70 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] shadow-sm text-sm md:text-base">
+                  <option value="todos">Todos os tipos</option>
+                  {["Casa","Apartamento","Terreno","Comercial","Chácara / Sítio","Gleba"].map((t) => <option key={t}>{t}</option>)}
                 </select>
-                <select className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/50 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] text-sm md:text-base">
-                  <option>Compra</option>
+                <select value={fOp} onChange={(e) => setFOp(e.target.value)} className="h-14 md:h-16 px-6 rounded-xl md:rounded-2xl bg-white/50 text-slate-900 border border-white/20 outline-none focus:border-[var(--color-accent)] transition-all cursor-pointer font-bold appearance-none min-w-full sm:min-w-[160px] text-sm md:text-base">
+                  <option value="todos">Todas as finalidades</option>
                   <option>Venda</option>
                   <option>Locação</option>
                   <option>Permuta</option>
@@ -577,14 +578,15 @@ function Index() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {(dbListings ?? []).slice(0, MAX_LISTINGS).map((property) => (
+            {(dbListings ?? []).filter((p) => {
+              const n = (x: string) => x.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+              if (fType !== "todos" && n(p.type) !== n(fType)) return false;
+              if (fOp !== "todos" && !n(p.status).includes(n(fOp))) return false;
+              return !q.trim() || n(`${p.title} ${p.location} ${p.description}`).includes(n(q.trim()));
+            }).slice(0, MAX_LISTINGS).map((property) => (
               <div key={property.id} className="group bg-white/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-black/5 hover:border-[var(--color-accent)] transition-all duration-700 shadow-xl hover:-translate-y-3">
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img 
-                    src={property.image} 
-                    alt={property.title}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  />
+                  <PhotoCarousel images={property.images.length ? property.images : [property.image]} alt={property.title} />
                   <div className="absolute top-4 left-4 flex flex-col gap-2">
                     <span className="bg-white/90 backdrop-blur-md text-slate-900 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
                       {property.type}
@@ -958,5 +960,22 @@ function Index() {
         </div>
       </footer>
     </div>
+  );
+}
+function PhotoCarousel({ images, alt }: { images: string[]; alt: string }) {
+  const [i, setI] = useState(0);
+  const n = images.length;
+  const go = (d: number) => (e: React.MouseEvent) => { e.stopPropagation(); e.preventDefault(); setI((v) => (v + d + n) % n); };
+  return (
+    <>
+      <img src={images[i]} alt={alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+      {n > 1 && (
+        <>
+          <button type="button" aria-label="Foto anterior" onClick={go(-1)} className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 text-slate-900 rounded-full w-9 h-9 flex items-center justify-center shadow">‹</button>
+          <button type="button" aria-label="Próxima foto" onClick={go(1)} className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 text-slate-900 rounded-full w-9 h-9 flex items-center justify-center shadow">›</button>
+          <span className="absolute bottom-3 right-3 z-10 bg-slate-900/80 text-white text-[10px] font-black px-2.5 py-1 rounded-full">{i + 1}/{n}</span>
+        </>
+      )}
+    </>
   );
 }
