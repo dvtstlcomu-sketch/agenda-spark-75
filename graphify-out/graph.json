@@ -1,14 +1,6 @@
 {
-  "generated_at": "2026-11-03T20:40:55.573427+00:00",
+  "generated_at": "2026-11-04T01:59:25.765789+00:00",
   "files": [
-    {
-      "path": "eslint.config.js",
-      "bytes": 1250
-    },
-    {
-      "path": "roadmap.md",
-      "bytes": 820
-    },
     {
       "path": "AGENTS.md",
       "bytes": 1369
@@ -18,32 +10,36 @@
       "bytes": 3043
     },
     {
-      "path": "README.md",
-      "bytes": 24710
-    },
-    {
       "path": "vite.config.ts",
       "bytes": 1427
-    },
-    {
-      "path": "drizzle.config.ts",
-      "bytes": 245
     },
     {
       "path": "tsconfig.json",
       "bytes": 820
     },
     {
+      "path": "README.md",
+      "bytes": 24710
+    },
+    {
       "path": "components.json",
       "bytes": 443
     },
     {
-      "path": "src/routeTree.gen.ts",
-      "bytes": 4014
+      "path": "eslint.config.js",
+      "bytes": 1250
     },
     {
-      "path": "src/server.ts",
-      "bytes": 2048
+      "path": "drizzle.config.ts",
+      "bytes": 245
+    },
+    {
+      "path": "roadmap.md",
+      "bytes": 820
+    },
+    {
+      "path": "src/routeTree.gen.ts",
+      "bytes": 4014
     },
     {
       "path": "src/styles.css",
@@ -58,6 +54,10 @@
       "bytes": 1064
     },
     {
+      "path": "src/server.ts",
+      "bytes": 2048
+    },
+    {
       "path": ".lovasiri/sync.json",
       "bytes": 80
     },
@@ -66,24 +66,16 @@
       "bytes": 60
     },
     {
-      "path": ".lovable/plan.md",
-      "bytes": 1940
-    },
-    {
       "path": ".lovable/project.json",
       "bytes": 124
     },
     {
-      "path": ".lovable/plan/evolução-do-site-territorial-imóveis-2026-08-13.md",
-      "bytes": 2029
+      "path": ".lovable/plan.md",
+      "bytes": 1940
     },
     {
-      "path": ".lovable/plan/modernização-e-expansão-do-portal-territorial-imóveis-silvio-2026-08-13.md",
-      "bytes": 1514
-    },
-    {
-      "path": ".lovable/plan/plan-restore-missing-sections-and-finalize-order-2026-08-19.md",
-      "bytes": 1226
+      "path": ".lovable/plan/plan-responding-to-possível-se-transformar-em-app-2026-08-20.md",
+      "bytes": 1362
     },
     {
       "path": ".lovable/plan/plano-de-modernização-premium-territorial-imóveis-2026-08-13.md",
@@ -94,12 +86,24 @@
       "bytes": 1900
     },
     {
-      "path": ".lovable/plan/plan-responding-to-possível-se-transformar-em-app-2026-08-20.md",
-      "bytes": 1362
+      "path": ".lovable/plan/modernização-e-expansão-do-portal-territorial-imóveis-silvio-2026-08-13.md",
+      "bytes": 1514
     },
     {
-      "path": "drizzle/migrations/0004_auto_publish_listings.sql",
-      "bytes": 429
+      "path": ".lovable/plan/evolução-do-site-territorial-imóveis-2026-08-13.md",
+      "bytes": 2029
+    },
+    {
+      "path": ".lovable/plan/plan-restore-missing-sections-and-finalize-order-2026-08-19.md",
+      "bytes": 1226
+    },
+    {
+      "path": "drizzle/migrations/0008_public_read_approved_photos.sql",
+      "bytes": 300
+    },
+    {
+      "path": "drizzle/migrations/0006_auto_publish_all_inserts.sql",
+      "bytes": 569
     },
     {
       "path": "drizzle/migrations/0007_restore_ceo_approval_flow.sql",
@@ -110,16 +114,8 @@
       "bytes": 324
     },
     {
-      "path": "drizzle/migrations/0006_auto_publish_all_inserts.sql",
-      "bytes": 569
-    },
-    {
-      "path": "drizzle/migrations/0008_public_read_approved_photos.sql",
-      "bytes": 300
-    },
-    {
-      "path": "drizzle/migrations/0002_restrict_photo_downloads.sql",
-      "bytes": 403
+      "path": "drizzle/migrations/0004_auto_publish_listings.sql",
+      "bytes": 429
     },
     {
       "path": "drizzle/migrations/0000_public_listings_and_ceo.sql",
@@ -130,43 +126,15 @@
       "bytes": 2179
     },
     {
+      "path": "drizzle/migrations/0002_restrict_photo_downloads.sql",
+      "bytes": 403
+    },
+    {
       "path": "drizzle/migrations/0005_allow_visitor_auto_publish.sql",
       "bytes": 245
     },
     {
-      "path": "drizzle/migrations/meta/0000_snapshot.json",
-      "bytes": 336
-    },
-    {
-      "path": "drizzle/migrations/meta/0006_snapshot.json",
-      "bytes": 336
-    },
-    {
-      "path": "drizzle/migrations/meta/0008_snapshot.json",
-      "bytes": 336
-    },
-    {
       "path": "drizzle/migrations/meta/0003_snapshot.json",
-      "bytes": 336
-    },
-    {
-      "path": "drizzle/migrations/meta/0002_snapshot.json",
-      "bytes": 336
-    },
-    {
-      "path": "drizzle/migrations/meta/0001_snapshot.json",
-      "bytes": 336
-    },
-    {
-      "path": "drizzle/migrations/meta/_journal.json",
-      "bytes": 1425
-    },
-    {
-      "path": "drizzle/migrations/meta/0007_snapshot.json",
-      "bytes": 336
-    },
-    {
-      "path": "drizzle/migrations/meta/0005_snapshot.json",
       "bytes": 336
     },
     {
@@ -174,44 +142,36 @@
       "bytes": 336
     },
     {
-      "path": "src/routes/auth.tsx",
-      "bytes": 4193
+      "path": "drizzle/migrations/meta/0001_snapshot.json",
+      "bytes": 336
     },
     {
-      "path": "src/routes/__root.tsx",
-      "bytes": 1714
+      "path": "drizzle/migrations/meta/0005_snapshot.json",
+      "bytes": 336
     },
     {
-      "path": "src/routes/index.tsx",
-      "bytes": 15124
+      "path": "drizzle/migrations/meta/0006_snapshot.json",
+      "bytes": 336
     },
     {
-      "path": "src/components/SubmitListingForm.tsx",
-      "bytes": 7120
+      "path": "drizzle/migrations/meta/0007_snapshot.json",
+      "bytes": 336
     },
     {
-      "path": "src/assets/logo_silvio.jpg.asset.json",
-      "bytes": 453
+      "path": "drizzle/migrations/meta/0000_snapshot.json",
+      "bytes": 336
     },
     {
-      "path": "src/assets/logo_2.jpg.asset.json",
-      "bytes": 438
+      "path": "drizzle/migrations/meta/0002_snapshot.json",
+      "bytes": 336
     },
     {
-      "path": "src/lib/utils.ts",
-      "bytes": 165
+      "path": "drizzle/migrations/meta/_journal.json",
+      "bytes": 1425
     },
     {
-      "path": "src/lib/managers.functions.ts",
-      "bytes": 3107
-    },
-    {
-      "path": "src/lib/error-capture.ts",
-      "bytes": 335
-    },
-    {
-      "path": "src/lib/listings.ts",
-      "bytes": 5117
+      "path": "drizzle/migrations/meta/0008_snapshot.json",
+      "bytes": 336
     },
     {
       "path": "src/lib/listings.functions.ts",
@@ -222,8 +182,60 @@
       "bytes": 645
     },
     {
+      "path": "src/lib/utils.ts",
+      "bytes": 165
+    },
+    {
+      "path": "src/lib/managers.functions.ts",
+      "bytes": 3107
+    },
+    {
+      "path": "src/lib/listings.ts",
+      "bytes": 5937
+    },
+    {
+      "path": "src/lib/error-capture.ts",
+      "bytes": 335
+    },
+    {
+      "path": "src/assets/logo_2.jpg.asset.json",
+      "bytes": 438
+    },
+    {
+      "path": "src/assets/logo_silvio.jpg.asset.json",
+      "bytes": 453
+    },
+    {
+      "path": "src/components/SubmitListingForm.tsx",
+      "bytes": 7120
+    },
+    {
+      "path": "src/routes/index.tsx",
+      "bytes": 15124
+    },
+    {
+      "path": "src/routes/auth.tsx",
+      "bytes": 4193
+    },
+    {
+      "path": "src/routes/__root.tsx",
+      "bytes": 1714
+    },
+    {
+      "path": "src/routes/_authenticated/route.tsx",
+      "bytes": 381
+    },
+    {
+      "path": "src/routes/_authenticated/painel.tsx",
+      "bytes": 20682
+    },
+    {
       "path": "src/components/ui/button.tsx",
       "bytes": 1856
+    },
+    {
+      "path": "src/integrations/supabase/auth-middleware.ts",
+      "bytes": 3234
     },
     {
       "path": "src/integrations/supabase/auth-attacher.ts",
@@ -234,31 +246,31 @@
       "bytes": 7906
     },
     {
+      "path": "src/integrations/supabase/client.ts",
+      "bytes": 1975
+    },
+    {
       "path": "src/integrations/supabase/previewAuthStorage.ts",
       "bytes": 6623
     },
     {
       "path": "src/integrations/supabase/client.server.ts",
       "bytes": 2753
-    },
-    {
-      "path": "src/integrations/supabase/client.ts",
-      "bytes": 1975
-    },
-    {
-      "path": "src/integrations/supabase/auth-middleware.ts",
-      "bytes": 3234
-    },
-    {
-      "path": "src/routes/_authenticated/route.tsx",
-      "bytes": 381
-    },
-    {
-      "path": "src/routes/_authenticated/painel.tsx",
-      "bytes": 20682
     }
   ],
   "dependencies": [
+    {
+      "source": "vite.config.ts",
+      "target": "@lovable.dev/vite-tanstack-config"
+    },
+    {
+      "source": "README.md",
+      "target": "react"
+    },
+    {
+      "source": "README.md",
+      "target": "lucide-react"
+    },
     {
       "source": "eslint.config.js",
       "target": "@eslint/js"
@@ -282,18 +294,6 @@
     {
       "source": "eslint.config.js",
       "target": "typescript-eslint"
-    },
-    {
-      "source": "README.md",
-      "target": "react"
-    },
-    {
-      "source": "README.md",
-      "target": "lucide-react"
-    },
-    {
-      "source": "vite.config.ts",
-      "target": "@lovable.dev/vite-tanstack-config"
     },
     {
       "source": "drizzle.config.ts",
@@ -328,18 +328,6 @@
       "target": "./start.ts"
     },
     {
-      "source": "src/server.ts",
-      "target": "./lib/error-capture"
-    },
-    {
-      "source": "src/server.ts",
-      "target": "./lib/error-page"
-    },
-    {
-      "source": "src/server.ts",
-      "target": "@tanstack/react-start/server-entry"
-    },
-    {
       "source": "src/router.tsx",
       "target": "@tanstack/react-query"
     },
@@ -364,76 +352,32 @@
       "target": "@/integrations/supabase/auth-attacher"
     },
     {
-      "source": "src/routes/auth.tsx",
-      "target": "@tanstack/react-router"
+      "source": "src/server.ts",
+      "target": "./lib/error-capture"
     },
     {
-      "source": "src/routes/auth.tsx",
-      "target": "react"
+      "source": "src/server.ts",
+      "target": "./lib/error-page"
     },
     {
-      "source": "src/routes/auth.tsx",
-      "target": "@/integrations/supabase/client"
+      "source": "src/server.ts",
+      "target": "@tanstack/react-start/server-entry"
     },
     {
-      "source": "src/routes/__root.tsx",
-      "target": "@tanstack/react-query"
+      "source": "src/lib/listings.functions.ts",
+      "target": "@tanstack/react-start"
     },
     {
-      "source": "src/routes/__root.tsx",
-      "target": "@tanstack/react-router"
+      "source": "src/lib/listings.functions.ts",
+      "target": "@/integrations/supabase/auth-middleware"
     },
     {
-      "source": "src/routes/__root.tsx",
-      "target": "@tanstack/react-router"
+      "source": "src/lib/listings.functions.ts",
+      "target": "@/integrations/supabase/client.server"
     },
     {
-      "source": "src/routes/__root.tsx",
-      "target": "react"
-    },
-    {
-      "source": "src/routes/index.tsx",
-      "target": "@tanstack/react-router"
-    },
-    {
-      "source": "src/routes/index.tsx",
-      "target": "lucide-react"
-    },
-    {
-      "source": "src/routes/index.tsx",
-      "target": "react"
-    },
-    {
-      "source": "src/routes/index.tsx",
-      "target": "@tanstack/react-query"
-    },
-    {
-      "source": "src/routes/index.tsx",
-      "target": "@/lib/listings"
-    },
-    {
-      "source": "src/routes/index.tsx",
-      "target": "@/components/SubmitListingForm"
-    },
-    {
-      "source": "src/routes/index.tsx",
-      "target": "@/components/ui/button"
-    },
-    {
-      "source": "src/components/SubmitListingForm.tsx",
-      "target": "react"
-    },
-    {
-      "source": "src/components/SubmitListingForm.tsx",
-      "target": "@tanstack/react-query"
-    },
-    {
-      "source": "src/components/SubmitListingForm.tsx",
-      "target": "lucide-react"
-    },
-    {
-      "source": "src/components/SubmitListingForm.tsx",
-      "target": "@/lib/listings"
+      "source": "src/lib/listings.functions.ts",
+      "target": "@supabase/supabase-js"
     },
     {
       "source": "src/lib/utils.ts",
@@ -472,76 +416,76 @@
       "target": "@/lib/listings.functions"
     },
     {
-      "source": "src/lib/listings.functions.ts",
-      "target": "@tanstack/react-start"
-    },
-    {
-      "source": "src/lib/listings.functions.ts",
-      "target": "@/integrations/supabase/auth-middleware"
-    },
-    {
-      "source": "src/lib/listings.functions.ts",
-      "target": "@/integrations/supabase/client.server"
-    },
-    {
-      "source": "src/lib/listings.functions.ts",
-      "target": "@supabase/supabase-js"
-    },
-    {
-      "source": "src/components/ui/button.tsx",
+      "source": "src/components/SubmitListingForm.tsx",
       "target": "react"
     },
     {
-      "source": "src/components/ui/button.tsx",
-      "target": "@radix-ui/react-slot"
+      "source": "src/components/SubmitListingForm.tsx",
+      "target": "@tanstack/react-query"
     },
     {
-      "source": "src/components/ui/button.tsx",
-      "target": "class-variance-authority"
+      "source": "src/components/SubmitListingForm.tsx",
+      "target": "lucide-react"
     },
     {
-      "source": "src/components/ui/button.tsx",
-      "target": "@/lib/utils"
+      "source": "src/components/SubmitListingForm.tsx",
+      "target": "@/lib/listings"
     },
     {
-      "source": "src/integrations/supabase/auth-attacher.ts",
-      "target": "@tanstack/react-start"
+      "source": "src/routes/index.tsx",
+      "target": "@tanstack/react-router"
     },
     {
-      "source": "src/integrations/supabase/auth-attacher.ts",
-      "target": "./client"
+      "source": "src/routes/index.tsx",
+      "target": "lucide-react"
     },
     {
-      "source": "src/integrations/supabase/client.server.ts",
-      "target": "@supabase/supabase-js"
+      "source": "src/routes/index.tsx",
+      "target": "react"
     },
     {
-      "source": "src/integrations/supabase/client.server.ts",
-      "target": "./types"
+      "source": "src/routes/index.tsx",
+      "target": "@tanstack/react-query"
     },
     {
-      "source": "src/integrations/supabase/client.server.ts",
-      "target": "@/integrations/supabase/client.server"
+      "source": "src/routes/index.tsx",
+      "target": "@/lib/listings"
     },
     {
-      "source": "src/integrations/supabase/client.ts",
-      "target": "@supabase/supabase-js"
+      "source": "src/routes/index.tsx",
+      "target": "@/components/SubmitListingForm"
     },
     {
-      "source": "src/integrations/supabase/auth-middleware.ts",
-      "target": "@tanstack/react-start"
+      "source": "src/routes/index.tsx",
+      "target": "@/components/ui/button"
     },
     {
-      "source": "src/integrations/supabase/auth-middleware.ts",
-      "target": "@tanstack/react-start/server"
+      "source": "src/routes/auth.tsx",
+      "target": "@tanstack/react-router"
     },
     {
-      "source": "src/integrations/supabase/auth-middleware.ts",
-      "target": "@supabase/supabase-js"
+      "source": "src/routes/auth.tsx",
+      "target": "react"
     },
     {
-      "source": "src/integrations/supabase/auth-middleware.ts",
-      "target": "./types"
+      "source": "src/routes/auth.tsx",
+      "target": "@/integrations/supabase/client"
+    },
+    {
+      "source": "src/routes/__root.tsx",
+      "target": "@tanstack/react-query"
+    },
+    {
+      "source": "src/routes/__root.tsx",
+      "target": "@tanstack/react-router"
+    },
+    {
+      "source": "src/routes/__root.tsx",
+      "target": "@tanstack/react-router"
+    },
+    {
+      "source": "src/routes/__root.tsx",
+      "target": "react"
     },
     {
       "source": "src/routes/_authenticated/route.tsx",
@@ -590,6 +534,62 @@
     {
       "source": "src/routes/_authenticated/painel.tsx",
       "target": "lucide-react"
+    },
+    {
+      "source": "src/components/ui/button.tsx",
+      "target": "react"
+    },
+    {
+      "source": "src/components/ui/button.tsx",
+      "target": "@radix-ui/react-slot"
+    },
+    {
+      "source": "src/components/ui/button.tsx",
+      "target": "class-variance-authority"
+    },
+    {
+      "source": "src/components/ui/button.tsx",
+      "target": "@/lib/utils"
+    },
+    {
+      "source": "src/integrations/supabase/auth-middleware.ts",
+      "target": "@tanstack/react-start"
+    },
+    {
+      "source": "src/integrations/supabase/auth-middleware.ts",
+      "target": "@tanstack/react-start/server"
+    },
+    {
+      "source": "src/integrations/supabase/auth-middleware.ts",
+      "target": "@supabase/supabase-js"
+    },
+    {
+      "source": "src/integrations/supabase/auth-middleware.ts",
+      "target": "./types"
+    },
+    {
+      "source": "src/integrations/supabase/auth-attacher.ts",
+      "target": "@tanstack/react-start"
+    },
+    {
+      "source": "src/integrations/supabase/auth-attacher.ts",
+      "target": "./client"
+    },
+    {
+      "source": "src/integrations/supabase/client.ts",
+      "target": "@supabase/supabase-js"
+    },
+    {
+      "source": "src/integrations/supabase/client.server.ts",
+      "target": "@supabase/supabase-js"
+    },
+    {
+      "source": "src/integrations/supabase/client.server.ts",
+      "target": "./types"
+    },
+    {
+      "source": "src/integrations/supabase/client.server.ts",
+      "target": "@/integrations/supabase/client.server"
     }
   ]
 }
