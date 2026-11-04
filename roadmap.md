@@ -8,3 +8,4 @@
 - [x] Corrigir fotos pendentes e ações de incluir, publicar e excluir no painel
 - [x] Dar acesso de CEO ao Silvio, publicar anúncios novos na hora, botão Excluir visível, mensagens de cadastro em português
 - [ ] Publicar versão corrigida (aguarda o usuário clicar em Publicar)
+- [ ] Filtros 'Todos' padrão + busca livre; carrossel com setas/contador nos cards
